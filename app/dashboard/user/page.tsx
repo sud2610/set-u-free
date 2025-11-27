@@ -207,7 +207,7 @@ export default function UserDashboardPage() {
             </p>
           </div>
           <Link
-            href="/services"
+            href="/"
             className="inline-flex items-center gap-2 px-5 py-3 bg-white text-orange-600 font-semibold rounded-xl hover:bg-orange-50 transition-colors"
           >
             <Search className="w-5 h-5" />

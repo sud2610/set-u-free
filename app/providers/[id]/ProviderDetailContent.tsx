@@ -301,7 +301,7 @@ export function ProviderDetailContent({ providerId }: ProviderDetailContentProps
               Home
             </Link>
             <ChevronRight className="w-4 h-4 text-gray-400" />
-            <Link href="/services" className="text-gray-500 hover:text-orange-500">
+            <Link href="/" className="text-gray-500 hover:text-orange-500">
               Services
             </Link>
             <ChevronRight className="w-4 h-4 text-gray-400" />

@@ -1,25 +1,10 @@
 import { Suspense } from 'react';
 import { HeroSection } from '@/components/home/HeroSection';
-import { SearchBar } from '@/components/home/SearchBar';
+import { ServicesContent } from '@/app/services/ServicesContent';
+import { ServicesLoading } from '@/app/services/ServicesLoading';
 import { CategoriesSection } from '@/components/home/CategoriesSection';
 import { StatsSection } from '@/components/home/StatsSection';
 import { WhyChooseUs } from '@/components/home/WhyChooseUs';
-
-// ==================== LOADING COMPONENTS ====================
-
-function SearchBarFallback() {
-  return (
-    <div className="w-full max-w-4xl mx-auto">
-      <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-3 animate-pulse">
-        <div className="flex flex-col sm:flex-row gap-2">
-          <div className="flex-1 h-14 bg-gray-100 rounded-xl" />
-          <div className="sm:w-56 h-14 bg-gray-100 rounded-xl" />
-          <div className="w-full sm:w-32 h-14 bg-gray-200 rounded-xl" />
-        </div>
-      </div>
-    </div>
-  );
-}
 
 // ==================== HOME PAGE COMPONENT ====================
 
@@ -27,17 +12,11 @@ function SearchBarFallback() {
  * Home page - Main landing page for Set-U-Free
  * 
  * Sections:
- * 1. HeroSection - Main hero banner with headline and CTA
- * 2. SearchBar - Functional search with category and city filters
- * 3. CategoriesSection - Popular service categories grid
- * 4. StatsSection - Platform statistics with animated counters
+ * 1. HeroSection - Main hero with headline
+ * 2. ServicesContent - Search, filters, and provider cards
+ * 3. CategoriesSection - Explore by Category
+ * 4. StatsSection - Platform statistics
  * 5. WhyChooseUs - Benefits and trust indicators
- * 
- * Features:
- * - SEO optimized with proper meta tags (in layout)
- * - Mobile responsive design
- * - Smooth scroll between sections
- * - Loading states for interactive components
  */
 export default function HomePage() {
   return (
@@ -45,14 +24,10 @@ export default function HomePage() {
       {/* ==================== HERO SECTION ==================== */}
       <HeroSection />
 
-      {/* ==================== SEARCH SECTION ==================== */}
-      <section className="relative z-10 -mt-8 pb-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Suspense fallback={<SearchBarFallback />}>
-            <SearchBar />
-          </Suspense>
-        </div>
-      </section>
+      {/* ==================== SERVICES SEARCH & PROVIDERS ==================== */}
+      <Suspense fallback={<ServicesLoading />}>
+        <ServicesContent />
+      </Suspense>
 
       {/* ==================== CATEGORIES SECTION ==================== */}
       <CategoriesSection />
@@ -180,7 +155,7 @@ export default function HomePage() {
           {/* CTA */}
           <div className="mt-16 text-center">
             <a
-              href="/services"
+              href="/"
               className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold rounded-xl shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 transition-all duration-300"
             >
               Start Searching Now
@@ -338,7 +313,7 @@ export default function HomePage() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="/services"
+              href="/"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-white hover:bg-gray-100 text-orange-600 font-semibold rounded-xl shadow-lg transition-all duration-300"
             >
               Browse Services
@@ -368,4 +343,3 @@ export default function HomePage() {
     </>
   );
 }
-

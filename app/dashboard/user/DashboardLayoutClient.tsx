@@ -135,7 +135,7 @@ export function DashboardLayoutClient({
             {/* Right Section */}
             <div className="flex items-center gap-4">
               <Link
-                href="/services"
+                href="/"
                 className="hidden sm:inline-flex px-4 py-2 text-gray-600 hover:text-orange-600 font-medium transition-colors"
               >
                 Browse Services

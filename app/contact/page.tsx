@@ -392,7 +392,7 @@ export default function ContactPage() {
                     <h3 className="text-xl font-bold text-gray-900 mb-6">Quick Links</h3>
                     <div className="space-y-4">
                       <Link
-                        href="/services"
+                        href="/"
                         className="flex items-center justify-between p-4 bg-gray-50 rounded-xl hover:bg-orange-50 transition-colors group"
                       >
                         <div className="flex items-center gap-3">

@@ -1,7 +1,6 @@
 'use client';
 
-import { useState, useEffect, useMemo, useCallback } from 'react';
-import { useSearchParams, useRouter } from 'next/navigation';
+import { useState, useEffect } from 'react';
 import { Search, MapPin, Filter, ChevronDown, X, SlidersHorizontal } from 'lucide-react';
 import { ProviderCard, ProviderCardSkeleton } from '@/components/providers/ProviderCard';
 import { searchProviders, getAllCategories, getAllCities } from '@/lib/firestore';
@@ -171,15 +170,12 @@ const mockProviders: Provider[] = [
 // ==================== SERVICES CONTENT COMPONENT ====================
 
 export function ServicesContent() {
-  const router = useRouter();
-  const searchParams = useSearchParams();
-
   // ==================== STATE ====================
   const [providers, setProviders] = useState<Provider[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [searchQuery, setSearchQuery] = useState(searchParams.get('q') || '');
-  const [selectedCategory, setSelectedCategory] = useState(searchParams.get('category') || '');
-  const [selectedCity, setSelectedCity] = useState(searchParams.get('city') || '');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('');
+  const [selectedCity, setSelectedCity] = useState('');
   const [categories, setCategories] = useState<string[]>([]);
   const [cities, setCities] = useState<string[]>([]);
   const [showFilters, setShowFilters] = useState(false);
@@ -265,17 +261,7 @@ export function ServicesContent() {
     fetchProviders();
   }, [searchQuery, selectedCategory, selectedCity]);
 
-  // ==================== URL SYNC ====================
-
-  useEffect(() => {
-    const params = new URLSearchParams();
-    if (searchQuery) params.set('q', searchQuery);
-    if (selectedCategory) params.set('category', selectedCategory);
-    if (selectedCity) params.set('city', selectedCity);
-
-    const newUrl = params.toString() ? `?${params.toString()}` : '/services';
-    router.replace(newUrl, { scroll: false });
-  }, [searchQuery, selectedCategory, selectedCity, router]);
+  // URL sync removed - content is now on home page
 
   // ==================== HANDLERS ====================
 
@@ -301,10 +287,10 @@ export function ServicesContent() {
   // ==================== RENDER ====================
 
   return (
-    <section className="py-8 lg:py-12">
+    <section className="py-8 lg:py-12 bg-[#faf8f5]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* ==================== SEARCH & FILTERS ==================== */}
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-4 sm:p-6 mb-8">
+        <div className="bg-white rounded-2xl shadow-md border-2 border-gray-200 p-4 sm:p-6 mb-8">
           {/* Search Bar */}
           <form onSubmit={handleSearch} className="flex flex-col lg:flex-row gap-4">
             {/* Search Input */}
@@ -320,12 +306,12 @@ export function ServicesContent() {
             </div>
 
             {/* Category Filter */}
-            <div className="relative lg:w-48">
-              <Filter className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
+            <div className="relative lg:w-52">
+              <Filter className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
               <select
                 value={selectedCategory}
                 onChange={(e) => setSelectedCategory(e.target.value)}
-                className="w-full pl-12 pr-10 py-3.5 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent appearance-none cursor-pointer transition-all"
+                className="w-full pl-10 pr-10 py-3.5 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent appearance-none cursor-pointer transition-all text-sm"
               >
                 <option value="">All Categories</option>
                 {categories.map((cat) => (
@@ -334,16 +320,16 @@ export function ServicesContent() {
                   </option>
                 ))}
               </select>
-              <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
+              <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
             </div>
 
             {/* City Filter */}
-            <div className="relative lg:w-48">
-              <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
+            <div className="relative lg:w-44">
+              <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
               <select
                 value={selectedCity}
                 onChange={(e) => setSelectedCity(e.target.value)}
-                className="w-full pl-12 pr-10 py-3.5 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent appearance-none cursor-pointer transition-all"
+                className="w-full pl-10 pr-10 py-3.5 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent appearance-none cursor-pointer transition-all text-sm"
               >
                 <option value="">All Cities</option>
                 {cities.map((city) => (
@@ -352,7 +338,7 @@ export function ServicesContent() {
                   </option>
                 ))}
               </select>
-              <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
+              <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
             </div>
 
             {/* Search Button */}

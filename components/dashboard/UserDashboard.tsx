@@ -249,7 +249,7 @@ export function UserDashboard() {
             <h2 className="text-lg font-semibold text-dark-900 mb-4">Quick Actions</h2>
             <div className="space-y-3">
               <Link
-                href="/services"
+                href="/"
                 className="flex items-center justify-between p-3 bg-primary-50 rounded-xl text-primary-600 hover:bg-primary-100 transition-colors"
               >
                 <span className="font-medium">Browse Services</span>

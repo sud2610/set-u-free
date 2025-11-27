@@ -81,7 +81,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="min-h-screen bg-background antialiased">
+      <body className="min-h-screen bg-[#faf8f5] antialiased">
         <AuthProvider>{children}</AuthProvider>
       </body>
     </html>
