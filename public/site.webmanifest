@@ -1,0 +1,22 @@
+{
+  "name": "Set-U-Free",
+  "short_name": "SetUFree",
+  "description": "Find Local Service Providers",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fef7ee",
+  "theme_color": "#ee751c",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
+
