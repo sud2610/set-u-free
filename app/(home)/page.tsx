@@ -219,11 +219,11 @@ export default function HomePage() {
               </p>
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center">
-                  <span className="text-white font-semibold">RS</span>
+                  <span className="text-white font-semibold">JW</span>
                 </div>
                 <div>
-                  <p className="font-semibold text-gray-900">Rahul Sharma</p>
-                  <p className="text-sm text-gray-500">Mumbai</p>
+                  <p className="font-semibold text-gray-900">James Wilson</p>
+                  <p className="text-sm text-gray-500">Sydney</p>
                 </div>
               </div>
             </div>
@@ -248,11 +248,11 @@ export default function HomePage() {
               </p>
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center">
-                  <span className="text-white font-semibold">PA</span>
+                  <span className="text-white font-semibold">EM</span>
                 </div>
                 <div>
-                  <p className="font-semibold text-gray-900">Priya Agarwal</p>
-                  <p className="text-sm text-gray-500">Yoga Instructor, Delhi</p>
+                  <p className="font-semibold text-gray-900">Emma Mitchell</p>
+                  <p className="text-sm text-gray-500">Yoga Instructor, Melbourne</p>
                 </div>
               </div>
             </div>
@@ -273,15 +273,15 @@ export default function HomePage() {
               <p className="text-gray-600 mb-6">
                 &quot;The instant booking feature is a game-changer! I booked a free
                 consultation with a nutritionist and got personalized diet advice.
-                All without spending a rupee!&quot;
+                All without spending a cent!&quot;
               </p>
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center">
-                  <span className="text-white font-semibold">AK</span>
+                  <span className="text-white font-semibold">LC</span>
                 </div>
                 <div>
-                  <p className="font-semibold text-gray-900">Amit Kumar</p>
-                  <p className="text-sm text-gray-500">Bangalore</p>
+                  <p className="font-semibold text-gray-900">Liam Chen</p>
+                  <p className="text-sm text-gray-500">Brisbane</p>
                 </div>
               </div>
             </div>

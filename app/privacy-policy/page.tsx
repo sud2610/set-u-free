@@ -257,7 +257,7 @@ We encourage you to review this policy periodically. Continued use of our servic
     content: `If you have questions about this Privacy Policy or our data practices, please contact us:
 
 **Email:** privacy@setufree.com
-**Address:** 123 Business Park, Sector 5, Mumbai, Maharashtra 400001
+**Address:** 123 George Street, Sydney, NSW 2000, Australia
 **Phone:** +91 1800-XXX-XXXX
 
 **Data Protection Officer:**

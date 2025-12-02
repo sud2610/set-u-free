@@ -71,7 +71,7 @@ const values = [
 const milestones = [
   { year: '2023', title: 'Founded', description: 'Set-U-Free was born with a vision' },
   { year: '2023', title: '1000+ Providers', description: 'Reached our first milestone' },
-  { year: '2024', title: '25+ Cities', description: 'Expanded across India' },
+  { year: '2024', title: '10+ Cities', description: 'Expanded across Australia' },
   { year: '2024', title: '50K+ Bookings', description: 'Helped thousands find services' },
 ];
 

@@ -28,16 +28,16 @@ const categoryOptions: Suggestion[] = [
 ];
 
 const cityOptions: Suggestion[] = [
-  { id: 'mumbai', name: 'Mumbai' },
-  { id: 'delhi', name: 'Delhi' },
-  { id: 'bangalore', name: 'Bangalore' },
-  { id: 'hyderabad', name: 'Hyderabad' },
-  { id: 'chennai', name: 'Chennai' },
-  { id: 'kolkata', name: 'Kolkata' },
-  { id: 'pune', name: 'Pune' },
-  { id: 'ahmedabad', name: 'Ahmedabad' },
-  { id: 'jaipur', name: 'Jaipur' },
-  { id: 'lucknow', name: 'Lucknow' },
+  { id: 'sydney', name: 'Sydney' },
+  { id: 'melbourne', name: 'Melbourne' },
+  { id: 'brisbane', name: 'Brisbane' },
+  { id: 'perth', name: 'Perth' },
+  { id: 'adelaide', name: 'Adelaide' },
+  { id: 'gold-coast', name: 'Gold Coast' },
+  { id: 'canberra', name: 'Canberra' },
+  { id: 'newcastle', name: 'Newcastle' },
+  { id: 'hobart', name: 'Hobart' },
+  { id: 'darwin', name: 'Darwin' },
 ];
 
 const popularSearches = ['Dentist', 'Yoga Classes', 'Personal Trainer', 'Nutritionist'];

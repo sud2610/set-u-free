@@ -37,8 +37,8 @@ const mockProvider: Provider = {
   businessName: 'Smile Dental Clinic',
   description: 'Expert dental care with modern technology and experienced professionals. We provide comprehensive dental services for the whole family.',
   categories: ['Dentist', 'Dental Care', 'Orthodontics'],
-  location: 'Shop 12, Crystal Plaza, Andheri West',
-  city: 'Mumbai',
+  location: 'Shop 12, Westfield Shopping Centre, Bondi Junction',
+  city: 'Sydney',
   bio: `Welcome to Smile Dental Clinic, where your oral health is our top priority. With over 15 years of experience in dental care, we provide comprehensive services ranging from routine check-ups to advanced cosmetic procedures.
 
 Our team of certified dentists uses state-of-the-art equipment and follows the latest techniques to ensure you receive the best possible care. We believe in making dental visits comfortable and stress-free for all our patients.
@@ -104,9 +104,9 @@ const mockReviews: (Review & { userName: string })[] = [
     userId: 'u1',
     providerId: '1',
     rating: 5,
-    comment: 'Excellent service! Dr. Sharma was very professional and made me feel comfortable throughout the procedure. Highly recommended for anyone looking for quality dental care.',
+    comment: 'Excellent service! Dr. Smith was very professional and made me feel comfortable throughout the procedure. Highly recommended for anyone looking for quality dental care.',
     createdAt: new Date('2024-01-15'),
-    userName: 'Rahul Sharma',
+    userName: 'James Wilson',
   },
   {
     id: 'r2',
@@ -115,7 +115,7 @@ const mockReviews: (Review & { userName: string })[] = [
     rating: 4,
     comment: 'Good experience overall. The clinic is clean and well-maintained. Wait time was a bit longer than expected but the treatment was great.',
     createdAt: new Date('2024-01-10'),
-    userName: 'Priya Patel',
+    userName: 'Sarah Thompson',
   },
   {
     id: 'r3',
@@ -124,7 +124,7 @@ const mockReviews: (Review & { userName: string })[] = [
     rating: 5,
     comment: 'Best dental clinic in the area! The staff is friendly and the prices are reasonable. Got my teeth cleaned and whitened - very happy with the results.',
     createdAt: new Date('2024-01-05'),
-    userName: 'Amit Kumar',
+    userName: 'Michael Chen',
   },
   {
     id: 'r4',
@@ -133,7 +133,7 @@ const mockReviews: (Review & { userName: string })[] = [
     rating: 5,
     comment: 'My whole family visits this clinic. They are great with kids too. Very gentle and patient. Thank you for the wonderful service!',
     createdAt: new Date('2024-01-02'),
-    userName: 'Sneha Gupta',
+    userName: 'Emma Roberts',
   },
 ];
 
@@ -143,8 +143,8 @@ const mockRelatedProviders: Provider[] = [
     businessName: 'Perfect Smile Dental',
     description: 'Advanced dental treatments with care.',
     categories: ['Dentist', 'Orthodontics'],
-    location: 'Bandra',
-    city: 'Mumbai',
+    location: 'Surry Hills',
+    city: 'Sydney',
     bio: 'Specialized in orthodontics and cosmetic dentistry.',
     profileImage: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=400',
     rating: 4.9,
@@ -159,8 +159,8 @@ const mockRelatedProviders: Provider[] = [
     businessName: 'DentalCare Plus',
     description: 'Modern dental clinic with latest equipment.',
     categories: ['Dentist', 'Dental Care'],
-    location: 'Powai',
-    city: 'Mumbai',
+    location: 'Parramatta',
+    city: 'Sydney',
     bio: 'Quality dental care for the whole family.',
     profileImage: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=400',
     rating: 4.7,
@@ -175,8 +175,8 @@ const mockRelatedProviders: Provider[] = [
     businessName: 'Bright Teeth Clinic',
     description: 'Your smile is our priority.',
     categories: ['Dentist', 'Cosmetic Dentistry'],
-    location: 'Juhu',
-    city: 'Mumbai',
+    location: 'Manly',
+    city: 'Sydney',
     bio: 'Expert cosmetic dentistry services.',
     profileImage: 'https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=400',
     rating: 4.6,

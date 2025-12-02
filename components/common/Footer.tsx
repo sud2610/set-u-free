@@ -136,17 +136,17 @@ export function Footer() {
                 support@setufree.com
               </a>
               <a
-                href="tel:+919876543210"
+                href="tel:+61298765432"
                 className="flex items-center gap-3 text-gray-400 hover:text-orange-400 transition-colors text-sm"
               >
                 <Phone className="w-4 h-4" />
-                +91 98765 43210
+                +61 2 9876 5432
               </a>
               <div className="flex items-start gap-3 text-gray-400 text-sm">
                 <MapPin className="w-4 h-4 mt-0.5 shrink-0" />
                 <span>
-                  123 Service Hub, Andheri West,<br />
-                  Mumbai, Maharashtra 400058
+                  123 George Street,<br />
+                  Sydney, NSW 2000
                 </span>
               </div>
             </div>

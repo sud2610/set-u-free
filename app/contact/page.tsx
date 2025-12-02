@@ -38,7 +38,7 @@ const contactInfo = [
   {
     icon: MapPin,
     title: 'Visit Us',
-    details: ['123 Business Park, Sector 5', 'Mumbai, Maharashtra 400001'],
+    details: ['123 George Street', 'Sydney, NSW 2000'],
     color: 'bg-orange-500',
   },
   {
@@ -376,7 +376,7 @@ export default function ContactPage() {
                   {/* Map Embed */}
                   <div className="bg-white rounded-3xl overflow-hidden shadow-sm h-80">
                     <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241317.11609823277!2d72.74109995709657!3d19.08219783958221!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1704000000000!5m2!1sen!2sin"
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d212270.82364386498!2d150.93151455!3d-33.8474027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b129838f39a743f%3A0x3017d681632a850!2sSydney%20NSW%2C%20Australia!5e0!3m2!1sen!2sau!4v1704000000000!5m2!1sen!2sau"
                       width="100%"
                       height="100%"
                       style={{ border: 0 }}

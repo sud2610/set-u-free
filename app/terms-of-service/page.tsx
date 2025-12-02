@@ -285,8 +285,8 @@ We may suspend or terminate accounts for:
 • We may investigate and take action
 
 **With Set-U-Free:**
-• Disputes are governed by Indian law
-• Courts in Mumbai, Maharashtra have exclusive jurisdiction
+• Disputes are governed by Australian law
+• Courts in New South Wales, Australia have exclusive jurisdiction
 • You waive any right to participate in class actions
 
 **Process:**
@@ -321,7 +321,7 @@ We are not liable for delays or failures due to circumstances beyond our control
 
 **Email:** legal@setufree.com
 **Support:** support@setufree.com
-**Address:** 123 Business Park, Sector 5, Mumbai, Maharashtra 400001
+**Address:** 123 George Street, Sydney, NSW 2000, Australia
 **Phone:** +91 1800-XXX-XXXX
 
 We aim to respond to all inquiries within 5 business days.`,
