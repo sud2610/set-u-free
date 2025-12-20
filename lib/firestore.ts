@@ -39,6 +39,15 @@ const COLLECTIONS = {
 // ==================== HELPER FUNCTIONS ====================
 
 /**
+ * Asserts that Firestore is initialized
+ */
+function assertDbInitialized(): void {
+  if (!db) {
+    throw new Error('Firestore is not initialized');
+  }
+}
+
+/**
  * Converts Firestore Timestamp to JavaScript Date
  */
 function convertTimestamp(timestamp: Timestamp | undefined): Date {
@@ -71,8 +80,9 @@ export async function createUser(
   uid: string,
   userData: Omit<User, 'uid' | 'createdAt' | 'updatedAt'>
 ): Promise<User> {
+  assertDbInitialized();
   try {
-    const userRef = doc(db, COLLECTIONS.users, uid);
+    const userRef = doc(db!, COLLECTIONS.users, uid);
     
     const userDoc = {
       ...userData,
@@ -102,7 +112,7 @@ export async function createUser(
  */
 export async function getUser(uid: string): Promise<User | null> {
   try {
-    const userRef = doc(db, COLLECTIONS.users, uid);
+    const userRef = doc(db!, COLLECTIONS.users, uid);
     const userSnap = await getDoc(userRef);
 
     if (!userSnap.exists()) {
@@ -133,7 +143,7 @@ export async function updateUser(
   data: Partial<Omit<User, 'uid' | 'createdAt' | 'updatedAt'>>
 ): Promise<void> {
   try {
-    const userRef = doc(db, COLLECTIONS.users, uid);
+    const userRef = doc(db!, COLLECTIONS.users, uid);
     
     await updateDoc(userRef, {
       ...data,
@@ -152,7 +162,7 @@ export async function updateUser(
  */
 export async function deleteUser(uid: string): Promise<void> {
   try {
-    const userRef = doc(db, COLLECTIONS.users, uid);
+    const userRef = doc(db!, COLLECTIONS.users, uid);
     await deleteDoc(userRef);
     
     console.log('User deleted successfully:', uid);
@@ -176,7 +186,7 @@ export async function createProvider(
   providerData: Omit<Provider, 'uid' | 'createdAt' | 'updatedAt'>
 ): Promise<Provider> {
   try {
-    const providerRef = doc(db, COLLECTIONS.providers, uid);
+    const providerRef = doc(db!, COLLECTIONS.providers, uid);
     
     const providerDoc = {
       ...providerData,
@@ -212,7 +222,7 @@ export async function createProvider(
  */
 export async function getProvider(uid: string): Promise<Provider | null> {
   try {
-    const providerRef = doc(db, COLLECTIONS.providers, uid);
+    const providerRef = doc(db!, COLLECTIONS.providers, uid);
     const providerSnap = await getDoc(providerRef);
 
     if (!providerSnap.exists()) {
@@ -243,7 +253,7 @@ export async function updateProvider(
   data: Partial<Omit<Provider, 'uid' | 'createdAt' | 'updatedAt'>>
 ): Promise<void> {
   try {
-    const providerRef = doc(db, COLLECTIONS.providers, uid);
+    const providerRef = doc(db!, COLLECTIONS.providers, uid);
     
     await updateDoc(providerRef, {
       ...data,
@@ -263,7 +273,7 @@ export async function updateProvider(
  */
 export async function getProvidersByCity(city: string): Promise<Provider[]> {
   try {
-    const providersRef = collection(db, COLLECTIONS.providers);
+    const providersRef = collection(db!, COLLECTIONS.providers);
     const q = query(
       providersRef,
       where('city', '==', city),
@@ -296,7 +306,7 @@ export async function getProvidersByCity(city: string): Promise<Provider[]> {
  */
 export async function getProvidersByCategory(category: string): Promise<Provider[]> {
   try {
-    const providersRef = collection(db, COLLECTIONS.providers);
+    const providersRef = collection(db!, COLLECTIONS.providers);
     const q = query(
       providersRef,
       where('categories', 'array-contains', category),
@@ -337,7 +347,7 @@ export async function createService(
   serviceData: Omit<Service, 'id' | 'providerId' | 'createdAt'>
 ): Promise<Service> {
   try {
-    const servicesRef = collection(db, COLLECTIONS.services);
+    const servicesRef = collection(db!, COLLECTIONS.services);
     
     const serviceDoc = {
       ...serviceData,
@@ -367,7 +377,7 @@ export async function createService(
  */
 export async function getServices(providerId: string): Promise<Service[]> {
   try {
-    const servicesRef = collection(db, COLLECTIONS.services);
+    const servicesRef = collection(db!, COLLECTIONS.services);
     const q = query(
       servicesRef,
       where('providerId', '==', providerId),
@@ -399,7 +409,7 @@ export async function getServices(providerId: string): Promise<Service[]> {
  */
 export async function getService(serviceId: string): Promise<Service | null> {
   try {
-    const serviceRef = doc(db, COLLECTIONS.services, serviceId);
+    const serviceRef = doc(db!, COLLECTIONS.services, serviceId);
     const serviceSnap = await getDoc(serviceRef);
 
     if (!serviceSnap.exists()) {
@@ -429,7 +439,7 @@ export async function updateService(
   data: Partial<Omit<Service, 'id' | 'providerId' | 'createdAt'>>
 ): Promise<void> {
   try {
-    const serviceRef = doc(db, COLLECTIONS.services, serviceId);
+    const serviceRef = doc(db!, COLLECTIONS.services, serviceId);
     await updateDoc(serviceRef, data);
 
     console.log('Service updated successfully:', serviceId);
@@ -444,7 +454,7 @@ export async function updateService(
  */
 export async function deleteService(serviceId: string): Promise<void> {
   try {
-    const serviceRef = doc(db, COLLECTIONS.services, serviceId);
+    const serviceRef = doc(db!, COLLECTIONS.services, serviceId);
     await deleteDoc(serviceRef);
     
     console.log('Service deleted successfully:', serviceId);
@@ -466,7 +476,7 @@ export async function createBooking(
   bookingData: Omit<Booking, 'id' | 'createdAt' | 'updatedAt'>
 ): Promise<Booking> {
   try {
-    const bookingsRef = collection(db, COLLECTIONS.bookings);
+    const bookingsRef = collection(db!, COLLECTIONS.bookings);
     
     const bookingDoc = {
       ...bookingData,
@@ -503,7 +513,7 @@ export async function createBooking(
  */
 export async function getBooking(bookingId: string): Promise<Booking | null> {
   try {
-    const bookingRef = doc(db, COLLECTIONS.bookings, bookingId);
+    const bookingRef = doc(db!, COLLECTIONS.bookings, bookingId);
     const bookingSnap = await getDoc(bookingRef);
 
     if (!bookingSnap.exists()) {
@@ -532,7 +542,7 @@ export async function getBooking(bookingId: string): Promise<Booking | null> {
  */
 export async function getBookings(userId: string): Promise<Booking[]> {
   try {
-    const bookingsRef = collection(db, COLLECTIONS.bookings);
+    const bookingsRef = collection(db!, COLLECTIONS.bookings);
     const q = query(
       bookingsRef,
       where('userId', '==', userId),
@@ -566,7 +576,7 @@ export async function getBookings(userId: string): Promise<Booking[]> {
  */
 export async function getProviderBookings(providerId: string): Promise<Booking[]> {
   try {
-    const bookingsRef = collection(db, COLLECTIONS.bookings);
+    const bookingsRef = collection(db!, COLLECTIONS.bookings);
     const q = query(
       bookingsRef,
       where('providerId', '==', providerId),
@@ -603,7 +613,7 @@ export async function updateBookingStatus(
   status: BookingStatus
 ): Promise<void> {
   try {
-    const bookingRef = doc(db, COLLECTIONS.bookings, bookingId);
+    const bookingRef = doc(db!, COLLECTIONS.bookings, bookingId);
     
     await updateDoc(bookingRef, {
       status,
@@ -642,7 +652,7 @@ export async function createReview(
   reviewData: Omit<Review, 'id' | 'createdAt'>
 ): Promise<Review> {
   try {
-    const reviewsRef = collection(db, COLLECTIONS.reviews);
+    const reviewsRef = collection(db!, COLLECTIONS.reviews);
     
     const reviewDoc = {
       ...reviewData,
@@ -673,7 +683,7 @@ export async function createReview(
  */
 export async function getProviderReviews(providerId: string): Promise<Review[]> {
   try {
-    const reviewsRef = collection(db, COLLECTIONS.reviews);
+    const reviewsRef = collection(db!, COLLECTIONS.reviews);
     const q = query(
       reviewsRef,
       where('providerId', '==', providerId),
@@ -757,7 +767,7 @@ async function updateProviderRating(providerId: string): Promise<void> {
  */
 export async function searchProviders(filters: SearchFilter): Promise<Provider[]> {
   try {
-    const providersRef = collection(db, COLLECTIONS.providers);
+    const providersRef = collection(db!, COLLECTIONS.providers);
     const constraints: QueryConstraint[] = [];
 
     // Filter by city
@@ -820,7 +830,7 @@ export async function searchProviders(filters: SearchFilter): Promise<Provider[]
  */
 export async function getAllCategories(): Promise<string[]> {
   try {
-    const providersRef = collection(db, COLLECTIONS.providers);
+    const providersRef = collection(db!, COLLECTIONS.providers);
     const querySnap = await getDocs(providersRef);
     
     const categoriesSet = new Set<string>();
@@ -849,7 +859,7 @@ export async function getAllCategories(): Promise<string[]> {
  */
 export async function getAllCities(): Promise<string[]> {
   try {
-    const providersRef = collection(db, COLLECTIONS.providers);
+    const providersRef = collection(db!, COLLECTIONS.providers);
     const querySnap = await getDocs(providersRef);
     
     const citiesSet = new Set<string>();
@@ -881,7 +891,7 @@ export async function getAllCities(): Promise<string[]> {
  */
 export async function getFeaturedProviders(limitCount: number = 6): Promise<Provider[]> {
   try {
-    const providersRef = collection(db, COLLECTIONS.providers);
+    const providersRef = collection(db!, COLLECTIONS.providers);
     const q = query(
       providersRef,
       where('verified', '==', true),
@@ -919,7 +929,7 @@ export async function getBookingsByStatus(
   status: BookingStatus
 ): Promise<Booking[]> {
   try {
-    const bookingsRef = collection(db, COLLECTIONS.bookings);
+    const bookingsRef = collection(db!, COLLECTIONS.bookings);
     const q = query(
       bookingsRef,
       where('userId', '==', userId),
@@ -953,7 +963,7 @@ export async function getBookingsByStatus(
  */
 export async function getServicesByCategory(category: string): Promise<Service[]> {
   try {
-    const servicesRef = collection(db, COLLECTIONS.services);
+    const servicesRef = collection(db!, COLLECTIONS.services);
     const q = query(
       servicesRef,
       where('category', '==', category),

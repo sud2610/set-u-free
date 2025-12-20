@@ -139,7 +139,7 @@ export function ProviderDashboard() {
       {/* Welcome Header */}
       <div className="bg-gradient-to-r from-secondary-500 to-secondary-600 rounded-2xl p-6 md:p-8 text-white">
         <h1 className="text-2xl md:text-3xl font-bold mb-2">
-          Welcome back, {user?.displayName?.split(' ')[0] || 'Provider'}! 👋
+          Welcome back, {user?.fullName?.split(' ')[0] || 'Provider'}! 👋
         </h1>
         <p className="text-secondary-100">
           Here&apos;s an overview of your business performance.

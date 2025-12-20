@@ -248,19 +248,19 @@ export async function POST(request: NextRequest): Promise<NextResponse<ApiRespon
     };
 
     // Create booking in Firestore
-    let bookingId: string;
+    let createdBooking: Booking;
     try {
-      bookingId = await createBooking(bookingData);
+      createdBooking = await createBooking(bookingData);
     } catch (error) {
       console.error('Error creating booking:', error);
-      // Generate mock ID for development
-      bookingId = `booking_${Date.now()}`;
+      // Generate mock booking for development
+      createdBooking = {
+        id: `booking_${Date.now()}`,
+        ...bookingData,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      };
     }
-
-    const createdBooking: Booking = {
-      id: bookingId,
-      ...bookingData,
-    };
 
     // Send notification to provider
     try {

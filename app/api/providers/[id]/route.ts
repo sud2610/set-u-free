@@ -337,7 +337,7 @@ export async function PUT(
     }
 
     // Update provider
-    const updateData: Partial<Provider> = {
+    const updateData = {
       ...(body.businessName && { businessName: body.businessName.trim() }),
       ...(body.description && { description: body.description.trim() }),
       ...(body.categories && { categories: body.categories }),
@@ -345,7 +345,6 @@ export async function PUT(
       ...(body.city && { city: body.city.trim() }),
       ...(body.bio && { bio: body.bio.trim() }),
       ...(body.profileImage && { profileImage: body.profileImage }),
-      updatedAt: new Date(),
     };
 
     try {

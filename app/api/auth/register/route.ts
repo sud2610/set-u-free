@@ -181,6 +181,17 @@ export async function POST(request: NextRequest): Promise<NextResponse<ApiRespon
       );
     }
 
+    // Check if Firebase is configured
+    if (!auth) {
+      return NextResponse.json(
+        {
+          success: false,
+          message: 'Firebase authentication is not configured',
+        },
+        { status: 500, headers: getSecurityHeaders() }
+      );
+    }
+
     // Create Firebase Auth user
     const userCredential = await createUserWithEmailAndPassword(
       auth,

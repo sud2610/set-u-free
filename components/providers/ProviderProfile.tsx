@@ -1,15 +1,16 @@
 'use client';
 
 import Image from 'next/image';
-import { Star, MapPin, Shield, Clock, Calendar, Check } from 'lucide-react';
-import type { Provider, Review } from '@/types';
+import { Star, MapPin, Shield, Clock, Calendar } from 'lucide-react';
+import type { Provider, Review, Service } from '@/types';
 
 interface ProviderProfileProps {
   provider: Provider;
+  services?: Service[];
   reviews?: Review[];
 }
 
-export function ProviderProfile({ provider, reviews = [] }: ProviderProfileProps) {
+export function ProviderProfile({ provider, services = [], reviews = [] }: ProviderProfileProps) {
   return (
     <div className="space-y-8">
       {/* Header Section */}
@@ -42,12 +43,12 @@ export function ProviderProfile({ provider, reviews = [] }: ProviderProfileProps
                     <Star className="w-5 h-5 text-yellow-500 fill-yellow-500" />
                     <span className="font-semibold">{provider.rating}</span>
                     <span className="text-dark-500">
-                      ({provider.totalReviews} reviews)
+                      ({provider.reviewCount} reviews)
                     </span>
                   </div>
                   <div className="flex items-center gap-1 text-dark-500">
                     <MapPin className="w-4 h-4" />
-                    <span>{provider.location.city}</span>
+                    <span>{provider.city}</span>
                   </div>
                 </div>
               </div>
@@ -61,27 +62,21 @@ export function ProviderProfile({ provider, reviews = [] }: ProviderProfileProps
                   Verified Provider
                 </span>
               )}
-              {provider.featured && (
-                <span className="badge-primary">
-                  <Star className="w-3 h-3 mr-1" />
-                  Featured
-                </span>
-              )}
               <span className="badge bg-dark-100 text-dark-600">
                 <Calendar className="w-3 h-3 mr-1" />
-                {provider.totalBookings}+ bookings
+                {provider.reviewCount}+ reviews
               </span>
             </div>
 
-            {/* Specializations */}
+            {/* Categories */}
             <div className="mt-4">
               <div className="flex flex-wrap gap-2">
-                {provider.subcategories.map((sub) => (
+                {provider.categories.map((category) => (
                   <span
-                    key={sub}
+                    key={category}
                     className="px-3 py-1 bg-primary-50 text-primary-700 text-sm rounded-full"
                   >
-                    {sub}
+                    {category}
                   </span>
                 ))}
               </div>
@@ -94,46 +89,43 @@ export function ProviderProfile({ provider, reviews = [] }: ProviderProfileProps
       <div className="card p-6">
         <h2 className="text-xl font-semibold text-dark-900 mb-4">About</h2>
         <p className="text-dark-600 whitespace-pre-line">{provider.description}</p>
+        {provider.bio && (
+          <p className="text-dark-600 whitespace-pre-line mt-4">{provider.bio}</p>
+        )}
       </div>
 
       {/* Services */}
-      <div className="card p-6">
-        <h2 className="text-xl font-semibold text-dark-900 mb-4">
-          Services ({provider.services.length})
-        </h2>
-        <div className="space-y-4">
-          {provider.services.map((service) => (
-            <div
-              key={service.id}
-              className="flex items-center justify-between p-4 bg-dark-50 rounded-xl"
-            >
-              <div>
-                <h3 className="font-medium text-dark-900">{service.name}</h3>
-                <p className="text-sm text-dark-500 mt-1">{service.description}</p>
-                <div className="flex items-center gap-3 mt-2 text-sm text-dark-400">
-                  <span className="flex items-center gap-1">
-                    <Clock className="w-4 h-4" />
-                    {service.duration} mins
-                  </span>
-                </div>
-              </div>
-              <div className="text-right">
-                <div className="text-lg font-semibold text-dark-900">
-                  ₹{service.price}
-                  {service.priceType !== 'fixed' && (
-                    <span className="text-sm font-normal text-dark-500">
-                      {service.priceType === 'hourly' ? '/hr' : '+'}
+      {services.length > 0 && (
+        <div className="card p-6">
+          <h2 className="text-xl font-semibold text-dark-900 mb-4">
+            Services ({services.length})
+          </h2>
+          <div className="space-y-4">
+            {services.map((service) => (
+              <div
+                key={service.id}
+                className="flex items-center justify-between p-4 bg-dark-50 rounded-xl"
+              >
+                <div>
+                  <h3 className="font-medium text-dark-900">{service.title}</h3>
+                  <p className="text-sm text-dark-500 mt-1">{service.description}</p>
+                  <div className="flex items-center gap-3 mt-2 text-sm text-dark-400">
+                    <span className="flex items-center gap-1">
+                      <Clock className="w-4 h-4" />
+                      {service.duration} mins
                     </span>
-                  )}
+                  </div>
                 </div>
-                <button className="btn-primary text-sm py-2 px-4 mt-2">
-                  Book Now
-                </button>
+                <div className="text-right">
+                  <button className="btn-primary text-sm py-2 px-4">
+                    Book Now
+                  </button>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Reviews */}
       <div className="card p-6">
@@ -160,7 +152,7 @@ export function ProviderProfile({ provider, reviews = [] }: ProviderProfileProps
               ))}
             </div>
             <div className="text-sm text-dark-500 mt-1">
-              {provider.totalReviews} reviews
+              {provider.reviewCount} reviews
             </div>
           </div>
         </div>
@@ -203,44 +195,31 @@ export function ProviderProfile({ provider, reviews = [] }: ProviderProfileProps
         </div>
       </div>
 
-      {/* Working Hours */}
-      <div className="card p-6">
-        <h2 className="text-xl font-semibold text-dark-900 mb-4">Working Hours</h2>
-        <div className="space-y-3">
-          {provider.availability.days.map((day) => (
-            <div key={day.day} className="flex items-center justify-between">
-              <span className="capitalize text-dark-600">{day.day}</span>
-              <span
-                className={
-                  day.isAvailable ? 'text-dark-900 font-medium' : 'text-dark-400'
-                }
-              >
-                {day.isAvailable
-                  ? `${day.slots[0]?.start} - ${day.slots[0]?.end}`
-                  : 'Closed'}
-              </span>
-            </div>
-          ))}
+      {/* Consultation Slots */}
+      {provider.consultationSlots && provider.consultationSlots.length > 0 && (
+        <div className="card p-6">
+          <h2 className="text-xl font-semibold text-dark-900 mb-4">Available Slots</h2>
+          <div className="space-y-3">
+            {provider.consultationSlots.filter(slot => slot.available).map((slot, index) => (
+              <div key={index} className="flex items-center justify-between p-3 bg-dark-50 rounded-lg">
+                <span className="text-dark-600">{slot.date}</span>
+                <span className="text-dark-900 font-medium">
+                  {slot.startTime} - {slot.endTime}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Location */}
       <div className="card p-6">
         <h2 className="text-xl font-semibold text-dark-900 mb-4">Location</h2>
-        <p className="text-dark-600">
-          {provider.location.address}
-          <br />
-          {provider.location.city}, {provider.location.state}
-          <br />
-          {provider.location.pincode}
-        </p>
+        <div className="flex items-center gap-2 text-dark-600">
+          <MapPin className="w-5 h-5" />
+          <span>{provider.location}, {provider.city}</span>
+        </div>
       </div>
     </div>
   );
 }
-
-
-
-
-
-

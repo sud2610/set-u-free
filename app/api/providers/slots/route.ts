@@ -335,7 +335,6 @@ export async function POST(request: NextRequest): Promise<NextResponse<ApiRespon
     try {
       await updateProvider(body.providerId, {
         consultationSlots: updatedSlots,
-        updatedAt: new Date(),
       });
     } catch (error) {
       console.error('Error updating provider:', error);
@@ -472,7 +471,6 @@ export async function DELETE(request: NextRequest): Promise<NextResponse<ApiResp
     try {
       await updateProvider(body.providerId, {
         consultationSlots: updatedSlots,
-        updatedAt: new Date(),
       });
     } catch (error) {
       console.error('Error updating provider:', error);

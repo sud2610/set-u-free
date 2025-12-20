@@ -59,7 +59,9 @@ export async function POST(request: NextRequest): Promise<NextResponse<ApiRespon
     // Note: This mainly affects server-side Firebase instance
     // Client should also call signOut separately
     try {
-      await signOut(auth);
+      if (auth) {
+        await signOut(auth);
+      }
     } catch (firebaseError) {
       // Firebase signOut might fail if no user is signed in
       // This is not an error condition for logout

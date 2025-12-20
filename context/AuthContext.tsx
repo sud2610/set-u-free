@@ -312,6 +312,9 @@ export function AuthProvider({ children }: AuthProviderProps) {
       }
 
       // Sign in with Firebase Auth
+      if (!auth) {
+        throw new Error('Firebase auth is not initialized');
+      }
       await signInWithEmailAndPassword(auth, email, password);
       
       // Note: We don't need to setUser here
@@ -362,6 +365,9 @@ export function AuthProvider({ children }: AuthProviderProps) {
       }
 
       // Step 1: Create Firebase Auth account
+      if (!auth) {
+        throw new Error('Firebase auth is not initialized');
+      }
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const { uid } = userCredential.user;
       console.log('Firebase Auth account created:', uid);
@@ -405,7 +411,9 @@ export function AuthProvider({ children }: AuthProviderProps) {
         throw new Error('Firebase is not configured.');
       }
       
-      await firebaseSignOut(auth);
+      if (auth) {
+        await firebaseSignOut(auth);
+      }
       
       // Note: onAuthStateChanged will set user to null
       console.log('Logout successful');
