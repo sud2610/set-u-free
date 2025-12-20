@@ -14,6 +14,9 @@ import {
   Calendar,
   LayoutDashboard,
   Briefcase,
+  Search,
+  Sparkles,
+  ChevronRight,
 } from 'lucide-react';
 
 // ==================== TYPES ====================
@@ -21,40 +24,28 @@ import {
 interface NavTab {
   label: string;
   href: string;
-  emoji: string;
-  isNew?: boolean;
+  icon: React.ReactNode;
 }
-
-// ==================== CONSTANTS ====================
-
-const navTabs: NavTab[] = [
-  { label: 'Services', href: '/', emoji: '🏠' },
-  { label: 'Experiences', href: '/about', emoji: '🎈', isNew: true },
-  { label: 'Providers', href: '/contact', emoji: '🛎️', isNew: true },
-];
 
 // ==================== NAVBAR COMPONENT ====================
 
-/**
- * Airbnb-style navigation bar component with blue theme
- */
 export function Navbar() {
-  // ==================== STATE ====================
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   
-  // ==================== HOOKS ====================
   const pathname = usePathname();
   const { user, loading, logout } = useAuth();
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  // ==================== EFFECTS ====================
+  const navTabs: NavTab[] = [
+    { label: 'Services', href: '/', icon: <Search className="w-4 h-4" /> },
+    { label: 'About', href: '/about', icon: <Sparkles className="w-4 h-4" /> },
+    { label: 'Contact', href: '/contact', icon: <Briefcase className="w-4 h-4" /> },
+  ];
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 10);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -74,8 +65,6 @@ export function Navbar() {
     setIsProfileDropdownOpen(false);
   }, [pathname]);
 
-  // ==================== HANDLERS ====================
-
   const handleLogout = async () => {
     try {
       await logout();
@@ -87,8 +76,6 @@ export function Navbar() {
 
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
   const toggleProfileDropdown = () => setIsProfileDropdownOpen(!isProfileDropdownOpen);
-
-  // ==================== HELPERS ====================
 
   const isActiveLink = (href: string): boolean => {
     if (href === '/') return pathname === '/';
@@ -106,62 +93,56 @@ export function Navbar() {
     return user?.role === 'provider' ? '/dashboard/provider' : '/dashboard/user';
   };
 
-  // ==================== RENDER ====================
-
   return (
     <header
-      className={`sticky top-0 z-50 transition-all duration-300 ${
+      className={`sticky top-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100'
-          : 'bg-white'
+          ? 'bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500 shadow-xl shadow-amber-500/20'
+          : 'bg-gradient-to-r from-yellow-300 via-amber-300 to-yellow-400'
       }`}
     >
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20 md:h-28">
+      {/* Decorative top border */}
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-600" />
+      
+      {/* Subtle pattern overlay */}
+      <div className="absolute inset-0 opacity-10" style={{
+        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+      }} />
+
+      <nav className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-20 md:h-24">
           {/* ==================== LOGO ==================== */}
-          <Link href="/" className="flex items-center flex-shrink-0">
-            <Image
-              src="/logo.png"
-              alt="Set-U-Free - Free Help is Just a Click Away"
-              width={400}
-              height={100}
-              className="h-16 sm:h-20 md:h-24 w-auto object-contain"
-              priority
-            />
+          <Link href="/" className="flex items-center flex-shrink-0 group">
+            <div className="relative">
+              <div className="absolute -inset-2 bg-white/30 rounded-2xl blur-sm group-hover:bg-white/40 transition-colors" />
+              <Image
+                src="/logo.png"
+                alt="Set-U-Free"
+                width={280}
+                height={70}
+                className="relative h-14 sm:h-16 md:h-[72px] w-auto object-contain drop-shadow-sm rounded-xl border-2 border-gray-900"
+                priority
+              />
+            </div>
           </Link>
 
-          {/* ==================== CENTER NAVIGATION TABS ==================== */}
+          {/* ==================== CENTER NAVIGATION ==================== */}
           <div className="hidden lg:flex items-center justify-center flex-1">
-            <div className="flex items-center">
+            <div className="flex items-center gap-1 bg-white/90 backdrop-blur-sm rounded-full p-1.5 shadow-lg shadow-amber-600/10 border border-white/50">
               {navTabs.map((tab) => (
                 <Link
                   key={tab.href}
                   href={tab.href}
-                  className="relative group"
+                  className={`relative flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
+                    isActiveLink(tab.href)
+                      ? 'bg-gradient-to-r from-amber-500 to-yellow-500 text-white shadow-lg shadow-amber-500/40'
+                      : 'text-gray-700 hover:text-amber-700 hover:bg-amber-50'
+                  }`}
                 >
-                  <div
-                    className={`flex flex-col items-center px-5 py-1 transition-all duration-200 ${
-                      isActiveLink(tab.href)
-                        ? 'opacity-100'
-                        : 'opacity-70 hover:opacity-100'
-                    }`}
-                  >
-                    {tab.isNew && (
-                      <span className="absolute -top-1 right-1 px-1.5 py-0.5 bg-yellow-500 text-gray-900 text-[10px] font-bold rounded-full">
-                        NEW
-                      </span>
-                    )}
-                    <span className="text-xl mb-0.5">{tab.emoji}</span>
-                    <span
-                      className={`text-xs font-medium ${
-                        isActiveLink(tab.href) ? 'text-gray-900' : 'text-gray-600'
-                      }`}
-                    >
-                      {tab.label}
-                    </span>
-                  </div>
+                  {tab.icon}
+                  <span>{tab.label}</span>
                   {isActiveLink(tab.href) && (
-                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-10 h-0.5 bg-gray-900 rounded-full" />
+                    <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-white rounded-full shadow" />
                   )}
                 </Link>
               ))}
@@ -169,93 +150,96 @@ export function Navbar() {
           </div>
 
           {/* ==================== RIGHT SECTION ==================== */}
-          <div className="flex items-center gap-2 flex-shrink-0">
+          <div className="flex items-center gap-3 flex-shrink-0">
             {loading ? (
-              <div className="w-10 h-10 rounded-full bg-gray-200 animate-pulse" />
+              <div className="w-10 h-10 rounded-full bg-white/50 animate-pulse" />
             ) : user ? (
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-3">
+                {user.role !== 'provider' && (
+                  <Link
+                    href="/register?role=provider"
+                    className="hidden lg:flex items-center gap-2 px-4 py-2 text-sm font-semibold text-amber-900 bg-white/90 hover:bg-white rounded-full shadow-md hover:shadow-lg transition-all duration-200 border border-white/50"
+                  >
+                    <Sparkles className="w-4 h-4" />
+                    Become a Provider
+                  </Link>
+                )}
+
                 <div className="relative" ref={dropdownRef}>
                   <button
                     onClick={toggleProfileDropdown}
-                    className="flex items-center gap-2 p-2 pl-3 rounded-full border border-gray-200 hover:shadow-md transition-all duration-200 bg-white"
+                    className="flex items-center gap-2 p-1.5 pl-3 rounded-full bg-white/90 hover:bg-white border-2 border-white/50 hover:border-amber-300 shadow-md hover:shadow-lg transition-all duration-200"
                     aria-expanded={isProfileDropdownOpen}
-                    aria-haspopup="true"
                   >
-                    <Menu className="w-4 h-4 text-gray-600" />
+                    <Menu className="w-4 h-4 text-amber-700" />
                     {user.profileImage ? (
                       <Image
                         src={user.profileImage}
                         alt={user.fullName}
                         width={32}
                         height={32}
-                        className="w-8 h-8 rounded-full object-cover"
+                        className="w-8 h-8 rounded-full object-cover ring-2 ring-amber-400"
                       />
                     ) : (
-                      <div className="w-8 h-8 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center">
-                        <span className="text-xs font-semibold text-gray-900">
-                          {getUserInitials()}
-                        </span>
+                      <div className="w-8 h-8 rounded-full bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center ring-2 ring-amber-400">
+                        <span className="text-xs font-bold text-white">{getUserInitials()}</span>
                       </div>
                     )}
                   </button>
 
                   {isProfileDropdownOpen && (
-                    <div className="absolute right-0 top-full mt-2 w-64 bg-white rounded-2xl shadow-xl border border-gray-100 py-2 animate-in fade-in slide-in-from-top-2 duration-200">
-                      <div className="px-4 py-3 border-b border-gray-100">
-                        <p className="font-semibold text-gray-900 truncate">{user.fullName}</p>
-                        <p className="text-sm text-gray-500 truncate">{user.email}</p>
-                        <span className="inline-block mt-2 px-2 py-0.5 bg-yellow-100 text-yellow-800 text-xs font-medium rounded-full capitalize">
-                          {user.role}
-                        </span>
+                    <div className="absolute right-0 top-full mt-2 w-72 bg-white rounded-2xl shadow-2xl shadow-amber-500/20 border border-amber-100 overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200">
+                      <div className="px-4 py-4 bg-gradient-to-r from-yellow-400 to-amber-400">
+                        <div className="flex items-center gap-3">
+                          {user.profileImage ? (
+                            <Image src={user.profileImage} alt={user.fullName} width={48} height={48} className="w-12 h-12 rounded-full object-cover ring-2 ring-white" />
+                          ) : (
+                            <div className="w-12 h-12 rounded-full bg-white/30 flex items-center justify-center ring-2 ring-white">
+                              <span className="text-lg font-bold text-white">{getUserInitials()}</span>
+                            </div>
+                          )}
+                          <div>
+                            <p className="font-bold text-gray-900 truncate">{user.fullName}</p>
+                            <p className="text-sm text-amber-800 truncate">{user.email}</p>
+                          </div>
+                        </div>
+                        <div className="mt-3 flex items-center gap-2">
+                          <span className="inline-flex items-center gap-1 px-2 py-1 bg-white/80 text-amber-800 text-xs font-semibold rounded-full capitalize">
+                            <Sparkles className="w-3 h-3" />
+                            {user.role}
+                          </span>
+                        </div>
                       </div>
 
                       <div className="py-2">
-                        <Link
-                          href={getDashboardLink()}
-                          className="flex items-center gap-3 px-4 py-2.5 text-gray-700 hover:bg-gray-50 transition-colors"
-                          onClick={() => setIsProfileDropdownOpen(false)}
-                        >
-                          <LayoutDashboard className="w-4 h-4 text-gray-400" />
-                          <span className="text-sm font-medium">Dashboard</span>
-                        </Link>
-
-                        <Link
-                          href={`${getDashboardLink()}/bookings`}
-                          className="flex items-center gap-3 px-4 py-2.5 text-gray-700 hover:bg-gray-50 transition-colors"
-                          onClick={() => setIsProfileDropdownOpen(false)}
-                        >
-                          <Calendar className="w-4 h-4 text-gray-400" />
-                          <span className="text-sm font-medium">My Bookings</span>
-                        </Link>
-
-                        {user.role === 'provider' && (
+                        {[
+                          { href: getDashboardLink(), icon: LayoutDashboard, label: 'Dashboard' },
+                          { href: `${getDashboardLink()}/bookings`, icon: Calendar, label: 'My Bookings' },
+                          ...(user.role === 'provider' ? [{ href: '/dashboard/provider/services', icon: Briefcase, label: 'My Services' }] : []),
+                          { href: `${getDashboardLink()}/settings`, icon: Settings, label: 'Settings' },
+                        ].map((item) => (
                           <Link
-                            href="/dashboard/provider/services"
-                            className="flex items-center gap-3 px-4 py-2.5 text-gray-700 hover:bg-gray-50 transition-colors"
+                            key={item.href}
+                            href={item.href}
+                            className="flex items-center justify-between px-4 py-3 text-gray-700 hover:bg-amber-50 transition-colors group"
                             onClick={() => setIsProfileDropdownOpen(false)}
                           >
-                            <Briefcase className="w-4 h-4 text-gray-400" />
-                            <span className="text-sm font-medium">My Services</span>
+                            <div className="flex items-center gap-3">
+                              <item.icon className="w-5 h-5 text-amber-500" />
+                              <span className="font-medium">{item.label}</span>
+                            </div>
+                            <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-amber-500 transition-colors" />
                           </Link>
-                        )}
-
-                        <Link
-                          href={`${getDashboardLink()}/settings`}
-                          className="flex items-center gap-3 px-4 py-2.5 text-gray-700 hover:bg-gray-50 transition-colors"
-                          onClick={() => setIsProfileDropdownOpen(false)}
-                        >
-                          <Settings className="w-4 h-4 text-gray-400" />
-                          <span className="text-sm font-medium">Settings</span>
-                        </Link>
+                        ))}
                       </div>
 
-                      <div className="border-t border-gray-100 pt-2">
+                      <div className="border-t border-amber-100 p-2">
                         <button
                           onClick={handleLogout}
-                          className="flex items-center gap-3 px-4 py-2.5 text-red-600 hover:bg-red-50 transition-colors w-full"
+                          className="flex items-center gap-3 px-4 py-3 text-red-600 hover:bg-red-50 transition-colors w-full rounded-xl"
                         >
-                          <LogOut className="w-4 h-4" />
-                          <span className="text-sm font-medium">Sign Out</span>
+                          <LogOut className="w-5 h-5" />
+                          <span className="font-medium">Sign Out</span>
                         </button>
                       </div>
                     </div>
@@ -266,90 +250,85 @@ export function Navbar() {
               <div className="flex items-center gap-2">
                 <Link
                   href="/register?role=provider"
-                  className="hidden lg:flex items-center px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 rounded-full transition-colors"
+                  className="hidden lg:flex items-center gap-2 px-4 py-2 text-sm font-semibold text-amber-900 hover:text-amber-950 transition-colors"
                 >
-                  Become a provider
+                  <Sparkles className="w-4 h-4" />
+                  Become a Provider
                 </Link>
 
                 <Link
                   href="/login"
-                  className="flex items-center gap-2 p-2 pl-3 rounded-full border border-gray-200 hover:shadow-md transition-all duration-200 bg-white"
+                  className="hidden sm:flex items-center px-4 py-2.5 text-sm font-semibold text-amber-900 bg-white/80 hover:bg-white rounded-full shadow-md hover:shadow-lg transition-all duration-200"
                 >
-                  <Menu className="w-4 h-4 text-gray-600" />
-                  <div className="w-8 h-8 rounded-full bg-gray-500 flex items-center justify-center">
-                    <User className="w-5 h-5 text-white" />
-                  </div>
+                  Sign In
+                </Link>
+
+                <Link
+                  href="/register"
+                  className="flex items-center gap-2 px-5 py-2.5 bg-gray-900 hover:bg-gray-800 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-200"
+                >
+                  <User className="w-4 h-4" />
+                  <span className="hidden sm:inline">Get Started</span>
+                  <span className="sm:hidden">Join</span>
                 </Link>
               </div>
             )}
 
             <button
               onClick={toggleMobileMenu}
-              className="lg:hidden p-2 rounded-xl text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-colors"
+              className="lg:hidden p-2.5 rounded-xl bg-white/80 hover:bg-white text-amber-800 shadow-md hover:shadow-lg transition-all duration-200"
               aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
-              aria-expanded={isMobileMenuOpen}
             >
-              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>
 
         {/* ==================== MOBILE MENU ==================== */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden py-3 border-t border-gray-100 animate-in slide-in-from-top duration-200">
-            <div className="flex justify-around py-3">
-              {navTabs.map((tab) => (
-                <Link
-                  key={tab.href}
-                  href={tab.href}
-                  className="relative flex flex-col items-center"
-                >
-                  {tab.isNew && (
-                    <span className="absolute -top-1 right-0 px-1.5 py-0.5 bg-yellow-500 text-gray-900 text-[9px] font-bold rounded-full">
-                      NEW
-                    </span>
-                  )}
-                  <span className="text-xl mb-0.5">{tab.emoji}</span>
-                  <span
-                    className={`text-xs font-medium ${
-                      isActiveLink(tab.href) ? 'text-gray-900' : 'text-gray-500'
+          <div className="lg:hidden py-4 animate-in slide-in-from-top duration-200">
+            <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-4 border border-white/50">
+              <div className="flex flex-col gap-1 mb-4">
+                {navTabs.map((tab) => (
+                  <Link
+                    key={tab.href}
+                    href={tab.href}
+                    className={`flex items-center justify-between px-4 py-3 rounded-xl transition-all ${
+                      isActiveLink(tab.href)
+                        ? 'bg-gradient-to-r from-amber-400 to-yellow-400 text-gray-900 font-semibold shadow-md'
+                        : 'text-gray-700 hover:bg-amber-50'
                     }`}
                   >
-                    {tab.label}
-                  </span>
-                  {isActiveLink(tab.href) && (
-                    <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-8 h-0.5 bg-gray-900 rounded-full" />
-                  )}
-                </Link>
-              ))}
-            </div>
-
-            {!user && (
-              <div className="mt-3 pt-3 border-t border-gray-100 px-2 space-y-2">
-                <Link
-                  href="/register?role=provider"
-                  className="flex items-center justify-center gap-2 w-full px-4 py-2.5 text-gray-700 bg-gray-50 hover:bg-gray-100 rounded-xl font-medium transition-colors"
-                >
-                  <Briefcase className="w-4 h-4" />
-                  Become a Provider
-                </Link>
-
-                <div className="grid grid-cols-2 gap-2">
-                  <Link
-                    href="/login"
-                    className="px-4 py-2.5 text-center text-gray-700 bg-gray-100 hover:bg-gray-200 rounded-xl font-medium transition-colors"
-                  >
-                    Sign In
+                    <div className="flex items-center gap-3">
+                      <span className={isActiveLink(tab.href) ? 'text-gray-900' : 'text-amber-600'}>{tab.icon}</span>
+                      <span>{tab.label}</span>
+                    </div>
+                    <ChevronRight className={`w-4 h-4 ${isActiveLink(tab.href) ? 'text-gray-900' : 'text-gray-400'}`} />
                   </Link>
-                  <Link
-                    href="/register"
-                    className="px-4 py-2.5 text-center text-gray-900 bg-yellow-400 hover:bg-yellow-500 rounded-xl font-semibold transition-colors"
-                  >
-                    Register
-                  </Link>
-                </div>
+                ))}
               </div>
-            )}
+
+              {!user && (
+                <div className="pt-4 border-t border-amber-200 space-y-3">
+                  <Link
+                    href="/register?role=provider"
+                    className="flex items-center justify-center gap-2 w-full px-4 py-3 text-amber-800 bg-amber-100 hover:bg-amber-200 rounded-xl font-semibold transition-colors"
+                  >
+                    <Sparkles className="w-4 h-4" />
+                    Become a Provider
+                  </Link>
+
+                  <div className="grid grid-cols-2 gap-2">
+                    <Link href="/login" className="px-4 py-3 text-center text-gray-700 bg-gray-100 hover:bg-gray-200 rounded-xl font-semibold transition-colors">
+                      Sign In
+                    </Link>
+                    <Link href="/register" className="px-4 py-3 text-center text-white bg-gray-900 hover:bg-gray-800 rounded-xl font-semibold shadow-lg transition-all">
+                      Get Started
+                    </Link>
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
         )}
       </nav>

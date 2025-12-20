@@ -14,3 +14,6 @@ firebase login
 # Deploy
 npm run build
 firebase deploy
+npm run seed
+
+vercel --prod

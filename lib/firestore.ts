@@ -767,6 +767,8 @@ async function updateProviderRating(providerId: string): Promise<void> {
  */
 export async function searchProviders(filters: SearchFilter): Promise<Provider[]> {
   try {
+    assertDbInitialized();
+    
     const providersRef = collection(db!, COLLECTIONS.providers);
     const constraints: QueryConstraint[] = [];
 
@@ -775,7 +777,7 @@ export async function searchProviders(filters: SearchFilter): Promise<Provider[]
       constraints.push(where('city', '==', filters.city));
     }
 
-    // Filter by category
+    // Filter by category (requires composite index with orderBy)
     if (filters.category) {
       constraints.push(where('categories', 'array-contains', filters.category));
     }
@@ -785,14 +787,20 @@ export async function searchProviders(filters: SearchFilter): Promise<Provider[]
       constraints.push(where('rating', '>=', filters.rating));
     }
 
-    // Always sort by rating
-    constraints.push(orderBy('rating', 'desc'));
-    
     // Limit results
     constraints.push(limit(50));
 
-    const q = query(providersRef, ...constraints);
-    const querySnap = await getDocs(q);
+    // Try with orderBy first, fallback to client-side sorting if index not available
+    let querySnap;
+    try {
+      const q = query(providersRef, ...constraints, orderBy('rating', 'desc'));
+      querySnap = await getDocs(q);
+    } catch (indexError) {
+      // If composite index is missing, fetch without orderBy and sort client-side
+      console.warn('Firestore index not available, sorting client-side');
+      const q = query(providersRef, ...constraints);
+      querySnap = await getDocs(q);
+    }
     
     let providers: Provider[] = querySnap.docs.map((doc) => {
       const data = doc.data();
@@ -805,7 +813,6 @@ export async function searchProviders(filters: SearchFilter): Promise<Provider[]
     });
 
     // Client-side text search (Firestore doesn't support full-text search)
-    // For production, consider using Algolia or Elasticsearch
     if (filters.searchQuery) {
       const searchLower = filters.searchQuery.toLowerCase();
       providers = providers.filter(
@@ -816,6 +823,9 @@ export async function searchProviders(filters: SearchFilter): Promise<Provider[]
           provider.categories.some((cat) => cat.toLowerCase().includes(searchLower))
       );
     }
+
+    // Always sort by rating (descending) on client-side to ensure consistency
+    providers.sort((a, b) => b.rating - a.rating);
 
     console.log(`Search found ${providers.length} providers`);
     return providers;
@@ -830,23 +840,40 @@ export async function searchProviders(filters: SearchFilter): Promise<Provider[]
  */
 export async function getAllCategories(): Promise<string[]> {
   try {
+    // First try to fetch from the categories collection
+    const categoriesRef = collection(db!, 'categories');
+    const querySnap = await getDocs(categoriesRef);
+    
+    if (querySnap.docs.length > 0) {
+      // Use categories from the dedicated collection
+      const categories = querySnap.docs
+        .map((doc) => doc.data().name as string)
+        .filter(Boolean)
+        .sort();
+      
+      console.log(`Found ${categories.length} categories from categories collection`);
+      return categories;
+    }
+    
+    // Fallback: Extract from providers if categories collection is empty
     const providersRef = collection(db!, COLLECTIONS.providers);
-    const querySnap = await getDocs(providersRef);
+    const providersSnap = await getDocs(providersRef);
     
     const categoriesSet = new Set<string>();
     
-    querySnap.docs.forEach((doc) => {
+    providersSnap.docs.forEach((doc) => {
       const data = doc.data();
       if (data.categories && Array.isArray(data.categories)) {
-        data.categories.forEach((category: string) => {
-          categoriesSet.add(category);
-        });
+        // Only add the first category (main category) from each provider
+        if (data.categories[0]) {
+          categoriesSet.add(data.categories[0]);
+        }
       }
     });
 
     const categories = Array.from(categoriesSet).sort();
     
-    console.log(`Found ${categories.length} unique categories`);
+    console.log(`Found ${categories.length} unique categories from providers`);
     return categories;
   } catch (error) {
     handleFirestoreError(error, 'getAllCategories');
@@ -859,12 +886,28 @@ export async function getAllCategories(): Promise<string[]> {
  */
 export async function getAllCities(): Promise<string[]> {
   try {
+    // First try to fetch from the cities collection
+    const citiesRef = collection(db!, 'cities');
+    const querySnap = await getDocs(citiesRef);
+    
+    if (querySnap.docs.length > 0) {
+      // Use cities from the dedicated collection
+      const cities = querySnap.docs
+        .map((doc) => doc.data().name as string)
+        .filter(Boolean)
+        .sort();
+      
+      console.log(`Found ${cities.length} cities from cities collection`);
+      return cities;
+    }
+    
+    // Fallback: Extract from providers if cities collection is empty
     const providersRef = collection(db!, COLLECTIONS.providers);
-    const querySnap = await getDocs(providersRef);
+    const providersSnap = await getDocs(providersRef);
     
     const citiesSet = new Set<string>();
     
-    querySnap.docs.forEach((doc) => {
+    providersSnap.docs.forEach((doc) => {
       const data = doc.data();
       if (data.city) {
         citiesSet.add(data.city);
@@ -873,7 +916,7 @@ export async function getAllCities(): Promise<string[]> {
 
     const cities = Array.from(citiesSet).sort();
     
-    console.log(`Found ${cities.length} unique cities`);
+    console.log(`Found ${cities.length} unique cities from providers`);
     return cities;
   } catch (error) {
     handleFirestoreError(error, 'getAllCities');

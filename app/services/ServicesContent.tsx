@@ -10,18 +10,21 @@ import type { Provider, SearchFilter } from '@/types';
 
 const ITEMS_PER_PAGE = 12;
 
-// Default categories if Firestore is not available
+// Default categories synced with Firebase seed data
 const defaultCategories = [
   { id: 'dentist', name: 'Dentist', icon: '🦷' },
-  { id: 'beauty', name: 'Beauty & Spa', icon: '💅' },
-  { id: 'gym', name: 'Gym & Fitness', icon: '💪' },
+  { id: 'beauty', name: 'Beauty', icon: '💅' },
+  { id: 'gym', name: 'Gym', icon: '💪' },
   { id: 'physiotherapy', name: 'Physiotherapy', icon: '🏥' },
   { id: 'yoga', name: 'Yoga', icon: '🧘' },
   { id: 'nutrition', name: 'Nutrition', icon: '🥗' },
   { id: 'mental-health', name: 'Mental Health', icon: '🧠' },
   { id: 'dermatology', name: 'Dermatology', icon: '✨' },
+  { id: 'ayurveda', name: 'Ayurveda', icon: '🌿' },
+  { id: 'eye-care', name: 'Eye Care', icon: '👁️' },
 ];
 
+// Australian cities synced with Firebase seed data
 const defaultCities = [
   'Sydney',
   'Melbourne',
@@ -35,16 +38,16 @@ const defaultCities = [
   'Darwin',
 ];
 
-// Mock providers for development
+// Mock providers synced with Firebase seed data (Australian cities)
 const mockProviders: Provider[] = [
   {
-    uid: '1',
-    businessName: 'Smile Dental Clinic',
-    description: 'Expert dental care with modern technology and experienced professionals.',
-    categories: ['Dentist', 'Dental Care'],
+    uid: 'provider_001',
+    businessName: 'Sydney Smile Dental',
+    description: 'We provide comprehensive dental services including cleanings, fillings, and cosmetic dentistry.',
+    categories: ['Dentist', 'Dental Care', 'Cosmetic Dentistry'],
     location: 'Bondi Junction',
     city: 'Sydney',
-    bio: 'We provide comprehensive dental services including cleanings, fillings, and cosmetic dentistry.',
+    bio: 'Expert dental care with modern technology and experienced professionals.',
     profileImage: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=400',
     rating: 4.8,
     reviewCount: 234,
@@ -54,13 +57,13 @@ const mockProviders: Provider[] = [
     updatedAt: new Date(),
   },
   {
-    uid: '2',
-    businessName: 'Glamour Beauty Studio',
+    uid: 'provider_002',
+    businessName: 'Melbourne Beauty Lounge',
     description: 'Premium beauty and spa services for all your grooming needs.',
-    categories: ['Beauty', 'Spa', 'Skincare'],
+    categories: ['Beauty', 'Spa', 'Skincare', 'Hair Salon'],
     location: 'South Yarra',
     city: 'Melbourne',
-    bio: 'Transform yourself with our expert beauty treatments and relaxing spa services.',
+    bio: 'Transform yourself with our expert beauty treatments.',
     profileImage: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=400',
     rating: 4.9,
     reviewCount: 189,
@@ -70,13 +73,13 @@ const mockProviders: Provider[] = [
     updatedAt: new Date(),
   },
   {
-    uid: '3',
-    businessName: 'FitLife Gym & Training',
+    uid: 'provider_003',
+    businessName: 'FitZone Brisbane',
     description: 'State-of-the-art fitness center with certified personal trainers.',
-    categories: ['Gym', 'Personal Training', 'Fitness'],
+    categories: ['Gym', 'Personal Training', 'Fitness', 'Yoga'],
     location: 'Fortitude Valley',
     city: 'Brisbane',
-    bio: 'Achieve your fitness goals with our expert trainers and modern equipment.',
+    bio: 'Achieve your fitness goals with expert trainers and modern equipment.',
     profileImage: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400',
     rating: 4.7,
     reviewCount: 156,
@@ -86,13 +89,13 @@ const mockProviders: Provider[] = [
     updatedAt: new Date(),
   },
   {
-    uid: '4',
-    businessName: 'Healing Hands Physiotherapy',
+    uid: 'provider_004',
+    businessName: 'Perth Physio & Rehab',
     description: 'Specialized physiotherapy services for pain relief and rehabilitation.',
-    categories: ['Physiotherapy', 'Rehabilitation'],
+    categories: ['Physiotherapy', 'Rehabilitation', 'Sports Medicine'],
     location: 'Subiaco',
     city: 'Perth',
-    bio: 'Get back to your active lifestyle with our expert physiotherapy treatments.',
+    bio: 'Get back to your active lifestyle with expert physiotherapy care.',
     profileImage: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400',
     rating: 4.9,
     reviewCount: 98,
@@ -102,13 +105,13 @@ const mockProviders: Provider[] = [
     updatedAt: new Date(),
   },
   {
-    uid: '5',
-    businessName: 'Serenity Yoga Center',
+    uid: 'provider_005',
+    businessName: 'Bondi Yoga Studio',
     description: 'Traditional and modern yoga classes for all levels.',
-    categories: ['Yoga', 'Meditation', 'Wellness'],
-    location: 'Manly',
+    categories: ['Yoga', 'Meditation', 'Wellness', 'Pranayama'],
+    location: 'Bondi Beach',
     city: 'Sydney',
-    bio: 'Find your inner peace with our expert yoga instructors and serene environment.',
+    bio: 'Find your inner peace with expert yoga instructors.',
     profileImage: 'https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=400',
     rating: 4.8,
     reviewCount: 267,
@@ -118,13 +121,13 @@ const mockProviders: Provider[] = [
     updatedAt: new Date(),
   },
   {
-    uid: '6',
-    businessName: 'NutriWell Clinic',
+    uid: 'provider_006',
+    businessName: 'Adelaide Nutrition Clinic',
     description: 'Personalized nutrition plans and dietary consultations.',
-    categories: ['Nutrition', 'Diet Planning', 'Wellness'],
-    location: 'Fitzroy',
-    city: 'Melbourne',
-    bio: 'Transform your health with personalized nutrition guidance from certified experts.',
+    categories: ['Nutrition', 'Diet Planning', 'Wellness', 'Weight Management'],
+    location: 'North Adelaide',
+    city: 'Adelaide',
+    bio: 'Transform your health with certified nutritionists.',
     profileImage: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=400',
     rating: 4.6,
     reviewCount: 145,
@@ -134,13 +137,13 @@ const mockProviders: Provider[] = [
     updatedAt: new Date(),
   },
   {
-    uid: '7',
-    businessName: 'MindCare Wellness',
+    uid: 'provider_007',
+    businessName: 'MindWell Psychology',
     description: 'Professional mental health counseling and therapy services.',
-    categories: ['Mental Health', 'Counseling', 'Therapy'],
+    categories: ['Mental Health', 'Counseling', 'Therapy', 'Psychology'],
     location: 'St Kilda',
     city: 'Melbourne',
-    bio: 'Your mental health matters. Get professional support from our certified counselors.',
+    bio: 'Your mental health matters. Get professional support.',
     profileImage: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400',
     rating: 4.9,
     reviewCount: 89,
@@ -150,16 +153,48 @@ const mockProviders: Provider[] = [
     updatedAt: new Date(),
   },
   {
-    uid: '8',
-    businessName: 'Glow Skin Clinic',
-    description: 'Advanced dermatology and skincare treatments.',
-    categories: ['Dermatology', 'Skincare', 'Beauty'],
-    location: 'Surry Hills',
-    city: 'Sydney',
-    bio: 'Get glowing, healthy skin with our advanced dermatological treatments.',
-    profileImage: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=400',
+    uid: 'provider_008',
+    businessName: 'Gold Coast Skin Clinic',
+    description: 'Advanced dermatology treatments for acne, pigmentation, and anti-aging.',
+    categories: ['Dermatology', 'Skincare', 'Anti-Aging', 'Acne Treatment'],
+    location: 'Surfers Paradise',
+    city: 'Gold Coast',
+    bio: 'Get glowing, healthy skin with our expert dermatologists.',
+    profileImage: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400',
     rating: 4.7,
     reviewCount: 178,
+    verified: true,
+    consultationSlots: [],
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  },
+  {
+    uid: 'provider_009',
+    businessName: 'Canberra Natural Therapies',
+    description: 'Traditional naturopathic treatments and therapies for holistic healing.',
+    categories: ['Ayurveda', 'Wellness', 'Natural Healing', 'Naturopathy'],
+    location: 'Braddon',
+    city: 'Canberra',
+    bio: 'Experience the power of natural healing.',
+    profileImage: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=400',
+    rating: 4.8,
+    reviewCount: 134,
+    verified: true,
+    consultationSlots: [],
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  },
+  {
+    uid: 'provider_010',
+    businessName: 'Newcastle Eye Centre',
+    description: 'Comprehensive eye care services including exams, glasses, and LASIK.',
+    categories: ['Eye Care', 'Ophthalmology', 'Optometry'],
+    location: 'Newcastle CBD',
+    city: 'Newcastle',
+    bio: 'Clear vision for a brighter future.',
+    profileImage: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=400',
+    rating: 4.6,
+    reviewCount: 112,
     verified: true,
     consultationSlots: [],
     createdAt: new Date(),
@@ -242,11 +277,16 @@ export function ServicesContent() {
             );
           }
           
+          // Sort by rating (descending)
+          filteredMock.sort((a, b) => b.rating - a.rating);
+          
           setProviders(filteredMock);
           setHasMore(false);
         } else {
-          setProviders(results);
-          setHasMore(results.length >= ITEMS_PER_PAGE);
+          // Sort results by rating (descending)
+          const sortedResults = [...results].sort((a, b) => b.rating - a.rating);
+          setProviders(sortedResults);
+          setHasMore(sortedResults.length >= ITEMS_PER_PAGE);
         }
       } catch (error) {
         console.error('Error fetching providers:', error);

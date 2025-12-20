@@ -74,9 +74,9 @@ const categories: Category[] = [
     name: 'Nutrition',
     description: 'Diet plans & consultations',
     icon: '🥗',
-    color: 'text-orange-600',
-    bgColor: 'bg-orange-50',
-    hoverColor: 'hover:border-orange-300 hover:bg-orange-50/50',
+    color: 'text-amber-600',
+    bgColor: 'bg-amber-50',
+    hoverColor: 'hover:border-amber-300 hover:bg-amber-50/50',
     providerCount: 90,
   },
 ];
@@ -142,7 +142,7 @@ export function CategoriesSection() {
               </div>
 
               {/* Content */}
-              <h3 className={`font-semibold text-gray-900 group-hover:${category.color} transition-colors`}>
+              <h3 className={`font-semibold text-gray-900 group-hover:${category.color} transition-colors truncate`}>
                 {category.name}
               </h3>
               <p className="text-sm text-gray-500 mt-1 line-clamp-1">

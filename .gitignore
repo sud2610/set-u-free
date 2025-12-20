@@ -43,6 +43,8 @@ next-env.d.ts
 # Firebase
 .firebase/
 firebase-debug.log
+serviceAccountKey.json
+build-errors.txt
 
 
 
