@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { Search, MapPin, ChevronDown, X, Sparkles } from 'lucide-react';
+import { Search, MapPin, Calendar, Users, X } from 'lucide-react';
 
 // ==================== TYPES ====================
 
@@ -40,34 +40,30 @@ const cityOptions: Suggestion[] = [
   { id: 'darwin', name: 'Darwin' },
 ];
 
-const popularSearches = ['Dentist', 'Yoga Classes', 'Personal Trainer', 'Nutritionist'];
-
-// ==================== SEARCH BAR COMPONENT ====================
+// ==================== AIRBNB-STYLE SEARCH BAR ====================
 
 /**
- * Search bar component for the home page
+ * Airbnb-style search bar component
  * Features:
- * - Service/category search input with dropdown suggestions
- * - Location/city input with dropdown suggestions
- * - Search button
- * - Integration with Next.js router
- * - Popular searches quick links
- * - Responsive design
+ * - Pill-shaped design with sections
+ * - Service search with dropdown
+ * - Location/city input with dropdown
+ * - When section (placeholder)
+ * - Who section (placeholder)
+ * - Pink/rose search button
  */
 export function SearchBar() {
   // ==================== STATE ====================
+  const [activeSection, setActiveSection] = useState<string | null>(null);
   const [serviceQuery, setServiceQuery] = useState('');
   const [cityQuery, setCityQuery] = useState('');
-  const [showServiceDropdown, setShowServiceDropdown] = useState(false);
-  const [showCityDropdown, setShowCityDropdown] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<Suggestion | null>(null);
   const [selectedCity, setSelectedCity] = useState<Suggestion | null>(null);
 
   // ==================== REFS ====================
+  const searchBarRef = useRef<HTMLDivElement>(null);
   const serviceInputRef = useRef<HTMLInputElement>(null);
   const cityInputRef = useRef<HTMLInputElement>(null);
-  const serviceDropdownRef = useRef<HTMLDivElement>(null);
-  const cityDropdownRef = useRef<HTMLDivElement>(null);
 
   // ==================== HOOKS ====================
   const router = useRouter();
@@ -77,19 +73,8 @@ export function SearchBar() {
   // Close dropdowns when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (
-        serviceDropdownRef.current &&
-        !serviceDropdownRef.current.contains(event.target as Node) &&
-        !serviceInputRef.current?.contains(event.target as Node)
-      ) {
-        setShowServiceDropdown(false);
-      }
-      if (
-        cityDropdownRef.current &&
-        !cityDropdownRef.current.contains(event.target as Node) &&
-        !cityInputRef.current?.contains(event.target as Node)
-      ) {
-        setShowCityDropdown(false);
+      if (searchBarRef.current && !searchBarRef.current.contains(event.target as Node)) {
+        setActiveSection(null);
       }
     };
 
@@ -99,9 +84,7 @@ export function SearchBar() {
 
   // ==================== HANDLERS ====================
 
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
-    
+  const handleSearch = () => {
     const params = new URLSearchParams();
     
     if (selectedCategory) {
@@ -127,36 +110,33 @@ export function SearchBar() {
   const handleCategorySelect = (category: Suggestion) => {
     setSelectedCategory(category);
     setServiceQuery(category.name);
-    setShowServiceDropdown(false);
+    setActiveSection('location');
+    cityInputRef.current?.focus();
   };
 
   const handleCitySelect = (city: Suggestion) => {
     setSelectedCity(city);
     setCityQuery(city.name);
-    setShowCityDropdown(false);
+    setActiveSection(null);
   };
 
-  const handleQuickSearch = (term: string) => {
-    setServiceQuery(term);
-    const category = categoryOptions.find(
-      (c) => c.name.toLowerCase().includes(term.toLowerCase())
-    );
-    if (category) {
-      setSelectedCategory(category);
+  const handleSectionClick = (section: string) => {
+    setActiveSection(activeSection === section ? null : section);
+    if (section === 'service') {
+      serviceInputRef.current?.focus();
+    } else if (section === 'location') {
+      cityInputRef.current?.focus();
     }
-    router.push(`/services?q=${encodeURIComponent(term)}`);
   };
 
   const clearServiceInput = () => {
     setServiceQuery('');
     setSelectedCategory(null);
-    serviceInputRef.current?.focus();
   };
 
   const clearCityInput = () => {
     setCityQuery('');
     setSelectedCity(null);
-    cityInputRef.current?.focus();
   };
 
   // ==================== FILTERED OPTIONS ====================
@@ -172,142 +152,189 @@ export function SearchBar() {
   // ==================== RENDER ====================
 
   return (
-    <div className="w-full max-w-4xl mx-auto">
-      {/* ==================== SEARCH FORM ==================== */}
-      <form onSubmit={handleSearch}>
-        <div className="bg-white rounded-2xl shadow-xl shadow-gray-200/50 border border-gray-100 p-2 sm:p-3">
-          <div className="flex flex-col sm:flex-row gap-2">
-            {/* Service/Category Input */}
-            <div className="relative flex-1">
-              <div className="relative">
-                <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-                <input
-                  ref={serviceInputRef}
-                  type="text"
-                  value={serviceQuery}
-                  onChange={(e) => {
-                    setServiceQuery(e.target.value);
-                    setSelectedCategory(null);
+    <div ref={searchBarRef}>
+      {/* ==================== SEARCH BAR PILL ==================== */}
+      <div
+        className={`relative flex items-center bg-white rounded-full border transition-all duration-300 ${
+          activeSection
+            ? 'shadow-2xl border-gray-200'
+            : 'shadow-lg shadow-gray-200/50 border-gray-200 hover:shadow-xl'
+        }`}
+      >
+        {/* Where Section */}
+        <div
+          className={`relative flex-1 min-w-0 cursor-pointer rounded-full transition-all ${
+            activeSection === 'service'
+              ? 'bg-white shadow-lg'
+              : activeSection
+              ? 'bg-gray-50 hover:bg-gray-100'
+              : 'hover:bg-gray-100'
+          }`}
+          onClick={() => handleSectionClick('service')}
+        >
+          <div className="px-6 py-4">
+            <label className="block text-xs font-bold text-gray-900">Where</label>
+            <div className="relative">
+              <input
+                ref={serviceInputRef}
+                type="text"
+                value={serviceQuery}
+                onChange={(e) => {
+                  setServiceQuery(e.target.value);
+                  setSelectedCategory(null);
+                }}
+                onFocus={() => setActiveSection('service')}
+                placeholder="Search services"
+                className="w-full text-sm text-gray-600 placeholder:text-gray-400 bg-transparent border-none outline-none focus:ring-0 p-0"
+              />
+              {serviceQuery && activeSection === 'service' && (
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    clearServiceInput();
                   }}
-                  onFocus={() => setShowServiceDropdown(true)}
-                  placeholder="Search services (e.g., Dentist, Yoga)"
-                  className="w-full pl-12 pr-10 py-4 bg-gray-50 hover:bg-gray-100 focus:bg-white border border-transparent focus:border-orange-200 rounded-xl text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20 transition-all"
-                />
-                {serviceQuery && (
-                  <button
-                    type="button"
-                    onClick={clearServiceInput}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 p-1 text-gray-400 hover:text-gray-600 transition-colors"
-                  >
-                    <X className="w-4 h-4" />
-                  </button>
-                )}
-              </div>
-
-              {/* Service Dropdown */}
-              {showServiceDropdown && filteredCategories.length > 0 && (
-                <div
-                  ref={serviceDropdownRef}
-                  className="absolute z-50 top-full left-0 right-0 mt-2 bg-white rounded-xl shadow-lg border border-gray-100 py-2 max-h-72 overflow-y-auto"
+                  className="absolute right-0 top-1/2 -translate-y-1/2 p-1 bg-gray-200 hover:bg-gray-300 rounded-full transition-colors"
                 >
-                  <div className="px-3 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">
-                    Categories
-                  </div>
-                  {filteredCategories.map((category) => (
-                    <button
-                      key={category.id}
-                      type="button"
-                      onClick={() => handleCategorySelect(category)}
-                      className="w-full flex items-center gap-3 px-4 py-3 text-left hover:bg-orange-50 transition-colors"
-                    >
-                      <span className="text-xl">{category.icon}</span>
-                      <span className="text-gray-700 font-medium">{category.name}</span>
-                    </button>
-                  ))}
-                </div>
+                  <X className="w-3 h-3 text-gray-600" />
+                </button>
               )}
             </div>
-
-            {/* City Input */}
-            <div className="relative sm:w-56">
-              <div className="relative">
-                <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-                <input
-                  ref={cityInputRef}
-                  type="text"
-                  value={cityQuery}
-                  onChange={(e) => {
-                    setCityQuery(e.target.value);
-                    setSelectedCity(null);
-                  }}
-                  onFocus={() => setShowCityDropdown(true)}
-                  placeholder="City"
-                  className="w-full pl-12 pr-10 py-4 bg-gray-50 hover:bg-gray-100 focus:bg-white border border-transparent focus:border-orange-200 rounded-xl text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20 transition-all"
-                />
-                {cityQuery ? (
-                  <button
-                    type="button"
-                    onClick={clearCityInput}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 p-1 text-gray-400 hover:text-gray-600 transition-colors"
-                  >
-                    <X className="w-4 h-4" />
-                  </button>
-                ) : (
-                  <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" />
-                )}
-              </div>
-
-              {/* City Dropdown */}
-              {showCityDropdown && filteredCities.length > 0 && (
-                <div
-                  ref={cityDropdownRef}
-                  className="absolute z-50 top-full left-0 right-0 mt-2 bg-white rounded-xl shadow-lg border border-gray-100 py-2 max-h-60 overflow-y-auto"
-                >
-                  <div className="px-3 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">
-                    Popular Cities
-                  </div>
-                  {filteredCities.map((city) => (
-                    <button
-                      key={city.id}
-                      type="button"
-                      onClick={() => handleCitySelect(city)}
-                      className="w-full flex items-center gap-3 px-4 py-3 text-left hover:bg-orange-50 transition-colors"
-                    >
-                      <MapPin className="w-4 h-4 text-gray-400" />
-                      <span className="text-gray-700 font-medium">{city.name}</span>
-                    </button>
-                  ))}
-                </div>
-              )}
-            </div>
-
-            {/* Search Button */}
-            <button
-              type="submit"
-              className="flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold rounded-xl shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 transition-all duration-300 whitespace-nowrap"
-            >
-              <Search className="w-5 h-5" />
-              <span className="hidden sm:inline">Search</span>
-            </button>
           </div>
-        </div>
-      </form>
 
-      {/* ==================== POPULAR SEARCHES ==================== */}
-      <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-        <span className="flex items-center gap-1.5 text-sm text-gray-500">
-          <Sparkles className="w-4 h-4 text-orange-500" />
-          Popular:
-        </span>
-        {popularSearches.map((term) => (
-          <button
-            key={term}
-            onClick={() => handleQuickSearch(term)}
-            className="px-4 py-2 bg-white hover:bg-orange-50 border border-gray-200 hover:border-orange-300 rounded-full text-sm text-gray-600 hover:text-orange-600 transition-all duration-200"
-          >
-            {term}
-          </button>
-        ))}
+          {/* Service Dropdown */}
+          {activeSection === 'service' && (
+            <div className="absolute z-50 top-full left-0 mt-3 w-96 bg-white rounded-3xl shadow-2xl border border-gray-100 py-4 max-h-80 overflow-y-auto">
+              <div className="px-6 py-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">
+                Popular Services
+              </div>
+              {filteredCategories.map((category) => (
+                <button
+                  key={category.id}
+                  type="button"
+                  onClick={() => handleCategorySelect(category)}
+                  className="w-full flex items-center gap-4 px-6 py-3 text-left hover:bg-gray-50 transition-colors"
+                >
+                  <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center">
+                    <span className="text-2xl">{category.icon}</span>
+                  </div>
+                  <span className="text-gray-900 font-medium">{category.name}</span>
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+
+        {/* Divider */}
+        <div className={`w-px h-8 ${activeSection ? 'bg-transparent' : 'bg-gray-200'}`} />
+
+        {/* When Section */}
+        <div
+          className={`relative cursor-pointer rounded-full transition-all ${
+            activeSection === 'when'
+              ? 'bg-white shadow-lg'
+              : activeSection
+              ? 'bg-gray-50 hover:bg-gray-100'
+              : 'hover:bg-gray-100'
+          }`}
+          onClick={() => handleSectionClick('when')}
+        >
+          <div className="px-6 py-4">
+            <label className="block text-xs font-bold text-gray-900">When</label>
+            <p className="text-sm text-gray-400">Add dates</p>
+          </div>
+
+          {/* When Dropdown - Placeholder */}
+          {activeSection === 'when' && (
+            <div className="absolute z-50 top-full left-1/2 -translate-x-1/2 mt-3 w-72 bg-white rounded-3xl shadow-2xl border border-gray-100 p-6 text-center">
+              <Calendar className="w-12 h-12 mx-auto text-gray-300 mb-3" />
+              <p className="text-gray-500 text-sm">
+                Date selection coming soon!
+              </p>
+            </div>
+          )}
+        </div>
+
+        {/* Divider */}
+        <div className={`w-px h-8 ${activeSection ? 'bg-transparent' : 'bg-gray-200'}`} />
+
+        {/* Who Section */}
+        <div
+          className={`relative cursor-pointer rounded-full transition-all ${
+            activeSection === 'location'
+              ? 'bg-white shadow-lg'
+              : activeSection
+              ? 'bg-gray-50 hover:bg-gray-100'
+              : 'hover:bg-gray-100'
+          }`}
+          onClick={() => handleSectionClick('location')}
+        >
+          <div className="px-6 py-4 pr-24">
+            <label className="block text-xs font-bold text-gray-900">Location</label>
+            <div className="relative">
+              <input
+                ref={cityInputRef}
+                type="text"
+                value={cityQuery}
+                onChange={(e) => {
+                  setCityQuery(e.target.value);
+                  setSelectedCity(null);
+                }}
+                onFocus={() => setActiveSection('location')}
+                placeholder="Add location"
+                className="w-full text-sm text-gray-600 placeholder:text-gray-400 bg-transparent border-none outline-none focus:ring-0 p-0"
+              />
+              {cityQuery && activeSection === 'location' && (
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    clearCityInput();
+                  }}
+                  className="absolute right-0 top-1/2 -translate-y-1/2 p-1 bg-gray-200 hover:bg-gray-300 rounded-full transition-colors"
+                >
+                  <X className="w-3 h-3 text-gray-600" />
+                </button>
+              )}
+            </div>
+          </div>
+
+          {/* Location Dropdown */}
+          {activeSection === 'location' && (
+            <div className="absolute z-50 top-full right-0 mt-3 w-80 bg-white rounded-3xl shadow-2xl border border-gray-100 py-4 max-h-72 overflow-y-auto">
+              <div className="px-6 py-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">
+                Popular Destinations
+              </div>
+              {filteredCities.map((city) => (
+                <button
+                  key={city.id}
+                  type="button"
+                  onClick={() => handleCitySelect(city)}
+                  className="w-full flex items-center gap-4 px-6 py-3 text-left hover:bg-gray-50 transition-colors"
+                >
+                  <div className="w-10 h-10 bg-gray-100 rounded-xl flex items-center justify-center">
+                    <MapPin className="w-5 h-5 text-gray-400" />
+                  </div>
+                  <span className="text-gray-900 font-medium">{city.name}</span>
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+
+        {/* Search Button */}
+        <button
+          type="button"
+          onClick={handleSearch}
+          className={`absolute right-2 flex items-center justify-center transition-all duration-300 ${
+            activeSection
+              ? 'gap-2 px-6 py-3 bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700 text-white font-semibold rounded-full shadow-lg'
+              : 'w-12 h-12 bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700 text-white rounded-full shadow-lg'
+          }`}
+        >
+          <Search className={activeSection ? 'w-4 h-4' : 'w-5 h-5'} />
+          {activeSection && <span>Search</span>}
+        </button>
       </div>
     </div>
   );

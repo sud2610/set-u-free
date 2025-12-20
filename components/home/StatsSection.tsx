@@ -42,8 +42,8 @@ const stats: Stat[] = [
     suffix: '+',
     label: 'Cities Covered',
     icon: MapPin,
-    color: 'text-orange-600',
-    bgColor: 'bg-orange-100',
+    color: 'text-yellow-600',
+    bgColor: 'bg-yellow-100',
   },
   {
     id: 'consultations',
@@ -144,7 +144,7 @@ function StatCard({ stat, index }: StatCardProps) {
   return (
     <div
       ref={ref}
-      className="group relative bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-gray-100 hover:shadow-xl hover:border-orange-200 transition-all duration-300 hover:-translate-y-1"
+      className="group relative bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-gray-100 hover:shadow-xl hover:border-yellow-300 transition-all duration-300 hover:-translate-y-1"
       style={{
         animationDelay: `${index * 150}ms`,
       }}
@@ -159,14 +159,14 @@ function StatCard({ stat, index }: StatCardProps) {
       {/* Value */}
       <div className="text-4xl sm:text-5xl font-bold text-gray-900 mb-2">
         {formatNumber(count)}
-        <span className="text-orange-500">{stat.suffix}</span>
+        <span className="text-yellow-500">{stat.suffix}</span>
       </div>
 
       {/* Label */}
       <p className="text-gray-600 font-medium">{stat.label}</p>
 
       {/* Decorative Element */}
-      <div className="absolute top-4 right-4 w-20 h-20 bg-gradient-to-br from-orange-500/5 to-amber-500/5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity -z-10" />
+      <div className="absolute top-4 right-4 w-20 h-20 bg-gradient-to-br from-yellow-500/5 to-yellow-600/5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity -z-10" />
     </div>
   );
 }
@@ -184,20 +184,20 @@ function StatCard({ stat, index }: StatCardProps) {
  */
 export function StatsSection() {
   return (
-    <section className="py-20 lg:py-28 bg-gradient-to-b from-white to-orange-50/50 relative overflow-hidden">
+    <section className="py-20 lg:py-28 bg-gradient-to-b from-white to-yellow-50/50 relative overflow-hidden">
       {/* Background Decorations */}
-      <div className="absolute top-0 left-0 w-72 h-72 bg-orange-200/30 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-amber-200/30 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
+      <div className="absolute top-0 left-0 w-72 h-72 bg-yellow-200/30 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-yellow-200/30 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* ==================== HEADER ==================== */}
         <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
-          <span className="inline-block px-4 py-1.5 bg-orange-100 text-orange-600 text-sm font-semibold rounded-full mb-4">
+          <span className="inline-block px-4 py-1.5 bg-yellow-100 text-yellow-700 text-sm font-semibold rounded-full mb-4">
             Our Impact
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
             Trusted by{' '}
-            <span className="bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-yellow-500 to-yellow-600 bg-clip-text text-transparent">
               Thousands
             </span>
           </h2>
@@ -222,7 +222,7 @@ export function StatsSection() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href="/"
-              className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold rounded-xl shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 transition-all duration-300"
+              className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-gray-900 font-semibold rounded-xl shadow-lg shadow-yellow-500/25 hover:shadow-yellow-500/40 transition-all duration-300"
             >
               Find a Service Provider
             </a>

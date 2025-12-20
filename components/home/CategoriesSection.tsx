@@ -99,12 +99,12 @@ export function CategoriesSection() {
         {/* ==================== HEADER ==================== */}
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-12">
           <div>
-            <span className="inline-block px-4 py-1.5 bg-orange-100 text-orange-600 text-sm font-semibold rounded-full mb-4">
+            <span className="inline-block px-4 py-1.5 bg-yellow-100 text-yellow-700 text-sm font-semibold rounded-full mb-4">
               Categories
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
               Explore by{' '}
-              <span className="bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-yellow-500 to-yellow-600 bg-clip-text text-transparent">
                 Category
               </span>
             </h2>
@@ -116,7 +116,7 @@ export function CategoriesSection() {
           
           <Link
             href="/services"
-            className="inline-flex items-center gap-2 text-orange-600 font-semibold hover:text-orange-700 group transition-colors"
+            className="inline-flex items-center gap-2 text-yellow-600 font-semibold hover:text-yellow-700 group transition-colors"
           >
             View All Categories
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -154,11 +154,11 @@ export function CategoriesSection() {
                 <span className="text-xs font-medium text-gray-400">
                   {category.providerCount}+ providers
                 </span>
-                <ArrowRight className="w-4 h-4 text-gray-300 group-hover:text-orange-500 group-hover:translate-x-1 transition-all" />
+                <ArrowRight className="w-4 h-4 text-gray-300 group-hover:text-yellow-500 group-hover:translate-x-1 transition-all" />
               </div>
 
               {/* Hover Glow Effect */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-orange-500/5 to-amber-500/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-yellow-500/5 to-yellow-600/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
             </Link>
           ))}
         </div>
@@ -175,7 +175,7 @@ export function CategoriesSection() {
           </div>
           <Link
             href="/services"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-xl transition-colors whitespace-nowrap"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold rounded-xl transition-colors whitespace-nowrap"
           >
             Browse All Services
             <ArrowRight className="w-5 h-5" />

@@ -290,7 +290,7 @@ export function ServicesContent() {
     <section className="py-8 lg:py-12 bg-[#faf8f5]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* ==================== SEARCH & FILTERS ==================== */}
-        <div className="bg-white rounded-2xl shadow-md border-2 border-gray-200 p-4 sm:p-6 mb-8">
+        <div className="bg-white rounded-2xl shadow-md border-2 border-yellow-400 p-4 sm:p-6 mb-8">
           {/* Search Bar */}
           <form onSubmit={handleSearch} className="flex flex-col lg:flex-row gap-4">
             {/* Search Input */}
@@ -301,7 +301,7 @@ export function ServicesContent() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search services or providers..."
-                className="w-full pl-12 pr-4 py-3.5 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
+                className="w-full pl-12 pr-4 py-3.5 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all"
               />
             </div>
 
@@ -311,7 +311,7 @@ export function ServicesContent() {
               <select
                 value={selectedCategory}
                 onChange={(e) => setSelectedCategory(e.target.value)}
-                className="w-full pl-10 pr-10 py-3.5 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent appearance-none cursor-pointer transition-all text-sm"
+                className="w-full pl-10 pr-10 py-3.5 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent appearance-none cursor-pointer transition-all text-sm"
               >
                 <option value="">All Categories</option>
                 {categories.map((cat) => (
@@ -329,7 +329,7 @@ export function ServicesContent() {
               <select
                 value={selectedCity}
                 onChange={(e) => setSelectedCity(e.target.value)}
-                className="w-full pl-10 pr-10 py-3.5 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent appearance-none cursor-pointer transition-all text-sm"
+                className="w-full pl-10 pr-10 py-3.5 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent appearance-none cursor-pointer transition-all text-sm"
               >
                 <option value="">All Cities</option>
                 {cities.map((city) => (
@@ -344,7 +344,7 @@ export function ServicesContent() {
             {/* Search Button */}
             <button
               type="submit"
-              className="px-8 py-3.5 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold rounded-xl shadow-lg shadow-orange-500/25 transition-all"
+              className="px-8 py-3.5 bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-gray-900 font-semibold rounded-xl shadow-lg shadow-yellow-500/25 transition-all"
             >
               Search
             </button>
@@ -355,33 +355,33 @@ export function ServicesContent() {
             <div className="mt-4 flex flex-wrap items-center gap-2">
               <span className="text-sm text-gray-500">Active filters:</span>
               {searchQuery && (
-                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-orange-100 text-orange-700 text-sm font-medium rounded-full">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-yellow-100 text-yellow-800 text-sm font-medium rounded-full">
                   Search: {searchQuery}
                   <button
                     onClick={() => setSearchQuery('')}
-                    className="hover:text-orange-900"
+                    className="hover:text-yellow-900"
                   >
                     <X className="w-4 h-4" />
                   </button>
                 </span>
               )}
               {selectedCategory && (
-                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-orange-100 text-orange-700 text-sm font-medium rounded-full">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-yellow-100 text-yellow-800 text-sm font-medium rounded-full">
                   {selectedCategory}
                   <button
                     onClick={() => setSelectedCategory('')}
-                    className="hover:text-orange-900"
+                    className="hover:text-yellow-900"
                   >
                     <X className="w-4 h-4" />
                   </button>
                 </span>
               )}
               {selectedCity && (
-                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-orange-100 text-orange-700 text-sm font-medium rounded-full">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-yellow-100 text-yellow-800 text-sm font-medium rounded-full">
                   {selectedCity}
                   <button
                     onClick={() => setSelectedCity('')}
-                    className="hover:text-orange-900"
+                    className="hover:text-yellow-900"
                   >
                     <X className="w-4 h-4" />
                   </button>
@@ -440,7 +440,7 @@ export function ServicesContent() {
               <div className="mt-12 text-center">
                 <button
                   onClick={handleLoadMore}
-                  className="px-8 py-3 bg-white border-2 border-gray-200 hover:border-orange-300 text-gray-700 hover:text-orange-600 font-semibold rounded-xl transition-all"
+                  className="px-8 py-3 bg-white border-2 border-gray-200 hover:border-yellow-400 text-gray-700 hover:text-yellow-600 font-semibold rounded-xl transition-all"
                 >
                   Load More Providers
                 </button>
@@ -462,7 +462,7 @@ export function ServicesContent() {
             </p>
             <button
               onClick={handleClearFilters}
-              className="px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-xl transition-colors"
+              className="px-6 py-3 bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold rounded-xl transition-colors"
             >
               Clear Filters
             </button>

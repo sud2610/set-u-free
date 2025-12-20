@@ -46,8 +46,8 @@ const benefits: Benefit[] = [
     title: 'Instant Booking',
     description: 'Book appointments instantly with real-time availability. No waiting, no phone calls needed.',
     icon: Zap,
-    color: 'text-orange-600',
-    bgColor: 'bg-orange-100',
+    color: 'text-yellow-600',
+    bgColor: 'bg-yellow-100',
   },
   {
     id: 'secure',
@@ -110,7 +110,7 @@ export function WhyChooseUs() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* ==================== HIGHLIGHTED FEATURES BANNER ==================== */}
         <div className="mb-16">
-          <div className="bg-gradient-to-r from-orange-500 to-amber-500 rounded-3xl p-8 sm:p-12 relative overflow-hidden">
+          <div className="bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-3xl p-8 sm:p-12 relative overflow-hidden">
             {/* Background Pattern */}
             <div className="absolute inset-0 opacity-10">
               <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -129,14 +129,14 @@ export function WhyChooseUs() {
                 return (
                   <div
                     key={index}
-                    className="flex items-center gap-4 text-white"
+                    className="flex items-center gap-4 text-gray-900"
                   >
-                    <div className="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center shrink-0">
+                    <div className="w-14 h-14 bg-gray-900/10 backdrop-blur-sm rounded-2xl flex items-center justify-center shrink-0">
                       <Icon className="w-7 h-7" />
                     </div>
                     <div>
                       <h3 className="text-xl font-bold">{feature.title}</h3>
-                      <p className="text-white/80">{feature.description}</p>
+                      <p className="text-gray-700">{feature.description}</p>
                     </div>
                   </div>
                 );
@@ -147,12 +147,12 @@ export function WhyChooseUs() {
 
         {/* ==================== HEADER ==================== */}
         <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
-          <span className="inline-block px-4 py-1.5 bg-orange-100 text-orange-600 text-sm font-semibold rounded-full mb-4">
+          <span className="inline-block px-4 py-1.5 bg-yellow-100 text-yellow-700 text-sm font-semibold rounded-full mb-4">
             Why Set-U-Free
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
             Why Choose{' '}
-            <span className="bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-yellow-500 to-yellow-600 bg-clip-text text-transparent">
               Set-U-Free?
             </span>
           </h2>
@@ -169,7 +169,7 @@ export function WhyChooseUs() {
             return (
               <div
                 key={benefit.id}
-                className="group bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 hover:border-orange-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                className="group bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 hover:border-yellow-300 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
                 style={{
                   animationDelay: `${index * 100}ms`,
                 }}
@@ -182,7 +182,7 @@ export function WhyChooseUs() {
                 </div>
 
                 {/* Content */}
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-orange-600 transition-colors">
+                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-yellow-600 transition-colors">
                   {benefit.title}
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
@@ -220,8 +220,8 @@ export function WhyChooseUs() {
         <div className="mt-16 text-center">
           <div className="inline-flex flex-col sm:flex-row items-center gap-4 p-4 bg-white rounded-2xl shadow-lg border border-gray-100">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center">
-                <Clock className="w-6 h-6 text-orange-600" />
+              <div className="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center">
+                <Clock className="w-6 h-6 text-yellow-600" />
               </div>
               <div className="text-left">
                 <p className="font-semibold text-gray-900">Ready to get started?</p>
@@ -230,7 +230,7 @@ export function WhyChooseUs() {
             </div>
             <a
               href="/"
-              className="px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold rounded-xl shadow-lg shadow-orange-500/25 transition-all duration-300 whitespace-nowrap"
+              className="px-6 py-3 bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-gray-900 font-semibold rounded-xl shadow-lg shadow-yellow-500/25 transition-all duration-300 whitespace-nowrap"
             >
               Explore Services
             </a>

@@ -111,12 +111,12 @@ export function Footer() {
           <div className="lg:col-span-2">
             {/* Logo */}
             <Link href="/" className="inline-flex items-center gap-2 group">
-              <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center shadow-lg">
-                <span className="text-xl font-bold text-white">S</span>
+              <div className="w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-xl flex items-center justify-center shadow-lg">
+                <span className="text-xl font-bold text-gray-900">S</span>
               </div>
               <div>
                 <span className="text-xl font-bold text-white">Set-U-</span>
-                <span className="text-xl font-bold text-orange-500">Free</span>
+                <span className="text-xl font-bold text-yellow-400">Free</span>
               </div>
             </Link>
 
@@ -130,14 +130,14 @@ export function Footer() {
             <div className="mt-6 space-y-3">
               <a
                 href="mailto:support@setufree.com"
-                className="flex items-center gap-3 text-gray-400 hover:text-orange-400 transition-colors text-sm"
+                className="flex items-center gap-3 text-gray-400 hover:text-yellow-400 transition-colors text-sm"
               >
                 <Mail className="w-4 h-4" />
                 support@setufree.com
               </a>
               <a
                 href="tel:+61298765432"
-                className="flex items-center gap-3 text-gray-400 hover:text-orange-400 transition-colors text-sm"
+                className="flex items-center gap-3 text-gray-400 hover:text-yellow-400 transition-colors text-sm"
               >
                 <Phone className="w-4 h-4" />
                 +61 2 9876 5432
@@ -161,7 +161,7 @@ export function Footer() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-xl bg-gray-800 hover:bg-orange-500 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-200"
+                    className="w-10 h-10 rounded-xl bg-gray-800 hover:bg-yellow-400 flex items-center justify-center text-gray-400 hover:text-gray-900 transition-all duration-200"
                     aria-label={`Follow us on ${social.name}`}
                   >
                     <Icon className="w-5 h-5" />
@@ -182,7 +182,7 @@ export function Footer() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-gray-400 hover:text-orange-400 transition-colors text-sm inline-block"
+                      className="text-gray-400 hover:text-yellow-400 transition-colors text-sm inline-block"
                     >
                       {link.label}
                     </Link>
@@ -208,12 +208,12 @@ export function Footer() {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 lg:w-72 px-4 py-3 bg-gray-800 border border-gray-700 rounded-xl text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-sm"
+                className="flex-1 lg:w-72 px-4 py-3 bg-gray-800 border border-gray-700 rounded-xl text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent text-sm"
                 required
               />
               <button
                 type="submit"
-                className="px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold rounded-xl shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 transition-all flex items-center gap-2 text-sm whitespace-nowrap"
+                className="px-6 py-3 bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-gray-900 font-semibold rounded-xl shadow-lg shadow-yellow-500/25 hover:shadow-yellow-500/40 transition-all flex items-center gap-2 text-sm whitespace-nowrap"
               >
                 Subscribe
                 <ArrowRight className="w-4 h-4" />
@@ -236,25 +236,25 @@ export function Footer() {
             <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm">
               <Link
                 href="/privacy"
-                className="text-gray-500 hover:text-orange-400 transition-colors"
+                className="text-gray-500 hover:text-yellow-400 transition-colors"
               >
                 Privacy Policy
               </Link>
               <Link
                 href="/terms"
-                className="text-gray-500 hover:text-orange-400 transition-colors"
+                className="text-gray-500 hover:text-yellow-400 transition-colors"
               >
                 Terms of Service
               </Link>
               <Link
                 href="/cookies"
-                className="text-gray-500 hover:text-orange-400 transition-colors"
+                className="text-gray-500 hover:text-yellow-400 transition-colors"
               >
                 Cookie Settings
               </Link>
               <Link
                 href="/sitemap"
-                className="text-gray-500 hover:text-orange-400 transition-colors"
+                className="text-gray-500 hover:text-yellow-400 transition-colors"
               >
                 Sitemap
               </Link>

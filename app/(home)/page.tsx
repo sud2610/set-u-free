@@ -43,12 +43,12 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="inline-block px-4 py-1.5 bg-orange-100 text-orange-600 text-sm font-semibold rounded-full mb-4">
+            <span className="inline-block px-4 py-1.5 bg-yellow-100 text-yellow-700 text-sm font-semibold rounded-full mb-4">
               How It Works
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
               Book Your Free Consultation in{' '}
-              <span className="bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-yellow-500 to-yellow-600 bg-clip-text text-transparent">
                 3 Simple Steps
               </span>
             </h2>
@@ -62,9 +62,9 @@ export default function HomePage() {
           <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
             {/* Step 1 */}
             <div className="relative text-center group">
-              <div className="relative inline-flex items-center justify-center w-20 h-20 bg-orange-100 rounded-2xl mb-6 group-hover:bg-orange-200 transition-colors">
-                <span className="text-3xl font-bold text-orange-600">1</span>
-                <div className="absolute -top-2 -right-2 w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center">
+              <div className="relative inline-flex items-center justify-center w-20 h-20 bg-yellow-100 rounded-2xl mb-6 group-hover:bg-yellow-200 transition-colors">
+                <span className="text-3xl font-bold text-yellow-600">1</span>
+                <div className="absolute -top-2 -right-2 w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center">
                   <svg
                     className="w-4 h-4 text-white"
                     fill="none"
@@ -88,7 +88,7 @@ export default function HomePage() {
                 location, and ratings to find the perfect match.
               </p>
               {/* Connector Line */}
-              <div className="hidden md:block absolute top-10 left-[60%] w-[80%] h-0.5 bg-gradient-to-r from-orange-300 to-transparent" />
+              <div className="hidden md:block absolute top-10 left-[60%] w-[80%] h-0.5 bg-gradient-to-r from-yellow-300 to-transparent" />
             </div>
 
             {/* Step 2 */}
@@ -156,7 +156,7 @@ export default function HomePage() {
           <div className="mt-16 text-center">
             <a
               href="/"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold rounded-xl shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 transition-all duration-300"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-gray-900 font-semibold rounded-xl shadow-lg shadow-yellow-500/25 hover:shadow-yellow-500/40 transition-all duration-300"
             >
               Start Searching Now
               <svg
@@ -182,12 +182,12 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="inline-block px-4 py-1.5 bg-orange-100 text-orange-600 text-sm font-semibold rounded-full mb-4">
+            <span className="inline-block px-4 py-1.5 bg-yellow-100 text-yellow-700 text-sm font-semibold rounded-full mb-4">
               Testimonials
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
               What Our{' '}
-              <span className="bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-yellow-500 to-yellow-600 bg-clip-text text-transparent">
                 Customers Say
               </span>
             </h2>
@@ -218,8 +218,8 @@ export default function HomePage() {
                 recommended!&quot;
               </p>
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center">
-                  <span className="text-white font-semibold">JW</span>
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center">
+                  <span className="text-gray-900 font-semibold">JW</span>
                 </div>
                 <div>
                   <p className="font-semibold text-gray-900">James Wilson</p>
@@ -290,7 +290,7 @@ export default function HomePage() {
       </section>
 
       {/* ==================== CTA SECTION ==================== */}
-      <section className="py-20 lg:py-28 bg-gradient-to-r from-orange-500 to-amber-500 relative overflow-hidden">
+      <section className="py-20 lg:py-28 bg-gradient-to-r from-yellow-400 to-yellow-500 relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -314,7 +314,7 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href="/"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-white hover:bg-gray-100 text-orange-600 font-semibold rounded-xl shadow-lg transition-all duration-300"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-gray-900 hover:bg-gray-800 text-white font-semibold rounded-xl shadow-lg transition-all duration-300"
             >
               Browse Services
               <svg

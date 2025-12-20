@@ -123,7 +123,7 @@ export function ProviderCard({
       tabIndex={0}
       onClick={handleClick}
       onKeyDown={handleKeyDown}
-      className={`group relative bg-white rounded-2xl border border-gray-100 overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-xl hover:shadow-gray-200/50 hover:border-orange-200 hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 ${className}`}
+      className={`group relative bg-white rounded-2xl border-2 border-amber-200 overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-xl hover:shadow-amber-100/50 hover:border-amber-400 hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 ${className}`}
       style={style}
       aria-label={`View ${provider.businessName} profile`}
     >
@@ -182,7 +182,7 @@ export function ProviderCard({
       {/* ==================== CONTENT SECTION ==================== */}
       <div className="p-5">
         {/* Business Name */}
-        <h3 className="text-lg font-bold text-gray-900 group-hover:text-orange-600 transition-colors line-clamp-1">
+        <h3 className="text-lg font-bold text-gray-900 group-hover:text-yellow-600 transition-colors line-clamp-1">
           {provider.businessName}
         </h3>
 
@@ -191,7 +191,7 @@ export function ProviderCard({
           {provider.categories.slice(0, 3).map((category, index) => (
             <span
               key={index}
-              className="inline-block px-2.5 py-1 bg-orange-50 text-orange-700 text-xs font-medium rounded-md"
+              className="inline-block px-2.5 py-1 bg-yellow-50 text-yellow-700 text-xs font-medium rounded-md"
             >
               {category}
             </span>
@@ -237,7 +237,7 @@ export function ProviderCard({
 
         {/* View Details Button */}
         <button
-          className="mt-4 w-full flex items-center justify-center gap-2 px-4 py-3 bg-gray-50 hover:bg-orange-50 text-gray-700 hover:text-orange-600 font-semibold rounded-xl transition-all duration-200 group/btn"
+          className="mt-4 w-full flex items-center justify-center gap-2 px-4 py-3 bg-gray-50 hover:bg-yellow-50 text-gray-700 hover:text-yellow-600 font-semibold rounded-xl transition-all duration-200 group/btn"
           onClick={(e) => {
             e.stopPropagation();
             handleClick();
@@ -249,7 +249,7 @@ export function ProviderCard({
       </div>
 
       {/* ==================== HOVER OVERLAY ==================== */}
-      <div className="absolute inset-0 bg-gradient-to-t from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-yellow-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
     </article>
   );
 }
@@ -262,7 +262,7 @@ export function ProviderCard({
  */
 export function ProviderCardSkeleton() {
   return (
-    <div className="bg-white rounded-2xl border border-gray-100 overflow-hidden animate-pulse">
+    <div className="bg-white rounded-2xl border-2 border-amber-200 overflow-hidden animate-pulse">
       {/* Image Skeleton */}
       <div className="aspect-[4/3] bg-gray-200" />
 
@@ -329,7 +329,7 @@ export function ProviderCardCompact({
           handleClick();
         }
       }}
-      className={`group flex items-center gap-4 p-4 bg-white rounded-xl border border-gray-100 cursor-pointer transition-all duration-200 hover:shadow-lg hover:border-orange-200 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 ${className}`}
+      className={`group flex items-center gap-4 p-4 bg-white rounded-xl border-2 border-amber-200 cursor-pointer transition-all duration-200 hover:shadow-lg hover:border-amber-400 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 ${className}`}
       aria-label={`View ${provider.businessName} profile`}
     >
       {/* Avatar */}
@@ -361,7 +361,7 @@ export function ProviderCardCompact({
 
       {/* Info */}
       <div className="flex-1 min-w-0">
-        <h3 className="font-semibold text-gray-900 group-hover:text-orange-600 transition-colors truncate">
+        <h3 className="font-semibold text-gray-900 group-hover:text-yellow-600 transition-colors truncate">
           {provider.businessName}
         </h3>
         <p className="text-sm text-gray-500 truncate">
@@ -380,7 +380,7 @@ export function ProviderCardCompact({
       </div>
 
       {/* Arrow */}
-      <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-orange-500 transition-colors shrink-0" />
+      <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-yellow-500 transition-colors shrink-0" />
     </article>
   );
 }
