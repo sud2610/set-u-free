@@ -17,7 +17,7 @@ import {
   signInWithPopup,
   User as FirebaseUser,
 } from 'firebase/auth';
-import { doc, getDoc, setDoc, serverTimestamp } from 'firebase/firestore';
+import { doc, getDoc, setDoc, updateDoc, serverTimestamp } from 'firebase/firestore';
 import { auth, db, isFirebaseConfigured } from '@/lib/firebase';
 import type { User } from '@/types';
 
@@ -48,6 +48,10 @@ interface AuthContextType {
   logout: () => Promise<void>;
   /** Sign in with Google OAuth */
   signInWithGoogle: () => Promise<void>;
+  /** Update user profile in Firestore */
+  updateUserProfile: (
+    data: Partial<Omit<User, 'uid' | 'email' | 'createdAt' | 'updatedAt'>>
+  ) => Promise<void>;
   /** Clear any existing error */
   clearError: () => void;
 }
@@ -73,6 +77,9 @@ const defaultContextValue: AuthContextType = {
     throw new Error('AuthContext not initialized');
   },
   signInWithGoogle: async () => {
+    throw new Error('AuthContext not initialized');
+  },
+  updateUserProfile: async () => {
     throw new Error('AuthContext not initialized');
   },
   clearError: () => {},
@@ -467,13 +474,20 @@ export function AuthProvider({ children }: AuthProviderProps) {
         // New user - create Firestore profile
         console.log('Creating new user profile for Google user');
         
+        // Build user data without undefined values (Firestore doesn't accept undefined)
         const newUserData: Omit<User, 'uid' | 'email' | 'createdAt' | 'updatedAt'> = {
           fullName: firebaseUser.displayName || 'User',
           role: 'customer', // Default role for Google sign-in
           location: '',
-          profileImage: firebaseUser.photoURL || undefined,
-          phone: firebaseUser.phoneNumber || undefined,
         };
+        
+        // Only add optional fields if they have values
+        if (firebaseUser.photoURL) {
+          newUserData.profileImage = firebaseUser.photoURL;
+        }
+        if (firebaseUser.phoneNumber) {
+          newUserData.phone = firebaseUser.phoneNumber;
+        }
 
         const newUser = await createUserInFirestore(
           firebaseUser.uid,
@@ -498,6 +512,53 @@ export function AuthProvider({ children }: AuthProviderProps) {
   }, []);
 
   /**
+   * Update user profile in Firestore
+   * Updates the user document and refreshes local state
+   */
+  const updateUserProfile = useCallback(async (
+    data: Partial<Omit<User, 'uid' | 'email' | 'createdAt' | 'updatedAt'>>
+  ): Promise<void> => {
+    console.log('Updating user profile...');
+    
+    setError(null);
+
+    try {
+      if (!user) {
+        throw new Error('No user logged in');
+      }
+
+      if (!db) {
+        throw new Error('Firebase is not configured');
+      }
+
+      // Update Firestore document
+      const userRef = doc(db, 'users', user.uid);
+      await updateDoc(userRef, {
+        ...data,
+        updatedAt: serverTimestamp(),
+      });
+
+      // Update local state with new data
+      setUser((prevUser) => {
+        if (!prevUser) return null;
+        return {
+          ...prevUser,
+          ...data,
+          updatedAt: new Date(),
+        };
+      });
+
+      console.log('Profile updated successfully');
+      
+    } catch (err: any) {
+      console.error('Profile update error:', err);
+      const message = err.message || 'Failed to update profile';
+      setError(message);
+      throw new Error(message);
+    }
+  }, [user]);
+
+  /**
    * Clear any existing error message
    */
   const clearError = useCallback((): void => {
@@ -515,6 +576,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
     register,
     logout,
     signInWithGoogle,
+    updateUserProfile,
     clearError,
   };
 

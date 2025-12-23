@@ -202,13 +202,10 @@ export function RegisterForm() {
         location: '',
       });
       
-      toast.success('Account created successfully!');
+      toast.success('Account created successfully! Welcome to Set-U-Free!');
       
-      // Redirect based on role
-      const redirectUrl = data.role === 'provider' 
-        ? '/dashboard/provider' 
-        : '/dashboard/user';
-      router.push(redirectUrl);
+      // Redirect to home page after successful registration
+      router.push('/');
     } catch (err) {
       toast.error('Registration failed. Please try again.');
     }
@@ -220,8 +217,8 @@ export function RegisterForm() {
 
     try {
       await signInWithGoogle();
-      toast.success('Account created successfully!');
-      router.push('/dashboard/user');
+      toast.success('Account created successfully! Welcome to Set-U-Free!');
+      router.push('/');
     } catch (err) {
       toast.error('Google sign-in failed. Please try again.');
     } finally {
@@ -244,7 +241,7 @@ export function RegisterForm() {
           <label
             className={`relative flex flex-col items-center p-4 rounded-xl border-2 cursor-pointer transition-all duration-200 ${
               watchRole === 'customer'
-                ? 'border-orange-500 bg-orange-50'
+                ? 'border-yellow-500 bg-yellow-50'
                 : 'border-gray-200 hover:border-gray-300 bg-white'
             }`}
           >
@@ -256,20 +253,20 @@ export function RegisterForm() {
             />
             <UserCircle
               className={`w-8 h-8 mb-2 ${
-                watchRole === 'customer' ? 'text-orange-500' : 'text-gray-400'
+                watchRole === 'customer' ? 'text-yellow-500' : 'text-gray-400'
               }`}
             />
             <span
               className={`font-semibold ${
-                watchRole === 'customer' ? 'text-orange-700' : 'text-gray-700'
+                watchRole === 'customer' ? 'text-yellow-700' : 'text-gray-700'
               }`}
             >
               Find Services
             </span>
             <span className="text-xs text-gray-500 mt-1">As a customer</span>
             {watchRole === 'customer' && (
-              <div className="absolute top-2 right-2 w-5 h-5 bg-orange-500 rounded-full flex items-center justify-center">
-                <Check className="w-3 h-3 text-white" />
+              <div className="absolute top-2 right-2 w-5 h-5 bg-yellow-500 rounded-full flex items-center justify-center">
+                <Check className="w-3 h-3 text-gray-900" />
               </div>
             )}
           </label>
@@ -277,7 +274,7 @@ export function RegisterForm() {
           <label
             className={`relative flex flex-col items-center p-4 rounded-xl border-2 cursor-pointer transition-all duration-200 ${
               watchRole === 'provider'
-                ? 'border-orange-500 bg-orange-50'
+                ? 'border-yellow-500 bg-yellow-50'
                 : 'border-gray-200 hover:border-gray-300 bg-white'
             }`}
           >
@@ -289,20 +286,20 @@ export function RegisterForm() {
             />
             <Briefcase
               className={`w-8 h-8 mb-2 ${
-                watchRole === 'provider' ? 'text-orange-500' : 'text-gray-400'
+                watchRole === 'provider' ? 'text-yellow-500' : 'text-gray-400'
               }`}
             />
             <span
               className={`font-semibold ${
-                watchRole === 'provider' ? 'text-orange-700' : 'text-gray-700'
+                watchRole === 'provider' ? 'text-yellow-700' : 'text-gray-700'
               }`}
             >
               Offer Services
             </span>
             <span className="text-xs text-gray-500 mt-1">As a provider</span>
             {watchRole === 'provider' && (
-              <div className="absolute top-2 right-2 w-5 h-5 bg-orange-500 rounded-full flex items-center justify-center">
-                <Check className="w-3 h-3 text-white" />
+              <div className="absolute top-2 right-2 w-5 h-5 bg-yellow-500 rounded-full flex items-center justify-center">
+                <Check className="w-3 h-3 text-gray-900" />
               </div>
             )}
           </label>
@@ -388,7 +385,7 @@ export function RegisterForm() {
               className={`w-full pl-12 pr-4 py-3.5 bg-gray-50 border rounded-xl text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:bg-white transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed ${
                 errors.fullName
                   ? 'border-red-300 focus:ring-red-500 focus:border-red-500'
-                  : 'border-gray-200 focus:ring-orange-500 focus:border-orange-500'
+                  : 'border-gray-200 focus:ring-yellow-500 focus:border-yellow-500'
               }`}
               placeholder="John Doe"
             />
@@ -417,7 +414,7 @@ export function RegisterForm() {
               className={`w-full pl-12 pr-4 py-3.5 bg-gray-50 border rounded-xl text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:bg-white transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed ${
                 errors.email
                   ? 'border-red-300 focus:ring-red-500 focus:border-red-500'
-                  : 'border-gray-200 focus:ring-orange-500 focus:border-orange-500'
+                  : 'border-gray-200 focus:ring-yellow-500 focus:border-yellow-500'
               }`}
               placeholder="you@example.com"
             />
@@ -446,7 +443,7 @@ export function RegisterForm() {
               className={`w-full pl-12 pr-12 py-3.5 bg-gray-50 border rounded-xl text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:bg-white transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed ${
                 errors.password
                   ? 'border-red-300 focus:ring-red-500 focus:border-red-500'
-                  : 'border-gray-200 focus:ring-orange-500 focus:border-orange-500'
+                  : 'border-gray-200 focus:ring-yellow-500 focus:border-yellow-500'
               }`}
               placeholder="Create a strong password"
             />
@@ -488,7 +485,7 @@ export function RegisterForm() {
               className={`w-full pl-12 pr-12 py-3.5 bg-gray-50 border rounded-xl text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:bg-white transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed ${
                 errors.confirmPassword
                   ? 'border-red-300 focus:ring-red-500 focus:border-red-500'
-                  : 'border-gray-200 focus:ring-orange-500 focus:border-orange-500'
+                  : 'border-gray-200 focus:ring-yellow-500 focus:border-yellow-500'
               }`}
               placeholder="Confirm your password"
             />
@@ -519,20 +516,20 @@ export function RegisterForm() {
             id="acceptTerms"
             type="checkbox"
             {...register('acceptTerms')}
-            className="w-4 h-4 mt-0.5 rounded border-gray-300 text-orange-500 focus:ring-orange-500 cursor-pointer"
+            className="w-4 h-4 mt-0.5 rounded border-gray-300 text-yellow-500 focus:ring-yellow-500 cursor-pointer"
           />
           <label htmlFor="acceptTerms" className="text-sm text-gray-600 cursor-pointer">
             I agree to the{' '}
             <Link
               href="/terms"
-              className="font-medium text-orange-600 hover:text-orange-700 underline"
+              className="font-medium text-yellow-600 hover:text-yellow-700 underline"
             >
               Terms of Service
             </Link>{' '}
             and{' '}
             <Link
               href="/privacy"
-              className="font-medium text-orange-600 hover:text-orange-700 underline"
+              className="font-medium text-yellow-600 hover:text-yellow-700 underline"
             >
               Privacy Policy
             </Link>
@@ -549,7 +546,7 @@ export function RegisterForm() {
         <button
           type="submit"
           disabled={isLoading}
-          className="w-full py-3.5 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 disabled:from-gray-300 disabled:to-gray-300 text-white font-semibold rounded-xl shadow-lg shadow-orange-500/25 disabled:shadow-none transition-all duration-200 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+          className="w-full py-3.5 bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 disabled:from-gray-300 disabled:to-gray-300 text-gray-900 font-semibold rounded-xl shadow-lg shadow-yellow-500/25 disabled:shadow-none transition-all duration-200 disabled:cursor-not-allowed flex items-center justify-center gap-2"
         >
           {isSubmitting ? (
             <>
@@ -567,7 +564,7 @@ export function RegisterForm() {
         Already have an account?{' '}
         <Link
           href="/login"
-          className="font-semibold text-orange-600 hover:text-orange-700 transition-colors"
+          className="font-semibold text-yellow-600 hover:text-yellow-700 transition-colors"
         >
           Sign in
         </Link>

@@ -38,16 +38,20 @@ export async function registerUser(
   // Update display name
   await updateProfile(firebaseUser, { displayName: fullName });
 
-  // Create user document in Firestore
+  // Create user document in Firestore (avoid undefined values - Firestore doesn't accept them)
   const userData: Omit<User, 'uid'> = {
     fullName,
     email: firebaseUser.email!,
     role,
     location: '',
-    profileImage: firebaseUser.photoURL || undefined,
     createdAt: new Date(),
     updatedAt: new Date(),
   };
+  
+  // Only add profileImage if it exists
+  if (firebaseUser.photoURL) {
+    userData.profileImage = firebaseUser.photoURL;
+  }
 
   await setDoc(doc(db!, 'users', firebaseUser.uid), {
     ...userData,
@@ -85,16 +89,20 @@ export async function signInWithGoogle(): Promise<User> {
   const userDoc = await getDoc(userDocRef);
 
   if (!userDoc.exists()) {
-    // Create new user document
+    // Create new user document (avoid undefined values - Firestore doesn't accept them)
     const userData: Omit<User, 'uid'> = {
       fullName: firebaseUser.displayName || 'User',
       email: firebaseUser.email!,
       role: 'customer',
       location: '',
-      profileImage: firebaseUser.photoURL || undefined,
       createdAt: new Date(),
       updatedAt: new Date(),
     };
+    
+    // Only add profileImage if it exists
+    if (firebaseUser.photoURL) {
+      userData.profileImage = firebaseUser.photoURL;
+    }
 
     await setDoc(userDocRef, {
       ...userData,

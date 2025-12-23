@@ -1,6 +1,5 @@
 import { Metadata } from 'next';
 import { Suspense } from 'react';
-import { notFound } from 'next/navigation';
 import { Toaster } from 'react-hot-toast';
 import { Navbar } from '@/components/common/Navbar';
 import { Footer } from '@/components/common/Footer';
@@ -13,58 +12,26 @@ interface PageProps {
   params: Promise<{ id: string }>;
 }
 
-// ==================== MOCK DATA FOR METADATA ====================
-
-// In production, fetch from Firestore
-const getProviderForMetadata = async (id: string) => {
-  // Mock provider data
-  const mockProviders: Record<string, { name: string; description: string; category: string }> = {
-    '1': {
-      name: 'Smile Dental Clinic',
-      description: 'Expert dental care with modern technology and experienced professionals.',
-      category: 'Dentist',
-    },
-    '2': {
-      name: 'Glamour Beauty Studio',
-      description: 'Premium beauty and spa services for all your grooming needs.',
-      category: 'Beauty',
-    },
-    '3': {
-      name: 'FitLife Gym & Training',
-      description: 'State-of-the-art fitness center with certified personal trainers.',
-      category: 'Gym',
-    },
-  };
-
-  return mockProviders[id] || null;
-};
-
 // ==================== METADATA ====================
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const resolvedParams = await params;
-  const provider = await getProviderForMetadata(resolvedParams.id);
-
-  if (!provider) {
-    return {
-      title: 'Provider Not Found',
-      description: 'The requested service provider could not be found.',
-    };
-  }
-
+  
+  // Use a generic title since we can't fetch from Firebase on the server easily
+  // The actual provider name will be shown in the page content
   return {
-    title: `${provider.name} | ${provider.category} Services`,
-    description: provider.description,
+    title: `Provider Details | Set-U-Free`,
+    description: 'View provider details, services, reviews, and book a free consultation on Set-U-Free.',
     openGraph: {
-      title: `${provider.name} | Set-U-Free`,
-      description: provider.description,
+      title: `Provider Details | Set-U-Free`,
+      description: 'View provider details, services, reviews, and book a free consultation.',
       type: 'profile',
       images: [`/api/og/provider/${resolvedParams.id}`],
     },
     twitter: {
       card: 'summary_large_image',
-      title: provider.name,
-      description: provider.description,
+      title: 'Provider Details | Set-U-Free',
+      description: 'View provider details, services, reviews, and book a free consultation.',
     },
   };
 }

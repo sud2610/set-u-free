@@ -90,7 +90,7 @@ export function Navbar() {
   };
 
   const getDashboardLink = (): string => {
-    return user?.role === 'provider' ? '/dashboard/provider' : '/dashboard/user';
+    return '/dashboard';
   };
 
   return (
@@ -213,10 +213,10 @@ export function Navbar() {
 
                       <div className="py-2">
                         {[
-                          { href: getDashboardLink(), icon: LayoutDashboard, label: 'Dashboard' },
-                          { href: `${getDashboardLink()}/bookings`, icon: Calendar, label: 'My Bookings' },
-                          ...(user.role === 'provider' ? [{ href: '/dashboard/provider/services', icon: Briefcase, label: 'My Services' }] : []),
-                          { href: `${getDashboardLink()}/settings`, icon: Settings, label: 'Settings' },
+                          { href: '/dashboard', icon: LayoutDashboard, label: 'Dashboard' },
+                          { href: '/dashboard/bookings', icon: Calendar, label: 'My Bookings' },
+                          ...(user.role === 'provider' ? [{ href: '/dashboard/services', icon: Briefcase, label: 'My Services' }] : []),
+                          { href: '/dashboard/settings', icon: Settings, label: 'Settings' },
                         ].map((item) => (
                           <Link
                             key={item.href}

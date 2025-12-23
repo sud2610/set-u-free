@@ -1,5 +1,4 @@
 import { Metadata, Viewport } from 'next';
-import { Toaster } from 'react-hot-toast';
 import { Navbar } from '@/components/common/Navbar';
 import { Footer } from '@/components/common/Footer';
 
@@ -107,47 +106,16 @@ export default function HomeLayout({
   children: React.ReactNode;
 }) {
   return (
-    <>
-      {/* Toast Notifications */}
-      <Toaster
-        position="top-center"
-        toastOptions={{
-          duration: 4000,
-          style: {
-            background: '#1f2937',
-            color: '#f9fafb',
-            borderRadius: '12px',
-            padding: '16px',
-            fontSize: '14px',
-            fontWeight: 500,
-          },
-          success: {
-            iconTheme: {
-              primary: '#22c55e',
-              secondary: '#ffffff',
-            },
-          },
-          error: {
-            iconTheme: {
-              primary: '#ef4444',
-              secondary: '#ffffff',
-            },
-          },
-        }}
-      />
+    <div className="flex flex-col min-h-screen">
+      {/* Navigation */}
+      <Navbar />
 
-      {/* Page Structure */}
-      <div className="flex flex-col min-h-screen">
-        {/* Navigation */}
-        <Navbar />
+      {/* Main Content */}
+      <main className="flex-1">{children}</main>
 
-        {/* Main Content */}
-        <main className="flex-1">{children}</main>
-
-        {/* Footer */}
-        <Footer />
-      </div>
-    </>
+      {/* Footer */}
+      <Footer />
+    </div>
   );
 }
 

@@ -55,30 +55,30 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen flex">
       {/* ==================== LEFT SIDE - BRANDING ==================== */}
-      <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-orange-500 via-orange-600 to-amber-600 p-12 flex-col justify-between relative overflow-hidden">
+      <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-yellow-400 via-yellow-500 to-amber-500 p-12 flex-col justify-between relative overflow-hidden">
         {/* Background Decorations */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-        <div className="absolute bottom-0 left-0 w-72 h-72 bg-amber-400/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-orange-400/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-72 h-72 bg-amber-300/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-yellow-300/10 rounded-full blur-3xl" />
 
         {/* Logo */}
         <div className="relative z-10">
           <Link href="/" className="inline-flex items-center gap-3 group">
             <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
-              <span className="text-2xl font-bold text-orange-500">S</span>
+              <span className="text-2xl font-bold text-yellow-500">S</span>
             </div>
-            <span className="text-2xl font-bold text-white">Set-U-Free</span>
+            <span className="text-2xl font-bold text-gray-900">Set-U-Free</span>
           </Link>
         </div>
 
         {/* Main Content */}
         <div className="relative z-10 space-y-6">
-          <h1 className="text-4xl xl:text-5xl font-bold text-white leading-tight">
+          <h1 className="text-4xl xl:text-5xl font-bold text-gray-900 leading-tight">
             Welcome back to
             <br />
             your service hub
           </h1>
-          <p className="text-orange-100 text-lg max-w-md leading-relaxed">
+          <p className="text-gray-800 text-lg max-w-md leading-relaxed">
             Access your bookings, connect with verified providers, and manage your
             consultations all in one place.
           </p>
@@ -89,7 +89,7 @@ export default function LoginPage() {
               {[1, 2, 3, 4].map((i) => (
                 <div
                   key={i}
-                  className="w-10 h-10 rounded-full bg-white/20 border-2 border-white/40 backdrop-blur-sm"
+                  className="w-10 h-10 rounded-full bg-white/30 border-2 border-white/50 backdrop-blur-sm"
                   style={{
                     backgroundImage: `url(https://i.pravatar.cc/100?img=${i + 10})`,
                     backgroundSize: 'cover',
@@ -97,14 +97,14 @@ export default function LoginPage() {
                 />
               ))}
             </div>
-            <p className="text-white/90 text-sm">
-              Join <span className="font-bold text-white">10,000+</span> happy users
+            <p className="text-gray-800 text-sm">
+              Join <span className="font-bold text-gray-900">10,000+</span> happy users
             </p>
           </div>
         </div>
 
         {/* Footer */}
-        <div className="relative z-10 text-orange-200 text-sm">
+        <div className="relative z-10 text-gray-700 text-sm">
           © {new Date().getFullYear()} Set-U-Free. All rights reserved.
         </div>
       </div>
@@ -115,8 +115,8 @@ export default function LoginPage() {
           {/* Mobile Logo */}
           <div className="lg:hidden text-center mb-8">
             <Link href="/" className="inline-flex items-center gap-2">
-              <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center shadow-lg">
-                <span className="text-xl font-bold text-white">S</span>
+              <div className="w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-xl flex items-center justify-center shadow-lg">
+                <span className="text-xl font-bold text-gray-900">S</span>
               </div>
               <span className="text-xl font-bold text-gray-900">Set-U-Free</span>
             </Link>

@@ -50,7 +50,7 @@ type LoginFormData = z.infer<typeof loginSchema>;
 export function LoginForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const redirectUrl = searchParams.get('redirect') || '/dashboard/user';
+  const redirectUrl = searchParams.get('redirect') || '/';
   
   const { login, signInWithGoogle, error: authError, clearError } = useAuth();
 
@@ -181,7 +181,7 @@ export function LoginForm() {
               className={`w-full pl-12 pr-4 py-3.5 bg-gray-50 border rounded-xl text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:bg-white transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed ${
                 errors.email
                   ? 'border-red-300 focus:ring-red-500 focus:border-red-500'
-                  : 'border-gray-200 focus:ring-orange-500 focus:border-orange-500'
+                  : 'border-gray-200 focus:ring-yellow-500 focus:border-yellow-500'
               }`}
               placeholder="you@example.com"
             />
@@ -202,7 +202,7 @@ export function LoginForm() {
             </label>
             <Link
               href="/forgot-password"
-              className="text-sm font-medium text-orange-600 hover:text-orange-700 transition-colors"
+              className="text-sm font-medium text-yellow-600 hover:text-yellow-700 transition-colors"
             >
               Forgot password?
             </Link>
@@ -218,7 +218,7 @@ export function LoginForm() {
               className={`w-full pl-12 pr-12 py-3.5 bg-gray-50 border rounded-xl text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:bg-white transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed ${
                 errors.password
                   ? 'border-red-300 focus:ring-red-500 focus:border-red-500'
-                  : 'border-gray-200 focus:ring-orange-500 focus:border-orange-500'
+                  : 'border-gray-200 focus:ring-yellow-500 focus:border-yellow-500'
               }`}
               placeholder="Enter your password"
             />
@@ -249,7 +249,7 @@ export function LoginForm() {
             id="rememberMe"
             type="checkbox"
             {...register('rememberMe')}
-            className="w-4 h-4 rounded border-gray-300 text-orange-500 focus:ring-orange-500 cursor-pointer"
+            className="w-4 h-4 rounded border-gray-300 text-yellow-500 focus:ring-yellow-500 cursor-pointer"
           />
           <label htmlFor="rememberMe" className="text-sm text-gray-600 cursor-pointer">
             Remember me for 30 days
@@ -260,7 +260,7 @@ export function LoginForm() {
         <button
           type="submit"
           disabled={isLoading}
-          className="w-full py-3.5 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 disabled:from-gray-300 disabled:to-gray-300 text-white font-semibold rounded-xl shadow-lg shadow-orange-500/25 disabled:shadow-none transition-all duration-200 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+          className="w-full py-3.5 bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 disabled:from-gray-300 disabled:to-gray-300 text-gray-900 font-semibold rounded-xl shadow-lg shadow-yellow-500/25 disabled:shadow-none transition-all duration-200 disabled:cursor-not-allowed flex items-center justify-center gap-2"
         >
           {isSubmitting ? (
             <>
@@ -278,7 +278,7 @@ export function LoginForm() {
         Don&apos;t have an account?{' '}
         <Link
           href="/register"
-          className="font-semibold text-orange-600 hover:text-orange-700 transition-colors"
+          className="font-semibold text-yellow-600 hover:text-yellow-700 transition-colors"
         >
           Create account
         </Link>

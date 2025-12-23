@@ -59,6 +59,9 @@ export function ProviderDetailContent({ providerId }: ProviderDetailContentProps
         if (providerData) {
           setProvider(providerData);
           
+          // Update document title with provider name
+          document.title = `${providerData.businessName} | ${providerData.categories[0] || 'Services'} | Set-U-Free`;
+          
           // Fetch related data separately - don't let failures prevent page from loading
           try {
             const servicesData = await getServices(providerId);
@@ -86,11 +89,13 @@ export function ProviderDetailContent({ providerId }: ProviderDetailContentProps
         } else {
           // Provider not found
           setProvider(null);
+          document.title = 'Provider Not Found | Set-U-Free';
         }
       } catch (error) {
         console.error('Error fetching provider:', error);
         // Provider fetch failed
         setProvider(null);
+        document.title = 'Provider Not Found | Set-U-Free';
       } finally {
         setIsLoading(false);
       }

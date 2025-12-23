@@ -1,326 +1,306 @@
 'use client';
 
-import { useState } from 'react';
+import { useAuth } from '@/context/AuthContext';
 import Link from 'next/link';
-import Image from 'next/image';
 import {
   Calendar,
-  DollarSign,
   Star,
-  TrendingUp,
-  Users,
   Clock,
+  Users,
   ArrowRight,
+  TrendingUp,
+  DollarSign,
   CheckCircle,
-  XCircle,
   AlertCircle,
-  MoreVertical,
+  Eye,
+  MessageSquare,
+  BarChart3,
 } from 'lucide-react';
-import { useAuth } from '@/context/AuthContext';
-
-// Mock data for demonstration
-const mockBookings = [
-  {
-    id: '1',
-    serviceName: 'Home Cleaning',
-    customerName: 'Rahul Sharma',
-    customerImage: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100',
-    date: '2024-01-25',
-    time: '10:00 AM',
-    status: 'pending',
-    amount: 1500,
-  },
-  {
-    id: '2',
-    serviceName: 'AC Repair',
-    customerName: 'Priya Patel',
-    customerImage: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100',
-    date: '2024-01-26',
-    time: '02:00 PM',
-    status: 'confirmed',
-    amount: 800,
-  },
-  {
-    id: '3',
-    serviceName: 'Plumbing Work',
-    customerName: 'Amit Kumar',
-    customerImage: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100',
-    date: '2024-01-27',
-    time: '11:00 AM',
-    status: 'confirmed',
-    amount: 600,
-  },
-];
-
-const mockReviews = [
-  {
-    id: '1',
-    customerName: 'Rahul Sharma',
-    rating: 5,
-    comment: 'Excellent service! Very professional.',
-    date: '2024-01-20',
-  },
-  {
-    id: '2',
-    customerName: 'Priya Patel',
-    rating: 4,
-    comment: 'Good work, arrived on time.',
-    date: '2024-01-18',
-  },
-];
-
-const statusConfig = {
-  pending: {
-    icon: AlertCircle,
-    color: 'text-yellow-500',
-    bg: 'bg-yellow-50',
-    label: 'Pending',
-  },
-  confirmed: {
-    icon: CheckCircle,
-    color: 'text-blue-500',
-    bg: 'bg-blue-50',
-    label: 'Confirmed',
-  },
-  completed: {
-    icon: CheckCircle,
-    color: 'text-secondary-500',
-    bg: 'bg-secondary-50',
-    label: 'Completed',
-  },
-  cancelled: {
-    icon: XCircle,
-    color: 'text-red-500',
-    bg: 'bg-red-50',
-    label: 'Cancelled',
-  },
-};
 
 export function ProviderDashboard() {
   const { user } = useAuth();
 
+  // Mock data - In production, fetch from Firebase
   const stats = [
     {
-      label: 'Total Earnings',
-      value: '₹45,250',
-      change: '+12%',
-      icon: DollarSign,
-      color: 'text-secondary-500',
-      bgColor: 'bg-secondary-50',
-    },
-    {
       label: 'Total Bookings',
-      value: '156',
-      change: '+8%',
+      value: '48',
+      change: '+12%',
       icon: Calendar,
-      color: 'text-blue-500',
+      color: 'bg-blue-500',
       bgColor: 'bg-blue-50',
+      textColor: 'text-blue-600',
     },
     {
-      label: 'Average Rating',
+      label: 'This Month',
+      value: '15',
+      change: '+8%',
+      icon: TrendingUp,
+      color: 'bg-green-500',
+      bgColor: 'bg-green-50',
+      textColor: 'text-green-600',
+    },
+    {
+      label: 'Profile Views',
+      value: '234',
+      change: '+25%',
+      icon: Eye,
+      color: 'bg-purple-500',
+      bgColor: 'bg-purple-50',
+      textColor: 'text-purple-600',
+    },
+    {
+      label: 'Avg. Rating',
       value: '4.8',
       change: '+0.2',
       icon: Star,
-      color: 'text-yellow-500',
+      color: 'bg-yellow-500',
       bgColor: 'bg-yellow-50',
+      textColor: 'text-yellow-600',
+    },
+  ];
+
+  const upcomingBookings = [
+    {
+      id: 1,
+      customer: 'John Smith',
+      service: 'Dental Checkup',
+      date: 'Today',
+      time: '2:00 PM',
+      status: 'confirmed',
     },
     {
-      label: 'Total Customers',
-      value: '89',
-      change: '+15%',
-      icon: Users,
-      color: 'text-purple-500',
-      bgColor: 'bg-purple-50',
+      id: 2,
+      customer: 'Sarah Wilson',
+      service: 'Teeth Whitening',
+      date: 'Today',
+      time: '4:30 PM',
+      status: 'confirmed',
+    },
+    {
+      id: 3,
+      customer: 'Mike Johnson',
+      service: 'Root Canal',
+      date: 'Tomorrow',
+      time: '10:00 AM',
+      status: 'pending',
+    },
+    {
+      id: 4,
+      customer: 'Emily Davis',
+      service: 'Dental Checkup',
+      date: 'Dec 26',
+      time: '11:30 AM',
+      status: 'confirmed',
+    },
+  ];
+
+  const recentReviews = [
+    {
+      id: 1,
+      customer: 'John S.',
+      rating: 5,
+      comment: 'Excellent service! Very professional and friendly staff.',
+      date: '2 days ago',
+    },
+    {
+      id: 2,
+      customer: 'Maria L.',
+      rating: 4,
+      comment: 'Great experience, would recommend to others.',
+      date: '5 days ago',
     },
   ];
 
   return (
     <div className="space-y-8">
-      {/* Welcome Header */}
-      <div className="bg-gradient-to-r from-secondary-500 to-secondary-600 rounded-2xl p-6 md:p-8 text-white">
-        <h1 className="text-2xl md:text-3xl font-bold mb-2">
-          Welcome back, {user?.fullName?.split(' ')[0] || 'Provider'}! 👋
-        </h1>
-        <p className="text-secondary-100">
-          Here&apos;s an overview of your business performance.
-        </p>
+      {/* Welcome Section */}
+      <div className="bg-gradient-to-r from-yellow-400 via-yellow-500 to-amber-500 rounded-2xl p-6 md:p-8 text-gray-900">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <div>
+            <h1 className="text-2xl md:text-3xl font-bold">
+              Welcome back, {user?.fullName?.split(' ')[0]}! 👋
+            </h1>
+            <p className="mt-2 text-gray-800 opacity-90">
+              You have <span className="font-bold">4 upcoming bookings</span> today. Let&apos;s make it a great day!
+            </p>
+          </div>
+          <Link
+            href="/dashboard/bookings"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white font-semibold rounded-xl hover:bg-gray-800 transition-colors"
+          >
+            <Calendar className="w-5 h-5" />
+            View All Bookings
+          </Link>
+        </div>
       </div>
 
       {/* Stats Grid */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-        {stats.map((stat) => {
-          const Icon = stat.icon;
-          return (
-            <div key={stat.label} className="card p-5">
-              <div className="flex items-center justify-between mb-3">
-                <div className={`w-10 h-10 ${stat.bgColor} rounded-xl flex items-center justify-center`}>
-                  <Icon className={`w-5 h-5 ${stat.color}`} />
-                </div>
-                <span className="flex items-center gap-1 text-xs font-medium text-secondary-500">
-                  <TrendingUp className="w-3 h-3" />
-                  {stat.change}
-                </span>
+        {stats.map((stat) => (
+          <div
+            key={stat.label}
+            className="bg-white rounded-xl p-5 border border-gray-100 hover:shadow-md transition-shadow"
+          >
+            <div className="flex items-start justify-between">
+              <div className={`p-2.5 rounded-lg ${stat.bgColor}`}>
+                <stat.icon className={`w-5 h-5 ${stat.textColor}`} />
               </div>
-              <div className="text-2xl font-bold text-dark-900">{stat.value}</div>
-              <div className="text-sm text-dark-500">{stat.label}</div>
+              <span className="text-xs font-medium text-green-600 bg-green-50 px-2 py-0.5 rounded-full">
+                {stat.change}
+              </span>
             </div>
-          );
-        })}
+            <p className="text-2xl font-bold text-gray-900 mt-3">{stat.value}</p>
+            <p className="text-sm text-gray-500">{stat.label}</p>
+          </div>
+        ))}
       </div>
 
-      {/* Main Content Grid */}
-      <div className="grid lg:grid-cols-3 gap-8">
+      <div className="grid lg:grid-cols-3 gap-6">
         {/* Upcoming Bookings */}
-        <div className="lg:col-span-2">
-          <div className="card">
-            <div className="flex items-center justify-between p-6 border-b border-dark-100">
-              <h2 className="text-lg font-semibold text-dark-900">Upcoming Bookings</h2>
-              <Link
-                href="/dashboard/provider/bookings"
-                className="text-primary-500 text-sm font-medium hover:underline flex items-center gap-1"
+        <div className="lg:col-span-2 bg-white rounded-xl border border-gray-100 overflow-hidden">
+          <div className="flex items-center justify-between p-5 border-b border-gray-100">
+            <h2 className="text-lg font-semibold text-gray-900">Upcoming Bookings</h2>
+            <Link
+              href="/dashboard/bookings"
+              className="text-sm text-yellow-600 hover:text-yellow-700 font-medium flex items-center gap-1"
+            >
+              View All
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+          <div className="divide-y divide-gray-100">
+            {upcomingBookings.map((booking) => (
+              <div
+                key={booking.id}
+                className="p-5 hover:bg-gray-50 transition-colors"
               >
-                View All
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-            <div className="divide-y divide-dark-100">
-              {mockBookings.map((booking) => {
-                const status = statusConfig[booking.status as keyof typeof statusConfig];
-                const StatusIcon = status.icon;
-                return (
-                  <div
-                    key={booking.id}
-                    className="p-4 hover:bg-dark-50 transition-colors"
-                  >
-                    <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 rounded-xl overflow-hidden bg-dark-100 shrink-0">
-                        <Image
-                          src={booking.customerImage}
-                          alt={booking.customerName}
-                          width={48}
-                          height={48}
-                          className="object-cover"
-                        />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <h3 className="font-medium text-dark-900 truncate">
-                          {booking.serviceName}
-                        </h3>
-                        <p className="text-sm text-dark-500 truncate">
-                          {booking.customerName}
-                        </p>
-                      </div>
-                      <div className="text-right hidden sm:block">
-                        <div className="flex items-center gap-1 text-sm text-dark-600">
-                          <Calendar className="w-4 h-4" />
-                          {new Date(booking.date).toLocaleDateString('en-IN', {
-                            day: 'numeric',
-                            month: 'short',
-                          })}
-                        </div>
-                        <div className="flex items-center gap-1 text-sm text-dark-400">
-                          <Clock className="w-4 h-4" />
-                          {booking.time}
-                        </div>
-                      </div>
-                      <div
-                        className={`flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium ${status.bg} ${status.color}`}
-                      >
-                        <StatusIcon className="w-3 h-3" />
-                        {status.label}
-                      </div>
-                      <button className="p-2 rounded-lg hover:bg-dark-100 transition-colors">
-                        <MoreVertical className="w-5 h-5 text-dark-400" />
-                      </button>
+                <div className="flex items-center justify-between gap-4">
+                  <div className="flex items-center gap-4">
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-500 flex items-center justify-center">
+                      <span className="font-semibold text-gray-900">
+                        {booking.customer.charAt(0)}
+                      </span>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-gray-900">{booking.customer}</h3>
+                      <p className="text-sm text-gray-500">{booking.service}</p>
                     </div>
                   </div>
-                );
-              })}
-            </div>
+                  <div className="text-right">
+                    <p className="font-medium text-gray-900">{booking.date}</p>
+                    <p className="text-sm text-gray-500">{booking.time}</p>
+                  </div>
+                  <span
+                    className={`px-3 py-1 text-xs font-medium rounded-full ${
+                      booking.status === 'confirmed'
+                        ? 'bg-green-100 text-green-700'
+                        : 'bg-yellow-100 text-yellow-700'
+                    }`}
+                  >
+                    {booking.status.charAt(0).toUpperCase() + booking.status.slice(1)}
+                  </span>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* Sidebar */}
-        <div className="space-y-6">
-          {/* Recent Reviews */}
-          <div className="card">
-            <div className="flex items-center justify-between p-6 border-b border-dark-100">
-              <h2 className="text-lg font-semibold text-dark-900">Recent Reviews</h2>
-              <Link
-                href="/dashboard/provider/reviews"
-                className="text-primary-500 text-sm font-medium hover:underline"
-              >
-                View All
-              </Link>
-            </div>
-            <div className="p-4 space-y-4">
-              {mockReviews.map((review) => (
-                <div key={review.id} className="p-3 bg-dark-50 rounded-xl">
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="font-medium text-dark-900 text-sm">
-                      {review.customerName}
-                    </span>
-                    <div className="flex items-center gap-1">
-                      {[...Array(5)].map((_, i) => (
-                        <Star
-                          key={i}
-                          className={`w-3 h-3 ${
-                            i < review.rating
-                              ? 'text-yellow-500 fill-yellow-500'
-                              : 'text-dark-300'
-                          }`}
-                        />
-                      ))}
-                    </div>
+        {/* Recent Reviews */}
+        <div className="bg-white rounded-xl border border-gray-100 overflow-hidden">
+          <div className="flex items-center justify-between p-5 border-b border-gray-100">
+            <h2 className="text-lg font-semibold text-gray-900">Recent Reviews</h2>
+            <Link
+              href="/dashboard/reviews"
+              className="text-sm text-yellow-600 hover:text-yellow-700 font-medium flex items-center gap-1"
+            >
+              View All
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+          <div className="divide-y divide-gray-100">
+            {recentReviews.map((review) => (
+              <div key={review.id} className="p-5">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="font-medium text-gray-900">{review.customer}</span>
+                  <div className="flex items-center gap-1">
+                    {[...Array(5)].map((_, i) => (
+                      <Star
+                        key={i}
+                        className={`w-4 h-4 ${
+                          i < review.rating
+                            ? 'text-yellow-400 fill-yellow-400'
+                            : 'text-gray-200'
+                        }`}
+                      />
+                    ))}
                   </div>
-                  <p className="text-sm text-dark-600 line-clamp-2">{review.comment}</p>
-                  <p className="text-xs text-dark-400 mt-2">
-                    {new Date(review.date).toLocaleDateString('en-IN', {
-                      day: 'numeric',
-                      month: 'short',
-                      year: 'numeric',
-                    })}
-                  </p>
                 </div>
-              ))}
+                <p className="text-sm text-gray-600 line-clamp-2">{review.comment}</p>
+                <p className="text-xs text-gray-400 mt-2">{review.date}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Quick Stats Row */}
+      <div className="grid md:grid-cols-3 gap-4">
+        <div className="bg-white rounded-xl p-5 border border-gray-100">
+          <div className="flex items-center gap-4">
+            <div className="p-3 bg-green-50 rounded-xl">
+              <CheckCircle className="w-6 h-6 text-green-600" />
+            </div>
+            <div>
+              <p className="text-2xl font-bold text-gray-900">95%</p>
+              <p className="text-sm text-gray-500">Completion Rate</p>
             </div>
           </div>
-
-          {/* Quick Actions */}
-          <div className="card p-6">
-            <h2 className="text-lg font-semibold text-dark-900 mb-4">Quick Actions</h2>
-            <div className="space-y-3">
-              <Link
-                href="/dashboard/provider/services"
-                className="flex items-center justify-between p-3 bg-primary-50 rounded-xl text-primary-600 hover:bg-primary-100 transition-colors"
-              >
-                <span className="font-medium">Manage Services</span>
-                <ArrowRight className="w-5 h-5" />
-              </Link>
-              <Link
-                href="/dashboard/provider/settings"
-                className="flex items-center justify-between p-3 bg-dark-50 rounded-xl text-dark-600 hover:bg-dark-100 transition-colors"
-              >
-                <span className="font-medium">Update Profile</span>
-                <ArrowRight className="w-5 h-5" />
-              </Link>
-              <Link
-                href="/dashboard/provider/earnings"
-                className="flex items-center justify-between p-3 bg-secondary-50 rounded-xl text-secondary-600 hover:bg-secondary-100 transition-colors"
-              >
-                <span className="font-medium">View Earnings</span>
-                <ArrowRight className="w-5 h-5" />
-              </Link>
+        </div>
+        <div className="bg-white rounded-xl p-5 border border-gray-100">
+          <div className="flex items-center gap-4">
+            <div className="p-3 bg-blue-50 rounded-xl">
+              <MessageSquare className="w-6 h-6 text-blue-600" />
             </div>
+            <div>
+              <p className="text-2xl font-bold text-gray-900">12</p>
+              <p className="text-sm text-gray-500">New Messages</p>
+            </div>
+          </div>
+        </div>
+        <div className="bg-white rounded-xl p-5 border border-gray-100">
+          <div className="flex items-center gap-4">
+            <div className="p-3 bg-purple-50 rounded-xl">
+              <Users className="w-6 h-6 text-purple-600" />
+            </div>
+            <div>
+              <p className="text-2xl font-bold text-gray-900">156</p>
+              <p className="text-sm text-gray-500">Total Customers</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Tips Section */}
+      <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6 border border-blue-100">
+        <div className="flex items-start gap-4">
+          <div className="p-3 bg-blue-100 rounded-xl">
+            <BarChart3 className="w-6 h-6 text-blue-600" />
+          </div>
+          <div>
+            <h3 className="font-semibold text-gray-900">Boost Your Profile</h3>
+            <p className="mt-1 text-gray-600">
+              Complete your profile to get 40% more visibility. Add photos, update your services, and respond to reviews promptly!
+            </p>
+            <Link
+              href="/dashboard/settings"
+              className="inline-block mt-3 text-blue-600 hover:text-blue-700 font-medium text-sm"
+            >
+              Update Profile →
+            </Link>
           </div>
         </div>
       </div>
     </div>
   );
 }
-
-
-
-
-
-

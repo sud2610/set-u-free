@@ -59,57 +59,57 @@ export default function RegisterPage() {
   return (
     <div className="min-h-screen flex">
       {/* ==================== LEFT SIDE - BRANDING ==================== */}
-      <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-green-500 via-green-600 to-emerald-600 p-12 flex-col justify-between relative overflow-hidden">
+      <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-yellow-400 via-yellow-500 to-amber-500 p-12 flex-col justify-between relative overflow-hidden">
         {/* Background Decorations */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-        <div className="absolute bottom-0 left-0 w-72 h-72 bg-emerald-400/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-green-400/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-72 h-72 bg-amber-300/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-yellow-300/10 rounded-full blur-3xl" />
 
         {/* Logo */}
         <div className="relative z-10">
           <Link href="/" className="inline-flex items-center gap-3 group">
             <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
-              <span className="text-2xl font-bold text-green-500">S</span>
+              <span className="text-2xl font-bold text-yellow-500">S</span>
             </div>
-            <span className="text-2xl font-bold text-white">Set-U-Free</span>
+            <span className="text-2xl font-bold text-gray-900">Set-U-Free</span>
           </Link>
         </div>
 
         {/* Main Content */}
         <div className="relative z-10 space-y-6">
-          <h1 className="text-4xl xl:text-5xl font-bold text-white leading-tight">
+          <h1 className="text-4xl xl:text-5xl font-bold text-gray-900 leading-tight">
             Start your journey
             <br />
             with Set-U-Free
           </h1>
-          <p className="text-green-100 text-lg max-w-md leading-relaxed">
+          <p className="text-gray-800 text-lg max-w-md leading-relaxed">
             Whether you need services or want to offer them, create an account and
             join our growing community of trusted professionals and happy customers.
           </p>
 
           {/* Feature Cards */}
           <div className="grid grid-cols-2 gap-4 pt-4">
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
-              <div className="text-3xl font-bold text-white">500+</div>
-              <div className="text-green-100 text-sm">Verified Providers</div>
+            <div className="bg-white/30 backdrop-blur-sm rounded-xl p-4 border border-white/40">
+              <div className="text-3xl font-bold text-gray-900">500+</div>
+              <div className="text-gray-700 text-sm">Verified Providers</div>
             </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
-              <div className="text-3xl font-bold text-white">50+</div>
-              <div className="text-green-100 text-sm">Service Categories</div>
+            <div className="bg-white/30 backdrop-blur-sm rounded-xl p-4 border border-white/40">
+              <div className="text-3xl font-bold text-gray-900">50+</div>
+              <div className="text-gray-700 text-sm">Service Categories</div>
             </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
-              <div className="text-3xl font-bold text-white">100%</div>
-              <div className="text-green-100 text-sm">Free Consultations</div>
+            <div className="bg-white/30 backdrop-blur-sm rounded-xl p-4 border border-white/40">
+              <div className="text-3xl font-bold text-gray-900">100%</div>
+              <div className="text-gray-700 text-sm">Free Consultations</div>
             </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
-              <div className="text-3xl font-bold text-white">25+</div>
-              <div className="text-green-100 text-sm">Cities Covered</div>
+            <div className="bg-white/30 backdrop-blur-sm rounded-xl p-4 border border-white/40">
+              <div className="text-3xl font-bold text-gray-900">25+</div>
+              <div className="text-gray-700 text-sm">Cities Covered</div>
             </div>
           </div>
         </div>
 
         {/* Footer */}
-        <div className="relative z-10 text-green-200 text-sm">
+        <div className="relative z-10 text-gray-700 text-sm">
           © {new Date().getFullYear()} Set-U-Free. All rights reserved.
         </div>
       </div>
@@ -120,8 +120,8 @@ export default function RegisterPage() {
           {/* Mobile Logo */}
           <div className="lg:hidden text-center mb-8">
             <Link href="/" className="inline-flex items-center gap-2">
-              <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center shadow-lg">
-                <span className="text-xl font-bold text-white">S</span>
+              <div className="w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-xl flex items-center justify-center shadow-lg">
+                <span className="text-xl font-bold text-gray-900">S</span>
               </div>
               <span className="text-xl font-bold text-gray-900">Set-U-Free</span>
             </Link>

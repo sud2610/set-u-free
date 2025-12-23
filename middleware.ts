@@ -22,6 +22,8 @@ interface AuthResult {
 
 /**
  * Public routes that don't require authentication
+ * Note: /dashboard is public here because Firebase Auth uses client-side tokens
+ * The dashboard layout handles auth checks client-side
  */
 const PUBLIC_ROUTES = [
   '/',
@@ -34,6 +36,7 @@ const PUBLIC_ROUTES = [
   '/terms',
   '/login',
   '/register',
+  '/dashboard', // Client-side auth check handles this
 ];
 
 /**
@@ -156,12 +159,13 @@ function getTokenFromRequest(request: NextRequest): string | null {
  * Check if path matches any public route
  */
 function isPublicRoute(pathname: string): boolean {
+  // Dashboard routes are public (client-side auth handles them)
+  if (pathname.startsWith('/dashboard')) {
+    return true;
+  }
+
   // Check exact matches
   if (PUBLIC_ROUTES.some((route) => pathname === route || pathname.startsWith(`${route}/`))) {
-    // Exclude dashboard routes
-    if (pathname.startsWith('/dashboard')) {
-      return false;
-    }
     return true;
   }
 
