@@ -1,0 +1,222 @@
+[
+  {
+    "id": "service_001",
+    "providerId": "provider_001",
+    "category": "Dentist",
+    "title": "Dental Checkup & Cleaning",
+    "description": "Comprehensive dental examination, scaling, and polishing for healthy teeth and gums.",
+    "duration": 60,
+    "price": 180,
+    "priceType": "fixed",
+    "images": []
+  },
+  {
+    "id": "service_002",
+    "providerId": "provider_001",
+    "category": "Dentist",
+    "title": "Teeth Whitening",
+    "description": "Professional teeth whitening treatment for a brighter, whiter smile.",
+    "duration": 90,
+    "price": 450,
+    "priceType": "fixed",
+    "images": []
+  },
+  {
+    "id": "service_003",
+    "providerId": "provider_002",
+    "category": "Beauty",
+    "title": "Signature Facial",
+    "description": "Rejuvenating facial treatment tailored to your skin type for glowing skin.",
+    "duration": 90,
+    "price": 150,
+    "priceType": "fixed",
+    "images": []
+  },
+  {
+    "id": "service_004",
+    "providerId": "provider_002",
+    "category": "Beauty",
+    "title": "Hair Styling & Colour",
+    "description": "Expert hair styling, cutting, and colouring services by trained professionals.",
+    "duration": 120,
+    "price": 200,
+    "priceType": "starting",
+    "images": []
+  },
+  {
+    "id": "service_005",
+    "providerId": "provider_003",
+    "category": "Gym",
+    "title": "Personal Training Session",
+    "description": "One-on-one training session with a certified fitness expert.",
+    "duration": 60,
+    "price": 80,
+    "priceType": "hourly",
+    "images": []
+  },
+  {
+    "id": "service_006",
+    "providerId": "provider_003",
+    "category": "Gym",
+    "title": "Monthly Gym Membership",
+    "description": "Full access to gym facilities, group classes, and basic fitness consultation.",
+    "duration": 0,
+    "price": 70,
+    "priceType": "monthly",
+    "images": []
+  },
+  {
+    "id": "service_007",
+    "providerId": "provider_004",
+    "category": "Physiotherapy",
+    "title": "Initial Consultation & Assessment",
+    "description": "Detailed physical assessment and personalised treatment plan.",
+    "duration": 45,
+    "price": 120,
+    "priceType": "fixed",
+    "images": []
+  },
+  {
+    "id": "service_008",
+    "providerId": "provider_004",
+    "category": "Physiotherapy",
+    "title": "Physiotherapy Session",
+    "description": "Hands-on physiotherapy treatment including exercises and manual therapy.",
+    "duration": 45,
+    "price": 95,
+    "priceType": "fixed",
+    "images": []
+  },
+  {
+    "id": "service_009",
+    "providerId": "provider_005",
+    "category": "Yoga",
+    "title": "Beginner Yoga Class",
+    "description": "Introduction to basic yoga postures and breathing techniques.",
+    "duration": 75,
+    "price": 25,
+    "priceType": "fixed",
+    "images": []
+  },
+  {
+    "id": "service_010",
+    "providerId": "provider_005",
+    "category": "Yoga",
+    "title": "Private Yoga Session",
+    "description": "Personalised one-on-one yoga session tailored to your goals.",
+    "duration": 60,
+    "price": 100,
+    "priceType": "fixed",
+    "images": []
+  },
+  {
+    "id": "service_011",
+    "providerId": "provider_006",
+    "category": "Nutrition",
+    "title": "Dietary Consultation",
+    "description": "Personalised diet plan and lifestyle recommendations.",
+    "duration": 60,
+    "price": 130,
+    "priceType": "fixed",
+    "images": []
+  },
+  {
+    "id": "service_012",
+    "providerId": "provider_006",
+    "category": "Nutrition",
+    "title": "Weight Management Program",
+    "description": "12-week comprehensive weight management program with weekly consultations.",
+    "duration": 0,
+    "price": 800,
+    "priceType": "package",
+    "images": []
+  },
+  {
+    "id": "service_013",
+    "providerId": "provider_007",
+    "category": "Mental Health",
+    "title": "Individual Therapy Session",
+    "description": "One-on-one counselling session with a registered psychologist.",
+    "duration": 50,
+    "price": 200,
+    "priceType": "fixed",
+    "images": []
+  },
+  {
+    "id": "service_014",
+    "providerId": "provider_007",
+    "category": "Mental Health",
+    "title": "Couple Counselling",
+    "description": "Therapy session for couples to improve communication and resolve conflicts.",
+    "duration": 60,
+    "price": 280,
+    "priceType": "fixed",
+    "images": []
+  },
+  {
+    "id": "service_015",
+    "providerId": "provider_008",
+    "category": "Dermatology",
+    "title": "Skin Consultation",
+    "description": "Expert skin analysis and personalised treatment recommendations.",
+    "duration": 30,
+    "price": 150,
+    "priceType": "fixed",
+    "images": []
+  },
+  {
+    "id": "service_016",
+    "providerId": "provider_008",
+    "category": "Dermatology",
+    "title": "Acne Treatment",
+    "description": "Advanced acne treatment including extraction and LED therapy.",
+    "duration": 60,
+    "price": 220,
+    "priceType": "fixed",
+    "images": []
+  },
+  {
+    "id": "service_017",
+    "providerId": "provider_009",
+    "category": "Ayurveda",
+    "title": "Naturopathic Consultation",
+    "description": "Holistic health assessment and natural treatment plan.",
+    "duration": 60,
+    "price": 120,
+    "priceType": "fixed",
+    "images": []
+  },
+  {
+    "id": "service_018",
+    "providerId": "provider_009",
+    "category": "Ayurveda",
+    "title": "Detox & Wellness Program",
+    "description": "Complete detoxification and rejuvenation therapy.",
+    "duration": 0,
+    "price": 600,
+    "priceType": "package",
+    "images": []
+  },
+  {
+    "id": "service_019",
+    "providerId": "provider_010",
+    "category": "Eye Care",
+    "title": "Comprehensive Eye Exam",
+    "description": "Complete eye examination including vision test and eye health check.",
+    "duration": 45,
+    "price": 80,
+    "priceType": "fixed",
+    "images": []
+  },
+  {
+    "id": "service_020",
+    "providerId": "provider_010",
+    "category": "Eye Care",
+    "title": "LASIK Consultation",
+    "description": "Pre-LASIK evaluation to determine eligibility for laser vision correction.",
+    "duration": 60,
+    "price": 150,
+    "priceType": "fixed",
+    "images": []
+  }
+]

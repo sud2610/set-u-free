@@ -1,4 +1,4 @@
- # Data Folder
+# Data Folder
 
 This folder contains JSON files for seeding the Firebase Firestore database.
 
