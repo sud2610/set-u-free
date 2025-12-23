@@ -405,16 +405,9 @@ export function ProviderDetailContent({ providerId }: ProviderDetailContentProps
                               <Clock className="w-4 h-4" />
                               <span>{service.duration} min</span>
                             </div>
-                            {service.price !== undefined && service.price > 0 && (
-                              <div className="text-sm font-medium text-yellow-600">
-                                ${service.price}
-                              </div>
-                            )}
-                            {service.price === 0 && (
-                              <div className="text-sm font-medium text-green-600">
-                                Free Consultation
-                              </div>
-                            )}
+                            <div className="text-sm font-medium text-green-600">
+                              Free Consultation
+                            </div>
                           </div>
                         </div>
                       </div>
