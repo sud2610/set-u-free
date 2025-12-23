@@ -817,10 +817,10 @@ export async function searchProviders(filters: SearchFilter): Promise<Provider[]
       const searchLower = filters.searchQuery.toLowerCase();
       providers = providers.filter(
         (provider) =>
-          provider.businessName.toLowerCase().includes(searchLower) ||
-          provider.description.toLowerCase().includes(searchLower) ||
-          provider.bio.toLowerCase().includes(searchLower) ||
-          provider.categories.some((cat) => cat.toLowerCase().includes(searchLower))
+          (provider.businessName || '').toLowerCase().includes(searchLower) ||
+          (provider.description || '').toLowerCase().includes(searchLower) ||
+          (provider.bio || '').toLowerCase().includes(searchLower) ||
+          (provider.categories || []).some((cat) => cat.toLowerCase().includes(searchLower))
       );
     }
 

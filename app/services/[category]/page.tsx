@@ -158,11 +158,7 @@ export default async function CategoryPage({ params, searchParams }: PageProps) 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Breadcrumb */}
           <nav className="flex items-center gap-2 text-sm mb-6">
-            <Link href="/" className="text-gray-500 hover:text-orange-500 transition-colors">
-              Home
-            </Link>
-            <ChevronRight className="w-4 h-4 text-gray-400" />
-            <Link href="/services" className="text-gray-500 hover:text-orange-500 transition-colors">
+            <Link href="/" className="text-gray-500 hover:text-yellow-600 transition-colors">
               Services
             </Link>
             <ChevronRight className="w-4 h-4 text-gray-400" />

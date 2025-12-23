@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
 import {
   Star,
   MapPin,
@@ -17,6 +16,10 @@ import {
   ChevronRight,
   MessageSquare,
   Users,
+  Globe,
+  ExternalLink,
+  Navigation,
+  Building2,
 } from 'lucide-react';
 import { toast } from 'react-hot-toast';
 import { BookingModal } from '@/components/providers/BookingModal';
@@ -30,163 +33,6 @@ interface ProviderDetailContentProps {
   providerId: string;
 }
 
-// ==================== MOCK DATA ====================
-
-const mockProvider: Provider = {
-  uid: '1',
-  businessName: 'Smile Dental Clinic',
-  description: 'Expert dental care with modern technology and experienced professionals. We provide comprehensive dental services for the whole family.',
-  categories: ['Dentist', 'Dental Care', 'Orthodontics'],
-  location: 'Shop 12, Westfield Shopping Centre, Bondi Junction',
-  city: 'Sydney',
-  bio: `Welcome to Smile Dental Clinic, where your oral health is our top priority. With over 15 years of experience in dental care, we provide comprehensive services ranging from routine check-ups to advanced cosmetic procedures.
-
-Our team of certified dentists uses state-of-the-art equipment and follows the latest techniques to ensure you receive the best possible care. We believe in making dental visits comfortable and stress-free for all our patients.
-
-Services we offer:
-• General Dentistry (cleanings, fillings, extractions)
-• Cosmetic Dentistry (whitening, veneers)
-• Orthodontics (braces, aligners)
-• Pediatric Dentistry
-• Emergency Dental Care
-
-Book your free consultation today and take the first step towards a healthier, brighter smile!`,
-  profileImage: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800',
-  rating: 4.8,
-  reviewCount: 234,
-  verified: true,
-  consultationSlots: [
-    { date: '2024-01-25', startTime: '09:00', endTime: '09:30', available: true },
-    { date: '2024-01-25', startTime: '10:00', endTime: '10:30', available: true },
-    { date: '2024-01-25', startTime: '11:00', endTime: '11:30', available: false },
-    { date: '2024-01-25', startTime: '14:00', endTime: '14:30', available: true },
-  ],
-  createdAt: new Date('2022-01-15'),
-  updatedAt: new Date('2024-01-20'),
-};
-
-const mockServices: Service[] = [
-  {
-    id: 's1',
-    providerId: '1',
-    category: 'Dentist',
-    title: 'Dental Consultation',
-    description: 'Comprehensive dental check-up and consultation with our expert dentist.',
-    duration: 30,
-    images: [],
-    createdAt: new Date(),
-  },
-  {
-    id: 's2',
-    providerId: '1',
-    category: 'Dentist',
-    title: 'Teeth Cleaning',
-    description: 'Professional teeth cleaning to remove plaque and tartar buildup.',
-    duration: 45,
-    images: [],
-    createdAt: new Date(),
-  },
-  {
-    id: 's3',
-    providerId: '1',
-    category: 'Dentist',
-    title: 'Teeth Whitening',
-    description: 'Advanced teeth whitening treatment for a brighter smile.',
-    duration: 60,
-    images: [],
-    createdAt: new Date(),
-  },
-];
-
-const mockReviews: (Review & { userName: string })[] = [
-  {
-    id: 'r1',
-    userId: 'u1',
-    providerId: '1',
-    rating: 5,
-    comment: 'Excellent service! Dr. Smith was very professional and made me feel comfortable throughout the procedure. Highly recommended for anyone looking for quality dental care.',
-    createdAt: new Date('2024-01-15'),
-    userName: 'James Wilson',
-  },
-  {
-    id: 'r2',
-    userId: 'u2',
-    providerId: '1',
-    rating: 4,
-    comment: 'Good experience overall. The clinic is clean and well-maintained. Wait time was a bit longer than expected but the treatment was great.',
-    createdAt: new Date('2024-01-10'),
-    userName: 'Sarah Thompson',
-  },
-  {
-    id: 'r3',
-    userId: 'u3',
-    providerId: '1',
-    rating: 5,
-    comment: 'Best dental clinic in the area! The staff is friendly and the prices are reasonable. Got my teeth cleaned and whitened - very happy with the results.',
-    createdAt: new Date('2024-01-05'),
-    userName: 'Michael Chen',
-  },
-  {
-    id: 'r4',
-    userId: 'u4',
-    providerId: '1',
-    rating: 5,
-    comment: 'My whole family visits this clinic. They are great with kids too. Very gentle and patient. Thank you for the wonderful service!',
-    createdAt: new Date('2024-01-02'),
-    userName: 'Emma Roberts',
-  },
-];
-
-const mockRelatedProviders: Provider[] = [
-  {
-    uid: '10',
-    businessName: 'Perfect Smile Dental',
-    description: 'Advanced dental treatments with care.',
-    categories: ['Dentist', 'Orthodontics'],
-    location: 'Surry Hills',
-    city: 'Sydney',
-    bio: 'Specialized in orthodontics and cosmetic dentistry.',
-    profileImage: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=400',
-    rating: 4.9,
-    reviewCount: 178,
-    verified: true,
-    consultationSlots: [],
-    createdAt: new Date(),
-    updatedAt: new Date(),
-  },
-  {
-    uid: '11',
-    businessName: 'DentalCare Plus',
-    description: 'Modern dental clinic with latest equipment.',
-    categories: ['Dentist', 'Dental Care'],
-    location: 'Parramatta',
-    city: 'Sydney',
-    bio: 'Quality dental care for the whole family.',
-    profileImage: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=400',
-    rating: 4.7,
-    reviewCount: 156,
-    verified: true,
-    consultationSlots: [],
-    createdAt: new Date(),
-    updatedAt: new Date(),
-  },
-  {
-    uid: '12',
-    businessName: 'Bright Teeth Clinic',
-    description: 'Your smile is our priority.',
-    categories: ['Dentist', 'Cosmetic Dentistry'],
-    location: 'Manly',
-    city: 'Sydney',
-    bio: 'Expert cosmetic dentistry services.',
-    profileImage: 'https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=400',
-    rating: 4.6,
-    reviewCount: 98,
-    verified: false,
-    consultationSlots: [],
-    createdAt: new Date(),
-    updatedAt: new Date(),
-  },
-];
 
 // ==================== PROVIDER DETAIL CONTENT ====================
 
@@ -207,41 +53,44 @@ export function ProviderDetailContent({ providerId }: ProviderDetailContentProps
     const fetchData = async () => {
       setIsLoading(true);
       try {
-        // Fetch provider
+        // Fetch provider first
         const providerData = await getProvider(providerId);
         
         if (providerData) {
           setProvider(providerData);
           
-          // Fetch related data
-          const [servicesData, reviewsData, relatedData] = await Promise.all([
-            getServices(providerId),
-            getProviderReviews(providerId),
-            getProvidersByCategory(providerData.categories[0] || ''),
-          ]);
+          // Fetch related data separately - don't let failures prevent page from loading
+          try {
+            const servicesData = await getServices(providerId);
+            setServices(servicesData);
+          } catch (e) {
+            console.warn('Failed to fetch services:', e);
+            setServices([]);
+          }
           
-          setServices(servicesData.length > 0 ? servicesData : mockServices);
-          setReviews(reviewsData.length > 0 
-            ? reviewsData.map(r => ({ ...r, userName: 'Anonymous User' })) 
-            : mockReviews
-          );
-          setRelatedProviders(
-            relatedData.filter(p => p.uid !== providerId).slice(0, 3) || mockRelatedProviders
-          );
+          try {
+            const reviewsData = await getProviderReviews(providerId);
+            setReviews(reviewsData.map(r => ({ ...r, userName: 'Anonymous User' })));
+          } catch (e) {
+            console.warn('Failed to fetch reviews:', e);
+            setReviews([]);
+          }
+          
+          try {
+            const relatedData = await getProvidersByCategory(providerData.categories[0] || '');
+            setRelatedProviders(relatedData.filter(p => p.uid !== providerId).slice(0, 3));
+          } catch (e) {
+            console.warn('Failed to fetch related providers:', e);
+            setRelatedProviders([]);
+          }
         } else {
-          // Use mock data for development
-          setProvider(mockProvider);
-          setServices(mockServices);
-          setReviews(mockReviews);
-          setRelatedProviders(mockRelatedProviders);
+          // Provider not found
+          setProvider(null);
         }
       } catch (error) {
         console.error('Error fetching provider:', error);
-        // Fallback to mock data
-        setProvider(mockProvider);
-        setServices(mockServices);
-        setReviews(mockReviews);
-        setRelatedProviders(mockRelatedProviders);
+        // Provider fetch failed
+        setProvider(null);
       } finally {
         setIsLoading(false);
       }
@@ -285,7 +134,29 @@ export function ProviderDetailContent({ providerId }: ProviderDetailContentProps
   // ==================== NOT FOUND ====================
 
   if (!provider) {
-    notFound();
+    return (
+      <section className="py-16 lg:py-24">
+        <div className="max-w-2xl mx-auto px-4 text-center">
+          <div className="w-24 h-24 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
+            <MapPin className="w-12 h-12 text-yellow-500" />
+          </div>
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+            Provider Not Found
+          </h1>
+          <p className="text-gray-600 mb-8">
+            Sorry, we couldn&apos;t find the provider you&apos;re looking for. 
+            They may have been removed or the link might be incorrect.
+          </p>
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold rounded-xl transition-colors"
+          >
+            <ChevronRight className="w-5 h-5 rotate-180" />
+            Back to Home
+          </Link>
+        </div>
+      </section>
+    );
   }
 
   // ==================== RENDER ====================
@@ -297,17 +168,13 @@ export function ProviderDetailContent({ providerId }: ProviderDetailContentProps
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
           {/* Breadcrumb */}
           <nav className="flex items-center gap-2 text-sm mb-6">
-            <Link href="/" className="text-gray-500 hover:text-orange-500">
-              Home
-            </Link>
-            <ChevronRight className="w-4 h-4 text-gray-400" />
-            <Link href="/" className="text-gray-500 hover:text-orange-500">
+            <Link href="/" className="text-gray-500 hover:text-yellow-600">
               Services
             </Link>
             <ChevronRight className="w-4 h-4 text-gray-400" />
-            <Link
-              href={`/services/${provider.categories[0]?.toLowerCase()}`}
-              className="text-gray-500 hover:text-orange-500"
+            <Link 
+              href={`/?category=${encodeURIComponent(provider.categories[0])}`}
+              className="text-yellow-600 hover:text-yellow-700 font-medium"
             >
               {provider.categories[0]}
             </Link>
@@ -329,8 +196,8 @@ export function ProviderDetailContent({ providerId }: ProviderDetailContentProps
                   priority
                 />
               ) : (
-                <div className="w-full h-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center">
-                  <span className="text-6xl font-bold text-white">
+                <div className="w-full h-full bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center">
+                  <span className="text-6xl font-bold text-gray-900">
                     {provider.businessName.substring(0, 2).toUpperCase()}
                   </span>
                 </div>
@@ -356,7 +223,7 @@ export function ProviderDetailContent({ providerId }: ProviderDetailContentProps
                     {provider.categories.map((cat, index) => (
                       <span
                         key={index}
-                        className="px-3 py-1 bg-orange-100 text-orange-700 text-sm font-medium rounded-full"
+                        className="px-3 py-1 bg-yellow-100 text-yellow-700 text-sm font-medium rounded-full"
                       >
                         {cat}
                       </span>
@@ -435,17 +302,17 @@ export function ProviderDetailContent({ providerId }: ProviderDetailContentProps
                 </div>
               </div>
 
-              {/* CTA Button */}
-              <button
+              {/* CTA Button - Hidden for MVP, will be implemented later */}
+              {/* <button
                 onClick={() => {
                   setSelectedService(services[0] || null);
                   setIsBookingModalOpen(true);
                 }}
-                className="w-full sm:w-auto mt-6 px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold rounded-xl shadow-lg shadow-orange-500/25 transition-all flex items-center justify-center gap-2"
+                className="w-full sm:w-auto mt-6 px-8 py-4 bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-gray-900 font-semibold rounded-xl shadow-lg shadow-yellow-500/25 transition-all flex items-center justify-center gap-2"
               >
                 <Calendar className="w-5 h-5" />
                 Book Free Consultation
-              </button>
+              </button> */}
             </div>
           </div>
         </div>
@@ -461,8 +328,57 @@ export function ProviderDetailContent({ providerId }: ProviderDetailContentProps
               <div className="bg-white rounded-2xl p-6 lg:p-8 shadow-sm border border-gray-100">
                 <h2 className="text-xl font-bold text-gray-900 mb-4">About</h2>
                 <div className="prose prose-gray max-w-none">
-                  <p className="text-gray-600 whitespace-pre-line">{provider.bio}</p>
+                  <p className="text-gray-600 whitespace-pre-line leading-relaxed">
+                    {provider.bio || provider.description || 'No description available.'}
+                  </p>
+                  
+                  {/* Additional Details */}
+                  <div className="mt-6 grid sm:grid-cols-2 gap-4">
+                    {/* Location Details */}
+                    <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
+                      <Building2 className="w-5 h-5 text-yellow-500 mt-0.5 shrink-0" />
+                      <div>
+                        <p className="font-medium text-gray-900 text-sm">Location</p>
+                        <p className="text-gray-600 text-sm">
+                          {provider.location}
+                          {(provider as any).postcode && `, ${(provider as any).postcode}`}
+                        </p>
+                        <p className="text-gray-500 text-sm">
+                          {provider.city}{(provider as any).state && `, ${(provider as any).state}`}
+                        </p>
+                      </div>
+                    </div>
+                    
+                    {/* Free Consultation Badge */}
+                    <div className="flex items-start gap-3 p-3 bg-green-50 rounded-lg">
+                      <BadgeCheck className="w-5 h-5 text-green-500 mt-0.5 shrink-0" />
+                      <div>
+                        <p className="font-medium text-green-700 text-sm">Free Consultation</p>
+                        <p className="text-green-600 text-sm">
+                          No payment required for initial consultation
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
+                
+                {/* Business Hours */}
+                {(provider as any).businessHours && (
+                  <div className="mt-6 pt-6 border-t border-gray-100">
+                    <h3 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                      <Clock className="w-5 h-5 text-yellow-500" />
+                      Business Hours
+                    </h3>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      {Object.entries((provider as any).businessHours).map(([day, hours]) => (
+                        <div key={day} className="flex justify-between text-sm py-1.5 px-3 bg-gray-50 rounded-lg">
+                          <span className="font-medium text-gray-700 capitalize">{day}</span>
+                          <span className="text-gray-600">{hours as string}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
 
               {/* Services Section */}
@@ -470,33 +386,67 @@ export function ProviderDetailContent({ providerId }: ProviderDetailContentProps
                 <h2 className="text-xl font-bold text-gray-900 mb-6">
                   Services Offered
                 </h2>
-                <div className="space-y-4">
-                  {services.map((service) => (
-                    <div
-                      key={service.id}
-                      className="flex flex-col sm:flex-row sm:items-center justify-between p-4 bg-gray-50 rounded-xl hover:bg-orange-50 transition-colors group"
-                    >
-                      <div className="mb-3 sm:mb-0">
-                        <h3 className="font-semibold text-gray-900 group-hover:text-orange-600 transition-colors">
-                          {service.title}
-                        </h3>
-                        <p className="text-sm text-gray-500 mt-1">
-                          {service.description}
-                        </p>
-                        <div className="flex items-center gap-2 mt-2 text-sm text-gray-400">
-                          <Clock className="w-4 h-4" />
-                          <span>{service.duration} min</span>
+                {services.length > 0 ? (
+                  <div className="space-y-4">
+                    {services.map((service) => (
+                      <div
+                        key={service.id}
+                        className="flex flex-col sm:flex-row sm:items-center justify-between p-4 bg-gray-50 rounded-xl hover:bg-yellow-50 transition-colors group"
+                      >
+                        <div className="mb-3 sm:mb-0">
+                          <h3 className="font-semibold text-gray-900 group-hover:text-yellow-600 transition-colors">
+                            {service.title}
+                          </h3>
+                          <p className="text-sm text-gray-500 mt-1">
+                            {service.description}
+                          </p>
+                          <div className="flex items-center gap-4 mt-2">
+                            <div className="flex items-center gap-1 text-sm text-gray-400">
+                              <Clock className="w-4 h-4" />
+                              <span>{service.duration} min</span>
+                            </div>
+                            {service.price !== undefined && service.price > 0 && (
+                              <div className="text-sm font-medium text-yellow-600">
+                                ${service.price}
+                              </div>
+                            )}
+                            {service.price === 0 && (
+                              <div className="text-sm font-medium text-green-600">
+                                Free Consultation
+                              </div>
+                            )}
+                          </div>
                         </div>
                       </div>
-                      <button
-                        onClick={() => handleBookService(service)}
-                        className="px-5 py-2.5 bg-orange-500 hover:bg-orange-600 text-white font-medium rounded-lg transition-colors whitespace-nowrap"
+                    ))}
+                  </div>
+                ) : (
+                  /* Show categories as services when no specific services exist */
+                  <div className="space-y-4">
+                    {provider.categories.map((category, index) => (
+                      <div
+                        key={index}
+                        className="flex flex-col sm:flex-row sm:items-center justify-between p-4 bg-gray-50 rounded-xl"
                       >
-                        Book Now
-                      </button>
-                    </div>
-                  ))}
-                </div>
+                        <div>
+                          <h3 className="font-semibold text-gray-900">
+                            {category} Services
+                          </h3>
+                          <p className="text-sm text-gray-500 mt-1">
+                            Professional {category.toLowerCase()} services available. Contact us for details.
+                          </p>
+                          <div className="flex items-center gap-1 mt-2 text-sm text-green-600 font-medium">
+                            <BadgeCheck className="w-4 h-4" />
+                            <span>Free Consultation Available</span>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                    <p className="text-sm text-gray-500 text-center pt-4 border-t border-gray-100">
+                      Contact the provider directly for detailed service information and pricing.
+                    </p>
+                  </div>
+                )}
               </div>
 
               {/* Reviews Section */}
@@ -508,7 +458,7 @@ export function ProviderDetailContent({ providerId }: ProviderDetailContentProps
                 </div>
 
                 {/* Rating Summary */}
-                <div className="flex items-center gap-6 p-4 bg-orange-50 rounded-xl mb-6">
+                <div className="flex items-center gap-6 p-4 bg-yellow-50 rounded-xl mb-6">
                   <div className="text-center">
                     <div className="text-4xl font-bold text-gray-900">
                       {provider.rating}
@@ -532,49 +482,55 @@ export function ProviderDetailContent({ providerId }: ProviderDetailContentProps
                 </div>
 
                 {/* Reviews List */}
-                <div className="space-y-6">
-                  {reviews.map((review) => (
-                    <div
-                      key={review.id}
-                      className="pb-6 border-b border-gray-100 last:border-0 last:pb-0"
-                    >
-                      <div className="flex items-start gap-4">
-                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center shrink-0">
-                          <span className="text-sm font-semibold text-white">
-                            {review.userName.charAt(0)}
-                          </span>
-                        </div>
-                        <div className="flex-1">
-                          <div className="flex items-center justify-between">
-                            <h4 className="font-semibold text-gray-900">
-                              {review.userName}
-                            </h4>
-                            <span className="text-sm text-gray-400">
-                              {new Date(review.createdAt).toLocaleDateString('en-IN', {
-                                day: 'numeric',
-                                month: 'short',
-                                year: 'numeric',
-                              })}
+                {reviews.length > 0 ? (
+                  <div className="space-y-6">
+                    {reviews.map((review) => (
+                      <div
+                        key={review.id}
+                        className="pb-6 border-b border-gray-100 last:border-0 last:pb-0"
+                      >
+                        <div className="flex items-start gap-4">
+                          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center shrink-0">
+                            <span className="text-sm font-semibold text-white">
+                              {review.userName.charAt(0)}
                             </span>
                           </div>
-                          <div className="flex items-center gap-0.5 mt-1">
-                            {[1, 2, 3, 4, 5].map((star) => (
-                              <Star
-                                key={star}
-                                className={`w-4 h-4 ${
-                                  star <= review.rating
-                                    ? 'text-yellow-400 fill-yellow-400'
-                                    : 'text-gray-300'
-                                }`}
-                              />
-                            ))}
+                          <div className="flex-1">
+                            <div className="flex items-center justify-between">
+                              <h4 className="font-semibold text-gray-900">
+                                {review.userName}
+                              </h4>
+                              <span className="text-sm text-gray-400">
+                                {new Date(review.createdAt).toLocaleDateString('en-AU', {
+                                  day: 'numeric',
+                                  month: 'short',
+                                  year: 'numeric',
+                                })}
+                              </span>
+                            </div>
+                            <div className="flex items-center gap-0.5 mt-1">
+                              {[1, 2, 3, 4, 5].map((star) => (
+                                <Star
+                                  key={star}
+                                  className={`w-4 h-4 ${
+                                    star <= review.rating
+                                      ? 'text-yellow-400 fill-yellow-400'
+                                      : 'text-gray-300'
+                                  }`}
+                                />
+                              ))}
+                            </div>
+                            <p className="text-gray-600 mt-2">{review.comment}</p>
                           </div>
-                          <p className="text-gray-600 mt-2">{review.comment}</p>
                         </div>
                       </div>
-                    </div>
-                  ))}
-                </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="text-center py-8">
+                    <p className="text-gray-500">No reviews yet. Be the first to leave a review!</p>
+                  </div>
+                )}
 
                 {reviews.length > 4 && (
                   <button className="w-full mt-6 py-3 bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium rounded-xl transition-colors">
@@ -586,8 +542,8 @@ export function ProviderDetailContent({ providerId }: ProviderDetailContentProps
 
             {/* Right Column - Sidebar */}
             <div className="space-y-6">
-              {/* Availability Card */}
-              <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 sticky top-24">
+              {/* Availability Card - Hidden for MVP, will be implemented later */}
+              {/* <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 sticky top-24">
                 <h3 className="text-lg font-bold text-gray-900 mb-4">
                   Book Free Consultation
                 </h3>
@@ -612,7 +568,7 @@ export function ProviderDetailContent({ providerId }: ProviderDetailContentProps
                     setSelectedService(services[0] || null);
                     setIsBookingModalOpen(true);
                   }}
-                  className="w-full py-3.5 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold rounded-xl shadow-lg shadow-orange-500/25 transition-all"
+                  className="w-full py-3.5 bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-gray-900 font-semibold rounded-xl shadow-lg shadow-yellow-500/25 transition-all"
                 >
                   Book Now
                 </button>
@@ -620,22 +576,105 @@ export function ProviderDetailContent({ providerId }: ProviderDetailContentProps
                 <p className="text-center text-sm text-gray-500 mt-4">
                   No payment required
                 </p>
-              </div>
+              </div> */}
 
               {/* Contact Card */}
-              <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+              <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 sticky top-24">
                 <h3 className="text-lg font-bold text-gray-900 mb-4">
                   Contact Information
                 </h3>
-                <div className="space-y-3">
-                  <div className="flex items-center gap-3 text-gray-600">
-                    <MapPin className="w-5 h-5 text-gray-400" />
-                    <span className="text-sm">{provider.location}, {provider.city}</span>
+                
+                {/* Verified Badge */}
+                {provider.verified && (
+                  <div className="flex items-center gap-2 p-3 bg-green-50 rounded-xl mb-4">
+                    <BadgeCheck className="w-6 h-6 text-green-500" />
+                    <div>
+                      <p className="font-semibold text-green-700 text-sm">Verified Provider</p>
+                      <p className="text-green-600 text-xs">Identity & credentials verified</p>
+                    </div>
                   </div>
-                  <button className="w-full flex items-center justify-center gap-2 py-2.5 border-2 border-gray-200 hover:border-orange-300 text-gray-700 hover:text-orange-600 font-medium rounded-xl transition-all">
-                    <MessageSquare className="w-5 h-5" />
-                    Send Message
-                  </button>
+                )}
+                
+                <div className="space-y-3">
+                  {/* Location */}
+                  <div className="flex items-start gap-3 text-gray-600">
+                    <MapPin className="w-5 h-5 text-gray-400 shrink-0 mt-0.5" />
+                    <div className="text-sm">
+                      <p>{provider.location}</p>
+                      <p className="text-gray-500">{provider.city}{(provider as any).state && `, ${(provider as any).state}`}</p>
+                    </div>
+                  </div>
+                  
+                  {/* Phone - Call for Booking */}
+                  {(provider as any).phone && (
+                    <a 
+                      href={`tel:${(provider as any).phone}`}
+                      className="w-full flex items-center justify-center gap-2 py-3 bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-gray-900 font-semibold rounded-xl shadow-lg shadow-yellow-500/25 transition-all"
+                    >
+                      <Phone className="w-5 h-5" />
+                      Call for Booking
+                    </a>
+                  )}
+                  
+                  {/* Phone Number Display */}
+                  {(provider as any).phone && (
+                    <div className="flex items-center gap-3 text-gray-600 p-2 bg-gray-50 rounded-lg">
+                      <Phone className="w-4 h-4 text-gray-400" />
+                      <span className="text-sm font-medium">{(provider as any).phone}</span>
+                    </div>
+                  )}
+                  
+                  {/* Website */}
+                  {(provider as any).website && (
+                    <a 
+                      href={(provider as any).website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-center gap-2 py-2.5 border-2 border-gray-200 hover:border-yellow-400 text-gray-700 hover:text-yellow-600 font-medium rounded-xl transition-all"
+                    >
+                      <Globe className="w-5 h-5" />
+                      Visit Website
+                      <ExternalLink className="w-4 h-4" />
+                    </a>
+                  )}
+                  
+                  {/* Get Directions */}
+                  {(provider as any).googleMapsUrl ? (
+                    <a 
+                      href={(provider as any).googleMapsUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-center gap-2 py-2.5 border-2 border-gray-200 hover:border-blue-400 text-gray-700 hover:text-blue-600 font-medium rounded-xl transition-all"
+                    >
+                      <Navigation className="w-5 h-5" />
+                      Get Directions
+                    </a>
+                  ) : (
+                    <a 
+                      href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(provider.location + ', ' + provider.city)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-center gap-2 py-2.5 border-2 border-gray-200 hover:border-blue-400 text-gray-700 hover:text-blue-600 font-medium rounded-xl transition-all"
+                    >
+                      <Navigation className="w-5 h-5" />
+                      Get Directions
+                    </a>
+                  )}
+                </div>
+                
+                {/* Rating Summary in Sidebar */}
+                <div className="mt-6 pt-6 border-t border-gray-100">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-sm text-gray-500">Overall Rating</span>
+                    <div className="flex items-center gap-1">
+                      <Star className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+                      <span className="font-bold text-gray-900">{provider.rating}</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-gray-500">Total Reviews</span>
+                    <span className="font-medium text-gray-700">{provider.reviewCount}</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -649,8 +688,8 @@ export function ProviderDetailContent({ providerId }: ProviderDetailContentProps
                   Similar Providers
                 </h2>
                 <Link
-                  href={`/services/${provider.categories[0]?.toLowerCase()}`}
-                  className="text-orange-600 hover:text-orange-700 font-medium flex items-center gap-1"
+                  href="/services"
+                  className="text-yellow-600 hover:text-yellow-700 font-medium flex items-center gap-1"
                 >
                   View All
                   <ChevronRight className="w-4 h-4" />
@@ -666,8 +705,8 @@ export function ProviderDetailContent({ providerId }: ProviderDetailContentProps
         </div>
       </section>
 
-      {/* Booking Modal */}
-      {selectedService && (
+      {/* Booking Modal - Hidden for MVP, will be implemented later */}
+      {/* {selectedService && (
         <BookingModal
           provider={provider}
           service={selectedService}
@@ -680,7 +719,7 @@ export function ProviderDetailContent({ providerId }: ProviderDetailContentProps
             console.log('Booking confirmed:', booking);
           }}
         />
-      )}
+      )} */}
     </>
   );
 }

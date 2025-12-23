@@ -17,16 +17,16 @@ interface CategoryServicesContentProps {
 // ==================== CONSTANTS ====================
 
 const defaultCities = [
-  'Mumbai',
-  'Delhi',
-  'Bangalore',
-  'Hyderabad',
-  'Chennai',
-  'Kolkata',
-  'Pune',
-  'Ahmedabad',
-  'Jaipur',
-  'Lucknow',
+  'Sydney',
+  'Melbourne',
+  'Brisbane',
+  'Perth',
+  'Adelaide',
+  'Gold Coast',
+  'Canberra',
+  'Newcastle',
+  'Hobart',
+  'Darwin',
 ];
 
 const ratingOptions = [
@@ -35,111 +35,6 @@ const ratingOptions = [
   { value: '4.5', label: '4.5+ Stars' },
 ];
 
-// Mock providers for development (filtered by category)
-const getMockProviders = (categoryName: string): Provider[] => {
-  const allMock: Provider[] = [
-    {
-      uid: '1',
-      businessName: 'Smile Dental Clinic',
-      description: 'Expert dental care with modern technology.',
-      categories: ['Dentist', 'Dental Care'],
-      location: 'Andheri West',
-      city: 'Mumbai',
-      bio: 'Comprehensive dental services for the whole family.',
-      profileImage: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=400',
-      rating: 4.8,
-      reviewCount: 234,
-      verified: true,
-      consultationSlots: [],
-      createdAt: new Date(),
-      updatedAt: new Date(),
-    },
-    {
-      uid: '2',
-      businessName: 'Perfect Smile Dental',
-      description: 'Advanced dental treatments with care.',
-      categories: ['Dentist', 'Orthodontics'],
-      location: 'Bandra',
-      city: 'Mumbai',
-      bio: 'Specialized in orthodontics and cosmetic dentistry.',
-      profileImage: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=400',
-      rating: 4.9,
-      reviewCount: 178,
-      verified: true,
-      consultationSlots: [],
-      createdAt: new Date(),
-      updatedAt: new Date(),
-    },
-    {
-      uid: '3',
-      businessName: 'Glamour Beauty Studio',
-      description: 'Premium beauty and spa services.',
-      categories: ['Beauty', 'Spa', 'Skincare'],
-      location: 'Koramangala',
-      city: 'Bangalore',
-      bio: 'Transform yourself with our expert treatments.',
-      profileImage: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=400',
-      rating: 4.9,
-      reviewCount: 189,
-      verified: true,
-      consultationSlots: [],
-      createdAt: new Date(),
-      updatedAt: new Date(),
-    },
-    {
-      uid: '4',
-      businessName: 'FitLife Gym & Training',
-      description: 'State-of-the-art fitness center.',
-      categories: ['Gym', 'Personal Training', 'Fitness'],
-      location: 'Connaught Place',
-      city: 'Delhi',
-      bio: 'Achieve your fitness goals with expert trainers.',
-      profileImage: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400',
-      rating: 4.7,
-      reviewCount: 156,
-      verified: true,
-      consultationSlots: [],
-      createdAt: new Date(),
-      updatedAt: new Date(),
-    },
-    {
-      uid: '5',
-      businessName: 'Serenity Yoga Center',
-      description: 'Traditional and modern yoga classes.',
-      categories: ['Yoga', 'Meditation', 'Wellness'],
-      location: 'Bandra',
-      city: 'Mumbai',
-      bio: 'Find your inner peace with expert instructors.',
-      profileImage: 'https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=400',
-      rating: 4.8,
-      reviewCount: 267,
-      verified: true,
-      consultationSlots: [],
-      createdAt: new Date(),
-      updatedAt: new Date(),
-    },
-    {
-      uid: '6',
-      businessName: 'NutriWell Clinic',
-      description: 'Personalized nutrition plans.',
-      categories: ['Nutrition', 'Diet Planning', 'Wellness'],
-      location: 'HSR Layout',
-      city: 'Bangalore',
-      bio: 'Transform your health with certified experts.',
-      profileImage: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=400',
-      rating: 4.6,
-      reviewCount: 145,
-      verified: true,
-      consultationSlots: [],
-      createdAt: new Date(),
-      updatedAt: new Date(),
-    },
-  ];
-
-  return allMock.filter((p) =>
-    p.categories.some((c) => c.toLowerCase().includes(categoryName.toLowerCase()))
-  );
-};
 
 // ==================== CATEGORY SERVICES CONTENT ====================
 
@@ -181,59 +76,35 @@ export function CategoryServicesContent({
       try {
         const results = await getProvidersByCategory(categoryName);
 
-        if (results.length === 0) {
-          // Use mock data as fallback
-          let mockResults = getMockProviders(categoryName);
+        // Apply client-side filters to Firestore results
+        let filtered = results;
 
-          // Apply filters
-          if (searchQuery) {
-            const query = searchQuery.toLowerCase();
-            mockResults = mockResults.filter(
-              (p) =>
-                p.businessName.toLowerCase().includes(query) ||
-                p.description.toLowerCase().includes(query)
-            );
-          }
-
-          if (selectedCity) {
-            mockResults = mockResults.filter(
-              (p) => p.city.toLowerCase() === selectedCity.toLowerCase()
-            );
-          }
-
-          if (minRating) {
-            mockResults = mockResults.filter((p) => p.rating >= parseFloat(minRating));
-          }
-
-          setProviders(mockResults);
-        } else {
-          // Apply client-side filters to Firestore results
-          let filtered = results;
-
-          if (searchQuery) {
-            const query = searchQuery.toLowerCase();
-            filtered = filtered.filter(
-              (p) =>
-                p.businessName.toLowerCase().includes(query) ||
-                p.description.toLowerCase().includes(query)
-            );
-          }
-
-          if (selectedCity) {
-            filtered = filtered.filter(
-              (p) => p.city.toLowerCase() === selectedCity.toLowerCase()
-            );
-          }
-
-          if (minRating) {
-            filtered = filtered.filter((p) => p.rating >= parseFloat(minRating));
-          }
-
-          setProviders(filtered);
+        if (searchQuery) {
+          const query = searchQuery.toLowerCase();
+          filtered = filtered.filter(
+            (p) =>
+              (p.businessName || '').toLowerCase().includes(query) ||
+              (p.description || '').toLowerCase().includes(query)
+          );
         }
+
+        if (selectedCity) {
+          filtered = filtered.filter(
+            (p) => (p.city || '').toLowerCase() === selectedCity.toLowerCase()
+          );
+        }
+
+        if (minRating) {
+          filtered = filtered.filter((p) => p.rating >= parseFloat(minRating));
+        }
+
+        // Sort by rating (descending)
+        filtered.sort((a, b) => b.rating - a.rating);
+
+        setProviders(filtered);
       } catch (error) {
         console.error('Error fetching providers:', error);
-        setProviders(getMockProviders(categoryName));
+        setProviders([]);
       } finally {
         setIsLoading(false);
       }
@@ -283,7 +154,7 @@ export function CategoryServicesContent({
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder={`Search ${categoryName} providers...`}
-                className="w-full pl-12 pr-4 py-3.5 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
+                className="w-full pl-12 pr-4 py-3.5 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all"
               />
             </div>
 
@@ -293,7 +164,7 @@ export function CategoryServicesContent({
               <select
                 value={selectedCity}
                 onChange={(e) => setSelectedCity(e.target.value)}
-                className="w-full pl-12 pr-10 py-3.5 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent appearance-none cursor-pointer transition-all"
+                className="w-full pl-12 pr-10 py-3.5 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent appearance-none cursor-pointer transition-all"
               >
                 <option value="">All Cities</option>
                 {cities.map((city) => (
@@ -311,7 +182,7 @@ export function CategoryServicesContent({
               <select
                 value={minRating}
                 onChange={(e) => setMinRating(e.target.value)}
-                className="w-full pl-12 pr-10 py-3.5 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent appearance-none cursor-pointer transition-all"
+                className="w-full pl-12 pr-10 py-3.5 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent appearance-none cursor-pointer transition-all"
               >
                 {ratingOptions.map((option) => (
                   <option key={option.value} value={option.value}>
@@ -328,25 +199,25 @@ export function CategoryServicesContent({
             <div className="mt-4 flex flex-wrap items-center gap-2">
               <span className="text-sm text-gray-500">Active filters:</span>
               {searchQuery && (
-                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-orange-100 text-orange-700 text-sm font-medium rounded-full">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-yellow-100 text-yellow-700 text-sm font-medium rounded-full">
                   &quot;{searchQuery}&quot;
-                  <button onClick={() => setSearchQuery('')} className="hover:text-orange-900">
+                  <button onClick={() => setSearchQuery('')} className="hover:text-yellow-900">
                     <X className="w-4 h-4" />
                   </button>
                 </span>
               )}
               {selectedCity && (
-                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-orange-100 text-orange-700 text-sm font-medium rounded-full">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-yellow-100 text-yellow-700 text-sm font-medium rounded-full">
                   {selectedCity}
-                  <button onClick={() => setSelectedCity('')} className="hover:text-orange-900">
+                  <button onClick={() => setSelectedCity('')} className="hover:text-yellow-900">
                     <X className="w-4 h-4" />
                   </button>
                 </span>
               )}
               {minRating && (
-                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-orange-100 text-orange-700 text-sm font-medium rounded-full">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-yellow-100 text-yellow-700 text-sm font-medium rounded-full">
                   {minRating}+ Stars
-                  <button onClick={() => setMinRating('')} className="hover:text-orange-900">
+                  <button onClick={() => setMinRating('')} className="hover:text-yellow-900">
                     <X className="w-4 h-4" />
                   </button>
                 </span>
@@ -399,7 +270,7 @@ export function CategoryServicesContent({
             {hasActiveFilters && (
               <button
                 onClick={handleClearFilters}
-                className="px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-xl transition-colors"
+                className="px-6 py-3 bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold rounded-xl transition-colors"
               >
                 Clear Filters
               </button>

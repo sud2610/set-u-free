@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
+import { useSearchParams, useRouter } from 'next/navigation';
 import { Search, MapPin, Filter, ChevronDown, X, SlidersHorizontal } from 'lucide-react';
 import { ProviderCard, ProviderCardSkeleton } from '@/components/providers/ProviderCard';
 import { searchProviders, getAllCategories, getAllCities } from '@/lib/firestore';
@@ -42,6 +43,10 @@ const defaultCities = [
 // ==================== SERVICES CONTENT COMPONENT ====================
 
 export function ServicesContent() {
+  // ==================== HOOKS ====================
+  const searchParams = useSearchParams();
+  const router = useRouter();
+
   // ==================== STATE ====================
   const [providers, setProviders] = useState<Provider[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -53,6 +58,32 @@ export function ServicesContent() {
   const [showFilters, setShowFilters] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
+  const [isInitialized, setIsInitialized] = useState(false);
+
+  // ==================== URL SYNC ====================
+
+  // Read filters from URL on mount
+  useEffect(() => {
+    const query = searchParams.get('q') || '';
+    const category = searchParams.get('category') || '';
+    const city = searchParams.get('city') || '';
+    
+    setSearchQuery(query);
+    setSelectedCategory(category);
+    setSelectedCity(city);
+    setIsInitialized(true);
+  }, [searchParams]);
+
+  // Update URL when filters change (after initialization)
+  const updateURL = useCallback((query: string, category: string, city: string) => {
+    const params = new URLSearchParams();
+    if (query) params.set('q', query);
+    if (category) params.set('category', category);
+    if (city) params.set('city', city);
+    
+    const newURL = params.toString() ? `/?${params.toString()}` : '/';
+    router.replace(newURL, { scroll: false });
+  }, [router]);
 
   // ==================== FETCH DATA ====================
 
@@ -77,6 +108,9 @@ export function ServicesContent() {
   }, []);
 
   useEffect(() => {
+    // Don't fetch until URL params are read
+    if (!isInitialized) return;
+
     const fetchProviders = async () => {
       setIsLoading(true);
       try {
@@ -103,9 +137,10 @@ export function ServicesContent() {
     };
 
     fetchProviders();
-  }, [searchQuery, selectedCategory, selectedCity]);
-
-  // URL sync removed - content is now on home page
+    
+    // Update URL to reflect current filters
+    updateURL(searchQuery, selectedCategory, selectedCity);
+  }, [searchQuery, selectedCategory, selectedCity, isInitialized, updateURL]);
 
   // ==================== HANDLERS ====================
 
@@ -119,6 +154,7 @@ export function ServicesContent() {
     setSelectedCategory('');
     setSelectedCity('');
     setCurrentPage(1);
+    router.replace('/', { scroll: false });
   };
 
   const handleLoadMore = () => {
