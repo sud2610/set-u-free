@@ -8,45 +8,5 @@
     "id": "melbourne",
     "name": "Melbourne",
     "state": "Victoria"
-  },
-  {
-    "id": "brisbane",
-    "name": "Brisbane",
-    "state": "Queensland"
-  },
-  {
-    "id": "perth",
-    "name": "Perth",
-    "state": "Western Australia"
-  },
-  {
-    "id": "adelaide",
-    "name": "Adelaide",
-    "state": "South Australia"
-  },
-  {
-    "id": "gold-coast",
-    "name": "Gold Coast",
-    "state": "Queensland"
-  },
-  {
-    "id": "canberra",
-    "name": "Canberra",
-    "state": "Australian Capital Territory"
-  },
-  {
-    "id": "newcastle",
-    "name": "Newcastle",
-    "state": "New South Wales"
-  },
-  {
-    "id": "hobart",
-    "name": "Hobart",
-    "state": "Tasmania"
-  },
-  {
-    "id": "darwin",
-    "name": "Darwin",
-    "state": "Northern Territory"
   }
 ]

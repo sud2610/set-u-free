@@ -1,12 +1,20 @@
 import { NextRequest, NextResponse } from 'next/server';
 
+// ==================== DEV MODE ====================
+
+/**
+ * ⚠️ DEV MODE: Set to true to bypass auth for admin routes during development
+ * This allows direct access to /admin without login
+ */
+const DEV_BYPASS_ADMIN_AUTH = process.env.NODE_ENV === 'development';
+
 // ==================== TYPES ====================
 
 interface TokenPayload {
   user_id?: string;
   sub?: string;
   email?: string;
-  role?: 'customer' | 'provider';
+  role?: 'customer' | 'provider' | 'admin';
   exp?: number;
   iat?: number;
 }
@@ -14,7 +22,7 @@ interface TokenPayload {
 interface AuthResult {
   isAuthenticated: boolean;
   userId?: string;
-  role?: 'customer' | 'provider';
+  role?: 'customer' | 'provider' | 'admin';
   error?: string;
 }
 
@@ -62,6 +70,11 @@ const CUSTOMER_ROUTES = ['/dashboard/user'];
  * Provider-only routes
  */
 const PROVIDER_ROUTES = ['/dashboard/provider'];
+
+/**
+ * Admin-only routes
+ */
+const ADMIN_ROUTES = ['/admin'];
 
 /**
  * Protected API routes requiring authentication
@@ -195,6 +208,13 @@ function isProviderRoute(pathname: string): boolean {
 }
 
 /**
+ * Check if path is an admin-only route
+ */
+function isAdminRoute(pathname: string): boolean {
+  return ADMIN_ROUTES.some((route) => pathname.startsWith(route));
+}
+
+/**
  * Check if API route requires authentication
  */
 function isProtectedApiRoute(pathname: string, method: string): boolean {
@@ -322,6 +342,12 @@ export async function middleware(request: NextRequest): Promise<NextResponse> {
 
   // ==================== PAGE ROUTE HANDLING ====================
 
+  // DEV MODE: Allow direct access to admin routes without authentication
+  if (DEV_BYPASS_ADMIN_AUTH && isAdminRoute(pathname)) {
+    console.log('🔓 Middleware: DEV MODE - Allowing unauthenticated access to', pathname);
+    return NextResponse.next();
+  }
+
   // Public routes - allow access
   if (isPublicRoute(pathname) && !isAuthRoute(pathname)) {
     return NextResponse.next();
@@ -359,6 +385,21 @@ export async function middleware(request: NextRequest): Promise<NextResponse> {
     if (auth.role !== 'provider') {
       // Redirect customers to their dashboard
       return createRedirectResponse(request, '/dashboard/user', false);
+    }
+    return NextResponse.next();
+  }
+
+  // Admin-only routes
+  if (isAdminRoute(pathname)) {
+    // In dev mode, allow direct access to admin routes
+    if (DEV_BYPASS_ADMIN_AUTH) {
+      console.log('🔓 Middleware: DEV MODE - Admin auth bypassed for', pathname);
+      return NextResponse.next();
+    }
+    
+    if (auth.role !== 'admin') {
+      // Redirect non-admins to their dashboard
+      return createRedirectResponse(request, '/dashboard', false);
     }
     return NextResponse.next();
   }

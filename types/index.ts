@@ -4,9 +4,10 @@ export interface User {
   fullName: string;
   email: string;
   phone?: string;
-  role: 'customer' | 'provider';
+  role: 'customer' | 'provider' | 'admin';
   location: string;
   profileImage?: string;
+  isActive?: boolean;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -191,4 +192,21 @@ export interface ProviderDashboardStats {
   totalEarnings: number;
   averageRating: number;
   totalReviews: number;
+}
+
+// ==================== ADMIN DASHBOARD STATS ====================
+export interface AdminDashboardStats {
+  totalUsers: number;
+  totalProviders: number;
+  totalCustomers: number;
+  totalBookings: number;
+  pendingBookings: number;
+  completedBookings: number;
+  cancelledBookings: number;
+  pendingVerifications: number;
+  verifiedProviders: number;
+  totalServices: number;
+  totalReviews: number;
+  recentUsers: User[];
+  recentBookings: BookingWithDetails[];
 }
