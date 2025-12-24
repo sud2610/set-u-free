@@ -27,6 +27,7 @@ import {
   AlertTriangle,
   CheckCircle,
   Package,
+  Database,
 } from 'lucide-react';
 
 interface AdminLayoutProps {
@@ -189,10 +190,9 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
   // Admin navigation items
   const adminNavItems = [
     { href: '/admin', icon: LayoutDashboard, label: 'Overview' },
+    { href: '/admin/data', icon: Database, label: 'Data Management' },
     { href: '/admin/users', icon: Users, label: 'Users' },
-    { href: '/admin/providers', icon: Briefcase, label: 'Providers' },
     { href: '/admin/bookings', icon: Calendar, label: 'Bookings' },
-    { href: '/admin/services', icon: Package, label: 'Services' },
     { href: '/admin/reviews', icon: Star, label: 'Reviews' },
     { href: '/admin/analytics', icon: BarChart3, label: 'Analytics' },
     { href: '/admin/settings', icon: Settings, label: 'Settings' },
