@@ -39,7 +39,7 @@ export default function HomePage() {
       <WhyChooseUs />
 
       {/* ==================== HOW IT WORKS SECTION ==================== */}
-      <section id="how-it-works" className="py-20 lg:py-28 bg-white">
+      <section id="how-it-works" className="py-10 lg:py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -178,7 +178,7 @@ export default function HomePage() {
       </section>
 
       {/* ==================== TESTIMONIALS SECTION ==================== */}
-      <section className="py-20 lg:py-28 bg-gradient-to-b from-gray-50 to-white">
+      <section className="py-10 lg:py-12 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -290,7 +290,7 @@ export default function HomePage() {
       </section>
 
       {/* ==================== CTA SECTION ==================== */}
-      <section className="py-20 lg:py-28 bg-gradient-to-r from-yellow-400 to-yellow-500 relative overflow-hidden">
+      <section className="py-10 lg:py-12 bg-gradient-to-r from-yellow-400 to-yellow-500 relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">

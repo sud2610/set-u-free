@@ -79,6 +79,46 @@ const categories: Category[] = [
     hoverColor: 'hover:border-amber-300 hover:bg-amber-50/50',
     providerCount: 90,
   },
+  {
+    id: 'mental-health',
+    name: 'Mental Health',
+    description: 'Counseling & therapy',
+    icon: '🧠',
+    color: 'text-indigo-600',
+    bgColor: 'bg-indigo-50',
+    hoverColor: 'hover:border-indigo-300 hover:bg-indigo-50/50',
+    providerCount: 75,
+  },
+  {
+    id: 'dermatology',
+    name: 'Dermatology',
+    description: 'Skin care & treatments',
+    icon: '✨',
+    color: 'text-rose-600',
+    bgColor: 'bg-rose-50',
+    hoverColor: 'hover:border-rose-300 hover:bg-rose-50/50',
+    providerCount: 55,
+  },
+  {
+    id: 'ayurveda',
+    name: 'Ayurveda',
+    description: 'Traditional healing',
+    icon: '🌿',
+    color: 'text-emerald-600',
+    bgColor: 'bg-emerald-50',
+    hoverColor: 'hover:border-emerald-300 hover:bg-emerald-50/50',
+    providerCount: 45,
+  },
+  {
+    id: 'eye-care',
+    name: 'Eye Care',
+    description: 'Vision & eye health',
+    icon: '👁️',
+    color: 'text-cyan-600',
+    bgColor: 'bg-cyan-50',
+    hoverColor: 'hover:border-cyan-300 hover:bg-cyan-50/50',
+    providerCount: 60,
+  },
 ];
 
 // ==================== CATEGORIES SECTION COMPONENT ====================
@@ -94,42 +134,32 @@ const categories: Category[] = [
  */
 export function CategoriesSection() {
   return (
-    <section className="py-20 lg:py-28 bg-white">
+    <section className="py-10 lg:py-12 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* ==================== HEADER ==================== */}
-        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-12">
-          <div>
-            <span className="inline-block px-4 py-1.5 bg-yellow-100 text-yellow-700 text-sm font-semibold rounded-full mb-4">
-              Categories
+        <div className="text-center mb-10">
+          <span className="inline-block px-4 py-1.5 bg-yellow-100 text-yellow-700 text-sm font-semibold rounded-full mb-4">
+            Categories
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
+            Explore by{' '}
+            <span className="bg-gradient-to-r from-yellow-500 to-yellow-600 bg-clip-text text-transparent">
+              Category
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
-              Explore by{' '}
-              <span className="bg-gradient-to-r from-yellow-500 to-yellow-600 bg-clip-text text-transparent">
-                Category
-              </span>
-            </h2>
-            <p className="mt-3 text-gray-600 max-w-xl">
-              Browse through our most popular service categories and find the 
-              perfect provider for your needs.
-            </p>
-          </div>
-          
-          <Link
-            href="/services"
-            className="inline-flex items-center gap-2 text-yellow-600 font-semibold hover:text-yellow-700 group transition-colors"
-          >
-            View All Categories
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </Link>
+          </h2>
+          <p className="mt-3 text-gray-600 max-w-xl mx-auto">
+            Browse through our service categories and find the 
+            perfect provider for your needs.
+          </p>
         </div>
 
         {/* ==================== CATEGORIES GRID ==================== */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 lg:gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-5">
           {categories.map((category, index) => (
             <Link
               key={category.id}
               href={`/services/${category.id}`}
-              className={`group relative p-6 bg-white rounded-2xl border-2 border-gray-100 ${category.hoverColor} transition-all duration-300 hover:shadow-lg hover:-translate-y-1`}
+              className={`group relative p-6 bg-white rounded-2xl border-2 border-amber-200 ${category.hoverColor} transition-all duration-300 hover:shadow-lg hover:-translate-y-1`}
               style={{
                 animationDelay: `${index * 100}ms`,
               }}
@@ -163,24 +193,6 @@ export function CategoriesSection() {
           ))}
         </div>
 
-        {/* ==================== MORE CATEGORIES BANNER ==================== */}
-        <div className="mt-12 p-6 sm:p-8 bg-gradient-to-r from-gray-900 to-gray-800 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-6">
-          <div className="text-center sm:text-left">
-            <h3 className="text-xl font-bold text-white">
-              Can&apos;t find what you&apos;re looking for?
-            </h3>
-            <p className="text-gray-400 mt-1">
-              We have 50+ categories with 500+ service providers
-            </p>
-          </div>
-          <Link
-            href="/services"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold rounded-xl transition-colors whitespace-nowrap"
-          >
-            Browse All Services
-            <ArrowRight className="w-5 h-5" />
-          </Link>
-        </div>
       </div>
     </section>
   );

@@ -184,7 +184,7 @@ function StatCard({ stat, index }: StatCardProps) {
  */
 export function StatsSection() {
   return (
-    <section className="py-20 lg:py-28 bg-gradient-to-b from-white to-yellow-50/50 relative overflow-hidden">
+    <section className="py-10 lg:py-12 bg-gradient-to-b from-white to-yellow-50/50 relative overflow-hidden">
       {/* Background Decorations */}
       <div className="absolute top-0 left-0 w-72 h-72 bg-yellow-200/30 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-yellow-200/30 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />

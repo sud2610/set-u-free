@@ -12,21 +12,17 @@ import type { Provider } from '@/types';
 interface CategoryServicesContentProps {
   categoryId: string;
   categoryName: string;
+  categoryDisplayName: string;
 }
 
 // ==================== CONSTANTS ====================
 
+const ITEMS_PER_PAGE = 8;
+
+// MVP cities - Sydney and Melbourne only
 const defaultCities = [
   'Sydney',
   'Melbourne',
-  'Brisbane',
-  'Perth',
-  'Adelaide',
-  'Gold Coast',
-  'Canberra',
-  'Newcastle',
-  'Hobart',
-  'Darwin',
 ];
 
 const ratingOptions = [
@@ -41,6 +37,7 @@ const ratingOptions = [
 export function CategoryServicesContent({
   categoryId,
   categoryName,
+  categoryDisplayName,
 }: CategoryServicesContentProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -159,7 +156,7 @@ export function CategoryServicesContent({
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder={`Search ${categoryName} providers...`}
+                placeholder={`Search ${categoryDisplayName} providers...`}
                 className="w-full pl-12 pr-4 py-3.5 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all"
               />
             </div>
@@ -243,20 +240,22 @@ export function CategoryServicesContent({
           <h2 className="text-xl font-bold text-gray-900">
             {isLoading
               ? 'Loading...'
-              : `${providers.length} ${categoryName} Provider${providers.length !== 1 ? 's' : ''}`}
+              : providers.length > ITEMS_PER_PAGE
+                ? `Top ${categoryDisplayName} Providers`
+                : `${providers.length} ${categoryDisplayName} Provider${providers.length !== 1 ? 's' : ''}`}
           </h2>
         </div>
 
         {/* ==================== PROVIDERS GRID ==================== */}
         {isLoading ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {[...Array(8)].map((_, i) => (
+            {[...Array(ITEMS_PER_PAGE)].map((_, i) => (
               <ProviderCardSkeleton key={i} />
             ))}
           </div>
         ) : providers.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {providers.map((provider) => (
+            {providers.slice(0, ITEMS_PER_PAGE).map((provider) => (
               <ProviderCard key={provider.uid} provider={provider} />
             ))}
           </div>
@@ -267,7 +266,7 @@ export function CategoryServicesContent({
               <Search className="w-10 h-10 text-gray-400" />
             </div>
             <h3 className="text-xl font-bold text-gray-900 mb-2">
-              No {categoryName} providers found
+              No {categoryDisplayName} providers found
             </h3>
             <p className="text-gray-600 max-w-md mx-auto mb-6">
               We couldn&apos;t find any providers matching your criteria in this category.

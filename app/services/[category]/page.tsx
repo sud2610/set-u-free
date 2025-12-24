@@ -19,6 +19,7 @@ const categoryData: Record<
   string,
   {
     name: string;
+    displayName: string;
     description: string;
     longDescription: string;
     icon: string;
@@ -29,6 +30,7 @@ const categoryData: Record<
 > = {
   dentist: {
     name: 'Dentist',
+    displayName: 'Dentist',
     description: 'Find trusted dental professionals for all your oral health needs.',
     longDescription:
       'Connect with verified dentists for free consultations. Get expert advice on dental care, cleanings, fillings, orthodontics, and cosmetic dentistry.',
@@ -38,7 +40,8 @@ const categoryData: Record<
     keywords: ['dentist', 'dental care', 'oral health', 'teeth cleaning', 'orthodontics'],
   },
   beauty: {
-    name: 'Beauty & Spa',
+    name: 'Beauty',
+    displayName: 'Beauty & Spa',
     description: 'Discover beauty experts for salon and spa services.',
     longDescription:
       'Find premium beauty and spa services including hair styling, makeup, skincare treatments, and relaxing spa experiences with verified professionals.',
@@ -48,7 +51,8 @@ const categoryData: Record<
     keywords: ['beauty salon', 'spa', 'hair styling', 'makeup', 'skincare'],
   },
   gym: {
-    name: 'Gym & Fitness',
+    name: 'Gym',
+    displayName: 'Gym & Fitness',
     description: 'Connect with fitness centers and personal trainers.',
     longDescription:
       'Achieve your fitness goals with verified gyms and certified personal trainers. Get free consultations to find the perfect fitness solution.',
@@ -59,6 +63,7 @@ const categoryData: Record<
   },
   physiotherapy: {
     name: 'Physiotherapy',
+    displayName: 'Physiotherapy',
     description: 'Expert physiotherapists for pain relief and rehabilitation.',
     longDescription:
       'Get professional physiotherapy services for injury recovery, chronic pain management, and physical rehabilitation from verified experts.',
@@ -69,6 +74,7 @@ const categoryData: Record<
   },
   yoga: {
     name: 'Yoga',
+    displayName: 'Yoga',
     description: 'Find yoga instructors and meditation centers.',
     longDescription:
       'Discover inner peace with verified yoga instructors. Find classes for all levels, from beginner to advanced, including meditation and wellness programs.',
@@ -79,6 +85,7 @@ const categoryData: Record<
   },
   nutrition: {
     name: 'Nutrition',
+    displayName: 'Nutrition',
     description: 'Consult with certified nutritionists and dietitians.',
     longDescription:
       'Get personalized nutrition advice from certified professionals. Free consultations for diet planning, weight management, and healthy lifestyle guidance.',
@@ -89,6 +96,7 @@ const categoryData: Record<
   },
   'mental-health': {
     name: 'Mental Health',
+    displayName: 'Mental Health',
     description: 'Professional counselors and therapists for mental wellness.',
     longDescription:
       'Your mental health matters. Connect with verified counselors and therapists for free consultations on stress, anxiety, depression, and overall mental wellness.',
@@ -99,6 +107,7 @@ const categoryData: Record<
   },
   dermatology: {
     name: 'Dermatology',
+    displayName: 'Dermatology',
     description: 'Skin specialists for all your dermatological needs.',
     longDescription:
       'Consult with verified dermatologists for skin care, acne treatment, anti-aging solutions, and other dermatological concerns.',
@@ -122,11 +131,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   return {
-    title: `${category.name} Services | Find Trusted ${category.name} Providers`,
+    title: `${category.displayName} Services | Find Trusted ${category.displayName} Providers`,
     description: category.longDescription,
     keywords: category.keywords,
     openGraph: {
-      title: `${category.name} Services | Set-U-Free`,
+      title: `${category.displayName} Services | Set-U-Free`,
       description: category.description,
       images: [`/og-category-${resolvedParams.category}.png`],
     },
@@ -162,7 +171,7 @@ export default async function CategoryPage({ params, searchParams }: PageProps) 
               Services
             </Link>
             <ChevronRight className="w-4 h-4 text-gray-400" />
-            <span className={`font-medium ${category.color}`}>{category.name}</span>
+            <span className={`font-medium ${category.color}`}>{category.displayName}</span>
           </nav>
 
           <div className="flex flex-col md:flex-row md:items-center gap-6">
@@ -174,7 +183,7 @@ export default async function CategoryPage({ params, searchParams }: PageProps) 
             {/* Content */}
             <div className="flex-1">
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900">
-                {category.name}{' '}
+                {category.displayName}{' '}
                 <span className={category.color}>Services</span>
               </h1>
               <p className="mt-3 text-lg text-gray-600 max-w-2xl">
@@ -190,6 +199,7 @@ export default async function CategoryPage({ params, searchParams }: PageProps) 
         <CategoryServicesContent
           categoryId={resolvedParams.category}
           categoryName={category.name}
+          categoryDisplayName={category.displayName}
         />
       </Suspense>
     </>

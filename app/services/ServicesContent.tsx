@@ -9,7 +9,7 @@ import type { Provider, SearchFilter } from '@/types';
 
 // ==================== CONSTANTS ====================
 
-const ITEMS_PER_PAGE = 12;
+const ITEMS_PER_PAGE = 8;
 
 // Default categories synced with Firebase seed data
 const defaultCategories = [
@@ -25,18 +25,10 @@ const defaultCategories = [
   { id: 'eye-care', name: 'Eye Care', icon: '👁️' },
 ];
 
-// Australian cities synced with Firebase seed data
+// MVP cities - Sydney and Melbourne only
 const defaultCities = [
   'Sydney',
   'Melbourne',
-  'Brisbane',
-  'Perth',
-  'Adelaide',
-  'Gold Coast',
-  'Canberra',
-  'Newcastle',
-  'Hobart',
-  'Darwin',
 ];
 
 
@@ -283,7 +275,9 @@ export function ServicesContent() {
             <h2 className="text-xl font-bold text-gray-900">
               {isLoading
                 ? 'Loading...'
-                : `${providers.length} Provider${providers.length !== 1 ? 's' : ''} Found`}
+                : providers.length > ITEMS_PER_PAGE 
+                  ? 'Top Providers' 
+                  : `${providers.length} Provider${providers.length !== 1 ? 's' : ''} Found`}
             </h2>
             {hasActiveFilters && (
               <p className="text-sm text-gray-500 mt-1">
@@ -303,21 +297,21 @@ export function ServicesContent() {
         {/* ==================== PROVIDERS GRID ==================== */}
         {isLoading ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {[...Array(8)].map((_, i) => (
+            {[...Array(ITEMS_PER_PAGE)].map((_, i) => (
               <ProviderCardSkeleton key={i} />
             ))}
           </div>
         ) : providers.length > 0 ? (
           <>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {providers.map((provider) => (
+              {providers.slice(0, currentPage * ITEMS_PER_PAGE).map((provider) => (
                 <ProviderCard key={provider.uid} provider={provider} />
               ))}
             </div>
 
             {/* Load More */}
-            {hasMore && (
-              <div className="mt-12 text-center">
+            {providers.length > currentPage * ITEMS_PER_PAGE && (
+              <div className="mt-8 text-center">
                 <button
                   onClick={handleLoadMore}
                   className="px-8 py-3 bg-white border-2 border-gray-200 hover:border-yellow-400 text-gray-700 hover:text-yellow-600 font-semibold rounded-xl transition-all"
