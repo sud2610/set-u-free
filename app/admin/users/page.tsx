@@ -115,10 +115,11 @@ export default function AdminUsersPage() {
 
   const toggleUserStatus = async (user: User) => {
     if (!db) return;
+    const firestore = db;
     setActionLoading(user.uid);
 
     try {
-      const userRef = doc(db, 'users', user.uid);
+      const userRef = doc(firestore, 'users', user.uid);
       const newStatus = user.isActive === false ? true : false;
       await updateDoc(userRef, { isActive: newStatus });
       
@@ -134,10 +135,11 @@ export default function AdminUsersPage() {
 
   const deleteUser = async (user: User) => {
     if (!db || !confirm(`Are you sure you want to delete ${user.fullName}? This action cannot be undone.`)) return;
+    const firestore = db;
     setActionLoading(user.uid);
 
     try {
-      await deleteDoc(doc(db, 'users', user.uid));
+      await deleteDoc(doc(firestore, 'users', user.uid));
       setUsers(prev => prev.filter(u => u.uid !== user.uid));
       setShowUserModal(false);
     } catch (error) {

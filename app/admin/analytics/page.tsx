@@ -85,7 +85,7 @@ export default function AdminAnalyticsPage() {
       const users = usersSnapshot.docs.map(doc => {
         const data = doc.data();
         return {
-          ...data,
+          role: data.role as 'customer' | 'provider' | 'admin',
           createdAt: data.createdAt?.toDate() || new Date(),
         };
       });
@@ -98,7 +98,7 @@ export default function AdminAnalyticsPage() {
       const bookings = bookingsSnapshot.docs.map(doc => {
         const data = doc.data();
         return {
-          ...data,
+          status: data.status as string,
           createdAt: data.createdAt?.toDate() || new Date(),
         };
       });
@@ -111,7 +111,7 @@ export default function AdminAnalyticsPage() {
       const providers = providersSnapshot.docs.map(doc => {
         const data = doc.data();
         return {
-          ...data,
+          verified: data.verified as boolean,
           createdAt: data.createdAt?.toDate() || new Date(),
         };
       });

@@ -43,6 +43,9 @@ const DEV_ADMIN_USER = {
   email: 'admin@localhost',
   role: 'admin' as const,
   location: 'Development',
+  profileImage: undefined as string | undefined,
+  phone: undefined as string | undefined,
+  isActive: true,
   createdAt: new Date(),
   updatedAt: new Date(),
 };

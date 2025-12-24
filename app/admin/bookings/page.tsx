@@ -67,9 +67,11 @@ export default function AdminBookingsPage() {
 
   const fetchBookings = async () => {
     if (!db) return;
+    
+    const firestore = db; // Store in local variable for TypeScript
 
     try {
-      const bookingsQuery = query(collection(db, 'bookings'), orderBy('createdAt', 'desc'));
+      const bookingsQuery = query(collection(firestore, 'bookings'), orderBy('createdAt', 'desc'));
       const bookingsSnapshot = await getDocs(bookingsQuery);
       
       const bookingsData = await Promise.all(
@@ -80,7 +82,7 @@ export default function AdminBookingsPage() {
           let user: UserType | undefined;
           if (data.userId) {
             try {
-              const userDoc = await getDoc(doc(db, 'users', data.userId));
+              const userDoc = await getDoc(doc(firestore, 'users', data.userId));
               if (userDoc.exists()) {
                 const userData = userDoc.data();
                 user = {
@@ -99,7 +101,7 @@ export default function AdminBookingsPage() {
           let provider: Provider | undefined;
           if (data.providerId) {
             try {
-              const providerDoc = await getDoc(doc(db, 'providers', data.providerId));
+              const providerDoc = await getDoc(doc(firestore, 'providers', data.providerId));
               if (providerDoc.exists()) {
                 const providerData = providerDoc.data();
                 provider = {
@@ -118,7 +120,7 @@ export default function AdminBookingsPage() {
           let service: Service | undefined;
           if (data.serviceId) {
             try {
-              const serviceDoc = await getDoc(doc(db, 'services', data.serviceId));
+              const serviceDoc = await getDoc(doc(firestore, 'services', data.serviceId));
               if (serviceDoc.exists()) {
                 const serviceData = serviceDoc.data();
                 service = {
@@ -179,10 +181,11 @@ export default function AdminBookingsPage() {
 
   const updateBookingStatus = async (booking: BookingWithDetails, newStatus: BookingStatus) => {
     if (!db) return;
+    const firestore = db;
     setActionLoading(booking.id);
 
     try {
-      const bookingRef = doc(db, 'bookings', booking.id);
+      const bookingRef = doc(firestore, 'bookings', booking.id);
       await updateDoc(bookingRef, { status: newStatus, updatedAt: new Date() });
       
       setBookings(prev => prev.map(b => 
@@ -201,10 +204,11 @@ export default function AdminBookingsPage() {
 
   const deleteBooking = async (booking: BookingWithDetails) => {
     if (!db || !confirm(`Are you sure you want to delete this booking? This action cannot be undone.`)) return;
+    const firestore = db;
     setActionLoading(booking.id);
 
     try {
-      await deleteDoc(doc(db, 'bookings', booking.id));
+      await deleteDoc(doc(firestore, 'bookings', booking.id));
       setBookings(prev => prev.filter(b => b.id !== booking.id));
       setShowBookingModal(false);
     } catch (error) {

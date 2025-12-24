@@ -55,9 +55,10 @@ export default function AdminReviewsPage() {
 
   const fetchReviews = async () => {
     if (!db) return;
+    const firestore = db;
 
     try {
-      const reviewsQuery = query(collection(db, 'reviews'), orderBy('createdAt', 'desc'));
+      const reviewsQuery = query(collection(firestore, 'reviews'), orderBy('createdAt', 'desc'));
       const reviewsSnapshot = await getDocs(reviewsQuery);
       
       const reviewsData = await Promise.all(
@@ -68,7 +69,7 @@ export default function AdminReviewsPage() {
           let user: UserType | undefined;
           if (data.userId) {
             try {
-              const userDoc = await getDoc(doc(db, 'users', data.userId));
+              const userDoc = await getDoc(doc(firestore, 'users', data.userId));
               if (userDoc.exists()) {
                 const userData = userDoc.data();
                 user = {
@@ -87,7 +88,7 @@ export default function AdminReviewsPage() {
           let provider: Provider | undefined;
           if (data.providerId) {
             try {
-              const providerDoc = await getDoc(doc(db, 'providers', data.providerId));
+              const providerDoc = await getDoc(doc(firestore, 'providers', data.providerId));
               if (providerDoc.exists()) {
                 const providerData = providerDoc.data();
                 provider = {
@@ -144,10 +145,11 @@ export default function AdminReviewsPage() {
 
   const deleteReview = async (review: ReviewWithDetails) => {
     if (!db || !confirm(`Are you sure you want to delete this review? This action cannot be undone.`)) return;
+    const firestore = db;
     setActionLoading(review.id);
 
     try {
-      await deleteDoc(doc(db, 'reviews', review.id));
+      await deleteDoc(doc(firestore, 'reviews', review.id));
       setReviews(prev => prev.filter(r => r.id !== review.id));
     } catch (error) {
       console.error('Error deleting review:', error);

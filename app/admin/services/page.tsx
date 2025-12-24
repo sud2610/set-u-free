@@ -58,9 +58,10 @@ export default function AdminServicesPage() {
 
   const fetchServices = async () => {
     if (!db) return;
+    const firestore = db;
 
     try {
-      const servicesQuery = query(collection(db, 'services'), orderBy('createdAt', 'desc'));
+      const servicesQuery = query(collection(firestore, 'services'), orderBy('createdAt', 'desc'));
       const servicesSnapshot = await getDocs(servicesQuery);
       
       const allCategories = new Set<string>();
@@ -78,7 +79,7 @@ export default function AdminServicesPage() {
           let provider: Provider | undefined;
           if (data.providerId) {
             try {
-              const providerDoc = await getDoc(doc(db, 'providers', data.providerId));
+              const providerDoc = await getDoc(doc(firestore, 'providers', data.providerId));
               if (providerDoc.exists()) {
                 const providerData = providerDoc.data();
                 provider = {
@@ -136,10 +137,11 @@ export default function AdminServicesPage() {
 
   const deleteService = async (service: ServiceWithProvider) => {
     if (!db || !confirm(`Are you sure you want to delete "${service.title}"? This action cannot be undone.`)) return;
+    const firestore = db;
     setActionLoading(service.id);
 
     try {
-      await deleteDoc(doc(db, 'services', service.id));
+      await deleteDoc(doc(firestore, 'services', service.id));
       setServices(prev => prev.filter(s => s.id !== service.id));
       setShowServiceModal(false);
     } catch (error) {

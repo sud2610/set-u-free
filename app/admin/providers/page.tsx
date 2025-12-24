@@ -68,10 +68,11 @@ export default function AdminProvidersPage() {
 
   const fetchProviders = async () => {
     if (!db) return;
+    const firestore = db;
 
     try {
       // Fetch providers
-      const providersQuery = query(collection(db, 'providers'), orderBy('createdAt', 'desc'));
+      const providersQuery = query(collection(firestore, 'providers'), orderBy('createdAt', 'desc'));
       const providersSnapshot = await getDocs(providersQuery);
       
       // Fetch users and services for each provider
@@ -83,7 +84,7 @@ export default function AdminProvidersPage() {
           // Get user data
           let user: User | undefined;
           try {
-            const userDoc = await getDoc(doc(db, 'users', providerId));
+            const userDoc = await getDoc(doc(firestore, 'users', providerId));
             if (userDoc.exists()) {
               const userData = userDoc.data();
               user = {
@@ -101,7 +102,7 @@ export default function AdminProvidersPage() {
           let servicesCount = 0;
           try {
             const servicesQuery = query(
-              collection(db, 'services'),
+              collection(firestore, 'services'),
             );
             const servicesSnapshot = await getDocs(servicesQuery);
             servicesCount = servicesSnapshot.docs.filter(
@@ -158,10 +159,11 @@ export default function AdminProvidersPage() {
 
   const toggleVerification = async (provider: ProviderWithUser) => {
     if (!db) return;
+    const firestore = db;
     setActionLoading(provider.uid);
 
     try {
-      const providerRef = doc(db, 'providers', provider.uid);
+      const providerRef = doc(firestore, 'providers', provider.uid);
       const newStatus = !provider.verified;
       await updateDoc(providerRef, { verified: newStatus });
       
@@ -181,11 +183,12 @@ export default function AdminProvidersPage() {
 
   const deleteProvider = async (provider: ProviderWithUser) => {
     if (!db || !confirm(`Are you sure you want to delete ${provider.businessName}? This will also remove all their services and data.`)) return;
+    const firestore = db;
     setActionLoading(provider.uid);
 
     try {
       // Delete provider document
-      await deleteDoc(doc(db, 'providers', provider.uid));
+      await deleteDoc(doc(firestore, 'providers', provider.uid));
       
       // Note: In production, you'd also want to delete associated services, bookings, etc.
       
