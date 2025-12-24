@@ -306,29 +306,71 @@ export async function getProvidersByCity(city: string): Promise<Provider[]> {
  */
 export async function getProvidersByCategory(category: string): Promise<Provider[]> {
   try {
-    const providersRef = collection(db!, COLLECTIONS.providers);
-    const q = query(
-      providersRef,
-      where('categories', 'array-contains', category),
-      orderBy('rating', 'desc')
-    );
+    if (!db) {
+      console.error('Firestore not initialized');
+      return [];
+    }
 
-    const querySnap = await getDocs(q);
+    console.log(`Querying providers with category: "${category}"`);
+    const providersRef = collection(db, COLLECTIONS.providers);
     
-    const providers: Provider[] = querySnap.docs.map((doc) => {
-      const data = doc.data();
-      return {
-        ...data,
-        uid: doc.id,
-        createdAt: convertTimestamp(data.createdAt),
-        updatedAt: convertTimestamp(data.updatedAt),
-      } as Provider;
-    });
+    // Try with orderBy first (requires composite index)
+    try {
+      const q = query(
+        providersRef,
+        where('categories', 'array-contains', category),
+        orderBy('rating', 'desc')
+      );
 
-    console.log(`Found ${providers.length} providers in category: ${category}`);
-    return providers;
+      const querySnap = await getDocs(q);
+      
+      const providers: Provider[] = querySnap.docs.map((doc) => {
+        const data = doc.data();
+        return {
+          ...data,
+          uid: doc.id,
+          createdAt: convertTimestamp(data.createdAt),
+          updatedAt: convertTimestamp(data.updatedAt),
+        } as Provider;
+      });
+
+      console.log(`Found ${providers.length} providers in category: ${category}`);
+      return providers;
+    } catch (indexError: any) {
+      // If index error, fall back to query without orderBy
+      if (indexError?.code === 'failed-precondition' || indexError?.message?.includes('index')) {
+        console.warn('Composite index not found, falling back to simple query...');
+        console.warn('Create index at:', indexError?.message?.match(/https:\/\/[^\s]+/)?.[0]);
+        
+        const simpleQuery = query(
+          providersRef,
+          where('categories', 'array-contains', category)
+        );
+        
+        const querySnap = await getDocs(simpleQuery);
+        
+        const providers: Provider[] = querySnap.docs.map((doc) => {
+          const data = doc.data();
+          return {
+            ...data,
+            uid: doc.id,
+            createdAt: convertTimestamp(data.createdAt),
+            updatedAt: convertTimestamp(data.updatedAt),
+          } as Provider;
+        });
+
+        // Sort client-side
+        providers.sort((a, b) => (b.rating || 0) - (a.rating || 0));
+        
+        console.log(`Found ${providers.length} providers (client-side sorted)`);
+        return providers;
+      }
+      throw indexError;
+    }
   } catch (error) {
+    console.error('getProvidersByCategory error:', error);
     handleFirestoreError(error, 'getProvidersByCategory');
+    return [];
   }
 }
 

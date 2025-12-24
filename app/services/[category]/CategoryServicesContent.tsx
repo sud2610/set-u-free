@@ -74,7 +74,9 @@ export function CategoryServicesContent({
     const fetchProviders = async () => {
       setIsLoading(true);
       try {
+        console.log(`Fetching providers for category: "${categoryName}"`);
         const results = await getProvidersByCategory(categoryName);
+        console.log(`Got ${results.length} providers from Firestore`);
 
         // Apply client-side filters to Firestore results
         let filtered = results;
@@ -102,8 +104,12 @@ export function CategoryServicesContent({
         filtered.sort((a, b) => b.rating - a.rating);
 
         setProviders(filtered);
-      } catch (error) {
+      } catch (error: any) {
         console.error('Error fetching providers:', error);
+        // Check if it's an index error
+        if (error?.message?.includes('index')) {
+          console.error('⚠️ FIRESTORE INDEX REQUIRED - Click the link in the error above to create it');
+        }
         setProviders([]);
       } finally {
         setIsLoading(false);
