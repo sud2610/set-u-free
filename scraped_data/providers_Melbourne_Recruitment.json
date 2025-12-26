@@ -1,0 +1,84 @@
+[
+  {
+    "id": "provider_0009",
+    "businessName": "Labour Care",
+    "description": "",
+    "categories": [
+      "Recruitment"
+    ],
+    "location": "Ground Floor/84 Hotham St, Preston VIC 3072",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3072",
+    "phone": "1800 549 668",
+    "website": "http://www.labourcare.com.au/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Labour+Care",
+    "latitude": -37.746465,
+    "longitude": 145.0077026,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Labour+Care/@-37.746465,145.0077026,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad64508c5f9dd5b:0xa2293ae6ab74e7e!8m2!3d-37.746465!4d145.0077026!16s%2Fg%2F11rxqd19nr?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T08:55:25.819Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "book your free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0082",
+    "businessName": "Executive Agents",
+    "description": "",
+    "categories": [
+      "Recruitment"
+    ],
+    "location": "Level 9/287 Collins St, Melbourne VIC 3000",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3000",
+    "phone": "(03) 8488 9955",
+    "website": "https://www.executiveagents.com.au/",
+    "rating": 4.7,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Executive+Agents",
+    "latitude": -37.8163369,
+    "longitude": 144.9645111,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Executive+Agents/@-37.8163369,144.9645111,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad642b5b750661f:0x937faed8df40ff21!8m2!3d-37.8163369!4d144.9645111!16s%2Fg%2F11gdkzsyx4?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T09:27:58.525Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free 15-minute",
+      "free consult"
+    ]
+  }
+]

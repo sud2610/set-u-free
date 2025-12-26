@@ -1,0 +1,440 @@
+[
+  {
+    "id": "provider_0009",
+    "businessName": "Preston New Smiles Dental",
+    "description": "",
+    "categories": [
+      "Dentist"
+    ],
+    "location": "Unit 1/340 Bell St, Preston VIC 3072",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3072",
+    "phone": "(03) 4514 0960",
+    "website": "https://www.newsmilesdental.com.au/?utm_source=google&utm_medium=organic_gmb&utm_content=New_smiles_dental&utm_campaign=gmb",
+    "rating": 4.9,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Preston+New+Smiles+Dental",
+    "latitude": -37.7447215,
+    "longitude": 145.0018302,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Preston+New+Smiles+Dental/@-37.7447215,145.0018302,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad64559cfbaf14f:0x756afeddb02dead1!8m2!3d-37.7447215!4d145.0018302!16s%2Fg%2F11sy6qy8yj?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2OUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T09:57:08.822Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "complimentary consultation",
+      "complimentary consult"
+    ]
+  },
+  {
+    "id": "provider_0013",
+    "businessName": "Preston Smiles",
+    "description": "",
+    "categories": [
+      "Dentist"
+    ],
+    "location": "326 High St, Preston VIC 3072",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3072",
+    "phone": "(03) 9470 2904",
+    "website": "https://www.prestonsmiles.com.au/",
+    "rating": 4.5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Preston+Smiles",
+    "latitude": -37.740987,
+    "longitude": 145.003692,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Preston+Smiles/@-37.740987,145.003692,16z/data=!3m1!4b1!4m6!3m5!1s0x6ad644f843aa7d75:0xb0cb7bf23ed8cc30!8m2!3d-37.740987!4d145.003692!16s%2Fg%2F1hc16z3j9?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2OUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T09:58:14.894Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0018",
+    "businessName": "Swann Dentistry",
+    "description": "",
+    "categories": [
+      "Dentist"
+    ],
+    "location": "407 High St, Preston VIC 3072",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3072",
+    "phone": "(03) 9478 4272",
+    "website": "https://swanndentistry.com.au/",
+    "rating": 4.8,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Swann+Dentistry",
+    "latitude": -37.7399588,
+    "longitude": 145.0034147,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Swann+Dentistry/@-37.7399588,145.0034147,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad644f85f3a3f8b:0xc12d6664aadf33b9!8m2!3d-37.7399588!4d145.0034147!16s%2Fg%2F1thz1t8j?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2OUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T09:59:22.170Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "complimentary consultation",
+      "complimentary consult"
+    ]
+  },
+  {
+    "id": "provider_0023",
+    "businessName": "Chic Dental | Dentist Preston",
+    "description": "",
+    "categories": [
+      "Dentist"
+    ],
+    "location": "150 Plenty Rd, Preston VIC 3072",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3072",
+    "phone": "(03) 9116 5584",
+    "website": "https://chicdental.com.au/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Chic+Dental+%7C+Dentist+Preston",
+    "latitude": -37.7480804,
+    "longitude": 145.0047776,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Chic+Dental+%7C+Dentist+Preston/@-37.7480804,145.0047776,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad645518d1e12fd:0x81577a34af70f2ed!8m2!3d-37.7480804!4d145.0047776!16s%2Fg%2F11hj1q5mlw?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2OUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T10:00:32.730Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "book a free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0027",
+    "businessName": "Preston Dental Group",
+    "description": "",
+    "categories": [
+      "Dentist"
+    ],
+    "location": "659-661 Bell St, Preston VIC 3072",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3072",
+    "phone": "(03) 9484 4477",
+    "website": "https://prestondentalgroup.com.au/?utm_source=googlebusinessprofile&utm_medium=local&utm_campaign=gmb",
+    "rating": 4.9,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Preston+Dental+Group",
+    "latitude": -37.7437681,
+    "longitude": 144.9860286,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Preston+Dental+Group/@-37.7437681,144.9860286,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad644eb02968845:0xef6334ac40efed9e!8m2!3d-37.7437681!4d144.9860286!16s%2Fg%2F1tctfrdk?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2OUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T10:01:21.969Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free dental check"
+    ]
+  },
+  {
+    "id": "provider_0030",
+    "businessName": "MC Dental Melbourne Central Shopping Centre",
+    "description": "",
+    "categories": [
+      "Dentist"
+    ],
+    "location": "Central Shopping Centre, Shop 254, Level 2/211 La Trobe St, Melbourne VIC 3000",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3000",
+    "phone": "(03) 8608 8971",
+    "website": "https://www.mcdental.com.au/",
+    "rating": 4.8,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "MC+Dental+Melbourne+Central+Shopping+Centre",
+    "latitude": -37.8107193,
+    "longitude": 144.9625702,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/MC+Dental+Melbourne+Central+Shopping+Centre/@-37.8107193,144.9625702,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad642e7e3f0a299:0x60036358c21d772!8m2!3d-37.8107193!4d144.9625702!16s%2Fg%2F1wt3nk94?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2OUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T10:02:05.954Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free 15-minute",
+      "free teeth whitening consultation",
+      "free dental consultation"
+    ]
+  },
+  {
+    "id": "provider_0035",
+    "businessName": "Melbourne Family Dentist",
+    "description": "",
+    "categories": [
+      "Dentist"
+    ],
+    "location": "751 Pascoe Vale Rd, Glenroy VIC 3046",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3046",
+    "phone": "(03) 8692 2500",
+    "website": "http://www.melbournefamilydentist.com.au/",
+    "rating": 4.8,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Melbourne+Family+Dentist",
+    "latitude": -37.7060027,
+    "longitude": 144.9158727,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Melbourne+Family+Dentist/@-37.7060027,144.9158727,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad65b7ccb0bd94b:0xcd2b3f86da4fceaf!8m2!3d-37.7060027!4d144.9158727!16s%2Fg%2F11gtrvw727?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2OUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T10:03:21.245Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free check-up"
+    ]
+  },
+  {
+    "id": "provider_0057",
+    "businessName": "Genesis Dentists Melbourne",
+    "description": "",
+    "categories": [
+      "Dentist"
+    ],
+    "location": "Arden Gardens, Shop 2/168 Macaulay Rd, North Melbourne VIC 3051",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3051",
+    "phone": "(03) 7020 9166",
+    "website": "https://genesisdentists.com.au/",
+    "rating": 4.9,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Genesis+Dentists+Melbourne",
+    "latitude": -37.7962156,
+    "longitude": 144.9408034,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Genesis+Dentists+Melbourne/@-37.7962156,144.9408034,17z/data=!3m1!4b1!4m6!3m5!1s0x6281207bfc93d363:0xded8103c1466c49c!8m2!3d-37.7962156!4d144.9408034!16s%2Fg%2F11sv2rbf1c?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2OUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T10:09:09.126Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free 15-minute"
+    ]
+  },
+  {
+    "id": "provider_0060",
+    "businessName": "City Smiles Dental Clinic",
+    "description": "",
+    "categories": [
+      "Dentist"
+    ],
+    "location": "8/20 Collins St, Melbourne VIC 3000",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3000",
+    "phone": "(03) 9654 6979",
+    "website": "https://citysmiles.com.au/",
+    "rating": 4.3,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "City+Smiles+Dental+Clinic",
+    "latitude": -37.8133329,
+    "longitude": 144.9729292,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/City+Smiles+Dental+Clinic/@-37.8133329,144.9729292,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad642c6320586cf:0xbdb41871593f1314!8m2!3d-37.8133329!4d144.9729292!16s%2Fg%2F1tj7f5r3?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2OUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T10:09:58.617Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free initial consultation"
+    ]
+  },
+  {
+    "id": "provider_0063",
+    "businessName": "National Dental Care Spring Street",
+    "description": "",
+    "categories": [
+      "Dentist"
+    ],
+    "location": "271 Spring St, Melbourne VIC 3000",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3000",
+    "phone": "(03) 8371 0200",
+    "website": "https://www.nationaldentalcare.com.au/spring-street",
+    "rating": 4.7,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "National+Dental+Care+Spring+Street",
+    "latitude": -37.8086181,
+    "longitude": 144.9715147,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/National+Dental+Care+Spring+Street/@-37.8086181,144.9715147,16z/data=!3m1!4b1!4m6!3m5!1s0x6ad642b451084587:0x9b3096af0766729d!8m2!3d-37.8086181!4d144.9715147!16s%2Fg%2F1tfq4sty?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2OUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T10:10:34.056Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free 30-minute"
+    ]
+  },
+  {
+    "id": "provider_0073",
+    "businessName": "Pinnacle Dental",
+    "description": "",
+    "categories": [
+      "Dentist"
+    ],
+    "location": "401/100 Harbour Esplanade, Docklands VIC 3008",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3008",
+    "phone": "(03) 9052 4422",
+    "website": "https://www.pinnacledentaldocklands.com.au/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Pinnacle+Dental",
+    "latitude": -37.8184709,
+    "longitude": 144.9469078,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Pinnacle+Dental/@-37.8184709,144.9469078,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad65dbdc45bc249:0xf92ad90b2ea11330!8m2!3d-37.8184709!4d144.9469078!16s%2Fg%2F11h6m9hmx5?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2OUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T10:12:55.399Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free check-up",
+      "free consult"
+    ]
+  }
+]

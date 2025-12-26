@@ -1,13 +1,13 @@
+'use client';
+
 import Link from 'next/link';
+import { toast } from 'react-hot-toast';
 import {
   Facebook,
   Twitter,
   Instagram,
-  Linkedin,
   Youtube,
   Mail,
-  Phone,
-  MapPin,
   ArrowRight,
 } from 'lucide-react';
 
@@ -35,34 +35,28 @@ const footerSections: FooterSection[] = [
   {
     title: 'Services',
     links: [
-      { label: 'Home Services', href: '/services/home-services' },
-      { label: 'Beauty & Wellness', href: '/services/beauty-wellness' },
-      { label: 'Health & Fitness', href: '/services/health-fitness' },
-      { label: 'Education & Tutoring', href: '/services/education-tutoring' },
-      { label: 'Events & Entertainment', href: '/services/events-entertainment' },
-      { label: 'All Categories', href: '/services' },
+      { label: 'Browse All Services', href: '/services' },
+      { label: 'Recruitment Agencies', href: '/services?category=Recruitment' },
+      { label: 'Migration & Visa', href: '/services?category=Migration' },
+      { label: 'Beauty & Wellness', href: '/services?category=Beauty' },
+      { label: 'Dentist', href: '/services?category=Dentist' },
+      { label: 'Doctors', href: '/services?category=Doctors' },
     ],
   },
   {
     title: 'Company',
     links: [
       { label: 'About Us', href: '/about' },
-      { label: 'How It Works', href: '/how-it-works' },
-      { label: 'Careers', href: '/careers' },
-      { label: 'Blog', href: '/blog' },
-      { label: 'Press & Media', href: '/press' },
-      { label: 'Partner With Us', href: '/partners' },
+      { label: 'Contact Us', href: '/contact' },
+      { label: 'Become a Provider', href: '/register?role=provider' },
     ],
   },
   {
     title: 'Support',
     links: [
-      { label: 'Help Center', href: '/help' },
       { label: 'Contact Us', href: '/contact' },
-      { label: 'FAQs', href: '/faqs' },
-      { label: 'Safety Guidelines', href: '/safety' },
-      { label: 'Community Guidelines', href: '/guidelines' },
-      { label: 'Report an Issue', href: '/report' },
+      { label: 'Register', href: '/register' },
+      { label: 'Login', href: '/login' },
     ],
   },
   {
@@ -70,20 +64,15 @@ const footerSections: FooterSection[] = [
     links: [
       { label: 'Privacy Policy', href: '/privacy' },
       { label: 'Terms of Service', href: '/terms' },
-      { label: 'Cookie Policy', href: '/cookies' },
-      { label: 'Refund Policy', href: '/refund' },
-      { label: 'Cancellation Policy', href: '/cancellation' },
-      { label: 'Disclaimer', href: '/disclaimer' },
     ],
   },
 ];
 
 const socialLinks: SocialLink[] = [
-  { name: 'Facebook', href: 'https://facebook.com/setufree', icon: Facebook },
-  { name: 'Twitter', href: 'https://twitter.com/setufree', icon: Twitter },
-  { name: 'Instagram', href: 'https://instagram.com/setufree', icon: Instagram },
-  { name: 'LinkedIn', href: 'https://linkedin.com/company/setufree', icon: Linkedin },
-  { name: 'YouTube', href: 'https://youtube.com/@setufree', icon: Youtube },
+  { name: 'Facebook', href: '#', icon: Facebook },
+  { name: 'Twitter', href: '#', icon: Twitter },
+  { name: 'Instagram', href: '#', icon: Instagram },
+  { name: 'YouTube', href: '#', icon: Youtube },
 ];
 
 // ==================== FOOTER COMPONENT ====================
@@ -129,26 +118,12 @@ export function Footer() {
             {/* Contact Info */}
             <div className="mt-6 space-y-3">
               <a
-                href="mailto:support@setufree.com"
+                href="mailto:contact.freesetu@gmail.com"
                 className="flex items-center gap-3 text-gray-400 hover:text-yellow-400 transition-colors text-sm"
               >
                 <Mail className="w-4 h-4" />
-                support@setufree.com
+                contact.freesetu@gmail.com
               </a>
-              <a
-                href="tel:+61298765432"
-                className="flex items-center gap-3 text-gray-400 hover:text-yellow-400 transition-colors text-sm"
-              >
-                <Phone className="w-4 h-4" />
-                +61 2 9876 5432
-              </a>
-              <div className="flex items-start gap-3 text-gray-400 text-sm">
-                <MapPin className="w-4 h-4 mt-0.5 shrink-0" />
-                <span>
-                  123 George Street,<br />
-                  Sydney, NSW 2000
-                </span>
-              </div>
             </div>
 
             {/* Social Links */}
@@ -156,16 +131,14 @@ export function Footer() {
               {socialLinks.map((social) => {
                 const Icon = social.icon;
                 return (
-                  <a
+                  <button
                     key={social.name}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    onClick={() => toast.success(`Follow us on ${social.name} - Coming soon!`)}
                     className="w-10 h-10 rounded-xl bg-gray-800 hover:bg-yellow-400 flex items-center justify-center text-gray-400 hover:text-gray-900 transition-all duration-200"
                     aria-label={`Follow us on ${social.name}`}
                   >
                     <Icon className="w-5 h-5" />
-                  </a>
+                  </button>
                 );
               })}
             </div>
@@ -204,7 +177,13 @@ export function Footer() {
                 Get the latest updates, tips, and exclusive offers delivered to your inbox.
               </p>
             </div>
-            <form className="flex gap-3 w-full lg:w-auto">
+            <form 
+              className="flex gap-3 w-full lg:w-auto"
+              onSubmit={(e) => {
+                e.preventDefault();
+                toast.success('Thank you for your interest! Newsletter coming soon.');
+              }}
+            >
               <input
                 type="email"
                 placeholder="Enter your email"
@@ -247,16 +226,10 @@ export function Footer() {
                 Terms of Service
               </Link>
               <Link
-                href="/cookies"
+                href="/contact"
                 className="text-gray-500 hover:text-yellow-400 transition-colors"
               >
-                Cookie Settings
-              </Link>
-              <Link
-                href="/sitemap"
-                className="text-gray-500 hover:text-yellow-400 transition-colors"
-              >
-                Sitemap
+                Contact
               </Link>
             </div>
 

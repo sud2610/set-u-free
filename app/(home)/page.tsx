@@ -252,7 +252,7 @@ export default function HomePage() {
                 </div>
                 <div>
                   <p className="font-semibold text-gray-900">Emma Mitchell</p>
-                  <p className="text-sm text-gray-500">Yoga Instructor, Melbourne</p>
+                  <p className="text-sm text-gray-500">Nutritionist, Melbourne</p>
                 </div>
               </div>
             </div>

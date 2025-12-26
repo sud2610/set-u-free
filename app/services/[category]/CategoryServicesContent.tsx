@@ -255,8 +255,11 @@ export function CategoryServicesContent({
           </div>
         ) : providers.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {providers.slice(0, ITEMS_PER_PAGE).map((provider) => (
-              <ProviderCard key={provider.uid} provider={provider} />
+            {providers.slice(0, ITEMS_PER_PAGE).map((provider, index) => (
+              <ProviderCard 
+                key={provider.uid} 
+                provider={provider} 
+              />
             ))}
           </div>
         ) : (

@@ -256,9 +256,8 @@ export default function TermsPage() {
               If you have any questions about these Terms of Service, please contact us:
             </p>
             <ul className="text-gray-600 space-y-2">
-              <li><strong>Email:</strong> legal@setufree.com</li>
+              <li><strong>Email:</strong> contact.freesetu@gmail.com</li>
               <li><strong>Website:</strong> www.setufree.com</li>
-              <li><strong>Address:</strong> Sydney, NSW, Australia</li>
             </ul>
           </section>
 

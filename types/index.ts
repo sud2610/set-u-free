@@ -158,16 +158,16 @@ export interface ServiceFormData {
 
 // ==================== CATEGORY TYPE ====================
 export type ServiceCategory =
-  | 'home-services'
-  | 'beauty-wellness'
-  | 'health-fitness'
-  | 'education-tutoring'
-  | 'events-entertainment'
-  | 'professional-services'
-  | 'automotive'
-  | 'pet-services'
-  | 'tech-support'
-  | 'other';
+  | 'recruitment-agencies'
+  | 'migration-visa'
+  | 'beauty'
+  | 'dentist'
+  | 'eye-care'
+  | 'doctors'
+  | 'mental-health'
+  | 'nutrition'
+  | 'physiotherapy'
+  | 'legal-services';
 
 export interface CategoryInfo {
   id: ServiceCategory;

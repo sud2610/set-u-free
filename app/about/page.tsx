@@ -7,7 +7,6 @@ import { Footer } from '@/components/common/Footer';
 import {
   Heart,
   Target,
-  Users,
   Shield,
   Award,
   Zap,
@@ -73,33 +72,6 @@ const milestones = [
   { year: '2023', title: '1000+ Providers', description: 'Reached our first milestone' },
   { year: '2024', title: '10+ Cities', description: 'Expanded across Australia' },
   { year: '2024', title: '50K+ Bookings', description: 'Helped thousands find services' },
-];
-
-const team = [
-  {
-    name: 'Rajesh Kumar',
-    role: 'Founder & CEO',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400',
-    bio: 'Former tech executive with 15+ years of experience in building consumer platforms.',
-  },
-  {
-    name: 'Priya Sharma',
-    role: 'Co-Founder & COO',
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400',
-    bio: 'Operations expert passionate about scaling businesses and customer success.',
-  },
-  {
-    name: 'Amit Patel',
-    role: 'CTO',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400',
-    bio: 'Engineering leader focused on building scalable and secure technology solutions.',
-  },
-  {
-    name: 'Sneha Gupta',
-    role: 'Head of Design',
-    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400',
-    bio: 'Award-winning designer creating intuitive experiences for millions of users.',
-  },
 ];
 
 const testimonials = [
@@ -307,42 +279,6 @@ export default function AboutPage() {
                     </div>
                   ))}
                 </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Team Section */}
-          <section className="py-20 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="text-center max-w-2xl mx-auto mb-16">
-                <div className="flex items-center justify-center gap-3 mb-4">
-                  <Users className="w-8 h-8 text-orange-400" />
-                </div>
-                <h2 className="text-3xl lg:text-4xl font-bold">Meet Our Team</h2>
-                <p className="mt-4 text-lg text-gray-400">
-                  The passionate people behind Set-U-Free
-                </p>
-              </div>
-
-              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                {team.map((member, index) => (
-                  <div
-                    key={index}
-                    className="bg-gray-800/50 rounded-2xl p-6 text-center hover:bg-gray-800 transition-colors"
-                  >
-                    <div className="relative w-24 h-24 mx-auto mb-4">
-                      <Image
-                        src={member.image}
-                        alt={member.name}
-                        fill
-                        className="rounded-full object-cover"
-                      />
-                    </div>
-                    <h3 className="text-lg font-bold">{member.name}</h3>
-                    <p className="text-orange-400 text-sm font-medium">{member.role}</p>
-                    <p className="text-gray-400 text-sm mt-3">{member.bio}</p>
-                  </div>
-                ))}
               </div>
             </div>
           </section>

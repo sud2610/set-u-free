@@ -172,7 +172,7 @@ While we strive to protect your data, no method of transmission over the Interne
 • Withdraw consent for data processing
 
 **How to Exercise Your Rights:**
-Contact us at privacy@setufree.com or through your account settings. We will respond within 30 days.`,
+Contact us at contact.freesetu@gmail.com or through your account settings. We will respond within 30 days.`,
   },
   {
     id: 'cookies',
@@ -256,12 +256,7 @@ We encourage you to review this policy periodically. Continued use of our servic
     icon: Mail,
     content: `If you have questions about this Privacy Policy or our data practices, please contact us:
 
-**Email:** privacy@setufree.com
-**Address:** 123 George Street, Sydney, NSW 2000, Australia
-**Phone:** +91 1800-XXX-XXXX
-
-**Data Protection Officer:**
-For GDPR-related inquiries, contact our DPO at dpo@setufree.com
+**Email:** contact.freesetu@gmail.com
 
 We aim to respond to all inquiries within 30 days.`,
   },

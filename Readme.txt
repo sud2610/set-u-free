@@ -32,3 +32,10 @@ vercel --prod
 
 Dentist, Physio, Migration, Beauty, Financial
 Melbourne, Sydney
+
+http://localhost:3000/admin
+npx ts-node --project tsconfig.seed.json scripts/make-admin.ts your-email@example.com
+
+
+
+npx ts-node --project tsconfig.seed.json scripts/make-admin.ts shivhare007@gmail.com

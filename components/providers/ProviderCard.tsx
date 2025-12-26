@@ -2,7 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
-import { Star, MapPin, BadgeCheck, ArrowRight, Clock } from 'lucide-react';
+import { Star, MapPin, BadgeCheck, ArrowRight } from 'lucide-react';
 import type { Provider } from '@/types';
 
 // ==================== TYPES ====================
@@ -262,37 +262,37 @@ export function ProviderCard({
  */
 export function ProviderCardSkeleton() {
   return (
-    <div className="bg-white rounded-2xl border-2 border-amber-200 overflow-hidden animate-pulse">
+    <div className="bg-white rounded-2xl border-2 border-amber-100 overflow-hidden animate-pulse">
       {/* Image Skeleton */}
       <div className="aspect-[4/3] bg-gray-200" />
 
       {/* Content Skeleton */}
-      <div className="p-5">
+      <div className="p-5 space-y-4">
         {/* Title */}
         <div className="h-6 bg-gray-200 rounded-lg w-3/4" />
 
         {/* Categories */}
-        <div className="mt-3 flex gap-2">
-          <div className="h-6 bg-gray-200 rounded-md w-20" />
-          <div className="h-6 bg-gray-200 rounded-md w-16" />
+        <div className="flex gap-2">
+          <div className="h-6 bg-yellow-100 rounded-md w-20" />
+          <div className="h-6 bg-yellow-100 rounded-md w-16" />
         </div>
 
         {/* Description */}
-        <div className="mt-3 space-y-2">
+        <div className="space-y-2">
           <div className="h-4 bg-gray-200 rounded w-full" />
           <div className="h-4 bg-gray-200 rounded w-2/3" />
         </div>
 
         {/* Rating */}
-        <div className="mt-4 pt-4 border-t border-gray-100">
+        <div className="pt-4 border-t border-gray-100">
           <div className="flex items-center gap-2">
-            <div className="h-4 bg-gray-200 rounded w-24" />
+            <div className="h-4 bg-yellow-100 rounded w-24" />
             <div className="h-4 bg-gray-200 rounded w-16" />
           </div>
         </div>
 
         {/* Button */}
-        <div className="mt-4 h-12 bg-gray-200 rounded-xl" />
+        <div className="h-12 bg-gray-100 rounded-xl" />
       </div>
     </div>
   );

@@ -1,0 +1,41 @@
+[
+  {
+    "id": "provider_0081",
+    "businessName": "Complete Care Preston",
+    "description": "",
+    "categories": [
+      "Doctors"
+    ],
+    "location": "190 Albert St, Preston VIC 3072",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3072",
+    "phone": "(03) 9471 0022",
+    "website": "https://www.completecarepreston.com.au/?utm_source=google&utm_medium=wix_google_business_profile&utm_campaign=784339460657374899",
+    "rating": 4.9,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Complete+Care+Preston",
+    "latitude": -37.7319921,
+    "longitude": 145.0252802,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Complete+Care+Preston/@-37.7319921,145.0252802,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad645dcbd4e3d79:0xad6cbb2a22383967!8m2!3d-37.7319921!4d145.0252802!16s%2Fg%2F11st6sksjy?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2OUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T11:24:22.308Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free initial consultation"
+    ]
+  }
+]

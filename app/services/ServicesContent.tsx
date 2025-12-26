@@ -13,16 +13,16 @@ const ITEMS_PER_PAGE = 8;
 
 // Default categories synced with Firebase seed data
 const defaultCategories = [
-  { id: 'dentist', name: 'Dentist', icon: '🦷' },
+  { id: 'recruitment-agencies', name: 'Recruitment Agencies', icon: '💼' },
+  { id: 'migration-visa', name: 'Migration & Visa Advisers', icon: '🛂' },
   { id: 'beauty', name: 'Beauty', icon: '💅' },
-  { id: 'gym', name: 'Gym', icon: '💪' },
-  { id: 'physiotherapy', name: 'Physiotherapy', icon: '🏥' },
-  { id: 'yoga', name: 'Yoga', icon: '🧘' },
-  { id: 'nutrition', name: 'Nutrition', icon: '🥗' },
-  { id: 'mental-health', name: 'Mental Health', icon: '🧠' },
-  { id: 'dermatology', name: 'Dermatology', icon: '✨' },
-  { id: 'ayurveda', name: 'Ayurveda', icon: '🌿' },
+  { id: 'dentist', name: 'Dentist', icon: '🦷' },
   { id: 'eye-care', name: 'Eye Care', icon: '👁️' },
+  { id: 'doctors', name: 'Doctors', icon: '👨‍⚕️' },
+  { id: 'mental-health', name: 'Mental Health', icon: '🧠' },
+  { id: 'nutrition', name: 'Nutrition', icon: '🥗' },
+  { id: 'physiotherapy', name: 'Physiotherapy', icon: '🏥' },
+  { id: 'legal-services', name: 'Legal Services', icon: '⚖️' },
 ];
 
 // MVP cities - Sydney and Melbourne only
@@ -304,8 +304,11 @@ export function ServicesContent() {
         ) : providers.length > 0 ? (
           <>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {providers.slice(0, currentPage * ITEMS_PER_PAGE).map((provider) => (
-                <ProviderCard key={provider.uid} provider={provider} />
+              {providers.slice(0, currentPage * ITEMS_PER_PAGE).map((provider, index) => (
+                <ProviderCard 
+                  key={provider.uid} 
+                  provider={provider} 
+                />
               ))}
             </div>
 

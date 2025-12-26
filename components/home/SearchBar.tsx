@@ -15,29 +15,21 @@ interface Suggestion {
 // ==================== CONSTANTS ====================
 
 const categoryOptions: Suggestion[] = [
-  { id: 'dentist', name: 'Dentist', icon: '🦷' },
+  { id: 'recruitment-agencies', name: 'Recruitment Agencies', icon: '💼' },
+  { id: 'migration-visa', name: 'Migration & Visa', icon: '🛂' },
   { id: 'beauty', name: 'Beauty & Spa', icon: '💅' },
-  { id: 'gym', name: 'Gym & Fitness', icon: '💪' },
-  { id: 'physiotherapy', name: 'Physiotherapy', icon: '🏥' },
-  { id: 'yoga', name: 'Yoga', icon: '🧘' },
-  { id: 'nutrition', name: 'Nutrition', icon: '🥗' },
+  { id: 'dentist', name: 'Dentist', icon: '🦷' },
+  { id: 'eye-care', name: 'Eye Care', icon: '👁️' },
+  { id: 'doctors', name: 'Doctors', icon: '👨‍⚕️' },
   { id: 'mental-health', name: 'Mental Health', icon: '🧠' },
-  { id: 'dermatology', name: 'Dermatology', icon: '✨' },
-  { id: 'home-services', name: 'Home Services', icon: '🏠' },
-  { id: 'education', name: 'Education', icon: '📚' },
+  { id: 'nutrition', name: 'Nutrition', icon: '🥗' },
+  { id: 'physiotherapy', name: 'Physiotherapy', icon: '🏥' },
+  { id: 'legal-services', name: 'Legal Services', icon: '⚖️' },
 ];
 
 const cityOptions: Suggestion[] = [
   { id: 'sydney', name: 'Sydney' },
   { id: 'melbourne', name: 'Melbourne' },
-  { id: 'brisbane', name: 'Brisbane' },
-  { id: 'perth', name: 'Perth' },
-  { id: 'adelaide', name: 'Adelaide' },
-  { id: 'gold-coast', name: 'Gold Coast' },
-  { id: 'canberra', name: 'Canberra' },
-  { id: 'newcastle', name: 'Newcastle' },
-  { id: 'hobart', name: 'Hobart' },
-  { id: 'darwin', name: 'Darwin' },
 ];
 
 // ==================== AIRBNB-STYLE SEARCH BAR ====================

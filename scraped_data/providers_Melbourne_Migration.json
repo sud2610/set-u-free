@@ -1,0 +1,1091 @@
+[
+  {
+    "id": "provider_0003",
+    "businessName": "Australian Migration Agents",
+    "description": "",
+    "categories": [
+      "Migration"
+    ],
+    "location": "180 Lonsdale St, Melbourne VIC 3000",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3000",
+    "phone": "1300 419 785",
+    "website": "https://www.australianmigrationagents.com.au/melbourne",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Australian+Migration+Agents",
+    "latitude": -37.8106794,
+    "longitude": 144.9666009,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Australian+Migration+Agents/@-37.8106794,144.9666009,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad6436e62269737:0xfec2d56631b06735!8m2!3d-37.8106794!4d144.9666009!16s%2Fg%2F11lcbzfk2c?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T09:55:15.369Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "book a free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0005",
+    "businessName": "Bansal Immigration Consultants ( Registered Migration Agent )",
+    "description": "",
+    "categories": [
+      "Migration"
+    ],
+    "location": "Next to flight Center, Level 8/278 Collins St, Melbourne VIC 3000",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3000",
+    "phone": "(03) 9602 1330",
+    "website": "https://www.bansalimmigration.com.au/?utm_source=GoogleMaps",
+    "rating": 4.8,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Bansal+Immigration+Consultants+(+Registered+Migration+Agent+)",
+    "latitude": -37.815633,
+    "longitude": 144.964752,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Bansal+Immigration+Consultants+(+Registered+Migration+Agent+)/@-37.815633,144.964752,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad642b4fba98713:0xee86d14bb1859eb0!8m2!3d-37.815633!4d144.964752!16s%2Fg%2F11c6w08ktl?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T09:55:43.077Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0006",
+    "businessName": "Global Vision Migration (Best Registered Migration Agents & Immigration Lawyer in Melbourne)",
+    "description": "",
+    "categories": [
+      "Migration"
+    ],
+    "location": "Suite 601 Level 6/365 Little Collins St, Melbourne VIC 3000",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3000",
+    "phone": "(03) 9978 7968",
+    "website": "https://www.gvm.com.au/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Global+Vision+Migration+(Best+Registered+Migration+Agents+%26+Immigration+Lawyer+in+Melbourne)",
+    "latitude": -37.8157645,
+    "longitude": 144.9627765,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Global+Vision+Migration+(Best+Registered+Migration+Agents+%26+Immigration+Lawyer+in+Melbourne)/@-37.8157645,144.9627765,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad643b380adfc01:0xa83063ada7932a07!8m2!3d-37.8157645!4d144.9627765!16s%2Fg%2F11ng65pm2s?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T09:55:55.199Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0007",
+    "businessName": "Y-Axis - Registered Migration Agents, Immigration & Education Consultants in Melbourne",
+    "description": "",
+    "categories": [
+      "Migration"
+    ],
+    "location": "level 2/390 Flinders St, Melbourne VIC 3000",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3000",
+    "phone": "(03) 9939 4818",
+    "website": "https://www.y-axis.com.au/melbourne/?utm_source=google&utm_medium=gmb&utm_campaign=Melbourne_Australia",
+    "rating": 4.7,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Y-Axis+-+Registered+Migration+Agents,+Immigration+%26+Education+Consultants+in+Melbourne",
+    "latitude": -37.819033,
+    "longitude": 144.961251,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Y-Axis+-+Registered+Migration+Agents,+Immigration+%26+Education+Consultants+in+Melbourne/@-37.819033,144.961251,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad642cb2bb49c29:0x2438fa2d34a63e05!8m2!3d-37.819033!4d144.961251!16s%2Fg%2F11b6gbrzq3?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T09:56:07.693Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free assessment",
+      "book your free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0009",
+    "businessName": "Flyworld Migration Lawyers & Registered Migration Agents in Melbourne",
+    "description": "",
+    "categories": [
+      "Migration"
+    ],
+    "location": "Level 24/570 Bourke St, Melbourne VIC 3000",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3000",
+    "phone": "(03) 8783 8138",
+    "website": "https://flyworldmigration.com.au/",
+    "rating": 4.8,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Flyworld+Migration+Lawyers+%26+Registered+Migration+Agents+in+Melbourne",
+    "latitude": -37.8153609,
+    "longitude": 144.9567302,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Flyworld+Migration+Lawyers+%26+Registered+Migration+Agents+in+Melbourne/@-37.8153609,144.9567302,17z/data=!3m1!4b1!4m6!3m5!1s0x6b91019783e8fe27:0x77f29f40179d577c!8m2!3d-37.8153609!4d144.9567302!16s%2Fg%2F11ftl0j2c_?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T09:56:36.829Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "book a free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0014",
+    "businessName": "Asia Pacific Group (APG) - Education Consultants & Migration Agents Melbourne",
+    "description": "",
+    "categories": [
+      "Migration"
+    ],
+    "location": "Asia Pacific Group, Level 7/278 Collins St, Melbourne VIC 3000",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3000",
+    "phone": "(03) 7003 8216",
+    "website": "https://asiapacificgroup.com/melbourne/",
+    "rating": 4.7,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Asia+Pacific+Group+(APG)+-+Education+Consultants+%26+Migration+Agents+Melbourne",
+    "latitude": -37.8156435,
+    "longitude": 144.9647575,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Asia+Pacific+Group+(APG)+-+Education+Consultants+%26+Migration+Agents+Melbourne/@-37.8156435,144.9647575,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad642b4758afc1d:0xf8879c932a785c4a!8m2!3d-37.8156435!4d144.9647575!16s%2Fg%2F1tgwsdb2?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T09:57:53.285Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0017",
+    "businessName": "VMC (Vision Migration Consultants)",
+    "description": "",
+    "categories": [
+      "Migration"
+    ],
+    "location": "705/2 Queen St, Melbourne VIC 3000",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3000",
+    "phone": "(03) 9629 2070",
+    "website": "http://www.vmcaustralia.com.au/",
+    "rating": 4.9,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "VMC+(Vision+Migration+Consultants)",
+    "latitude": -37.8186296,
+    "longitude": 144.9627485,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/VMC+(Vision+Migration+Consultants)/@-37.8186296,144.9627485,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad642cb197e5b6b:0x5b6c9c062c144bcf!8m2!3d-37.8186296!4d144.9627485!16s%2Fg%2F1hf12z8wy?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T09:58:37.907Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0019",
+    "businessName": "Giecglobal Education & Immigration Lawyer In Australia",
+    "description": "",
+    "categories": [
+      "Migration"
+    ],
+    "location": "Level 8/470 Collins St, Melbourne VIC 3000",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3000",
+    "phone": "0411 631 215",
+    "website": "https://giecglobal.com.au/",
+    "rating": 4.8,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Giecglobal+Education+%26+Immigration+Lawyer+In+Australia",
+    "latitude": -37.8176644,
+    "longitude": 144.9584842,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Giecglobal+Education+%26+Immigration+Lawyer+In+Australia/@-37.8176644,144.9584842,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad65d24dd358e4d:0xe2a25bef544daadc!8m2!3d-37.8176644!4d144.9584842!16s%2Fg%2F11h55wp6tw?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T09:59:07.315Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free assessment",
+      "book a free consultation",
+      "claim your free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0021",
+    "businessName": "Australian Migration Lawyers",
+    "description": "",
+    "categories": [
+      "Migration"
+    ],
+    "location": "117 Queens Bridge St, Southbank VIC 3006",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3006",
+    "phone": "1300 150 745",
+    "website": "https://www.australianmigrationlawyers.com.au/",
+    "rating": 4.9,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Australian+Migration+Lawyers",
+    "latitude": -37.8248769,
+    "longitude": 144.9605191,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Australian+Migration+Lawyers/@-37.8248769,144.9605191,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad65da626cf9543:0x26d735bdfe8a89e9!8m2!3d-37.8248769!4d144.9605191!16s%2Fg%2F11s53yyjj2?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T09:59:34.187Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0025",
+    "businessName": "Skylark Migration Specialists",
+    "description": "",
+    "categories": [
+      "Migration"
+    ],
+    "location": "Level/5/111 Cecil St, South Melbourne VIC 3205",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3205",
+    "phone": "(03) 9034 4514",
+    "website": "https://www.skylarkmigration.com.au/",
+    "rating": 4.9,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Skylark+Migration+Specialists",
+    "latitude": -37.8305009,
+    "longitude": 144.9570953,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Skylark+Migration+Specialists/@-37.8305009,144.9570953,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad642cbd9aa046b:0xed5e46895c71de52!8m2!3d-37.8305009!4d144.9570953!16s%2Fg%2F11fx9bjt2r?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T10:00:22.676Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "book your free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0031",
+    "businessName": "AIM Lawyers & Consultant - Immigration & Migration Agent Melbourne",
+    "description": "",
+    "categories": [
+      "Migration"
+    ],
+    "location": "Level 24/570 Bourke St, Melbourne VIC 3000",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3000",
+    "phone": "(03) 7036 8808",
+    "website": "http://www.aimlawyers.com.au/",
+    "rating": 4.9,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "AIM+Lawyers+%26+Consultant+-+Immigration+%26+Migration+Agent+Melbourne",
+    "latitude": -37.8157218,
+    "longitude": 144.9568474,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/AIM+Lawyers+%26+Consultant+-+Immigration+%26+Migration+Agent+Melbourne/@-37.8157218,144.9568474,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad64333d30abbf1:0x274a4768f220102f!8m2!3d-37.8157218!4d144.9568474!16s%2Fg%2F11hg0hcpkr?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T10:01:57.191Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "claim your free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0032",
+    "businessName": "Olympus Migration",
+    "description": "",
+    "categories": [
+      "Migration"
+    ],
+    "location": "Level 10/440 Collins St, Melbourne VIC 3000",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3000",
+    "phone": "1300 804 204",
+    "website": "http://www.olympusmigration.com.au/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Olympus+Migration",
+    "latitude": -37.8169986,
+    "longitude": 144.9597795,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Olympus+Migration/@-37.8169986,144.9597795,16z/data=!3m1!4b1!4m6!3m5!1s0x6ad65d15c205c59f:0x36c4265aca2680fd!8m2!3d-37.8169986!4d144.9597795!16s%2Fg%2F11sc2t5yrk?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T10:02:08.887Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "complimentary consultation",
+      "complimentary consult"
+    ]
+  },
+  {
+    "id": "provider_0035",
+    "businessName": "NEXOR Education Migration - Visa Services - Melbourne",
+    "description": "",
+    "categories": [
+      "Migration"
+    ],
+    "location": "Level 20/350 Queen St, Melbourne VIC 3000",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3000",
+    "phone": "(03) 9111 0009",
+    "website": "https://www.nexorgroup.com.au/?utm_source=Business.google.com&utm_medium=Social&utm_campaign=GMB-Page-Website-Link",
+    "rating": 4.9,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "NEXOR+Education+Migration+-+Visa+Services+-+Melbourne",
+    "latitude": -37.8104023,
+    "longitude": 144.9590325,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/NEXOR+Education+Migration+-+Visa+Services+-+Melbourne/@-37.8104023,144.9590325,16z/data=!3m1!4b1!4m6!3m5!1s0x6ad642b4e9119357:0xd484d0fb56bfea4a!8m2!3d-37.8104023!4d144.9590325!16s%2Fg%2F11bx1j854m?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T10:02:52.817Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0036",
+    "businessName": "Sanguine Migration Melbourne",
+    "description": "",
+    "categories": [
+      "Migration"
+    ],
+    "location": "Exchange Tower, Level 11, Suite 1102/530 Little Collins St, Melbourne VIC 3000",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "1102",
+    "phone": "0426 955 000",
+    "website": "http://www.sanguinemigration.com/",
+    "rating": 4.9,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Sanguine+Migration+Melbourne",
+    "latitude": -37.8168746,
+    "longitude": 144.9570946,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Sanguine+Migration+Melbourne/@-37.8168746,144.9570946,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad65db169921741:0x39d023d1c64e7ca6!8m2!3d-37.8168746!4d144.9570946!16s%2Fg%2F11fpjljhmh?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T10:03:12.101Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0039",
+    "businessName": "Big Brother Group - Migration Agents",
+    "description": "",
+    "categories": [
+      "Migration"
+    ],
+    "location": "Suite 804, Level 8/276 Flinders St, Melbourne VIC 3000",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3000",
+    "phone": "0481 033 481",
+    "website": "https://bigbrothergroup.com.au/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Big+Brother+Group+-+Migration+Agents",
+    "latitude": -37.8178466,
+    "longitude": 144.965307,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Big+Brother+Group+-+Migration+Agents/@-37.8178466,144.965307,17z/data=!3m1!4b1!4m6!3m5!1s0x8ce151fdd428eee5:0x176bbe2aaf201ea8!8m2!3d-37.8178466!4d144.965307!16s%2Fg%2F11v4sj9vyq?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T10:03:54.827Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0040",
+    "businessName": "Vision Consultants",
+    "description": "",
+    "categories": [
+      "Migration"
+    ],
+    "location": "Level 5/1 Elizabeth St, Melbourne VIC 3000",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3000",
+    "phone": "(03) 9939 0545",
+    "website": "https://visionaus.com.au/",
+    "rating": 4.8,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Vision+Consultants",
+    "latitude": -37.8180372,
+    "longitude": 144.9646185,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Vision+Consultants/@-37.8180372,144.9646185,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad65df07174c1cf:0xffb63de6ef9bf540!8m2!3d-37.8180372!4d144.9646185!16s%2Fg%2F1vyswp0w?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T10:04:08.897Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free visa assessment"
+    ]
+  },
+  {
+    "id": "provider_0041",
+    "businessName": "Australia Immigration Migration Consultancy",
+    "description": "",
+    "categories": [
+      "Migration"
+    ],
+    "location": "727 Collins St, Docklands VIC 3006",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3006",
+    "phone": "0433 999 901",
+    "website": "https://auimmi.com.au/about-us/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Australia+Immigration+Migration+Consultancy",
+    "latitude": -37.820592,
+    "longitude": 144.9503921,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Australia+Immigration+Migration+Consultancy/@-37.820592,144.9503921,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad65d509cc3170d:0xbc6220ee3e6fd764!8m2!3d-37.820592!4d144.9503921!16s%2Fg%2F11jqtsgqdd?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T10:04:22.339Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0045",
+    "businessName": "My Australian Visa",
+    "description": "",
+    "categories": [
+      "Migration"
+    ],
+    "location": "Level 30/35 Collins St, Melbourne VIC 3000",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3000",
+    "phone": "(03) 9101 8590",
+    "website": "http://myaustralianvisa.com/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "My+Australian+Visa",
+    "latitude": -37.8139975,
+    "longitude": 144.9727356,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/My+Australian+Visa/@-37.8139975,144.9727356,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad644f1455fdc6b:0x6fc362cc7e31eb23!8m2!3d-37.8139975!4d144.9727356!16s%2Fg%2F1wtbv0cj?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T10:05:26.019Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free assessment"
+    ]
+  },
+  {
+    "id": "provider_0046",
+    "businessName": "Think Visa",
+    "description": "",
+    "categories": [
+      "Migration"
+    ],
+    "location": "Suite 9, Level 3/517 Flinders Ln, Melbourne VIC 3000",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3000",
+    "phone": "(03) 9078 6819",
+    "website": "http://www.thinkvisa.com.au/",
+    "rating": 4.4,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Think+Visa",
+    "latitude": -37.8196436,
+    "longitude": 144.9565437,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Think+Visa/@-37.8196436,144.9565437,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad65d4cedc6a1b1:0x3d1d9bcd447fac6b!8m2!3d-37.8196436!4d144.9565437!16s%2Fg%2F1tfg7tjd?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T10:05:39.957Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free assessment",
+      "free 15-minute"
+    ]
+  },
+  {
+    "id": "provider_0047",
+    "businessName": "True Blue Migration Services",
+    "description": "",
+    "categories": [
+      "Migration"
+    ],
+    "location": "30 English St, Essendon Fields VIC 3041",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3041",
+    "phone": "(03) 9038 9070",
+    "website": "https://truebluemigration.com/",
+    "rating": 4.9,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "True+Blue+Migration+Services",
+    "latitude": -37.7271651,
+    "longitude": 144.8955192,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/True+Blue+Migration+Services/@-37.7271651,144.8955192,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad65ce040ba8813:0x76dc4626cb04a61a!8m2!3d-37.7271651!4d144.8955192!16s%2Fg%2F11b6qk_4cv?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T10:05:51.862Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free assessment"
+    ]
+  },
+  {
+    "id": "provider_0063",
+    "businessName": "MAHI VISA SERVICES (South Yarra)",
+    "description": "",
+    "categories": [
+      "Migration"
+    ],
+    "location": "Suite 811/9 Yarra St, South Yarra VIC 3141",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3141",
+    "phone": "(03) 8764 3052",
+    "website": "https://mahivisaservices.com/?utm_source=Gmb+&utm_medium=Gmb&utm_campaign=Gmb",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "MAHI+VISA+SERVICES+(South+Yarra)",
+    "latitude": -37.8375319,
+    "longitude": 144.9929394,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/MAHI+VISA+SERVICES+(South+Yarra)/@-37.8375319,144.9929394,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad6433e54e1c28f:0x26a63e5029044e0e!8m2!3d-37.8375319!4d144.9929394!16s%2Fg%2F11sgv__6tz?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T10:09:34.978Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "book your free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0072",
+    "businessName": "Stepping Stones Career Solutions - Immigration, Visa & Education Consultants",
+    "description": "",
+    "categories": [
+      "Migration"
+    ],
+    "location": "Suite 204, level 2/227 Collins St, Melbourne VIC 3000",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3000",
+    "phone": "1300 288 472",
+    "website": "http://www.sscs.com.au/",
+    "rating": 4.9,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Stepping+Stones+Career+Solutions+-+Immigration,+Visa+%26+Education+Consultants",
+    "latitude": -37.815751,
+    "longitude": 144.966393,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Stepping+Stones+Career+Solutions+-+Immigration,+Visa+%26+Education+Consultants/@-37.815751,144.966393,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad65d4ada9a4d6f:0x4901764173020d96!8m2!3d-37.815751!4d144.966393!16s%2Fg%2F11c317z_lm?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T10:11:40.280Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "get a free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0081",
+    "businessName": "Kindra Migration Lawyers (formerly WLW Migration Lawyers)",
+    "description": "",
+    "categories": [
+      "Migration"
+    ],
+    "location": "Level 10/277 William St, Melbourne VIC 3000",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3000",
+    "phone": "(03) 9088 6264",
+    "website": "https://kindramigration.com.au/",
+    "rating": 4.9,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Kindra+Migration+Lawyers+(formerly+WLW+Migration+Lawyers)",
+    "latitude": -37.8125211,
+    "longitude": 144.9562045,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Kindra+Migration+Lawyers+(formerly+WLW+Migration+Lawyers)/@-37.8125211,144.9562045,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad65d4c12fa997d:0x85a048285ef4601d!8m2!3d-37.8125211!4d144.9562045!16s%2Fg%2F11bwnxy2vp?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T10:14:27.160Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0099",
+    "businessName": "Dribbin & Brown Criminal Lawyers",
+    "description": "",
+    "categories": [
+      "Migration"
+    ],
+    "location": "4/271 William St, Melbourne VIC 3000",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3000",
+    "phone": "(03) 8644 7320",
+    "website": "https://www.criminalsolicitorsmelbourne.com.au/",
+    "rating": 4.9,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Dribbin+%26+Brown+Criminal+Lawyers",
+    "latitude": -37.8127042,
+    "longitude": 144.9564574,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Dribbin+%26+Brown+Criminal+Lawyers/@-37.8127042,144.9564574,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad65d4ada847c4b:0xea76f43b7bca1ed7!8m2!3d-37.8127042!4d144.9564574!16s%2Fg%2F1tt1sv1r?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T10:18:26.377Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0111",
+    "businessName": "SUKHDEV & AHMAD MIGRATION PTY LTD",
+    "description": "",
+    "categories": [
+      "Migration"
+    ],
+    "location": "505/530 Little Collins St, Melbourne VIC 3000",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3000",
+    "phone": "0406 634 966",
+    "website": "https://samigration.setmore.com/beta",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "SUKHDEV+%26+AHMAD+MIGRATION+PTY+LTD",
+    "latitude": -37.8168831,
+    "longitude": 144.9570971,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/SUKHDEV+%26+AHMAD+MIGRATION+PTY+LTD/@-37.8168831,144.9570971,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad65dfd10cf1a7b:0xd42f7ac188498e!8m2!3d-37.8168831!4d144.9570971!16s%2Fg%2F11hy_wskgb?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T10:21:09.186Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0126",
+    "businessName": "Migration Intelligence - Registered Migration & Education Agent",
+    "description": "",
+    "categories": [
+      "Migration"
+    ],
+    "location": "19/420 Collins St, Melbourne VIC 3000",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3000",
+    "phone": "0433 657 462",
+    "website": "http://www.migrationintelligence.com/",
+    "rating": 4.9,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Migration+Intelligence+-+Registered+Migration+%26+Education+Agent",
+    "latitude": -37.8170953,
+    "longitude": 144.960421,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Migration+Intelligence+-+Registered+Migration+%26+Education+Agent/@-37.8170953,144.960421,16z/data=!3m1!4b1!4m6!3m5!1s0x6ad642b337409e5f:0x674589971d9fb80e!8m2!3d-37.8170953!4d144.960421!16s%2Fg%2F11hb8gjv20?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T10:46:30.286Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free assessment",
+      "free consult",
+      "free visa assessment"
+    ]
+  },
+  {
+    "id": "provider_0131",
+    "businessName": "First Legal & Migration Services Pty Ltd",
+    "description": "",
+    "categories": [
+      "Migration"
+    ],
+    "location": "7/470 St Kilda Rd, Melbourne VIC 3004",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3004",
+    "phone": "0409 977 376",
+    "website": "http://www.firstlegalmigration.com.au/",
+    "rating": 4.9,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "First+Legal+%26+Migration+Services+Pty+Ltd",
+    "latitude": -37.8412448,
+    "longitude": 144.9767698,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/First+Legal+%26+Migration+Services+Pty+Ltd/@-37.8412448,144.9767698,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad65d4ada90f98b:0x5fff06570a462ff4!8m2!3d-37.8412448!4d144.9767698!16s%2Fg%2F11yg9jv0w?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T10:47:38.753Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free quote"
+    ]
+  }
+]

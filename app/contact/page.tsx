@@ -8,8 +8,6 @@ import { Navbar } from '@/components/common/Navbar';
 import { Footer } from '@/components/common/Footer';
 import {
   Mail,
-  Phone,
-  MapPin,
   Clock,
   Send,
   Loader2,
@@ -26,25 +24,13 @@ const contactInfo = [
   {
     icon: Mail,
     title: 'Email Us',
-    details: ['support@setufree.com', 'business@setufree.com'],
+    details: ['contact.freesetu@gmail.com'],
     color: 'bg-blue-500',
   },
   {
-    icon: Phone,
-    title: 'Call Us',
-    details: ['+91 1800-XXX-XXXX (Toll Free)', 'Mon-Sat: 9AM - 6PM IST'],
-    color: 'bg-green-500',
-  },
-  {
-    icon: MapPin,
-    title: 'Visit Us',
-    details: ['123 George Street', 'Sydney, NSW 2000'],
-    color: 'bg-orange-500',
-  },
-  {
     icon: Clock,
-    title: 'Working Hours',
-    details: ['Monday - Saturday', '9:00 AM - 6:00 PM IST'],
+    title: 'Response Time',
+    details: ['We typically respond within', '24-48 hours'],
     color: 'bg-purple-500',
   },
 ];
@@ -371,22 +357,8 @@ export default function ContactPage() {
                   )}
                 </div>
 
-                {/* Map & Additional Info */}
+                {/* Additional Info */}
                 <div className="space-y-8">
-                  {/* Map Embed */}
-                  <div className="bg-white rounded-3xl overflow-hidden shadow-sm h-80">
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d212270.82364386498!2d150.93151455!3d-33.8474027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b129838f39a743f%3A0x3017d681632a850!2sSydney%20NSW%2C%20Australia!5e0!3m2!1sen!2sau!4v1704000000000!5m2!1sen!2sau"
-                      width="100%"
-                      height="100%"
-                      style={{ border: 0 }}
-                      allowFullScreen
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                      title="Office Location"
-                    />
-                  </div>
-
                   {/* Quick Links */}
                   <div className="bg-white rounded-3xl p-8 shadow-sm">
                     <h3 className="text-xl font-bold text-gray-900 mb-6">Quick Links</h3>
@@ -457,7 +429,7 @@ export default function ContactPage() {
                 <p className="text-gray-600">
                   Still have questions?{' '}
                   <a
-                    href="mailto:support@setufree.com"
+                    href="mailto:contact.freesetu@gmail.com"
                     className="text-orange-600 hover:text-orange-700 font-medium"
                   >
                     Email us directly

@@ -290,7 +290,7 @@ We may suspend or terminate accounts for:
 • You waive any right to participate in class actions
 
 **Process:**
-1. Submit a written complaint to support@setufree.com
+1. Submit a written complaint to contact.freesetu@gmail.com
 2. We will respond within 30 days
 3. If unresolved, proceed to formal dispute resolution`,
   },
@@ -319,10 +319,7 @@ We are not liable for delays or failures due to circumstances beyond our control
     icon: Mail,
     content: `For questions about these Terms of Service, please contact us:
 
-**Email:** legal@setufree.com
-**Support:** support@setufree.com
-**Address:** 123 George Street, Sydney, NSW 2000, Australia
-**Phone:** +91 1800-XXX-XXXX
+**Email:** contact.freesetu@gmail.com
 
 We aim to respond to all inquiries within 5 business days.`,
   },

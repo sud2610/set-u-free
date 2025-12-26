@@ -28,16 +28,27 @@ const categoryData: Record<
     keywords: string[];
   }
 > = {
-  dentist: {
-    name: 'Dentist',
-    displayName: 'Dentist',
-    description: 'Find trusted dental professionals for all your oral health needs.',
+  'recruitment-agencies': {
+    name: 'Recruitment Agencies',
+    displayName: 'Recruitment Agencies',
+    description: 'Find trusted recruitment agencies for job placement and staffing.',
     longDescription:
-      'Connect with verified dentists for free consultations. Get expert advice on dental care, cleanings, fillings, orthodontics, and cosmetic dentistry.',
-    icon: '🦷',
+      'Connect with verified recruitment agencies for free consultations. Get expert help with job placement, career advice, and staffing solutions.',
+    icon: '💼',
     color: 'text-blue-600',
     bgColor: 'bg-blue-50',
-    keywords: ['dentist', 'dental care', 'oral health', 'teeth cleaning', 'orthodontics'],
+    keywords: ['recruitment', 'jobs', 'staffing', 'employment', 'career'],
+  },
+  'migration-visa': {
+    name: 'Migration & Visa Advisers',
+    displayName: 'Migration & Visa',
+    description: 'Expert migration agents and visa consultants.',
+    longDescription:
+      'Get professional immigration advice from registered migration agents. Free consultations for visa applications, migration pathways, and citizenship.',
+    icon: '🛂',
+    color: 'text-indigo-600',
+    bgColor: 'bg-indigo-50',
+    keywords: ['migration', 'visa', 'immigration', 'citizenship', 'migration agent'],
   },
   beauty: {
     name: 'Beauty',
@@ -50,49 +61,38 @@ const categoryData: Record<
     bgColor: 'bg-pink-50',
     keywords: ['beauty salon', 'spa', 'hair styling', 'makeup', 'skincare'],
   },
-  gym: {
-    name: 'Gym',
-    displayName: 'Gym & Fitness',
-    description: 'Connect with fitness centers and personal trainers.',
+  dentist: {
+    name: 'Dentist',
+    displayName: 'Dentist',
+    description: 'Find trusted dental professionals for all your oral health needs.',
     longDescription:
-      'Achieve your fitness goals with verified gyms and certified personal trainers. Get free consultations to find the perfect fitness solution.',
-    icon: '💪',
-    color: 'text-red-600',
-    bgColor: 'bg-red-50',
-    keywords: ['gym', 'fitness', 'personal trainer', 'workout', 'exercise'],
+      'Connect with verified dentists for free consultations. Get expert advice on dental care, cleanings, fillings, orthodontics, and cosmetic dentistry.',
+    icon: '🦷',
+    color: 'text-cyan-600',
+    bgColor: 'bg-cyan-50',
+    keywords: ['dentist', 'dental care', 'oral health', 'teeth cleaning', 'orthodontics'],
   },
-  physiotherapy: {
-    name: 'Physiotherapy',
-    displayName: 'Physiotherapy',
-    description: 'Expert physiotherapists for pain relief and rehabilitation.',
+  'eye-care': {
+    name: 'Eye Care',
+    displayName: 'Eye Care',
+    description: 'Optometrists and ophthalmologists for vision care.',
     longDescription:
-      'Get professional physiotherapy services for injury recovery, chronic pain management, and physical rehabilitation from verified experts.',
-    icon: '🏥',
-    color: 'text-green-600',
-    bgColor: 'bg-green-50',
-    keywords: ['physiotherapy', 'physical therapy', 'rehabilitation', 'pain relief'],
-  },
-  yoga: {
-    name: 'Yoga',
-    displayName: 'Yoga',
-    description: 'Find yoga instructors and meditation centers.',
-    longDescription:
-      'Discover inner peace with verified yoga instructors. Find classes for all levels, from beginner to advanced, including meditation and wellness programs.',
-    icon: '🧘',
+      'Get expert eye care from verified optometrists and ophthalmologists. Free consultations for eye exams, glasses, contacts, and eye health.',
+    icon: '👁️',
     color: 'text-purple-600',
     bgColor: 'bg-purple-50',
-    keywords: ['yoga', 'meditation', 'wellness', 'mindfulness', 'yoga classes'],
+    keywords: ['eye care', 'optometrist', 'ophthalmologist', 'glasses', 'vision'],
   },
-  nutrition: {
-    name: 'Nutrition',
-    displayName: 'Nutrition',
-    description: 'Consult with certified nutritionists and dietitians.',
+  doctors: {
+    name: 'Doctors',
+    displayName: 'Doctors',
+    description: 'General practitioners and medical specialists.',
     longDescription:
-      'Get personalized nutrition advice from certified professionals. Free consultations for diet planning, weight management, and healthy lifestyle guidance.',
-    icon: '🥗',
-    color: 'text-orange-600',
-    bgColor: 'bg-orange-50',
-    keywords: ['nutrition', 'dietitian', 'diet plan', 'healthy eating', 'weight management'],
+      'Connect with verified doctors for free consultations. Find GPs, specialists, and healthcare professionals for all your medical needs.',
+    icon: '👨‍⚕️',
+    color: 'text-green-600',
+    bgColor: 'bg-green-50',
+    keywords: ['doctor', 'GP', 'medical', 'healthcare', 'specialist'],
   },
   'mental-health': {
     name: 'Mental Health',
@@ -101,20 +101,42 @@ const categoryData: Record<
     longDescription:
       'Your mental health matters. Connect with verified counselors and therapists for free consultations on stress, anxiety, depression, and overall mental wellness.',
     icon: '🧠',
-    color: 'text-indigo-600',
-    bgColor: 'bg-indigo-50',
+    color: 'text-violet-600',
+    bgColor: 'bg-violet-50',
     keywords: ['mental health', 'counseling', 'therapy', 'psychologist', 'wellness'],
   },
-  dermatology: {
-    name: 'Dermatology',
-    displayName: 'Dermatology',
-    description: 'Skin specialists for all your dermatological needs.',
+  nutrition: {
+    name: 'Nutrition',
+    displayName: 'Nutrition',
+    description: 'Consult with certified nutritionists and dietitians.',
     longDescription:
-      'Consult with verified dermatologists for skin care, acne treatment, anti-aging solutions, and other dermatological concerns.',
-    icon: '✨',
+      'Get personalized nutrition advice from certified professionals. Free consultations for diet planning, weight management, and healthy lifestyle guidance.',
+    icon: '🥗',
     color: 'text-amber-600',
     bgColor: 'bg-amber-50',
-    keywords: ['dermatology', 'skin care', 'acne treatment', 'skin specialist'],
+    keywords: ['nutrition', 'dietitian', 'diet plan', 'healthy eating', 'weight management'],
+  },
+  physiotherapy: {
+    name: 'Physiotherapy',
+    displayName: 'Physiotherapy',
+    description: 'Expert physiotherapists for pain relief and rehabilitation.',
+    longDescription:
+      'Get professional physiotherapy services for injury recovery, chronic pain management, and physical rehabilitation from verified experts.',
+    icon: '🏥',
+    color: 'text-teal-600',
+    bgColor: 'bg-teal-50',
+    keywords: ['physiotherapy', 'physical therapy', 'rehabilitation', 'pain relief'],
+  },
+  'legal-services': {
+    name: 'Legal Services',
+    displayName: 'Legal Services',
+    description: 'Find lawyers and legal advisors for all your legal needs.',
+    longDescription:
+      'Connect with verified lawyers and legal professionals for free consultations. Get expert legal advice on various matters including family law, property, and business.',
+    icon: '⚖️',
+    color: 'text-slate-600',
+    bgColor: 'bg-slate-50',
+    keywords: ['lawyer', 'legal', 'attorney', 'law firm', 'legal advice'],
   },
 };
 

@@ -1,0 +1,22 @@
+{
+  "scrapedAt": "2025-12-26T00:35:23.064Z",
+  "totalProvidersScanned": 0,
+  "totalProviders": 1,
+  "freeConsultationProviders": 1,
+  "byCity": [
+    {
+      "city": "Sydney",
+      "total": 1,
+      "freeConsultation": 1
+    }
+  ],
+  "byCategory": [
+    {
+      "category": "Recruitment",
+      "total": 1,
+      "freeConsultation": 1
+    }
+  ],
+  "errors": [],
+  "duration": "41m 13s"
+}

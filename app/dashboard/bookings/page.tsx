@@ -52,7 +52,7 @@ export default function BookingsPage() {
       time: '6:00 PM',
       status: 'upcoming',
       location: '456 Fitness Ave, Sydney',
-      phone: '+61 2 9876 5432',
+      phone: 'Contact via platform',
       category: 'Gym',
     },
     {

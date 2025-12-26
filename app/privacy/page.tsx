@@ -193,7 +193,7 @@ export default function PrivacyPage() {
               <li><strong>Object:</strong> Object to certain types of data processing</li>
             </ul>
             <p className="text-gray-600 leading-relaxed mt-4">
-              To exercise these rights, please contact us at privacy@setufree.com. We will respond to your request within 30 days.
+              To exercise these rights, please contact us at contact.freesetu@gmail.com. We will respond to your request within 30 days.
             </p>
           </section>
 
@@ -232,7 +232,7 @@ export default function PrivacyPage() {
           <section>
             <h2 className="text-2xl font-bold text-gray-900 mb-4">10. Children&apos;s Privacy</h2>
             <p className="text-gray-600 leading-relaxed">
-              Our Platform is not intended for children under 18 years of age. We do not knowingly collect personal information from children. If you are a parent or guardian and believe your child has provided us with personal information, please contact us immediately at privacy@setufree.com, and we will take steps to delete such information.
+              Our Platform is not intended for children under 18 years of age. We do not knowingly collect personal information from children. If you are a parent or guardian and believe your child has provided us with personal information, please contact us immediately at contact.freesetu@gmail.com, and we will take steps to delete such information.
             </p>
           </section>
 
@@ -281,10 +281,8 @@ export default function PrivacyPage() {
               If you have any questions, concerns, or complaints about this Privacy Policy or our data practices, please contact us:
             </p>
             <ul className="text-gray-600 space-y-2">
-              <li><strong>Privacy Officer:</strong> privacy@setufree.com</li>
-              <li><strong>General Inquiries:</strong> support@setufree.com</li>
+              <li><strong>Email:</strong> contact.freesetu@gmail.com</li>
               <li><strong>Website:</strong> www.setufree.com</li>
-              <li><strong>Address:</strong> Sydney, NSW, Australia</li>
             </ul>
             <p className="text-gray-600 leading-relaxed mt-4">
               We will respond to all privacy-related inquiries within 30 days.

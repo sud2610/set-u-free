@@ -117,6 +117,7 @@ export const auth: Auth | null = app ? getAuth(app) : null;
  */
 export const db: Firestore | null = app ? getFirestore(app) : null;
 
+
 /**
  * Firebase Storage instance
  * Used for storing files (images, documents, etc.)

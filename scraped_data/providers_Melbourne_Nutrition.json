@@ -1,0 +1,199 @@
+[
+  {
+    "id": "provider_0005",
+    "businessName": "Annie Barry - Weight Loss & Perimenopause Dietitian",
+    "description": "",
+    "categories": [
+      "Nutrition"
+    ],
+    "location": "Lygon St, Brunswick East VIC 3057",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3057",
+    "phone": "0409 414 397",
+    "website": "https://www.allroundwellness.com.au/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Annie+Barry+-+Weight+Loss+%26+Perimenopause+Dietitian",
+    "latitude": -37.7728032,
+    "longitude": 144.9713706,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Annie+Barry+-+Weight+Loss+%26+Perimenopause+Dietitian/@-37.7728032,144.9713706,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad643d62ebdf94b:0xd08cf90a13bf4af9!8m2!3d-37.7728032!4d144.9713706!16s%2Fg%2F11h79kb_f7?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2OUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T21:26:15.417Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free discovery call"
+    ]
+  },
+  {
+    "id": "provider_0006",
+    "businessName": "Tonina Rizzo Nutrition",
+    "description": "",
+    "categories": [
+      "Nutrition"
+    ],
+    "location": "level 2/68 Cape St, Heidelberg VIC 3084",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3084",
+    "phone": "0413 732 574",
+    "website": "https://www.toninarizzo.com.au/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Tonina+Rizzo+Nutrition",
+    "latitude": -37.7566895,
+    "longitude": 145.0672942,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Tonina+Rizzo+Nutrition/@-37.7566895,145.0672942,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad645ee2b2aa3cb:0xddaede242cd018da!8m2!3d-37.7566895!4d145.0672942!16s%2Fg%2F11g3_9m9fj?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2OUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T21:26:25.265Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "schedule a free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0035",
+    "businessName": "Married To My Macros, Melbourne",
+    "description": "",
+    "categories": [
+      "Nutrition"
+    ],
+    "location": "39 Brindy Cres, Doncaster East VIC 3109",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3109",
+    "phone": "0449 997 404",
+    "website": "https://www.marriedtomymacros.com/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Married+To+My+Macros,+Melbourne",
+    "latitude": -37.7963105,
+    "longitude": 145.1451497,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Married+To+My+Macros,+Melbourne/@-37.7963105,145.1451497,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad639aea5a28171:0x613150b77999c0aa!8m2!3d-37.7963105!4d145.1451497!16s%2Fg%2F11qptqbjjm?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2OUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T21:33:36.633Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free assessment"
+    ]
+  },
+  {
+    "id": "provider_0055",
+    "businessName": "Fussy Eater Solutions",
+    "description": "",
+    "categories": [
+      "Nutrition"
+    ],
+    "location": "10 Oban St, South Yarra VIC 3185",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3185",
+    "phone": "0421 843 038",
+    "website": "https://www.fussyeater.com.au/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Fussy+Eater+Solutions",
+    "latitude": -37.8444014,
+    "longitude": 145.0028661,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Fussy+Eater+Solutions/@-37.8444014,145.0028661,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad669508c6494df:0x75cebecda8e48eba!8m2!3d-37.8444014!4d145.0028661!16s%2Fg%2F11f611w2mm?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2OUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T21:38:41.764Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free assessment"
+    ]
+  },
+  {
+    "id": "provider_0064",
+    "businessName": "Renew Health Co.",
+    "description": "",
+    "categories": [
+      "Nutrition"
+    ],
+    "location": "136 Wood St, Preston VIC 3072",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3072",
+    "phone": "",
+    "website": "https://www.renewhealthco.com.au/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Renew+Health+Co.",
+    "latitude": -37.7351161,
+    "longitude": 145.0215539,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Renew+Health+Co./@-37.7351161,145.0215539,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad6427c74f6aaab:0x58baa4ba3f1e37d1!8m2!3d-37.7351161!4d145.0215539!16s%2Fg%2F11h3_lg9m5?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2OUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T21:41:25.472Z",
+    "needsManualVerification": true,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free discovery call"
+    ]
+  }
+]
