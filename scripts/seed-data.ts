@@ -440,9 +440,9 @@ async function seedDatabase(): Promise<void> {
       cityBreakdown.set(provider.city, count + 1);
     }
     console.log('\n📍 Providers by city:');
-    for (const [city, count] of cityBreakdown) {
+    Array.from(cityBreakdown.entries()).forEach(([city, count]) => {
       console.log(`   - ${city}: ${count}`);
-    }
+    });
     
     // Show breakdown by category
     const categoryBreakdown = new Map<string, number>();
@@ -453,9 +453,9 @@ async function seedDatabase(): Promise<void> {
       }
     }
     console.log('\n🏷️  Providers by category:');
-    for (const [cat, count] of categoryBreakdown) {
+    Array.from(categoryBreakdown.entries()).forEach(([cat, count]) => {
       console.log(`   - ${cat}: ${count}`);
-    }
+    });
     
   } catch (error) {
     console.error('\n❌ Database seeding failed:', error);
