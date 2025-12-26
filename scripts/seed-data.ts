@@ -144,7 +144,10 @@ function getCategoryImage(categories: string[], categoryImageMap: Map<string, st
   }
   
   // Try partial match
-  for (const [key, image] of categoryImageMap) {
+  const entries = Array.from(categoryImageMap.entries());
+  for (let i = 0; i < entries.length; i++) {
+    const key = entries[i][0];
+    const image = entries[i][1];
     if (primaryCategory.includes(key) || key.includes(primaryCategory)) {
       return image;
     }
