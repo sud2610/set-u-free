@@ -20,9 +20,9 @@ import {
 // ==================== METADATA ====================
 
 export const metadata: Metadata = {
-  title: 'About Us | Set-U-Free - Connecting You with Trusted Service Providers',
+  title: 'About Us | FreeSetu - Connecting You with Trusted Service Providers',
   description:
-    'Learn about Set-U-Free, our mission to connect customers with verified service providers for free consultations. Discover our story, values, and the team behind the platform.',
+    'Learn about FreeSetu, our mission to connect customers with verified service providers for free consultations. Discover our story, values, and the team behind the platform.',
   keywords: [
     'about set-u-free',
     'free consultation platform',
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     'team',
   ],
   openGraph: {
-    title: 'About Set-U-Free',
+    title: 'About FreeSetu',
     description: 'Connecting customers with trusted service providers since 2023.',
     images: ['/og-about.png'],
   },
@@ -68,7 +68,7 @@ const values = [
 ];
 
 const milestones = [
-  { year: '2023', title: 'Founded', description: 'Set-U-Free was born with a vision' },
+  { year: '2023', title: 'Founded', description: 'FreeSetu was born with a vision' },
   { year: '2023', title: '1000+ Providers', description: 'Reached our first milestone' },
   { year: '2024', title: '10+ Cities', description: 'Expanded across Australia' },
   { year: '2024', title: '50K+ Bookings', description: 'Helped thousands find services' },
@@ -76,7 +76,7 @@ const milestones = [
 
 const testimonials = [
   {
-    quote: 'Set-U-Free transformed how I find local services. The free consultation feature is a game-changer!',
+    quote: 'FreeSetu transformed how I find local services. The free consultation feature is a game-changer!',
     author: 'Meera Joshi',
     role: 'Small Business Owner',
     rating: 5,
@@ -134,7 +134,7 @@ export default function AboutPage() {
                   </span>
                 </h1>
                 <p className="mt-6 text-xl text-gray-600 leading-relaxed">
-                  Set-U-Free was founded with a simple mission: make it easy for everyone to 
+                  FreeSetu was founded with a simple mission: make it easy for everyone to 
                   access quality services through free consultations with verified professionals.
                 </p>
               </div>

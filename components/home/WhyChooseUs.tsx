@@ -148,12 +148,12 @@ export function WhyChooseUs() {
         {/* ==================== HEADER ==================== */}
         <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
           <span className="inline-block px-4 py-1.5 bg-yellow-100 text-yellow-700 text-sm font-semibold rounded-full mb-4">
-            Why Set-U-Free
+            Why FreeSetu
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
             Why Choose{' '}
             <span className="bg-gradient-to-r from-yellow-500 to-yellow-600 bg-clip-text text-transparent">
-              Set-U-Free?
+              FreeSetu?
             </span>
           </h2>
           <p className="mt-4 text-gray-600 text-lg">

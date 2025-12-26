@@ -4,7 +4,7 @@ import { ArrowLeft, Shield, Eye, Database, Lock, Globe, Users, Mail, Cookie } fr
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
-  description: 'Privacy Policy for Set-U-Free platform - How we collect, use, and protect your data.',
+  description: 'Privacy Policy for FreeSetu platform - How we collect, use, and protect your data.',
 };
 
 export default function PrivacyPage() {
@@ -43,7 +43,7 @@ export default function PrivacyPage() {
               1. Introduction
             </h2>
             <p className="text-gray-600 leading-relaxed mb-4">
-              Set-U-Free (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our website, mobile applications, and services (collectively, the &quot;Platform&quot;).
+              FreeSetu (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our website, mobile applications, and services (collectively, the &quot;Platform&quot;).
             </p>
             <p className="text-gray-600 leading-relaxed">
               Please read this Privacy Policy carefully. By accessing or using our Platform, you acknowledge that you have read, understood, and agree to be bound by this Privacy Policy.
@@ -135,7 +135,7 @@ export default function PrivacyPage() {
 
             <h3 className="text-lg font-semibold text-gray-800 mb-2">4.4 Business Transfers</h3>
             <p className="text-gray-600 leading-relaxed">
-              If Set-U-Free is involved in a merger, acquisition, or sale of assets, your information may be transferred as part of that transaction.
+              If FreeSetu is involved in a merger, acquisition, or sale of assets, your information may be transferred as part of that transaction.
             </p>
           </section>
 

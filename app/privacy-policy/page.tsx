@@ -8,12 +8,12 @@ import { Shield, Eye, Lock, Bell, Trash2, FileText, Mail } from 'lucide-react';
 // ==================== METADATA ====================
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | Set-U-Free - How We Protect Your Data',
+  title: 'Privacy Policy | FreeSetu - How We Protect Your Data',
   description:
-    'Learn how Set-U-Free collects, uses, and protects your personal information. Our commitment to your privacy and data security.',
+    'Learn how FreeSetu collects, uses, and protects your personal information. Our commitment to your privacy and data security.',
   keywords: ['privacy policy', 'data protection', 'personal information', 'user rights', 'GDPR'],
   openGraph: {
-    title: 'Privacy Policy | Set-U-Free',
+    title: 'Privacy Policy | FreeSetu',
     description: 'Our commitment to protecting your privacy and personal data.',
   },
 };
@@ -27,9 +27,9 @@ const sections = [
     id: 'introduction',
     title: '1. Introduction',
     icon: Shield,
-    content: `Welcome to Set-U-Free ("we," "our," or "us"). We are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our platform.
+    content: `Welcome to FreeSetu ("we," "our," or "us"). We are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our platform.
 
-By using Set-U-Free, you agree to the collection and use of information in accordance with this policy. If you do not agree with our policies and practices, please do not use our services.`,
+By using FreeSetu, you agree to the collection and use of information in accordance with this policy. If you do not agree with our policies and practices, please do not use our services.`,
   },
   {
     id: 'information-collection',
@@ -221,7 +221,7 @@ After the retention period, data is securely deleted or anonymized.`,
     id: 'children',
     title: '9. Children\'s Privacy',
     icon: Shield,
-    content: `Set-U-Free is not intended for users under 18 years of age. We do not knowingly collect personal information from children.
+    content: `FreeSetu is not intended for users under 18 years of age. We do not knowingly collect personal information from children.
 
 If you are a parent or guardian and believe your child has provided us with personal information, please contact us immediately. We will take steps to delete such information from our systems.`,
   },
@@ -340,7 +340,7 @@ export default function PrivacyPolicyPage() {
               {/* Footer Note */}
               <div className="mt-12 bg-orange-50 rounded-2xl p-6 text-center">
                 <p className="text-gray-700">
-                  By using Set-U-Free, you acknowledge that you have read and understood this Privacy Policy.
+                  By using FreeSetu, you acknowledge that you have read and understood this Privacy Policy.
                 </p>
                 <div className="mt-4 flex flex-wrap justify-center gap-4">
                   <Link

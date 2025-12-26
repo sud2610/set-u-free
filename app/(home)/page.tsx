@@ -9,7 +9,7 @@ import { WhyChooseUs } from '@/components/home/WhyChooseUs';
 // ==================== HOME PAGE COMPONENT ====================
 
 /**
- * Home page - Main landing page for Set-U-Free
+ * Home page - Main landing page for FreeSetu
  * 
  * Sections:
  * 1. HeroSection - Main hero with headline
@@ -193,7 +193,7 @@ export default function HomePage() {
             </h2>
             <p className="mt-4 text-gray-600 text-lg">
               Don&apos;t just take our word for it. Here&apos;s what people are saying
-              about their experience with Set-U-Free.
+              about their experience with FreeSetu.
             </p>
           </div>
 
@@ -213,7 +213,7 @@ export default function HomePage() {
                 ))}
               </div>
               <p className="text-gray-600 mb-6">
-                &quot;Found an amazing dentist through Set-U-Free. The free consultation
+                &quot;Found an amazing dentist through FreeSetu. The free consultation
                 helped me understand my treatment options before committing. Highly
                 recommended!&quot;
               </p>
@@ -242,7 +242,7 @@ export default function HomePage() {
                 ))}
               </div>
               <p className="text-gray-600 mb-6">
-                &quot;As a yoga instructor, Set-U-Free has helped me reach more clients.
+                &quot;As a yoga instructor, FreeSetu has helped me reach more clients.
                 The platform is easy to use and the verification process builds trust
                 with potential customers.&quot;
               </p>
@@ -309,7 +309,7 @@ export default function HomePage() {
           </h2>
           <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
             Join thousands of satisfied customers who have found trusted professionals
-            through Set-U-Free. Start your journey today - it&apos;s completely free!
+            through FreeSetu. Start your journey today - it&apos;s completely free!
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a

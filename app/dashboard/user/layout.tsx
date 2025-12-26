@@ -7,9 +7,9 @@ import { DashboardLayoutClient } from './DashboardLayoutClient';
 export const metadata: Metadata = {
   title: {
     default: 'Dashboard',
-    template: '%s | My Dashboard - Set-U-Free',
+    template: '%s | My Dashboard - FreeSetu',
   },
-  description: 'Manage your bookings, profile, and settings on Set-U-Free.',
+  description: 'Manage your bookings, profile, and settings on FreeSetu.',
   robots: {
     index: false,
     follow: false,

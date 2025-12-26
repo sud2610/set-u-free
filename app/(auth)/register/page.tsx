@@ -9,11 +9,11 @@ import { AuthRedirect } from '../login/AuthRedirect';
 export const metadata: Metadata = {
   title: 'Create Account',
   description:
-    'Create your Set-U-Free account to book free consultations or register as a service provider.',
+    'Create your FreeSetu account to book free consultations or register as a service provider.',
   openGraph: {
-    title: 'Create Account | Set-U-Free',
+    title: 'Create Account | FreeSetu',
     description:
-      'Join Set-U-Free to connect with verified service providers or offer your services.',
+      'Join FreeSetu to connect with verified service providers or offer your services.',
   },
 };
 
@@ -71,7 +71,7 @@ export default function RegisterPage() {
             <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
               <span className="text-2xl font-bold text-yellow-500">S</span>
             </div>
-            <span className="text-2xl font-bold text-gray-900">Set-U-Free</span>
+            <span className="text-2xl font-bold text-gray-900">FreeSetu</span>
           </Link>
         </div>
 
@@ -80,7 +80,7 @@ export default function RegisterPage() {
           <h1 className="text-4xl xl:text-5xl font-bold text-gray-900 leading-tight">
             Start your journey
             <br />
-            with Set-U-Free
+            with FreeSetu
           </h1>
           <p className="text-gray-800 text-lg max-w-md leading-relaxed">
             Whether you need services or want to offer them, create an account and
@@ -110,7 +110,7 @@ export default function RegisterPage() {
 
         {/* Footer */}
         <div className="relative z-10 text-gray-700 text-sm">
-          © {new Date().getFullYear()} Set-U-Free. All rights reserved.
+          © {new Date().getFullYear()} FreeSetu. All rights reserved.
         </div>
       </div>
 
@@ -123,7 +123,7 @@ export default function RegisterPage() {
               <div className="w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-xl flex items-center justify-center shadow-lg">
                 <span className="text-xl font-bold text-gray-900">S</span>
               </div>
-              <span className="text-xl font-bold text-gray-900">Set-U-Free</span>
+              <span className="text-xl font-bold text-gray-900">FreeSetu</span>
             </Link>
           </div>
 

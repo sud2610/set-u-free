@@ -7,9 +7,9 @@ import { ProviderDashboardLayoutClient } from './ProviderDashboardLayoutClient';
 export const metadata: Metadata = {
   title: {
     default: 'Provider Dashboard',
-    template: '%s | Provider Dashboard - Set-U-Free',
+    template: '%s | Provider Dashboard - FreeSetu',
   },
-  description: 'Manage your services, bookings, and business profile on Set-U-Free.',
+  description: 'Manage your services, bookings, and business profile on FreeSetu.',
   robots: {
     index: false,
     follow: false,

@@ -118,7 +118,7 @@ export function Sidebar({ user, variant = 'user' }: SidebarProps) {
               <div className="w-8 h-8 bg-gradient-to-r from-orange-500 to-amber-500 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-sm">S</span>
               </div>
-              <span className="text-lg font-bold text-gray-900">Set-U-Free</span>
+              <span className="text-lg font-bold text-gray-900">FreeSetu</span>
             </Link>
             <button
               onClick={closeMobile}

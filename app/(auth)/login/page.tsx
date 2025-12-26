@@ -9,9 +9,9 @@ import { AuthRedirect } from './AuthRedirect';
 export const metadata: Metadata = {
   title: 'Sign In',
   description:
-    'Sign in to your Set-U-Free account to book free consultations with verified service providers.',
+    'Sign in to your FreeSetu account to book free consultations with verified service providers.',
   openGraph: {
-    title: 'Sign In | Set-U-Free',
+    title: 'Sign In | FreeSetu',
     description: 'Access your account and book free consultations.',
   },
 };
@@ -67,7 +67,7 @@ export default function LoginPage() {
             <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
               <span className="text-2xl font-bold text-yellow-500">S</span>
             </div>
-            <span className="text-2xl font-bold text-gray-900">Set-U-Free</span>
+            <span className="text-2xl font-bold text-gray-900">FreeSetu</span>
           </Link>
         </div>
 
@@ -105,7 +105,7 @@ export default function LoginPage() {
 
         {/* Footer */}
         <div className="relative z-10 text-gray-700 text-sm">
-          © {new Date().getFullYear()} Set-U-Free. All rights reserved.
+          © {new Date().getFullYear()} FreeSetu. All rights reserved.
         </div>
       </div>
 
@@ -118,7 +118,7 @@ export default function LoginPage() {
               <div className="w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-xl flex items-center justify-center shadow-lg">
                 <span className="text-xl font-bold text-gray-900">S</span>
               </div>
-              <span className="text-xl font-bold text-gray-900">Set-U-Free</span>
+              <span className="text-xl font-bold text-gray-900">FreeSetu</span>
             </Link>
           </div>
 

@@ -8,7 +8,7 @@ import { Footer } from '@/components/common/Footer';
 export const metadata: Metadata = {
   title: {
     default: 'Browse Services',
-    template: '%s | Set-U-Free Services',
+    template: '%s | FreeSetu Services',
   },
 };
 

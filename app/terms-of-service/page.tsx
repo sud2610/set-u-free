@@ -19,13 +19,13 @@ import {
 // ==================== METADATA ====================
 
 export const metadata: Metadata = {
-  title: 'Terms of Service | Set-U-Free - Platform Rules and User Agreement',
+  title: 'Terms of Service | FreeSetu - Platform Rules and User Agreement',
   description:
-    'Read the Terms of Service for Set-U-Free. Understand your rights, responsibilities, and the rules governing the use of our platform.',
+    'Read the Terms of Service for FreeSetu. Understand your rights, responsibilities, and the rules governing the use of our platform.',
   keywords: ['terms of service', 'user agreement', 'platform rules', 'terms and conditions'],
   openGraph: {
-    title: 'Terms of Service | Set-U-Free',
-    description: 'The rules and guidelines for using Set-U-Free platform.',
+    title: 'Terms of Service | FreeSetu',
+    description: 'The rules and guidelines for using FreeSetu platform.',
   },
 };
 
@@ -38,7 +38,7 @@ const sections = [
     id: 'acceptance',
     title: '1. Acceptance of Terms',
     icon: FileText,
-    content: `By accessing or using Set-U-Free ("Platform"), you agree to be bound by these Terms of Service ("Terms"). If you disagree with any part of these terms, you may not access the Platform.
+    content: `By accessing or using FreeSetu ("Platform"), you agree to be bound by these Terms of Service ("Terms"). If you disagree with any part of these terms, you may not access the Platform.
 
 These Terms apply to all users, including:
 • Customers seeking services
@@ -51,7 +51,7 @@ We reserve the right to modify these Terms at any time. Continued use of the Pla
     id: 'eligibility',
     title: '2. Eligibility',
     icon: Users,
-    content: `To use Set-U-Free, you must:
+    content: `To use FreeSetu, you must:
 
 **Age Requirements:**
 • Be at least 18 years old
@@ -74,7 +74,7 @@ We reserve the right to modify these Terms at any time. Continued use of the Pla
     id: 'services',
     title: '3. Platform Services',
     icon: Shield,
-    content: `Set-U-Free provides a platform connecting customers with service providers. We do not directly provide professional services.
+    content: `FreeSetu provides a platform connecting customers with service providers. We do not directly provide professional services.
 
 **What We Offer:**
 • Service provider discovery and search
@@ -180,7 +180,7 @@ Violations may result in immediate account suspension or termination.`,
     title: '7. Payments and Fees',
     icon: CreditCard,
     content: `**Free Consultations:**
-Initial consultations booked through Set-U-Free are free for customers.
+Initial consultations booked through FreeSetu are free for customers.
 
 **Paid Services:**
 • Providers may charge for services beyond free consultation
@@ -203,7 +203,7 @@ Initial consultations booked through Set-U-Free are free for customers.
     title: '8. Intellectual Property',
     icon: FileText,
     content: `**Platform Ownership:**
-All content, design, and functionality of Set-U-Free are owned by us and protected by intellectual property laws.
+All content, design, and functionality of FreeSetu are owned by us and protected by intellectual property laws.
 
 **User Content:**
 • You retain ownership of content you create
@@ -241,7 +241,7 @@ TO THE MAXIMUM EXTENT PERMITTED BY LAW, SET-U-FREE SHALL NOT BE LIABLE FOR ANY I
     id: 'indemnification',
     title: '10. Indemnification',
     icon: Shield,
-    content: `You agree to indemnify and hold harmless Set-U-Free, its officers, directors, employees, and agents from any claims, damages, losses, or expenses arising from:
+    content: `You agree to indemnify and hold harmless FreeSetu, its officers, directors, employees, and agents from any claims, damages, losses, or expenses arising from:
 
 • Your use of the Platform
 • Your violation of these Terms
@@ -284,7 +284,7 @@ We may suspend or terminate accounts for:
 • Contact our support team for mediation
 • We may investigate and take action
 
-**With Set-U-Free:**
+**With FreeSetu:**
 • Disputes are governed by Australian law
 • Courts in New South Wales, Australia have exclusive jurisdiction
 • You waive any right to participate in class actions
@@ -299,7 +299,7 @@ We may suspend or terminate accounts for:
     title: '13. General Provisions',
     icon: FileText,
     content: `**Entire Agreement:**
-These Terms, along with our Privacy Policy, constitute the entire agreement between you and Set-U-Free.
+These Terms, along with our Privacy Policy, constitute the entire agreement between you and FreeSetu.
 
 **Severability:**
 If any provision is found unenforceable, the remaining provisions remain in effect.
@@ -342,7 +342,7 @@ export default function TermsOfServicePage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4">Terms of Service</h1>
               <p className="text-xl text-gray-400">
-                The rules and guidelines for using Set-U-Free
+                The rules and guidelines for using FreeSetu
               </p>
               <p className="text-sm text-gray-500 mt-6">Last Updated: {lastUpdated}</p>
             </div>
@@ -428,7 +428,7 @@ export default function TermsOfServicePage() {
               {/* Agreement Section */}
               <div className="mt-12 bg-gray-900 rounded-2xl p-8 text-center">
                 <h3 className="text-xl font-bold text-white mb-4">
-                  By using Set-U-Free, you agree to these Terms
+                  By using FreeSetu, you agree to these Terms
                 </h3>
                 <p className="text-gray-400 mb-6">
                   If you have questions or concerns, please contact us before using the platform.

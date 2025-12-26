@@ -4,7 +4,7 @@ import { ArrowLeft, FileText, Shield, Users, AlertTriangle, Scale, Mail } from '
 
 export const metadata: Metadata = {
   title: 'Terms of Service',
-  description: 'Terms and Conditions for using Set-U-Free platform.',
+  description: 'Terms and Conditions for using FreeSetu platform.',
 };
 
 export default function TermsPage() {
@@ -43,7 +43,7 @@ export default function TermsPage() {
               1. Agreement to Terms
             </h2>
             <p className="text-gray-600 leading-relaxed mb-4">
-              Welcome to Set-U-Free. These Terms of Service (&quot;Terms&quot;) govern your access to and use of the Set-U-Free website, mobile applications, and services (collectively, the &quot;Platform&quot;). By accessing or using our Platform, you agree to be bound by these Terms.
+              Welcome to FreeSetu. These Terms of Service (&quot;Terms&quot;) govern your access to and use of the FreeSetu website, mobile applications, and services (collectively, the &quot;Platform&quot;). By accessing or using our Platform, you agree to be bound by these Terms.
             </p>
             <p className="text-gray-600 leading-relaxed">
               If you do not agree to these Terms, you may not access or use the Platform. We reserve the right to modify these Terms at any time. Your continued use of the Platform following any changes constitutes acceptance of those changes.
@@ -54,7 +54,7 @@ export default function TermsPage() {
           <section>
             <h2 className="text-2xl font-bold text-gray-900 mb-4">2. Definitions</h2>
             <ul className="list-disc list-inside text-gray-600 space-y-2">
-              <li><strong>&quot;Platform&quot;</strong> refers to the Set-U-Free website, applications, and all related services.</li>
+              <li><strong>&quot;Platform&quot;</strong> refers to the FreeSetu website, applications, and all related services.</li>
               <li><strong>&quot;User&quot;</strong> refers to any individual who accesses or uses the Platform.</li>
               <li><strong>&quot;Customer&quot;</strong> refers to Users who seek services through the Platform.</li>
               <li><strong>&quot;Service Provider&quot;</strong> refers to businesses or individuals offering services on the Platform.</li>
@@ -139,13 +139,13 @@ export default function TermsPage() {
           <section>
             <h2 className="text-2xl font-bold text-gray-900 mb-4">7. Bookings and Consultations</h2>
             <p className="text-gray-600 leading-relaxed mb-4">
-              Set-U-Free facilitates free consultations between Customers and Service Providers. The Platform serves as an intermediary and is not a party to any agreement between Customers and Service Providers.
+              FreeSetu facilitates free consultations between Customers and Service Providers. The Platform serves as an intermediary and is not a party to any agreement between Customers and Service Providers.
             </p>
             <ul className="list-disc list-inside text-gray-600 space-y-2">
               <li>All bookings are subject to Service Provider availability</li>
               <li>Service Providers set their own terms for services beyond initial consultations</li>
               <li>Any payments for services are made directly between Customers and Service Providers</li>
-              <li>Set-U-Free is not responsible for the quality, safety, or legality of services provided</li>
+              <li>FreeSetu is not responsible for the quality, safety, or legality of services provided</li>
             </ul>
           </section>
 
@@ -156,10 +156,10 @@ export default function TermsPage() {
               You may post reviews, comments, and other content on the Platform. By posting content, you:
             </p>
             <ul className="list-disc list-inside text-gray-600 space-y-2">
-              <li>Grant Set-U-Free a non-exclusive, worldwide, royalty-free license to use, display, and distribute your content</li>
+              <li>Grant FreeSetu a non-exclusive, worldwide, royalty-free license to use, display, and distribute your content</li>
               <li>Represent that you own or have the right to post such content</li>
               <li>Agree that your content will not violate any third-party rights</li>
-              <li>Accept that Set-U-Free may remove content that violates these Terms</li>
+              <li>Accept that FreeSetu may remove content that violates these Terms</li>
             </ul>
           </section>
 
@@ -170,7 +170,7 @@ export default function TermsPage() {
               9. Intellectual Property
             </h2>
             <p className="text-gray-600 leading-relaxed mb-4">
-              The Platform and its original content, features, and functionality are owned by Set-U-Free and are protected by international copyright, trademark, and other intellectual property laws.
+              The Platform and its original content, features, and functionality are owned by FreeSetu and are protected by international copyright, trademark, and other intellectual property laws.
             </p>
             <p className="text-gray-600 leading-relaxed">
               You may not copy, modify, distribute, sell, or lease any part of the Platform without our prior written consent.
@@ -212,7 +212,7 @@ export default function TermsPage() {
           <section>
             <h2 className="text-2xl font-bold text-gray-900 mb-4">12. Indemnification</h2>
             <p className="text-gray-600 leading-relaxed">
-              You agree to indemnify, defend, and hold harmless Set-U-Free and its officers, directors, employees, and agents from any claims, damages, losses, liabilities, and expenses (including legal fees) arising from your use of the Platform, violation of these Terms, or infringement of any third-party rights.
+              You agree to indemnify, defend, and hold harmless FreeSetu and its officers, directors, employees, and agents from any claims, damages, losses, liabilities, and expenses (including legal fees) arising from your use of the Platform, violation of these Terms, or infringement of any third-party rights.
             </p>
           </section>
 

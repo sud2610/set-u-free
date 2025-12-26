@@ -157,7 +157,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description: category.longDescription,
     keywords: category.keywords,
     openGraph: {
-      title: `${category.displayName} Services | Set-U-Free`,
+      title: `${category.displayName} Services | FreeSetu`,
       description: category.description,
       images: [`/og-category-${resolvedParams.category}.png`],
     },

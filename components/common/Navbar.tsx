@@ -117,7 +117,7 @@ export function Navbar() {
               <div className="absolute -inset-2 bg-white/30 rounded-2xl blur-sm group-hover:bg-white/40 transition-colors" />
               <Image
                 src="/logo.png"
-                alt="Set-U-Free"
+                alt="FreeSetu"
                 width={280}
                 height={70}
                 className="relative h-14 sm:h-16 md:h-[72px] w-auto object-contain drop-shadow-sm rounded-xl border-2 border-gray-900"

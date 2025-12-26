@@ -1,6 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "name": "set-u-free",
+  "name": "freesetu",
   "version": 2,
   "buildCommand": "npm run build",
   "installCommand": "npm install",

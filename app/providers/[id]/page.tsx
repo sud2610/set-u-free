@@ -20,17 +20,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   // Use a generic title since we can't fetch from Firebase on the server easily
   // The actual provider name will be shown in the page content
   return {
-    title: `Provider Details | Set-U-Free`,
-    description: 'View provider details, services, reviews, and book a free consultation on Set-U-Free.',
+    title: `Provider Details | FreeSetu`,
+    description: 'View provider details, services, reviews, and book a free consultation on FreeSetu.',
     openGraph: {
-      title: `Provider Details | Set-U-Free`,
+      title: `Provider Details | FreeSetu`,
       description: 'View provider details, services, reviews, and book a free consultation.',
       type: 'profile',
       images: [`/api/og/provider/${resolvedParams.id}`],
     },
     twitter: {
       card: 'summary_large_image',
-      title: 'Provider Details | Set-U-Free',
+      title: 'Provider Details | FreeSetu',
       description: 'View provider details, services, reviews, and book a free consultation.',
     },
   };

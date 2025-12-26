@@ -202,7 +202,7 @@ export function RegisterForm() {
         location: '',
       });
       
-      toast.success('Account created successfully! Welcome to Set-U-Free!');
+      toast.success('Account created successfully! Welcome to FreeSetu!');
       
       // Redirect to home page after successful registration
       router.push('/');
@@ -217,7 +217,7 @@ export function RegisterForm() {
 
     try {
       await signInWithGoogle();
-      toast.success('Account created successfully! Welcome to Set-U-Free!');
+      toast.success('Account created successfully! Welcome to FreeSetu!');
       router.push('/');
     } catch (err) {
       toast.error('Google sign-in failed. Please try again.');

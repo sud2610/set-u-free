@@ -208,7 +208,7 @@ export function Footer() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             {/* Copyright */}
             <p className="text-gray-500 text-sm text-center md:text-left">
-              © {currentYear} Set-U-Free. All rights reserved.
+              © {currentYear} FreeSetu. All rights reserved.
             </p>
 
             {/* Bottom Links */}

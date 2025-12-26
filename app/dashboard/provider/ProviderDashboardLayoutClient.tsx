@@ -137,7 +137,7 @@ export function ProviderDashboardLayoutClient({
                 <span className="text-white font-bold text-xl">S</span>
               </div>
               <div className="hidden sm:block">
-                <span className="text-xl font-bold text-gray-900">Set-U-Free</span>
+                <span className="text-xl font-bold text-gray-900">FreeSetu</span>
                 <span className="ml-2 px-2 py-0.5 bg-purple-100 text-purple-700 text-xs font-semibold rounded-full">
                   Provider
                 </span>
