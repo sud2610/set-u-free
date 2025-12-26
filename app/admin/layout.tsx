@@ -35,7 +35,8 @@ interface AdminLayoutProps {
 }
 
 // ⚠️ DEV MODE: Set this to true to bypass authentication during development
-const DEV_BYPASS_AUTH = process.env.NODE_ENV === 'development';
+// Set to false to require actual admin authentication
+const DEV_BYPASS_AUTH = false;
 
 // Mock admin user for development
 const DEV_ADMIN_USER = {

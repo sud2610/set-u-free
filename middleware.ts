@@ -5,8 +5,9 @@ import { NextRequest, NextResponse } from 'next/server';
 /**
  * ⚠️ DEV MODE: Set to true to bypass auth for admin routes during development
  * This allows direct access to /admin without login
+ * Set to false to require actual admin authentication
  */
-const DEV_BYPASS_ADMIN_AUTH = process.env.NODE_ENV === 'development';
+const DEV_BYPASS_ADMIN_AUTH = false;
 
 // ==================== TYPES ====================
 

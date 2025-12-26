@@ -1,0 +1,1175 @@
+[
+  {
+    "id": "provider_0001",
+    "businessName": "Australian Migration Agents",
+    "description": "",
+    "categories": [
+      "Migration"
+    ],
+    "location": "180 Lonsdale St, Melbourne VIC 3000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "3000",
+    "phone": "1300 419 785",
+    "website": "https://www.australianmigrationagents.com.au/melbourne",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Australian+Migration+Agents",
+    "latitude": -37.8106794,
+    "longitude": 144.9666009,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Australian+Migration+Agents/@-37.8106794,144.9666009,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad6436e62269737:0xfec2d56631b06735!8m2!3d-37.8106794!4d144.9666009!16s%2Fg%2F11lcbzfk2c?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T23:54:43.867Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "book a free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0008",
+    "businessName": "Asia Pacific Group (APG) - Education Consultants & Migration Agents Melbourne",
+    "description": "",
+    "categories": [
+      "Migration"
+    ],
+    "location": "Asia Pacific Group, Level 7/278 Collins St, Melbourne VIC 3000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "3000",
+    "phone": "(03) 7003 8216",
+    "website": "https://asiapacificgroup.com/melbourne/",
+    "rating": 4.7,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Asia+Pacific+Group+(APG)+-+Education+Consultants+%26+Migration+Agents+Melbourne",
+    "latitude": -37.8156435,
+    "longitude": 144.9647575,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Asia+Pacific+Group+(APG)+-+Education+Consultants+%26+Migration+Agents+Melbourne/@-37.8156435,144.9647575,16z/data=!3m1!4b1!4m6!3m5!1s0x6ad642b4758afc1d:0xf8879c932a785c4a!8m2!3d-37.8156435!4d144.9647575!16s%2Fg%2F1tgwsdb2?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T23:56:17.958Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0014",
+    "businessName": "Y-Axis - Registered Migration Agents, Immigration & Education Consultants in Melbourne",
+    "description": "",
+    "categories": [
+      "Migration"
+    ],
+    "location": "level 2/390 Flinders St, Melbourne VIC 3000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "3000",
+    "phone": "(03) 9939 4818",
+    "website": "https://www.y-axis.com.au/melbourne/?utm_source=google&utm_medium=gmb&utm_campaign=Melbourne_Australia",
+    "rating": 4.7,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Y-Axis+-+Registered+Migration+Agents,+Immigration+%26+Education+Consultants+in+Melbourne",
+    "latitude": -37.819033,
+    "longitude": 144.961251,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Y-Axis+-+Registered+Migration+Agents,+Immigration+%26+Education+Consultants+in+Melbourne/@-37.819033,144.961251,16z/data=!3m1!4b1!4m6!3m5!1s0x6ad642cb2bb49c29:0x2438fa2d34a63e05!8m2!3d-37.819033!4d144.961251!16s%2Fg%2F11b6gbrzq3?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T23:57:37.871Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free assessment",
+      "book your free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0015",
+    "businessName": "Sydney Visa",
+    "description": "",
+    "categories": [
+      "Migration"
+    ],
+    "location": "818/261 Harris St, Pyrmont NSW 2009",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2009",
+    "phone": "(02) 8311 2398",
+    "website": "http://sydneyvisas.com/",
+    "rating": 4.9,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Sydney+Visa",
+    "latitude": -33.8732454,
+    "longitude": 151.1958175,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Sydney+Visa/@-33.8732454,151.1958175,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12ae3054f885db:0x59f51aabdb812271!8m2!3d-33.8732454!4d151.1958175!16s%2Fg%2F11bwkdxhr9?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T23:57:47.487Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free visa assessment"
+    ]
+  },
+  {
+    "id": "provider_0016",
+    "businessName": "Australian Migration Agents Sydney",
+    "description": "",
+    "categories": [
+      "Migration"
+    ],
+    "location": "Podium, Levels 1, 2 & 3/60 Martin Pl, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "1300 419 785",
+    "website": "https://www.australianmigrationagents.com.au/sydney",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Australian+Migration+Agents+Sydney",
+    "latitude": -33.867615,
+    "longitude": 151.2116377,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Australian+Migration+Agents+Sydney/@-33.867615,151.2116377,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12af8bbee9d8b1:0x8dd564f8cd864f13!8m2!3d-33.867615!4d151.2116377!16s%2Fg%2F11y28nqbdq?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T23:58:02.182Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free initial consultation",
+      "book a free consultation",
+      "book your free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0031",
+    "businessName": "Asia Pacific Group (APG) - Education and Migration Consultants Sydney, MARA Agents",
+    "description": "",
+    "categories": [
+      "Migration"
+    ],
+    "location": "Level 6, Suite 601/447 Kent St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "(02) 7201 8800",
+    "website": "https://asiapacificgroup.com/sydney",
+    "rating": 4.8,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Asia+Pacific+Group+(APG)+-+Education+and+Migration+Consultants+Sydney,+MARA+Agents",
+    "latitude": -33.8722477,
+    "longitude": 151.2048257,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Asia+Pacific+Group+(APG)+-+Education+and+Migration+Consultants+Sydney,+MARA+Agents/@-33.8722477,151.2048257,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12ae3ebe2e860d:0x9b362086a4da39d2!8m2!3d-33.8722477!4d151.2048257!16s%2Fg%2F11c2jtl2pc?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T00:01:51.753Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free initial consultation"
+    ]
+  },
+  {
+    "id": "provider_0040",
+    "businessName": "Desire PTE and Migration Consultants",
+    "description": "",
+    "categories": [
+      "Migration"
+    ],
+    "location": "2/203 Palmers Rd, Truganina VIC 3029",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "3029",
+    "phone": "0482 610 000",
+    "website": "https://desiremigration.com.au/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Desire+PTE+and+Migration+Consultants",
+    "latitude": -37.83891,
+    "longitude": 144.746193,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Desire+PTE+and+Migration+Consultants/@-37.83891,144.746193,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad689c640b1ba53:0x3b3dbdd8bc81886c!8m2!3d-37.83891!4d144.746193!16s%2Fg%2F11v6m_ymb8?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T00:03:48.595Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "complimentary consultation",
+      "free consult",
+      "complimentary consult"
+    ]
+  },
+  {
+    "id": "provider_0045",
+    "businessName": "International Visa Advisers",
+    "description": "",
+    "categories": [
+      "Migration"
+    ],
+    "location": "Altitude Tower, Shop 1/1 Boys Ave, Blacktown NSW 2148",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2148",
+    "phone": "0403 430 987",
+    "website": "http://visaadvisers.com.au/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "International+Visa+Advisers",
+    "latitude": -33.766793,
+    "longitude": 150.9096004,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/International+Visa+Advisers/@-33.766793,150.9096004,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12990025905c13:0x63762613ea303dd1!8m2!3d-33.766793!4d150.9096004!16s%2Fg%2F11bwyhfk56?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T00:05:29.917Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0046",
+    "businessName": "V4U Global | Leading Immigration & Visa Consultants In Sydney, Australia, Paramatta",
+    "description": "",
+    "categories": [
+      "Migration"
+    ],
+    "location": "Suite 14, Level 2/27 Hunter St, Parramatta NSW 2150",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2150",
+    "phone": "0438 956 407",
+    "website": "https://v4uglobal.com/aus/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "V4U+Global+%7C+Leading+Immigration+%26+Visa+Consultants+In+Sydney,+Australia,+Paramatta",
+    "latitude": -33.8154426,
+    "longitude": 150.9992456,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/V4U+Global+%7C+Leading+Immigration+%26+Visa+Consultants+In+Sydney,+Australia,+Paramatta/@-33.8154426,150.9992456,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12a3e2430243dd:0x2d59ff0e0aaac460!8m2!3d-33.8154426!4d150.9992456!16s%2Fg%2F11kzgmvgqt?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T00:05:42.118Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "book a free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0050",
+    "businessName": "Opal Consulting Sydney",
+    "description": "",
+    "categories": [
+      "Migration"
+    ],
+    "location": "Suite 709/370 Pitt St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "(02) 8188 0740",
+    "website": "http://www.opalconsulting.com.au/",
+    "rating": 4.8,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Opal+Consulting+Sydney",
+    "latitude": -33.8772685,
+    "longitude": 151.2079999,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Opal+Consulting+Sydney/@-33.8772685,151.2079999,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12ae3dd77d1453:0x8c317cd52028fe17!8m2!3d-33.8772685!4d151.2079999!16s%2Fg%2F1ts1scv0?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T00:06:51.316Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free assessment",
+      "book a free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0054",
+    "businessName": "Visa Education Experts",
+    "description": "",
+    "categories": [
+      "Migration"
+    ],
+    "location": "Level 36, Gateway/1 Macquarie Pl, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "0414 588 942",
+    "website": "http://visaeducationexperts.com.au/",
+    "rating": 4.9,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Visa+Education+Experts",
+    "latitude": -33.8617002,
+    "longitude": 151.2097544,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Visa+Education+Experts/@-33.8617002,151.2097544,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12afc798181ffb:0x619facbbecb6182c!8m2!3d-33.8617002!4d151.2097544!16s%2Fg%2F11q4dlqnyk?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T00:07:43.662Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free assessment",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0059",
+    "businessName": "I Link You Australia Education and Visa Consultancy",
+    "description": "",
+    "categories": [
+      "Migration"
+    ],
+    "location": "Suite 1803, Level 18/109 Pitt St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "1803",
+    "phone": "0450 813 001",
+    "website": "http://www.ilinkyouaustralia.com/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "I+Link+You+Australia+Education+and+Visa+Consultancy",
+    "latitude": -33.866189,
+    "longitude": 151.2083183,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/I+Link+You+Australia+Education+and+Visa+Consultancy/@-33.866189,151.2083183,17z/data=!3m1!4b1!4m6!3m5!1s0x4203451b8c06e0c1:0x193a62010d2299b4!8m2!3d-33.866189!4d151.2083183!16s%2Fg%2F11vzxnmrlv?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T00:08:58.458Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "google_maps",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0061",
+    "businessName": "Infinity Visa & Education Consultants",
+    "description": "",
+    "categories": [
+      "Migration"
+    ],
+    "location": "497 Wentworth Ave, Toongabbie NSW 2146",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2146",
+    "phone": "0456 563 999",
+    "website": "https://infinitymigration.com.au/",
+    "rating": 4.9,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Infinity+Visa+%26+Education+Consultants",
+    "latitude": -33.7864283,
+    "longitude": 150.9517571,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Infinity+Visa+%26+Education+Consultants/@-33.7864283,150.9517571,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12991021449197:0xe1b2acc7e874727d!8m2!3d-33.7864283!4d150.9517571!16s%2Fg%2F11q30zftrg?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T00:09:27.979Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free quote"
+    ]
+  },
+  {
+    "id": "provider_0062",
+    "businessName": "Global Vision Migration (Best Registered Migration Agents & Immigration Lawyer in Sydney)",
+    "description": "",
+    "categories": [
+      "Migration"
+    ],
+    "location": "57 Dunmore St, Wentworthville NSW 2145",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2145",
+    "phone": "(02) 8880 0288",
+    "website": "https://www.gvm.com.au/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Global+Vision+Migration+(Best+Registered+Migration+Agents+%26+Immigration+Lawyer+in+Sydney)",
+    "latitude": -33.8073715,
+    "longitude": 150.9708578,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Global+Vision+Migration+(Best+Registered+Migration+Agents+%26+Immigration+Lawyer+in+Sydney)/@-33.8073715,150.9708578,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12a3a71eaf4181:0xabaf71583912958c!8m2!3d-33.8073715!4d150.9708578!16s%2Fg%2F11tk2m6n8j?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T00:09:40.454Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0064",
+    "businessName": "360 Visas | Migration Consultants in Western Sydney",
+    "description": "",
+    "categories": [
+      "Migration"
+    ],
+    "location": "217/14 Lexington Dr, Bella Vista NSW 2153",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2153",
+    "phone": "0449 100 360",
+    "website": "https://360visas.com.au/",
+    "rating": 4.9,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "360+Visas+%7C+Migration+Consultants+in+Western+Sydney",
+    "latitude": -33.7365455,
+    "longitude": 150.9473746,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/360+Visas+%7C+Migration+Consultants+in+Western+Sydney/@-33.7365455,150.9473746,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12a31f93d9ec07:0xd47a675728dbae42!8m2!3d-33.7365455!4d150.9473746!16s%2Fg%2F1v9lby89?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T00:10:12.472Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "book a free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0076",
+    "businessName": "Study and Visa Australia",
+    "description": "",
+    "categories": [
+      "Migration"
+    ],
+    "location": "suite 12, Lvl 1, 301 Castlereagh St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "(02) 9114 6290",
+    "website": "https://studyandvisaaustralia.com.au/",
+    "rating": 4.9,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Study+and+Visa+Australia",
+    "latitude": -33.8787228,
+    "longitude": 151.2082862,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Study+and+Visa+Australia/@-33.8787228,151.2082862,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12af536f0db7a7:0xe629b50e7e8c8862!8m2!3d-33.8787228!4d151.2082862!16s%2Fg%2F11f8hzkyzt?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T00:12:51.556Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0081",
+    "businessName": "PK Harrison Australian Visa Services",
+    "description": "",
+    "categories": [
+      "Migration"
+    ],
+    "location": "Business Park, Nexus Building, Level 5/4 Columbia Ct, Norwest NSW 2153",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2153",
+    "phone": "(02) 9098 9394",
+    "website": "https://australianvisaservices.com.au/",
+    "rating": 4.8,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "PK+Harrison+Australian+Visa+Services",
+    "latitude": -33.7310314,
+    "longitude": 150.9694681,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/PK+Harrison+Australian+Visa+Services/@-33.7310314,150.9694681,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12b07fef4c1b9f:0xa1796cfbc42d5280!8m2!3d-33.7310314!4d150.9694681!16s%2Fg%2F11b7w019bp?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T00:14:08.475Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free assessment"
+    ]
+  },
+  {
+    "id": "provider_0083",
+    "businessName": "Vision Consultants Sydney Education Agent & Migration Consultant. MARA Agents. Immigration Advisers",
+    "description": "",
+    "categories": [
+      "Migration"
+    ],
+    "location": "Suite 206, Level 2/250 Pitt St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "(02) 8021 7154",
+    "website": "https://visionaus.com.au/book-an-appointment/",
+    "rating": 4.2,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Vision+Consultants+Sydney+Education+Agent+%26+Migration+Consultant.+MARA+Agents.+Immigration+Advisers",
+    "latitude": -33.8725978,
+    "longitude": 151.2084128,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Vision+Consultants+Sydney+Education+Agent+%26+Migration+Consultant.+MARA+Agents.+Immigration+Advisers/@-33.8725978,151.2084128,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12ae3e6be03299:0x8b293f925325e4cc!8m2!3d-33.8725978!4d151.2084128!16s%2Fg%2F11gg9dr154?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T00:14:33.674Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult",
+      "free visa assessment"
+    ]
+  },
+  {
+    "id": "provider_0087",
+    "businessName": "Needs Migration",
+    "description": "",
+    "categories": [
+      "Migration"
+    ],
+    "location": "Unit 15/181 Church St, Parramatta NSW 2150",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2150",
+    "phone": "0434 811 844",
+    "website": "https://www.needsmigration.com.au/?utm_source=Gmb+&utm_medium=Gmb&utm_campaign=Gmb",
+    "rating": 4.9,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Needs+Migration",
+    "latitude": -33.8162478,
+    "longitude": 151.0023939,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Needs+Migration/@-33.8162478,151.0023939,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12a3648913ff89:0x91a38e29b6334669!8m2!3d-33.8162478!4d151.0023939!16s%2Fg%2F11jh9xp2gt?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T00:15:28.202Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "book a free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0090",
+    "businessName": "eHub International - Sydney",
+    "description": "",
+    "categories": [
+      "Migration"
+    ],
+    "location": "Suite 2, Level 2/22 Market St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "(02) 7226 1393",
+    "website": "http://www.ehubinternational.com/",
+    "rating": 4.9,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "eHub+International+-+Sydney",
+    "latitude": -33.8706247,
+    "longitude": 151.2050689,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/eHub+International+-+Sydney/@-33.8706247,151.2050689,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12af6755061feb:0x6f0933ec48a46a69!8m2!3d-33.8706247!4d151.2050689!16s%2Fg%2F11qqqt17x7?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T00:16:12.795Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0099",
+    "businessName": "Australian Migration Lawyers",
+    "description": "",
+    "categories": [
+      "Migration"
+    ],
+    "location": "117 Queens Bridge St, Southbank VIC 3006",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "3006",
+    "phone": "1300 150 745",
+    "website": "https://www.australianmigrationlawyers.com.au/",
+    "rating": 4.9,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Australian+Migration+Lawyers",
+    "latitude": -37.8248769,
+    "longitude": 144.9605191,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Australian+Migration+Lawyers/@-37.8248769,144.9605191,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad65da626cf9543:0x26d735bdfe8a89e9!8m2!3d-37.8248769!4d144.9605191!16s%2Fg%2F11s53yyjj2?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T00:18:56.469Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0100",
+    "businessName": "Australian Migration Lawyers Sydney",
+    "description": "",
+    "categories": [
+      "Migration"
+    ],
+    "location": "Level 11/66 Clarence St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "1300 242 505",
+    "website": "https://www.australianmigrationlawyers.com.au/sydney",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Australian+Migration+Lawyers+Sydney",
+    "latitude": -33.8668815,
+    "longitude": 151.2052334,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Australian+Migration+Lawyers+Sydney/@-33.8668815,151.2052334,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12af2b5a8815f5:0x7064a2d2cbeb97ba!8m2!3d-33.8668815!4d151.2052334!16s%2Fg%2F11vqwnqscn?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T00:19:06.918Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "book a free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0103",
+    "businessName": "The Immigration Lawyers",
+    "description": "",
+    "categories": [
+      "Migration"
+    ],
+    "location": "Suite 113/26/32 Pirrama Rd, Pyrmont NSW 2009",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2009",
+    "phone": "(02) 9590 3987",
+    "website": "https://theimmilawyer.com.au/?utm_source=google&utm_medium=organic&utm_campaign=gmb",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "The+Immigration+Lawyers",
+    "latitude": -33.8641854,
+    "longitude": 151.1942195,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/The+Immigration+Lawyers/@-33.8641854,151.1942195,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12b06a04c7b5f3:0x5424016adc7a4ed1!8m2!3d-33.8641854!4d151.1942195!16s%2Fg%2F11f1vmg15k?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T00:19:47.607Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "book a free consultation",
+      "request a free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0111",
+    "businessName": "Global Vision Migration (Best Registered Migration Agents & Immigration Lawyer in Melbourne)",
+    "description": "",
+    "categories": [
+      "Migration"
+    ],
+    "location": "Suite 601 Level 6/365 Little Collins St, Melbourne VIC 3000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "3000",
+    "phone": "(03) 9978 7968",
+    "website": "https://www.gvm.com.au/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Global+Vision+Migration+(Best+Registered+Migration+Agents+%26+Immigration+Lawyer+in+Melbourne)",
+    "latitude": -37.8157645,
+    "longitude": 144.9627765,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Global+Vision+Migration+(Best+Registered+Migration+Agents+%26+Immigration+Lawyer+in+Melbourne)/@-37.8157645,144.9627765,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad643b380adfc01:0xa83063ada7932a07!8m2!3d-37.8157645!4d144.9627765!16s%2Fg%2F11ng65pm2s?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T00:21:32.116Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0114",
+    "businessName": "Rocket & Ash Immigration Law",
+    "description": "",
+    "categories": [
+      "Migration"
+    ],
+    "location": "Suite 2130, Level 21/135 King St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2130",
+    "phone": "(02) 9158 3854",
+    "website": "https://rocketandash.com.au/?utm_source=google&utm_medium=business_profile&utm_campaign=tradius&utm_content=website_button",
+    "rating": 4.9,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Rocket+%26+Ash+Immigration+Law",
+    "latitude": -33.869059,
+    "longitude": 151.2089404,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Rocket+%26+Ash+Immigration+Law/@-33.869059,151.2089404,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12b1f7558078c7:0xc1af30048f3c140b!8m2!3d-33.869059!4d151.2089404!16s%2Fg%2F11g1lqqsd1?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T00:22:20.709Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free 15-minute"
+    ]
+  },
+  {
+    "id": "provider_0124",
+    "businessName": "No Borders Migration Agents / Lawyers Sydney",
+    "description": "",
+    "categories": [
+      "Migration"
+    ],
+    "location": "1/3 Spring St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "(02) 8294 4141",
+    "website": "http://www.noborders-group.com/",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "No+Borders+Migration+Agents+%2F+Lawyers+Sydney",
+    "latitude": -33.8642499,
+    "longitude": 151.2093189,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/No+Borders+Migration+Agents+%2F+Lawyers+Sydney/@-33.8642499,151.2093189,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12aeed720874a5:0x73f1fd559a24c583!8m2!3d-33.8642499!4d151.2093189!16s%2Fg%2F1q5gqqmzs?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T00:24:40.047Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "book a free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0130",
+    "businessName": "Immigration Advice & Rights Centre",
+    "description": "",
+    "categories": [
+      "Migration"
+    ],
+    "location": "suite 3 level 8/377-383 Sussex St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "(02) 8234 0700",
+    "website": "https://iarc.org.au/",
+    "rating": 4.3,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Immigration+Advice+%26+Rights+Centre",
+    "latitude": -33.8772423,
+    "longitude": 151.2045453,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Immigration+Advice+%26+Rights+Centre/@-33.8772423,151.2045453,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12ae3ed5ff9419:0x2e595cca015d262d!8m2!3d-33.8772423!4d151.2045453!16s%2Fg%2F1tc_wrq8?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T00:26:03.434Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free legal advice"
+    ]
+  },
+  {
+    "id": "provider_0135",
+    "businessName": "Lexs Lawyers",
+    "description": "",
+    "categories": [
+      "Migration"
+    ],
+    "location": "Level 11/66 Clarence St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "(02) 8705 5431",
+    "website": "https://lexslawyers.com.au/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Lexs+Lawyers",
+    "latitude": -33.8667784,
+    "longitude": 151.205236,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Lexs+Lawyers/@-33.8667784,151.205236,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12af2443421d93:0xbbf7c8e260cfeb05!8m2!3d-33.8667784!4d151.205236!16s%2Fg%2F11wr90y0xz?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T00:27:09.074Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free discovery call"
+    ]
+  },
+  {
+    "id": "provider_0136",
+    "businessName": "Flyworld Migration Lawyers & Registered Migration Agents in Sydney",
+    "description": "",
+    "categories": [
+      "Migration"
+    ],
+    "location": "Level 14 Suite 60/3 Parramatta Square, 153 Macquarie St, Parramatta NSW 2150",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2150",
+    "phone": "0401 480 979",
+    "website": "https://flyworldmigration.com.au/",
+    "rating": 4.8,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Flyworld+Migration+Lawyers+%26+Registered+Migration+Agents+in+Sydney",
+    "latitude": -33.8157505,
+    "longitude": 151.0051514,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Flyworld+Migration+Lawyers+%26+Registered+Migration+Agents+in+Sydney/@-33.8157505,151.0051514,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12a3b7894f96d3:0xa9d362aa12e2fa6d!8m2!3d-33.8157505!4d151.0051514!16s%2Fg%2F11w1vwtvnx?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T00:27:19.030Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "book a free consultation",
+      "free consult"
+    ]
+  }
+]

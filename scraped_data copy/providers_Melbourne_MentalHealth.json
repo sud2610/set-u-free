@@ -1,0 +1,161 @@
+[
+  {
+    "id": "provider_0053",
+    "businessName": "Talked Psychology and Counselling",
+    "description": "",
+    "categories": [
+      "Mental Health"
+    ],
+    "location": "",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "",
+    "phone": "(03) 7034 4033",
+    "website": "https://www.talked.com.au/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Talked+Psychology+and+Counselling",
+    "latitude": -32.205415,
+    "longitude": 136.1073692,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Talked+Psychology+and+Counselling/@-32.205415,136.1073692,4z/data=!3m1!4b1!4m6!3m5!1s0x88ca7105c9b1e9b9:0x6ddbe1575746a880!8m2!3d-32.205415!4d136.1073692!16s%2Fg%2F11pv5zz8kw?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T11:22:13.904Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0060",
+    "businessName": "Melbourne Specialist Relationship Counselling Clinic (MSRCC)",
+    "description": "",
+    "categories": [
+      "Mental Health"
+    ],
+    "location": "Unit 4/147 Wattletree Rd, Malvern VIC 3144",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3144",
+    "phone": "0411 615 313",
+    "website": "http://msrcc.com.au/",
+    "rating": 4.7,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Melbourne+Specialist+Relationship+Counselling+Clinic+(MSRCC)",
+    "latitude": -37.8624005,
+    "longitude": 145.0298681,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Melbourne+Specialist+Relationship+Counselling+Clinic+(MSRCC)/@-37.8624005,145.0298681,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad669583ddd958d:0x37e51b5d17cb6817!8m2!3d-37.8624005!4d145.0298681!16s%2Fg%2F11h1p27gsl?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T11:24:04.329Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0071",
+    "businessName": "Matthew Austin Counselling",
+    "description": "",
+    "categories": [
+      "Mental Health"
+    ],
+    "location": "8/10 Mansfield St, Thornbury VIC 3071",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3071",
+    "phone": "0438 967 088",
+    "website": "http://www.matthewaustincounselling.com.au/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Matthew+Austin+Counselling",
+    "latitude": -37.7567358,
+    "longitude": 145.0021332,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Matthew+Austin+Counselling/@-37.7567358,145.0021332,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad643876f200e57:0x696bb3eec1960cc1!8m2!3d-37.7567358!4d145.0021332!16s%2Fg%2F11hh8mw966?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T11:27:36.966Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free 15 minute",
+      "free 15-minute"
+    ]
+  },
+  {
+    "id": "provider_0075",
+    "businessName": "Flowing into Self - Wellness and Counselling",
+    "description": "",
+    "categories": [
+      "Mental Health"
+    ],
+    "location": "1a Michael St, Fitzroy North VIC 3068",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3068",
+    "phone": "0450 797 960",
+    "website": "http://www.flowingintoself.com.au/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Flowing+into+Self+-+Wellness+and+Counselling",
+    "latitude": -37.7883372,
+    "longitude": 144.9905508,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Flowing+into+Self+-+Wellness+and+Counselling/@-37.7883372,144.9905508,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad643d48ed9ae2b:0x1c8692a75f16a127!8m2!3d-37.7883372!4d144.9905508!16s%2Fg%2F11k9fn35gg?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T11:28:33.754Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free 15 minute"
+    ]
+  }
+]

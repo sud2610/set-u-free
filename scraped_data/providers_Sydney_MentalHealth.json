@@ -1,0 +1,362 @@
+[
+  {
+    "id": "provider_0025",
+    "businessName": "Revolution Psychology",
+    "description": "",
+    "categories": [
+      "Mental Health"
+    ],
+    "location": "",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "",
+    "phone": "0402 041 323",
+    "website": "https://www.revolutionpsychology.com.au/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Revolution+Psychology",
+    "latitude": -33.8149605,
+    "longitude": 151.0087327,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Revolution+Psychology/@-33.8149605,151.0087327,15z/data=!3m1!4b1!4m6!3m5!1s0x22a011b1b9e1a94b:0xee9931729f581165!8m2!3d-33.8149605!4d151.0087327!16s%2Fg%2F11wj2cjj14?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T02:37:56.193Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free 15-minute",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0044",
+    "businessName": "inner haven therapy",
+    "description": "",
+    "categories": [
+      "Mental Health"
+    ],
+    "location": "",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "",
+    "phone": "(02) 8006 8816",
+    "website": "http://innerhaventherapy.com.au/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "inner+haven+therapy",
+    "latitude": -32.205415,
+    "longitude": 136.1073692,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/inner+haven+therapy/@-32.205415,136.1073692,4z/data=!3m1!4b1!4m6!3m5!1s0x84c4569b1a486343:0x5ba74bab1a49636a!8m2!3d-32.205415!4d136.1073692!16s%2Fg%2F11p10h5kj8?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T02:42:51.542Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0054",
+    "businessName": "Transformational Mind Therapy- Rapid transformational therapist/ Hypnotherapist/ Mindfulness Therapy",
+    "description": "",
+    "categories": [
+      "Mental Health"
+    ],
+    "location": "",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "",
+    "phone": "0430 648 922",
+    "website": "https://transformationalmindtherapy.au/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Transformational+Mind+Therapy-+Rapid+transformational+therapist%2F+Hypnotherapist%2F+Mindfulness+Therapy",
+    "latitude": -33.7955575,
+    "longitude": 150.9319747,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Transformational+Mind+Therapy-+Rapid+transformational+therapist%2F+Hypnotherapist%2F+Mindfulness+Therapy/@-33.7955575,150.9319747,10z/data=!3m1!4b1!4m6!3m5!1s0x6b12af32de8624a9:0x23f625a613d7c45a!8m2!3d-33.7955575!4d150.9319747!16s%2Fg%2F11vdvbvvk8?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T02:45:23.026Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "book a free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0071",
+    "businessName": "Sydney Therapeutic Practice",
+    "description": "",
+    "categories": [
+      "Mental Health"
+    ],
+    "location": "Suite 4 - 41/43 Goulburn St, Liverpool NSW 2170",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2170",
+    "phone": "0460 752 842",
+    "website": "https://www.sydneytherapeutic.au/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Sydney+Therapeutic+Practice",
+    "latitude": -33.9178122,
+    "longitude": 150.9287434,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Sydney+Therapeutic+Practice/@-33.9178122,150.9287434,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12955f8673853d:0x8c429a4f0f7cf486!8m2!3d-33.9178122!4d150.9287434!16s%2Fg%2F11vlbgnk1w?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T02:49:30.135Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free 15 minute"
+    ]
+  },
+  {
+    "id": "provider_0101",
+    "businessName": "Therapeutic Axis",
+    "description": "",
+    "categories": [
+      "Mental Health"
+    ],
+    "location": "125 St Johns Rd, Glebe NSW 2037",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2037",
+    "phone": "(02) 9692 9788",
+    "website": "http://www.therapeuticaxis.com.au/",
+    "rating": 4.7,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Therapeutic+Axis",
+    "latitude": -33.8821697,
+    "longitude": 151.1848171,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Therapeutic+Axis/@-33.8821697,151.1848171,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12afd571d92f1d:0xbd215eaffa200200!8m2!3d-33.8821697!4d151.1848171!16s%2Fg%2F1td4z_vh?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T02:56:48.095Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free 15-minute"
+    ]
+  },
+  {
+    "id": "provider_0102",
+    "businessName": "Counselling Sydney - Dominique Smajstr",
+    "description": "",
+    "categories": [
+      "Mental Health"
+    ],
+    "location": "7/594-596 Crown St, Surry Hills NSW 2010",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2010",
+    "phone": "0449 822 141",
+    "website": "https://counsellingsurryhills.sydney/",
+    "rating": 4.9,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Counselling+Sydney+-+Dominique+Smajstr",
+    "latitude": -33.8898013,
+    "longitude": 151.21338,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Counselling+Sydney+-+Dominique+Smajstr/@-33.8898013,151.21338,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12af7cbcd8c723:0x8bcc4a919ae97e97!8m2!3d-33.8898013!4d151.21338!16s%2Fg%2F11m6ky_bm7?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T02:57:02.558Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "book a free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0122",
+    "businessName": "Lidia Smirnov Counselling",
+    "description": "",
+    "categories": [
+      "Mental Health"
+    ],
+    "location": "1/147 King St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "0403 921 223",
+    "website": "http://www.lidiasmirnovcounselling.com.au/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Lidia+Smirnov+Counselling",
+    "latitude": -33.8691931,
+    "longitude": 151.2091707,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Lidia+Smirnov+Counselling/@-33.8691931,151.2091707,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12af6e0b80c7a3:0xa3972f2b92df7cc4!8m2!3d-33.8691931!4d151.2091707!16s%2Fg%2F11fgkrvqzr?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T03:02:22.519Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free 15 minute",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0128",
+    "businessName": "The Authentic Counsellor - St Leonards ( North Shore)",
+    "description": "",
+    "categories": [
+      "Mental Health"
+    ],
+    "location": "480 Pacific Hwy, St Leonards NSW 2065",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2065",
+    "phone": "0478 832 568",
+    "website": "https://theauthenticcounsellor.com.au/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "The+Authentic+Counsellor+-+St+Leonards+%28+North+Shore%29",
+    "latitude": 0,
+    "longitude": 0,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/The+Authentic+Counsellor+-+St+Leonards+%28+North+Shore%29/data=!4m7!3m6!1s0x6b12af05365e6681:0x470e4cc1b7f5592e!8m2!3d-33.8242377!4d151.1974126!16s%2Fg%2F11vhs29w5w!19sChIJgWZeNgWvEmsRLln1t8FMDkc?authuser=0&hl=en&rclk=1",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T03:03:55.220Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free session",
+      "free 15-minute"
+    ]
+  },
+  {
+    "id": "provider_0132",
+    "businessName": "Insight Centre Counselling",
+    "description": "",
+    "categories": [
+      "Mental Health"
+    ],
+    "location": "52-54 Great N Rd, Five Dock NSW 2046",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2046",
+    "phone": "(02) 9051 2885",
+    "website": "https://www.insightcentrecounselling.com.au/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Insight+Centre+Counselling",
+    "latitude": -33.8701031,
+    "longitude": 151.1295105,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Insight+Centre+Counselling/@-33.8701031,151.1295105,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12bba67d9a97b9:0x5d0a13410b9a7550!8m2!3d-33.8701031!4d151.1295105!16s%2Fg%2F11y5gd_zlb?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T03:04:51.691Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free 15-minute"
+    ]
+  }
+]

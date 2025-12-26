@@ -1,0 +1,356 @@
+[
+  {
+    "id": "provider_0038",
+    "businessName": "Metabolic Clinic",
+    "description": "",
+    "categories": [
+      "Nutrition"
+    ],
+    "location": "3 Booralla Rd, Edensor Park NSW 2176",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2176",
+    "phone": "(02) 9727 0995",
+    "website": "http://www.metabolicclinicaustralia.com/",
+    "rating": 4.8,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Metabolic+Clinic",
+    "latitude": -33.8783421,
+    "longitude": 150.8847343,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Metabolic+Clinic/@-33.8783421,150.8847343,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12976f5da096b7:0x40b9a6b7f8c553ad!8m2!3d-33.8783421!4d150.8847343!16s%2Fg%2F11f62lmwrl?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T02:41:24.424Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "complimentary consultation",
+      "complimentary consult"
+    ]
+  },
+  {
+    "id": "provider_0040",
+    "businessName": "Nutrition by Leanne",
+    "description": "",
+    "categories": [
+      "Nutrition"
+    ],
+    "location": "Suite 101/40 Yeo St, Neutral Bay NSW 2089",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2089",
+    "phone": "",
+    "website": "http://www.nutritionbyleanne.com/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Nutrition+by+Leanne",
+    "latitude": -33.8319758,
+    "longitude": 151.2214529,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Nutrition+by+Leanne/@-33.8319758,151.2214529,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12affd2f516357:0xf8c43c52a9c0a7ed!8m2!3d-33.8319758!4d151.2214529!16s%2Fg%2F11s3b07m0w?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T02:41:47.723Z",
+    "needsManualVerification": true,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "complimentary consultation",
+      "complimentary session",
+      "complimentary consult"
+    ]
+  },
+  {
+    "id": "provider_0044",
+    "businessName": "Nutritionist Leichhardt",
+    "description": "",
+    "categories": [
+      "Nutrition"
+    ],
+    "location": "7/10 Norton St, Leichhardt NSW 2040",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2040",
+    "phone": "0403 251 748",
+    "website": "https://www.movement-therapy.com.au/nutritionist",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Nutritionist+Leichhardt",
+    "latitude": -33.887648,
+    "longitude": 151.157272,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Nutritionist+Leichhardt/@-33.887648,151.157272,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12b1d6df57c635:0x813ec4fe81fcf52a!8m2!3d-33.887648!4d151.157272!16s%2Fg%2F11y5d7fm2d?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T02:42:43.650Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free discovery call"
+    ]
+  },
+  {
+    "id": "provider_0073",
+    "businessName": "Your Vegan Nutritionist",
+    "description": "",
+    "categories": [
+      "Nutrition"
+    ],
+    "location": "Ocean St, Bondi NSW 2026",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2026",
+    "phone": "0400 354 722",
+    "website": "http://yourvegannutritionist.com.au/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Your+Vegan+Nutritionist",
+    "latitude": -33.8949009,
+    "longitude": 151.2622787,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Your+Vegan+Nutritionist/@-33.8949009,151.2622787,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12ad2157cbde2b:0xe012377b7b7a868d!8m2!3d-33.8949009!4d151.2622787!16s%2Fg%2F11rbvzyjcf?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T02:50:12.159Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free discovery call"
+    ]
+  },
+  {
+    "id": "provider_0097",
+    "businessName": "Vitruvian Health",
+    "description": "",
+    "categories": [
+      "Nutrition"
+    ],
+    "location": "307 Pitt St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "0400 466 323",
+    "website": "https://vitruvianhealth.com.au/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Vitruvian+Health",
+    "latitude": -33.873628,
+    "longitude": 151.20774,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Vitruvian+Health/@-33.873628,151.20774,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12ae406e4c312f:0x203bfefde46a511!8m2!3d-33.873628!4d151.20774!16s%2Fg%2F11f0whmw5v?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T02:55:22.270Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0131",
+    "businessName": "Inner West Nutrition",
+    "description": "",
+    "categories": [
+      "Nutrition"
+    ],
+    "location": "27 Lyons Rd, Drummoyne NSW 2047",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2047",
+    "phone": "0493 074 513",
+    "website": "http://www.innerwestnutrition.com.au/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Inner+West+Nutrition",
+    "latitude": -33.8516526,
+    "longitude": 151.1540984,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Inner+West+Nutrition/@-33.8516526,151.1540984,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12afcad97b7feb:0x932d9c4866a5dd27!8m2!3d-33.8516526!4d151.1540984!16s%2Fg%2F11r352rvvl?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T03:04:06.378Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free 15 minute"
+    ]
+  },
+  {
+    "id": "provider_0136",
+    "businessName": "Cynara Nutrition Clinic - Sydney Based",
+    "description": "",
+    "categories": [
+      "Nutrition"
+    ],
+    "location": "",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "",
+    "phone": "0412 425 886",
+    "website": "https://www.cynaranutritionclinic.com/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Cynara+Nutrition+Clinic+-+Sydney+Based",
+    "latitude": -33.8482439,
+    "longitude": 150.9319747,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Cynara+Nutrition+Clinic+-+Sydney+Based/@-33.8482439,150.9319747,10z/data=!3m1!4b1!4m6!3m5!1s0x2000e9dea156a58b:0x13fcf6155a60c656!8m2!3d-33.8482439!4d150.9319747!16s%2Fg%2F11vqs5b05t?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T03:05:25.877Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0145",
+    "businessName": "KW Family Nutrition",
+    "description": "",
+    "categories": [
+      "Nutrition"
+    ],
+    "location": "Shop 7, Tower A/22-28 Cambridge St, Epping NSW 2121",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2121",
+    "phone": "0422 232 539",
+    "website": "http://www.familynutrition.com.au/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "KW+Family+Nutrition",
+    "latitude": -33.7696354,
+    "longitude": 151.0826109,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/KW+Family+Nutrition/@-33.7696354,151.0826109,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12a75c070d74d7:0x4b580dee2dbe86cc!8m2!3d-33.7696354!4d151.0826109!16s%2Fg%2F11f6dmsr5t?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T03:07:32.415Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free discovery call"
+    ]
+  },
+  {
+    "id": "provider_0152",
+    "businessName": "Body Fusion Hunters Hill",
+    "description": "",
+    "categories": [
+      "Nutrition"
+    ],
+    "location": "6 Ryde Rd, Hunters Hill NSW 2110",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2110",
+    "phone": "0422 297 721",
+    "website": "http://www.bodyfusion.com.au/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Body+Fusion+Hunters+Hill",
+    "latitude": -33.8316955,
+    "longitude": 151.1414086,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Body+Fusion+Hunters+Hill/@-33.8316955,151.1414086,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12af5f8b4c9417:0x7d4679ea46254fe8!8m2!3d-33.8316955!4d151.1414086!16s%2Fg%2F11hdwfktq4?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T03:09:02.727Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free discovery call"
+    ]
+  }
+]

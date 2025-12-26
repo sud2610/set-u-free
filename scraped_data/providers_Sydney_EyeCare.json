@@ -1,0 +1,201 @@
+[
+  {
+    "id": "provider_0029",
+    "businessName": "Sydney Eye Clinic",
+    "description": "",
+    "categories": [
+      "Eye Care"
+    ],
+    "location": "L2/213 Darlinghurst Rd, Darlinghurst NSW 2010",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2010",
+    "phone": "1300 128 114",
+    "website": "http://www.eye.net.au/?utm_term=plcid_3914446416198479800&utm_source=google&utm_medium=organic&utm_campaign=Google+My+Business&utm_content=Sydney+Eye+Clinic+-+Darlinghurst",
+    "rating": 4.3,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Sydney+Eye+Clinic",
+    "latitude": -33.8764587,
+    "longitude": 151.2211932,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Sydney+Eye+Clinic/@-33.8764587,151.2211932,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12ae1204b70e73:0x7fd0965313835923!8m2!3d-33.8764587!4d151.2211932!16s%2Fg%2F1tjs52gq?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T01:57:19.217Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free assessment"
+    ]
+  },
+  {
+    "id": "provider_0051",
+    "businessName": "Envision Eye Centre",
+    "description": "",
+    "categories": [
+      "Eye Care"
+    ],
+    "location": "Park House, Level 12/187 Macquarie St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "(02) 9233 7333",
+    "website": "https://www.envisioneye.com.au/?utm_source=google&utm_medium=organic&utm_campaign=MyBusinessListing&utm_content=CBD",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Envision+Eye+Centre",
+    "latitude": -33.867016,
+    "longitude": 151.212058,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Envision+Eye+Centre/@-33.867016,151.212058,17z/data=!3m1!4b1!4m6!3m5!1s0x6b1297eda7c84941:0x506d5c3e30b38b49!8m2!3d-33.867016!4d151.212058!16s%2Fg%2F1ptx3kvld?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T02:03:36.115Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free assessment"
+    ]
+  },
+  {
+    "id": "provider_0062",
+    "businessName": "Sydney Laser and Vision Centre",
+    "description": "",
+    "categories": [
+      "Eye Care"
+    ],
+    "location": "Suite 202/35 Spring St, Bondi Junction NSW 2022",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2022",
+    "phone": "(02) 9387 8700",
+    "website": "https://www.sydneyvision.com.au/",
+    "rating": 4.8,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Sydney+Laser+and+Vision+Centre",
+    "latitude": -33.8925179,
+    "longitude": 151.2464391,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Sydney+Laser+and+Vision+Centre/@-33.8925179,151.2464391,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12ae40f4d9ecf5:0x14098ddd51293375!8m2!3d-33.8925179!4d151.2464391!16s%2Fg%2F1tf5dx6l?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T02:06:53.355Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "book a free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0094",
+    "businessName": "Dr John Males",
+    "description": "",
+    "categories": [
+      "Eye Care"
+    ],
+    "location": "Park, House, Level 12/187 Macquarie St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "(02) 9233 7333",
+    "website": "https://www.envisioneye.com.au/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Dr+John+Males",
+    "latitude": -33.867016,
+    "longitude": 151.212058,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Dr+John+Males/@-33.867016,151.212058,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12ae6af5e6d455:0x4f0186a4160a491d!8m2!3d-33.867016!4d151.212058!16s%2Fg%2F1tcwr8x5?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T02:15:35.295Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free assessment"
+    ]
+  },
+  {
+    "id": "provider_0098",
+    "businessName": "Vision Consultants Sydney Education Agent & Migration Consultant. MARA Agents. Immigration Advisers",
+    "description": "",
+    "categories": [
+      "Eye Care"
+    ],
+    "location": "Suite 206, Level 2/250 Pitt St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "(02) 8021 7154",
+    "website": "https://visionaus.com.au/book-an-appointment/",
+    "rating": 4.2,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Vision+Consultants+Sydney+Education+Agent+%26+Migration+Consultant.+MARA+Agents.+Immigration+Advisers",
+    "latitude": -33.8725978,
+    "longitude": 151.2084128,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Vision+Consultants+Sydney+Education+Agent+%26+Migration+Consultant.+MARA+Agents.+Immigration+Advisers/@-33.8725978,151.2084128,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12ae3e6be03299:0x8b293f925325e4cc!8m2!3d-33.8725978!4d151.2084128!16s%2Fg%2F11gg9dr154?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T02:16:46.252Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult",
+      "free visa assessment"
+    ]
+  }
+]

@@ -1,0 +1,72 @@
+[
+  {
+    "id": "recruitment-agencies",
+    "name": "Recruitment Agencies",
+    "icon": "💼",
+    "description": "Job placement & staffing services",
+    "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400"
+  },
+  {
+    "id": "migration-visa",
+    "name": "Migration & Visa Advisers",
+    "icon": "🛂",
+    "description": "Immigration & visa consultation",
+    "image": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=400"
+  },
+  {
+    "id": "beauty",
+    "name": "Beauty",
+    "icon": "💅",
+    "description": "Salon, spa & skincare",
+    "image": "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400"
+  },
+  {
+    "id": "dentist",
+    "name": "Dentist",
+    "icon": "🦷",
+    "description": "Dental care & oral health",
+    "image": "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=400"
+  },
+  {
+    "id": "eye-care",
+    "name": "Eye Care",
+    "icon": "👁️",
+    "description": "Vision & eye health",
+    "image": "https://images.unsplash.com/photo-1574258495973-f010dfbb5371?w=400"
+  },
+  {
+    "id": "doctors",
+    "name": "Doctors",
+    "icon": "👨‍⚕️",
+    "description": "General practice & specialists",
+    "image": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400"
+  },
+  {
+    "id": "mental-health",
+    "name": "Mental Health",
+    "icon": "🧠",
+    "description": "Counseling & therapy",
+    "image": "https://images.unsplash.com/photo-1527689368864-3a821dbccc34?w=400"
+  },
+  {
+    "id": "nutrition",
+    "name": "Nutrition",
+    "icon": "🥗",
+    "description": "Diet plans & consultations",
+    "image": "https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=400"
+  },
+  {
+    "id": "physiotherapy",
+    "name": "Physiotherapy",
+    "icon": "🏥",
+    "description": "Physical therapy & rehab",
+    "image": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400"
+  },
+  {
+    "id": "legal-services",
+    "name": "Legal Services",
+    "icon": "⚖️",
+    "description": "Legal advice & representation",
+    "image": "https://images.unsplash.com/photo-1505664194779-8beaceb93744?w=400"
+  }
+]

@@ -1,0 +1,162 @@
+[
+  {
+    "id": "provider_0012",
+    "businessName": "Specsavers Optometrists & Audiology - Reservoir",
+    "description": "",
+    "categories": [
+      "Eye Care"
+    ],
+    "location": "Summerhill Shopping Centre, Shop T19/850 Plenty Rd, Reservoir VIC 3073",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3073",
+    "phone": "(03) 9459 4408",
+    "website": "https://www.specsavers.com.au/stores/reservoir?utm_source=google&utm_medium=places&utm_content=reservoir&utm_campaign=googleplaces&y_source=1_MTA2NjczMTU4My03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+    "rating": 4.8,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Specsavers+Optometrists+%26+Audiology+-+Reservoir",
+    "latitude": -37.7248513,
+    "longitude": 145.0285174,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Specsavers+Optometrists+%26+Audiology+-+Reservoir/@-37.7248513,145.0285174,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad645c480b0eebd:0x84335dcea6dbbeb6!8m2!3d-37.7248513!4d145.0285174!16s%2Fg%2F11w363fr99?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3M0gBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T11:11:25.814Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free 15 minute"
+    ]
+  },
+  {
+    "id": "provider_0119",
+    "businessName": "NewVision Clinics",
+    "description": "",
+    "categories": [
+      "Eye Care"
+    ],
+    "location": "160 Victoria Parade, East Melbourne VIC 3002",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3002",
+    "phone": "1800 202 020",
+    "website": "http://www.newvisionclinics.com.au/",
+    "rating": 4.8,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "NewVision+Clinics",
+    "latitude": -37.8086931,
+    "longitude": 144.9773219,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/NewVision+Clinics/@-37.8086931,144.9773219,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad642c4a8c95541:0x10271daf7955b188!8m2!3d-37.8086931!4d144.9773219!16s%2Fg%2F1tzvwpzz?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3M0gBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T11:37:00.039Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0161",
+    "businessName": "B1 New Vision",
+    "description": "",
+    "categories": [
+      "Eye Care"
+    ],
+    "location": "9/179 Queen St, Melbourne VIC 3000",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3000",
+    "phone": "0401 498 864",
+    "website": "https://www.b1newvision.com.au/",
+    "rating": 4.8,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "B1+New+Vision",
+    "latitude": -37.8144973,
+    "longitude": 144.960022,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/B1+New+Vision/@-37.8144973,144.960022,16z/data=!3m1!4b1!4m6!3m5!1s0x6ad65d4b3d90323d:0x2e431540d00246a6!8m2!3d-37.8144973!4d144.960022!16s%2Fg%2F11bvvy2l5q?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3M0gBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T21:22:49.849Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free quote",
+      "schedule a free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0166",
+    "businessName": "Vision Eye Institute and Vision Hospital Group (Corporate Office)",
+    "description": "",
+    "categories": [
+      "Eye Care"
+    ],
+    "location": "Level 13/412 St Kilda Rd, Melbourne VIC 3004",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3004",
+    "phone": "(03) 8844 4000",
+    "website": "https://visioneyeinstitute.com.au/?utm_source=GMBlisting&utm_medium=organic&utm_campaign=Vision_Eye_Institute_Head_Office",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Vision+Eye+Institute+and+Vision+Hospital+Group+(Corporate+Office)",
+    "latitude": -37.8350387,
+    "longitude": 144.9743061,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Vision+Eye+Institute+and+Vision+Hospital+Group+(Corporate+Office)/@-37.8350387,144.9743061,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad642a7929b1793:0x5468ec5f5a821143!8m2!3d-37.8350387!4d144.9743061!16s%2Fg%2F11b6b90txm?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3M0gBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T21:23:55.979Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "google_maps",
+    "freeConsultationTermsMatched": [
+      "free assessment"
+    ]
+  }
+]

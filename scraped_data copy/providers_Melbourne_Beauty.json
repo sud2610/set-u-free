@@ -1,0 +1,205 @@
+[
+  {
+    "id": "provider_0017",
+    "businessName": "Brush and Co.",
+    "description": "",
+    "categories": [
+      "Beauty"
+    ],
+    "location": "18 Carson St, Reservoir VIC 3073",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3073",
+    "phone": "0413 224 962",
+    "website": "http://brushandco.com.au/",
+    "rating": 4.7,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Brush+and+Co.",
+    "latitude": -37.6977582,
+    "longitude": 145.0043089,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Brush+and+Co./@-37.6977582,145.0043089,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad644f79ec916cb:0xca6aca73c2094d8!8m2!3d-37.6977582!4d145.0043089!16s%2Fg%2F11bxgnkrv4?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T09:58:21.764Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0069",
+    "businessName": "Aura Skin Boutique",
+    "description": "",
+    "categories": [
+      "Beauty"
+    ],
+    "location": "154b Keilor Rd, Essendon North VIC 3041",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3041",
+    "phone": "0450 000 083",
+    "website": "https://auraskinboutique.com.au/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Aura+Skin+Boutique",
+    "latitude": -37.7403906,
+    "longitude": 144.9005129,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Aura+Skin+Boutique/@-37.7403906,144.9005129,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad65da5d0ad9039:0x3c62e20f8a21a156!8m2!3d-37.7403906!4d144.9005129!16s%2Fg%2F11w1vgz5jq?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T10:11:39.085Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "complimentary consultation",
+      "complimentary consult"
+    ]
+  },
+  {
+    "id": "provider_0071",
+    "businessName": "Australian Skin Clinics Emporium",
+    "description": "",
+    "categories": [
+      "Beauty"
+    ],
+    "location": "Shop 3 - 006/275-321 Lonsdale St, Melbourne VIC 3000",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3000",
+    "phone": "(03) 9081 0101",
+    "website": "https://australianskinclinics.com.au/clinics/vic/emporium/",
+    "rating": 4.8,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Australian+Skin+Clinics+Emporium",
+    "latitude": -37.8126694,
+    "longitude": 144.9641529,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Australian+Skin+Clinics+Emporium/@-37.8126694,144.9641529,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad642ca86ae50fd:0x100e94f03d801472!8m2!3d-37.8126694!4d144.9641529!16s%2Fg%2F11b6hv_qsf?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T10:12:05.151Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "book a free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0073",
+    "businessName": "La Belle Clinic - Skin Clinic Melbourne",
+    "description": "",
+    "categories": [
+      "Beauty"
+    ],
+    "location": "LEVEL 1/329 Elizabeth St, Melbourne VIC 3000",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3000",
+    "phone": "(03) 9670 3399",
+    "website": "http://www.labelleclinic.com.au/?utm_source=google&utm_medium=GMB&utm_campaign=labelleclinic_gmb",
+    "rating": 4.8,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "La+Belle+Clinic+-+Skin+Clinic+Melbourne",
+    "latitude": -37.810988,
+    "longitude": 144.9613817,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/La+Belle+Clinic+-+Skin+Clinic+Melbourne/@-37.810988,144.9613817,16z/data=!3m1!4b1!4m6!3m5!1s0x6ad642b55b613519:0x4b23da4cdfbd9019!8m2!3d-37.810988!4d144.9613817!16s%2Fg%2F11gbzc5mj7?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T10:12:30.735Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "book a free consultation",
+      "book your free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0077",
+    "businessName": "Australian Laser & Skin Clinics Reservoir",
+    "description": "",
+    "categories": [
+      "Beauty"
+    ],
+    "location": "46 Edwardes St, Reservoir VIC 3073",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3073",
+    "phone": "(03) 9464 2633",
+    "website": "https://www.australianlaser.com.au/",
+    "rating": 4.7,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Australian+Laser+%26+Skin+Clinics+Reservoir",
+    "latitude": -37.715944,
+    "longitude": 145.004297,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Australian+Laser+%26+Skin+Clinics+Reservoir/@-37.715944,145.004297,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad64f0e7602ce5f:0xc531e4a766e8379b!8m2!3d-37.715944!4d145.004297!16s%2Fg%2F1tf60f6t?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T10:13:28.531Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult"
+    ]
+  }
+]

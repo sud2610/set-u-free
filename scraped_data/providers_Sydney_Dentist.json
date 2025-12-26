@@ -1,0 +1,363 @@
+[
+  {
+    "id": "provider_0007",
+    "businessName": "Clear Dental Sydney CBD | 牙醫 (Wynyard Dental)",
+    "description": "",
+    "categories": [
+      "Dentist"
+    ],
+    "location": "131 Clarence St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "(02) 9262 5331",
+    "website": "https://www.cleardental.com.au/sydney-dentist.html",
+    "rating": 4.8,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Clear+Dental+Sydney+CBD+%7C+%E7%89%99%E9%86%AB+(Wynyard+Dental)",
+    "latitude": -33.8672896,
+    "longitude": 151.2049202,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Clear+Dental+Sydney+CBD+%7C+%E7%89%99%E9%86%AB+(Wynyard+Dental)/@-33.8672896,151.2049202,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12ae3e9353b7bb:0xdbd5599bc835483d!8m2!3d-33.8672896!4d151.2049202!16s%2Fg%2F1pzxfvnwq?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T01:51:03.687Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "book your free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0010",
+    "businessName": "Dental Boutique Sydney",
+    "description": "",
+    "categories": [
+      "Dentist"
+    ],
+    "location": "1 Castlereagh St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "1300 327 645",
+    "website": "https://dentalboutique.com.au/sydney",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Dental+Boutique+Sydney",
+    "latitude": -33.8663115,
+    "longitude": 151.2097612,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Dental+Boutique+Sydney/@-33.8663115,151.2097612,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12af5ae9f79f39:0x4b10f1db8713070f!8m2!3d-33.8663115!4d151.2097612!16s%2Fg%2F11t9gd0vgx?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T01:51:46.502Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0014",
+    "businessName": "A Better Smile Dentist Sydney",
+    "description": "",
+    "categories": [
+      "Dentist"
+    ],
+    "location": "Suite 8, Level 2/64-68 Castlereagh St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "(02) 9427 3366",
+    "website": "https://abettersmiledentistsydney.com.au/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "A+Better+Smile+Dentist+Sydney",
+    "latitude": -33.8688015,
+    "longitude": 151.2099003,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/A+Better+Smile+Dentist+Sydney/@-33.8688015,151.2099003,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12ae4006c166af:0x99e885b8b765962d!8m2!3d-33.8688015!4d151.2099003!16s%2Fg%2F1tf_16zb?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T01:52:46.410Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0015",
+    "businessName": "Quay Dental Sydney CBD",
+    "description": "",
+    "categories": [
+      "Dentist"
+    ],
+    "location": "5, Level 1/10 Bridge St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "(02) 9241 2038",
+    "website": "https://quaydental.com.au/?utm_source=google&utm_medium=organic&utm_campaign=gmb",
+    "rating": 4.8,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Quay+Dental+Sydney+CBD",
+    "latitude": -33.863409,
+    "longitude": 151.208165,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Quay+Dental+Sydney+CBD/@-33.863409,151.208165,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12ae69e0184079:0x4289107b50fca4e9!8m2!3d-33.863409!4d151.208165!16s%2Fg%2F1tdcrpnw?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T01:52:57.434Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free check-up"
+    ]
+  },
+  {
+    "id": "provider_0032",
+    "businessName": "24 Hour Dentist Sydney | Emergency Dentist Sydney",
+    "description": "",
+    "categories": [
+      "Dentist"
+    ],
+    "location": "Suite 410/307 Pitt St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "(02) 9154 0145",
+    "website": "https://www.24hour-dentist.com.au/",
+    "rating": 2.3,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "24+Hour+Dentist+Sydney+%7C+Emergency+Dentist+Sydney",
+    "latitude": -33.8736283,
+    "longitude": 151.2077398,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/24+Hour+Dentist+Sydney+%7C+Emergency+Dentist+Sydney/@-33.8736283,151.2077398,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12a525faf5e4df:0xb9a0b8bcd443bb78!8m2!3d-33.8736283!4d151.2077398!16s%2Fg%2F11gh84wkzq?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T01:57:32.005Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free checkup"
+    ]
+  },
+  {
+    "id": "provider_0034",
+    "businessName": "Lumina Dental Clinic Sydney",
+    "description": "",
+    "categories": [
+      "Dentist"
+    ],
+    "location": "Shop 333/71 Jones St, Ultimo NSW 2007",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2007",
+    "phone": "(02) 8668 4411",
+    "website": "https://luminadental.com.au/?utm_source=GBP&utm_medium=GBP-Profile&utm_campaign=GBP-Organic",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Lumina+Dental+Clinic+Sydney",
+    "latitude": -33.87852,
+    "longitude": 151.1965368,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Lumina+Dental+Clinic+Sydney/@-33.87852,151.1965368,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12afd3f4e8e125:0xf009e4159b561c7c!8m2!3d-33.87852!4d151.1965368!16s%2Fg%2F11jmw8t35w?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T01:58:00.945Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0063",
+    "businessName": "Sydney Park Dental",
+    "description": "",
+    "categories": [
+      "Dentist"
+    ],
+    "location": "Shop 15/177-219 Mitchell Rd, Erskineville NSW 2043",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2043",
+    "phone": "(02) 8084 7170",
+    "website": "https://www.sydneyparkdental.com.au/",
+    "rating": 4.9,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Sydney+Park+Dental",
+    "latitude": -33.9063245,
+    "longitude": 151.1876132,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Sydney+Park+Dental/@-33.9063245,151.1876132,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12b1b52f0ee8c9:0x4e479aa867594250!8m2!3d-33.9063245!4d151.1876132!16s%2Fg%2F1tfs16s2?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T02:06:43.574Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0073",
+    "businessName": "Hills Dental & Implant Centre: Dentist Castle Hill",
+    "description": "",
+    "categories": [
+      "Dentist"
+    ],
+    "location": "6/1 Terminus St, Castle Hill NSW 2154",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2154",
+    "phone": "(02) 9659 1222",
+    "website": "https://www.hillsdentalcentre.com.au/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Hills+Dental+%26+Implant+Centre:+Dentist+Castle+Hill",
+    "latitude": -33.7330672,
+    "longitude": 151.0069333,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Hills+Dental+%26+Implant+Centre:+Dentist+Castle+Hill/@-33.7330672,151.0069333,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12a10c858a3ba7:0x1627cb40083dc1ea!8m2!3d-33.7330672!4d151.0069333!16s%2Fg%2F1tf02mld?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T02:09:29.213Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0103",
+    "businessName": "Sydney Implant Institute",
+    "description": "",
+    "categories": [
+      "Dentist"
+    ],
+    "location": "2/151 Macquarie St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "(02) 9247 8961",
+    "website": "https://www.sydneyimplantinstitute.com.au/?utm_source=Google&utm_medium=Website&utm_campaign=sydney&utm_id=sydney",
+    "rating": 4.8,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Sydney+Implant+Institute",
+    "latitude": 0,
+    "longitude": 0,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Sydney+Implant+Institute/data=!4m7!3m6!1s0x6b12ae6a250a245d:0x4056b8b0325e0380!8m2!3d-33.8649792!4d151.2123007!16s%2Fg%2F11h12jbx3!19sChIJXSQKJWquEmsRgANeMrC4VkA?authuser=0&hl=en&rclk=1",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T02:18:06.123Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "complimentary consultation",
+      "book your free consultation",
+      "free consult",
+      "complimentary consult"
+    ]
+  }
+]

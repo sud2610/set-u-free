@@ -1,0 +1,43 @@
+[
+  {
+    "id": "provider_0169",
+    "businessName": "Employment Compass",
+    "description": "",
+    "categories": [
+      "Recruitment"
+    ],
+    "location": "11 York St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "1300 144 002",
+    "website": "https://www.employmentcompass.com.au/",
+    "rating": 4.9,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Employment+Compass",
+    "latitude": -33.8652046,
+    "longitude": 151.2055165,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Employment+Compass/@-33.8652046,151.2055165,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12af29a324b663:0x6180518e98b5de30!8m2!3d-33.8652046!4d151.2055165!16s%2Fg%2F11y1s8rz3k?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T00:35:14.375Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "contact us for a free consultation",
+      "free consult"
+    ]
+  }
+]

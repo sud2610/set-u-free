@@ -1,0 +1,884 @@
+[
+  {
+    "id": "provider_0002",
+    "businessName": "Haitch Legal - Melbourne",
+    "description": "",
+    "categories": [
+      "Legal"
+    ],
+    "location": "Level 1/416 Sydney Rd, Coburg VIC 3058",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3058",
+    "phone": "(03) 8590 8370",
+    "website": "http://www.haitchlegal.com.au/",
+    "rating": 4.8,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Haitch+Legal+-+Melbourne",
+    "latitude": -37.743576,
+    "longitude": 144.96641,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Haitch+Legal+-+Melbourne/@-37.743576,144.96641,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad644b409ae8523:0x3fcef7d0bcf3e3b0!8m2!3d-37.743576!4d144.96641!16s%2Fg%2F11c0rpm2pv?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T21:26:16.225Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0009",
+    "businessName": "Pentana Stanton Lawyers",
+    "description": "",
+    "categories": [
+      "Legal"
+    ],
+    "location": "Level 3 & Level 5/552 Lonsdale St, Melbourne VIC 3000",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3000",
+    "phone": "(03) 9002 2800",
+    "website": "https://pentanastanton.com.au/",
+    "rating": 4.5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Pentana+Stanton+Lawyers",
+    "latitude": -37.8138973,
+    "longitude": 144.9558921,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Pentana+Stanton+Lawyers/@-37.8138973,144.9558921,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad65d3db3b725c1:0xd8f72637142409a!8m2!3d-37.8138973!4d144.9558921!16s%2Fg%2F11pwx_rtyv?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T21:28:01.829Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0011",
+    "businessName": "Johnstone and Reimer Lawyers",
+    "description": "",
+    "categories": [
+      "Legal"
+    ],
+    "location": "708 High St, Reservoir VIC 3073",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3073",
+    "phone": "(03) 8658 0040",
+    "website": "https://www.johnstonereimer.com.au/",
+    "rating": 4.8,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Johnstone+and+Reimer+Lawyers",
+    "latitude": -37.7278784,
+    "longitude": 145.0060191,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Johnstone+and+Reimer+Lawyers/@-37.7278784,145.0060191,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad645520a63a61b:0x78ef52aa8d4adf82!8m2!3d-37.7278784!4d145.0060191!16s%2Fg%2F11l6t_q0dm?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T21:28:27.576Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free initial consultation"
+    ]
+  },
+  {
+    "id": "provider_0018",
+    "businessName": "FJR Lawyers",
+    "description": "",
+    "categories": [
+      "Legal"
+    ],
+    "location": "582 Sydney Rd, Brunswick VIC 3056",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3056",
+    "phone": "(03) 9355 7742",
+    "website": "http://www.fjrlawyers.com.au/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "FJR+Lawyers",
+    "latitude": -37.7641448,
+    "longitude": 144.9628399,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/FJR+Lawyers/@-37.7641448,144.9628399,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad65b45ac7a07a3:0x89eade8dcad10f0!8m2!3d-37.7641448!4d144.9628399!16s%2Fg%2F11f00xnvd3?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T21:30:21.446Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0020",
+    "businessName": "James Dowsley & Associates Criminal Law - Melbourne",
+    "description": "",
+    "categories": [
+      "Legal"
+    ],
+    "location": "Level 7/533 Little Lonsdale St, Melbourne VIC 3000",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3000",
+    "phone": "(03) 8602 1400",
+    "website": "https://dowsleyassociates.com.au/",
+    "rating": 4.8,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "James+Dowsley+%26+Associates+Criminal+Law+-+Melbourne",
+    "latitude": -37.8131359,
+    "longitude": 144.9562576,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/James+Dowsley+%26+Associates+Criminal+Law+-+Melbourne/@-37.8131359,144.9562576,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad65d495f0ce0e1:0xba11903a780d4e4e!8m2!3d-37.8131359!4d144.9562576!16s%2Fg%2F1wf38rlj?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T21:30:48.854Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "request a free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0046",
+    "businessName": "Gallant Law Criminal Lawyers Melbourne",
+    "description": "",
+    "categories": [
+      "Legal"
+    ],
+    "location": "Level 11/456 Lonsdale St, Melbourne VIC 3000",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3000",
+    "phone": "(03) 9070 9885",
+    "website": "https://gallantlaw.com.au/",
+    "rating": 4.8,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Gallant+Law+Criminal+Lawyers+Melbourne",
+    "latitude": -37.8129604,
+    "longitude": 144.9586669,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Gallant+Law+Criminal+Lawyers+Melbourne/@-37.8129604,144.9586669,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad65d068be1b9d5:0x78bef8a8d874fb21!8m2!3d-37.8129604!4d144.9586669!16s%2Fg%2F11h5kf_h2p?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T21:37:22.457Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "book your free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0047",
+    "businessName": "Bentleys Lawyers",
+    "description": "",
+    "categories": [
+      "Legal"
+    ],
+    "location": "386 Victoria Parade, East Melbourne VIC 3002",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3002",
+    "phone": "(03) 9419 6066",
+    "website": "http://www.bentleyslaw.com.au/",
+    "rating": 4.5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Bentleys+Lawyers",
+    "latitude": -37.809547,
+    "longitude": 144.984513,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Bentleys+Lawyers/@-37.809547,144.984513,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad642e7e992513d:0x3281ff8ab3a6e07a!8m2!3d-37.809547!4d144.984513!16s%2Fg%2F1vg4jyg0?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T21:37:33.411Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free initial consultation",
+      "book a free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0049",
+    "businessName": "DSA Law",
+    "description": "",
+    "categories": [
+      "Legal"
+    ],
+    "location": "Level 2/180 Queen St, Melbourne VIC 3000",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3000",
+    "phone": "(03) 8595 9580",
+    "website": "https://dsalaw.com.au/",
+    "rating": 4.5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "DSA+Law",
+    "latitude": -37.8142107,
+    "longitude": 144.9606257,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/DSA+Law/@-37.8142107,144.9606257,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad65d495f0ce0c3:0xacf70b817b86d475!8m2!3d-37.8142107!4d144.9606257!16s%2Fg%2F11clhpk0dc?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T21:37:57.676Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free initial consultation",
+      "free 30-minute",
+      "book your free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0050",
+    "businessName": "MA Lawyers & Associates",
+    "description": "",
+    "categories": [
+      "Legal"
+    ],
+    "location": "L40/140 William St, Melbourne VIC 3000",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3000",
+    "phone": "0403 325 725",
+    "website": "https://www.malawyers-associates.com.au/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "MA+Lawyers+%26+Associates",
+    "latitude": -37.8158942,
+    "longitude": 144.9587886,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/MA+Lawyers+%26+Associates/@-37.8158942,144.9587886,17z/data=!3m1!4b1!4m6!3m5!1s0x2d923985592f94f9:0x2231c0d8f6d4b3ff!8m2!3d-37.8158942!4d144.9587886!16s%2Fg%2F11m77cqy22?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T21:38:06.962Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "google_maps",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0053",
+    "businessName": "Josh Smith Legal",
+    "description": "",
+    "categories": [
+      "Legal"
+    ],
+    "location": "24/570 Bourke St, Melbourne VIC 3000",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3000",
+    "phone": "(03) 8658 5872",
+    "website": "https://defencelawyersvic.com.au/",
+    "rating": 4.9,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Josh+Smith+Legal",
+    "latitude": -37.8156576,
+    "longitude": 144.956789,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Josh+Smith+Legal/@-37.8156576,144.956789,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad65d626a15e6df:0x3bb8f4a2cb05c893!8m2!3d-37.8156576!4d144.956789!16s%2Fg%2F11qqxw_qmh?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T21:38:53.805Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0057",
+    "businessName": "Arnold Thomas & Becker Lawyers - Melbourne",
+    "description": "",
+    "categories": [
+      "Legal"
+    ],
+    "location": "573-577 Lonsdale St, Melbourne VIC 3000",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3000",
+    "phone": "(03) 9614 1433",
+    "website": "http://www.arnoldthomasbecker.com.au/",
+    "rating": 4.5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Arnold+Thomas+%26+Becker+Lawyers+-+Melbourne",
+    "latitude": -37.8145147,
+    "longitude": 144.9554515,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Arnold+Thomas+%26+Becker+Lawyers+-+Melbourne/@-37.8145147,144.9554515,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad642b351545399:0x45eb6057af0d85cc!8m2!3d-37.8145147!4d144.9554515!16s%2Fg%2F1x5qsy00?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T21:39:48.371Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free assessment"
+    ]
+  },
+  {
+    "id": "provider_0061",
+    "businessName": "Dribbin & Brown Criminal Lawyers",
+    "description": "",
+    "categories": [
+      "Legal"
+    ],
+    "location": "4/271 William St, Melbourne VIC 3000",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3000",
+    "phone": "(03) 8644 7320",
+    "website": "https://www.criminalsolicitorsmelbourne.com.au/",
+    "rating": 4.9,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Dribbin+%26+Brown+Criminal+Lawyers",
+    "latitude": -37.8127042,
+    "longitude": 144.9564574,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Dribbin+%26+Brown+Criminal+Lawyers/@-37.8127042,144.9564574,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad65d4ada847c4b:0xea76f43b7bca1ed7!8m2!3d-37.8127042!4d144.9564574!16s%2Fg%2F1tt1sv1r?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T21:40:41.566Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0096",
+    "businessName": "Seitz & Pepper Family Lawyers Melbourne",
+    "description": "",
+    "categories": [
+      "Legal"
+    ],
+    "location": "Level 1/530 Little Collins St, Melbourne VIC 3000",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3000",
+    "phone": "1300 926 125",
+    "website": "https://seitzpepper.com.au/?utm_source=Google&utm_medium=GMB&utm_campaign=Maps/Melbourne",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Seitz+%26+Pepper+Family+Lawyers+Melbourne",
+    "latitude": -37.8170738,
+    "longitude": 144.9575408,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Seitz+%26+Pepper+Family+Lawyers+Melbourne/@-37.8170738,144.9575408,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad65d77ba080cd5:0x83f6f67c36309c95!8m2!3d-37.8170738!4d144.9575408!16s%2Fg%2F11smzl9mx5?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T22:03:22.866Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "book a free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0100",
+    "businessName": "Aston Legal Group",
+    "description": "",
+    "categories": [
+      "Legal"
+    ],
+    "location": "level 1/91 William St, Melbourne VIC 3000",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3000",
+    "phone": "(03) 8391 8411",
+    "website": "https://astonlegalgroup.com.au/",
+    "rating": 4.9,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Aston+Legal+Group",
+    "latitude": -37.8170928,
+    "longitude": 144.958607,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Aston+Legal+Group/@-37.8170928,144.958607,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad65d4cf45ef5cd:0xce41c5fa5880faa2!8m2!3d-37.8170928!4d144.958607!16s%2Fg%2F11cn8s80l5?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T22:04:20.654Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0110",
+    "businessName": "FCL Lawyers",
+    "description": "",
+    "categories": [
+      "Legal"
+    ],
+    "location": "Level 24/570 Bourke St, Melbourne VIC 3000",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3000",
+    "phone": "0411 070 043",
+    "website": "https://www.fcllawyers.com.au/",
+    "rating": 4.9,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "FCL+Lawyers",
+    "latitude": -37.8187753,
+    "longitude": 144.9479867,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/FCL+Lawyers/@-37.8187753,144.9479867,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad65db78d518d9d:0xe6dc63bbf46f479c!8m2!3d-37.8187753!4d144.9479867!16s%2Fg%2F11shq3nxqx?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T22:06:35.538Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free quote"
+    ]
+  },
+  {
+    "id": "provider_0111",
+    "businessName": "Carew Counsel Solicitors",
+    "description": "",
+    "categories": [
+      "Legal"
+    ],
+    "location": "10/313 La Trobe St, Melbourne VIC 3000",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3000",
+    "phone": "(03) 9670 5711",
+    "website": "https://www.carewcounsel.com.au/",
+    "rating": 4.8,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Carew+Counsel+Solicitors",
+    "latitude": -37.810869,
+    "longitude": 144.960238,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Carew+Counsel+Solicitors/@-37.810869,144.960238,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad65d4bfadc1843:0x811b3886a6244a81!8m2!3d-37.810869!4d144.960238!16s%2Fg%2F1ptx273kw?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T22:07:43.358Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free 15 minute"
+    ]
+  },
+  {
+    "id": "provider_0112",
+    "businessName": "Northcote Lawyers & Associates",
+    "description": "",
+    "categories": [
+      "Legal"
+    ],
+    "location": "153/157 St Georges Rd, Northcote VIC 3070",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3070",
+    "phone": "(03) 9486 1661",
+    "website": "http://northcotelawyers.com.au/",
+    "rating": 4.7,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Northcote+Lawyers+%26+Associates",
+    "latitude": -37.7681032,
+    "longitude": 144.9910565,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Northcote+Lawyers+%26+Associates/@-37.7681032,144.9910565,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad6436253bbcce9:0x2edf5632cccb890!8m2!3d-37.7681032!4d144.9910565!16s%2Fg%2F11bvtgbbzx?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T22:07:53.634Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free first consultation",
+      "free 30 minute"
+    ]
+  },
+  {
+    "id": "provider_0117",
+    "businessName": "Bramham Lawyers",
+    "description": "",
+    "categories": [
+      "Legal"
+    ],
+    "location": "Unit 4/410 Lonsdale St, Melbourne VIC 3000",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3000",
+    "phone": "(03) 9650 6700",
+    "website": "https://bramhamlawyers.com.au/",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Bramham+Lawyers",
+    "latitude": -37.8122489,
+    "longitude": 144.9621762,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Bramham+Lawyers/@-37.8122489,144.9621762,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad6498f0212c1fd:0xd18cc6439e2a1524!8m2!3d-37.8122489!4d144.9621762!16s%2Fg%2F11mr2mf7cb?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T22:08:53.834Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0118",
+    "businessName": "Conveyancing.com.au Melbourne",
+    "description": "",
+    "categories": [
+      "Legal"
+    ],
+    "location": "Level 6 Suite 2/91 William St, Melbourne VIC 3000",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3000",
+    "phone": "1300 932 738",
+    "website": "https://www.conveyancing.com.au/victoria/melbourne?utm_source=google&utm_medium=organic&utm_content=Melbourne&utm_campaign=gmb",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Conveyancing.com.au+Melbourne",
+    "latitude": -37.817085,
+    "longitude": 144.958668,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Conveyancing.com.au+Melbourne/@-37.817085,144.958668,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad65d4b58c253a9:0x958ad81a73dc9871!8m2!3d-37.817085!4d144.958668!16s%2Fg%2F11bbrp9rzj?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T22:09:04.011Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free quote"
+    ]
+  },
+  {
+    "id": "provider_0136",
+    "businessName": "Lord Commercial Lawyers",
+    "description": "",
+    "categories": [
+      "Legal"
+    ],
+    "location": "Level 10/167 Queen St, Melbourne VIC 3000",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3000",
+    "phone": "(03) 9600 0162",
+    "website": "https://www.lordlaw.com.au/?utm_source=Google&utm_medium=GMB&utm_campaign=GMB",
+    "rating": 4.9,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Lord+Commercial+Lawyers",
+    "latitude": -37.8146916,
+    "longitude": 144.9603108,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Lord+Commercial+Lawyers/@-37.8146916,144.9603108,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad65d4ad3edb3bb:0xea1e53a47679f2ec!8m2!3d-37.8146916!4d144.9603108!16s%2Fg%2F1vcjmd40?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T22:13:51.141Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free initial consultation"
+    ]
+  },
+  {
+    "id": "provider_0140",
+    "businessName": "Coulter Legal",
+    "description": "",
+    "categories": [
+      "Legal"
+    ],
+    "location": "Level 10/485 La Trobe St, Melbourne VIC 3000",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3000",
+    "phone": "(03) 9070 6201",
+    "website": "https://www.coulterlegal.com.au/",
+    "rating": 4.8,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Coulter+Legal",
+    "latitude": -37.8123937,
+    "longitude": 144.9548671,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Coulter+Legal/@-37.8123937,144.9548671,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad643e6bbf95b05:0x713f7009b7eed487!8m2!3d-37.8123937!4d144.9548671!16s%2Fg%2F11hzw4n1hy?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T22:14:37.679Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0155",
+    "businessName": "Stary Norton Halphen Criminal Lawyers Melbourne",
+    "description": "",
+    "categories": [
+      "Legal"
+    ],
+    "location": "Level 12/460 Lonsdale St, Melbourne VIC 3000",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3000",
+    "phone": "(03) 8622 8200",
+    "website": "https://www.starylaw.com/",
+    "rating": 4.9,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Stary+Norton+Halphen+Criminal+Lawyers+Melbourne",
+    "latitude": -37.8130639,
+    "longitude": 144.9582236,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Stary+Norton+Halphen+Criminal+Lawyers+Melbourne/@-37.8130639,144.9582236,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad65d8d2da6ba91:0x3028024f8e6f4f29!8m2!3d-37.8130639!4d144.9582236!16s%2Fg%2F11btwv7nfm?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T23:09:39.033Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult"
+    ]
+  }
+]

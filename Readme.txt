@@ -36,6 +36,18 @@ Melbourne, Sydney
 http://localhost:3000/admin
 npx ts-node --project tsconfig.seed.json scripts/make-admin.ts your-email@example.com
 
+Here's the command to delete all users from Firebase Firestore:
+npx ts-node --project tsconfig.seed.json scripts/cleanup-firebase.ts users
 
 
-npx ts-node --project tsconfig.seed.json scripts/make-admin.ts shivhare007@gmail.com
+To Seed Your Database
+npx ts-node --project tsconfig.seed.json scripts/seed-data.ts
+
+Or if you want to clear everything first:
+npx ts-node --project tsconfig.seed.json scripts/cleanup-firebase.ts
+npx ts-node --project tsconfig.seed.json scripts/seed-data.ts
+
+
+Adding New Categories in the Future
+Edit the CATEGORIES array in scripts/seed-data.ts (lines 42-107) and re-run the seed script. The format is:
+{  id: 'your-category-id',  name: 'Your Category Name',  icon: '🔧',  description: 'Short description',  image: 'https://...',}

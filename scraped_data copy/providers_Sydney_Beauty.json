@@ -1,0 +1,448 @@
+[
+  {
+    "id": "provider_0014",
+    "businessName": "Contour Clinics Newtown",
+    "description": "",
+    "categories": [
+      "Beauty"
+    ],
+    "location": "1/222 King St, Newtown NSW 2042",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2042",
+    "phone": "1300 926 890",
+    "website": "https://contourclinics.com.au/cosmetic-clinics/newtown/",
+    "rating": 4.8,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Contour+Clinics+Newtown",
+    "latitude": -33.8951619,
+    "longitude": 151.1820646,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Contour+Clinics+Newtown/@-33.8951619,151.1820646,16z/data=!3m1!4b1!4m6!3m5!1s0x6b12b16e83745ca1:0xa7ddf0c8c36bb961!8m2!3d-33.8951619!4d151.1820646!16s%2Fg%2F11h874c4tr?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-25T23:57:54.166Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "complimentary consultation",
+      "complimentary consult"
+    ]
+  },
+  {
+    "id": "provider_0070",
+    "businessName": "mySpa Sydney",
+    "description": "",
+    "categories": [
+      "Beauty"
+    ],
+    "location": "unit 4/10 Hudson Ave, Castle Hill NSW 2154",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2154",
+    "phone": "(02) 8850 6550",
+    "website": "http://myspasydney.com.au/",
+    "rating": 4.9,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "mySpa+Sydney",
+    "latitude": -33.7316356,
+    "longitude": 150.972783,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/mySpa+Sydney/@-33.7316356,150.972783,16z/data=!3m1!4b1!4m6!3m5!1s0x6b129927791f6885:0xcdfb47e985ef17de!8m2!3d-33.7316356!4d150.972783!16s%2Fg%2F11b8vc6g51?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T00:11:58.760Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free quote"
+    ]
+  },
+  {
+    "id": "provider_0076",
+    "businessName": "Lumi Skin Clinics",
+    "description": "",
+    "categories": [
+      "Beauty"
+    ],
+    "location": "Wilson Parking - Market City, Haymarket, Sydney CBD NSW Car Park, Level1, Shop R1.05/13 Hay St, Haymarket NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "(02) 9211 0987",
+    "website": "http://lumiskinclinics.com.au/",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Lumi+Skin+Clinics",
+    "latitude": -33.8796569,
+    "longitude": 151.2037102,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Lumi+Skin+Clinics/@-33.8796569,151.2037102,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12af31c757d193:0xd084720f178139bf!8m2!3d-33.8796569!4d151.2037102!16s%2Fg%2F11spzr7lgm?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T00:13:43.028Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "book your free consultation",
+      "get a free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0080",
+    "businessName": "Global Skin Clinics - Sydney",
+    "description": "",
+    "categories": [
+      "Beauty"
+    ],
+    "location": "3/276-278 Pitt St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "(02) 9070 6900",
+    "website": "http://globalskinclinics.com/",
+    "rating": 4.4,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Global+Skin+Clinics+-+Sydney",
+    "latitude": -33.8739875,
+    "longitude": 151.2082232,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Global+Skin+Clinics+-+Sydney/@-33.8739875,151.2082232,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12af2898c15087:0x85e485d303e14abb!8m2!3d-33.8739875!4d151.2082232!16s%2Fg%2F11rpq7q4hk?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T00:14:42.355Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "complimentary consultation",
+      "complimentary consult"
+    ]
+  },
+  {
+    "id": "provider_0083",
+    "businessName": "V BEAUTY SKIN CLINICS",
+    "description": "",
+    "categories": [
+      "Beauty"
+    ],
+    "location": "3/95 Bathurst St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "0466 658 168",
+    "website": "https://vbeauty.com.au/",
+    "rating": 4.8,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "V+BEAUTY+SKIN+CLINICS",
+    "latitude": -33.8743632,
+    "longitude": 151.2056712,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/V+BEAUTY+SKIN+CLINICS/@-33.8743632,151.2056712,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12ae3c6bae8d6f:0x2d906260bb8c34ae!8m2!3d-33.8743632!4d151.2056712!16s%2Fg%2F11c6169_wz?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T00:15:23.482Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "book a free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0088",
+    "businessName": "Gardenia Skin Co - Cosmetic Clinic Sydney",
+    "description": "",
+    "categories": [
+      "Beauty"
+    ],
+    "location": "Suite 134, Level 13/183 Macquarie St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "0450 041 505",
+    "website": "https://gardeniaskinco.com.au/?utm_source=gmb",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Gardenia+Skin+Co+-+Cosmetic+Clinic+Sydney",
+    "latitude": -33.8665832,
+    "longitude": 151.212255,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Gardenia+Skin+Co+-+Cosmetic+Clinic+Sydney/@-33.8665832,151.212255,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12affe6f835287:0x54bef15b82eb80b2!8m2!3d-33.8665832!4d151.212255!16s%2Fg%2F11v0q10jdb?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T00:16:41.464Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "book a free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0090",
+    "businessName": "The Skin Clinic",
+    "description": "",
+    "categories": [
+      "Beauty"
+    ],
+    "location": "Unit 11/103 Majors Bay Rd, Concord NSW 2137",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2137",
+    "phone": "(02) 8757 3470",
+    "website": "https://theskinclinic.com.au/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "The+Skin+Clinic",
+    "latitude": -33.854784,
+    "longitude": 151.103282,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/The+Skin+Clinic/@-33.854784,151.103282,16z/data=!3m1!4b1!4m6!3m5!1s0x6b12a52e4db58299:0x65521dc7267fd64a!8m2!3d-33.854784!4d151.103282!16s%2Fg%2F1tmxwrc0?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T00:17:05.471Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "book your free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0094",
+    "businessName": "Pure Skin Lab",
+    "description": "",
+    "categories": [
+      "Beauty"
+    ],
+    "location": "215/1 Katherine St, Chatswood NSW 2067",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2067",
+    "phone": "0491 361 259",
+    "website": "https://www.pureskinlab.online/book-online",
+    "rating": 4.8,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Pure+Skin+Lab",
+    "latitude": -33.7978903,
+    "longitude": 151.1797743,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Pure+Skin+Lab/@-33.7978903,151.1797743,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12af466006c3d9:0xdb6efb7a32e53870!8m2!3d-33.7978903!4d151.1797743!16s%2Fg%2F11pwyp66rf?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T00:18:00.548Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0098",
+    "businessName": "Sydney Cosmetic Clinics",
+    "description": "",
+    "categories": [
+      "Beauty"
+    ],
+    "location": "63 West St, North Sydney NSW 2060",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2060",
+    "phone": "(02) 9929 0455",
+    "website": "http://wrinklefreesydney.com.au/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Sydney+Cosmetic+Clinics",
+    "latitude": -33.830747,
+    "longitude": 151.2060763,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Sydney+Cosmetic+Clinics/@-33.830747,151.2060763,16z/data=!3m1!4b1!4m6!3m5!1s0x6b12aeec1587d8f5:0x24b5a6e45e316158!8m2!3d-33.830747!4d151.2060763!16s%2Fg%2F11gnpl5984?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T00:18:59.625Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult",
+      "free skin consultation",
+      "free skin analysis"
+    ]
+  },
+  {
+    "id": "provider_0099",
+    "businessName": "Sharon MediSkin Clinic",
+    "description": "",
+    "categories": [
+      "Beauty"
+    ],
+    "location": "Shop 3, Ground Floor/265 Castlereagh St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "(02) 9267 7411",
+    "website": "https://sharonmediskinclinic.com.au/",
+    "rating": 4.5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Sharon+MediSkin+Clinic",
+    "latitude": -33.8771732,
+    "longitude": 151.2084001,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Sharon+MediSkin+Clinic/@-33.8771732,151.2084001,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12ae3d16acacdf:0x9008e216250137b2!8m2!3d-33.8771732!4d151.2084001!16s%2Fg%2F11bv6pvxw4?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T00:19:13.188Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0103",
+    "businessName": "Cosmedix Clinics",
+    "description": "",
+    "categories": [
+      "Beauty"
+    ],
+    "location": "169 William St, Darlinghurst NSW 2010",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2010",
+    "phone": "(02) 8006 3344",
+    "website": "http://www.cosmedixclinics.com.au/",
+    "rating": 4.5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Cosmedix+Clinics",
+    "latitude": -33.8749366,
+    "longitude": 151.2190271,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Cosmedix+Clinics/@-33.8749366,151.2190271,16z/data=!3m1!4b1!4m6!3m5!1s0x6b12a31ebfd590d3:0xc9b6cb0f336c3b14!8m2!3d-33.8749366!4d151.2190271!16s%2Fg%2F1tcw3s51?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T00:20:13.835Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "book your free consultation",
+      "free consult"
+    ]
+  }
+]
