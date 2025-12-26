@@ -45,6 +45,7 @@ interface Category {
   icon: string;
   description: string;
   image: string;
+  images?: string[]; // Array of images for random selection
 }
 
 interface ScrapedProvider {
@@ -107,21 +108,26 @@ function loadCategories(): Category[] {
 }
 
 /**
- * Create a mapping from category name to category image
+ * Create a mapping from category name to array of category images
  * Handles case-insensitive matching
  */
-function createCategoryImageMap(categories: Category[]): Map<string, string> {
-  const map = new Map<string, string>();
+function createCategoryImageMap(categories: Category[]): Map<string, string[]> {
+  const map = new Map<string, string[]>();
   
   for (const category of categories) {
+    // Use images array if available, otherwise fallback to single image
+    const images = category.images && category.images.length > 0 
+      ? category.images 
+      : [category.image];
+    
     // Map by exact name
-    map.set(category.name.toLowerCase(), category.image);
+    map.set(category.name.toLowerCase(), images);
     
     // Also map common variations
     // e.g., "Migration & Visa Advisers" -> "Migration"
     const firstName = category.name.split(/[&,]/)[0].trim().toLowerCase();
     if (!map.has(firstName)) {
-      map.set(firstName, category.image);
+      map.set(firstName, images);
     }
   }
   
@@ -129,27 +135,33 @@ function createCategoryImageMap(categories: Category[]): Map<string, string> {
 }
 
 /**
- * Get the category image for a provider based on their first category
+ * Get a random category image for a provider based on their first category
  */
-function getCategoryImage(categories: string[], categoryImageMap: Map<string, string>): string {
+function getCategoryImage(categories: string[], categoryImageMap: Map<string, string[]>): string {
   if (!categories || categories.length === 0) {
     return '';
   }
   
   const primaryCategory = categories[0].toLowerCase();
   
+  // Helper to pick a random image from array
+  const pickRandom = (images: string[]): string => {
+    if (!images || images.length === 0) return '';
+    return images[Math.floor(Math.random() * images.length)];
+  };
+  
   // Try exact match first
   if (categoryImageMap.has(primaryCategory)) {
-    return categoryImageMap.get(primaryCategory)!;
+    return pickRandom(categoryImageMap.get(primaryCategory)!);
   }
   
   // Try partial match
   const entries = Array.from(categoryImageMap.entries());
   for (let i = 0; i < entries.length; i++) {
     const key = entries[i][0];
-    const image = entries[i][1];
+    const images = entries[i][1];
     if (primaryCategory.includes(key) || key.includes(primaryCategory)) {
-      return image;
+      return pickRandom(images);
     }
   }
   
@@ -314,7 +326,7 @@ async function seedCities(cities: City[]): Promise<void> {
  */
 async function seedProviders(
   providers: ScrapedProvider[],
-  categoryImageMap: Map<string, string>
+  categoryImageMap: Map<string, string[]>
 ): Promise<void> {
   if (providers.length === 0) {
     console.log(`⏭️  Skipping providers (no data)`);

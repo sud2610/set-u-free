@@ -16,6 +16,8 @@ interface ProviderCardProps {
   className?: string;
   /** Optional inline styles */
   style?: React.CSSProperties;
+  /** Load image with priority (for above-the-fold cards) */
+  priority?: boolean;
 }
 
 // ==================== FALLBACK AVATAR ====================
@@ -70,6 +72,7 @@ export function ProviderCard({
   onClick,
   className = '',
   style,
+  priority = false,
 }: ProviderCardProps) {
   const router = useRouter();
 
@@ -136,6 +139,8 @@ export function ProviderCard({
             fill
             className="object-cover transition-transform duration-500 group-hover:scale-105"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            priority={priority}
+            loading={priority ? 'eager' : 'lazy'}
           />
         ) : (
           // Fallback Avatar
@@ -262,37 +267,37 @@ export function ProviderCard({
  */
 export function ProviderCardSkeleton() {
   return (
-    <div className="bg-white rounded-2xl border-2 border-amber-100 overflow-hidden animate-pulse">
-      {/* Image Skeleton */}
-      <div className="aspect-[4/3] bg-gray-200" />
+    <div className="bg-white rounded-2xl border-2 border-amber-100 overflow-hidden">
+      {/* Image Skeleton with shimmer */}
+      <div className="aspect-[4/3] bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-shimmer" />
 
       {/* Content Skeleton */}
       <div className="p-5 space-y-4">
         {/* Title */}
-        <div className="h-6 bg-gray-200 rounded-lg w-3/4" />
+        <div className="h-6 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-shimmer rounded-lg w-3/4" />
 
         {/* Categories */}
         <div className="flex gap-2">
-          <div className="h-6 bg-yellow-100 rounded-md w-20" />
-          <div className="h-6 bg-yellow-100 rounded-md w-16" />
+          <div className="h-6 bg-gradient-to-r from-yellow-100 via-yellow-50 to-yellow-100 bg-[length:200%_100%] animate-shimmer rounded-md w-20" />
+          <div className="h-6 bg-gradient-to-r from-yellow-100 via-yellow-50 to-yellow-100 bg-[length:200%_100%] animate-shimmer rounded-md w-16" />
         </div>
 
         {/* Description */}
         <div className="space-y-2">
-          <div className="h-4 bg-gray-200 rounded w-full" />
-          <div className="h-4 bg-gray-200 rounded w-2/3" />
+          <div className="h-4 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-shimmer rounded w-full" />
+          <div className="h-4 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-shimmer rounded w-2/3" />
         </div>
 
         {/* Rating */}
         <div className="pt-4 border-t border-gray-100">
           <div className="flex items-center gap-2">
-            <div className="h-4 bg-yellow-100 rounded w-24" />
-            <div className="h-4 bg-gray-200 rounded w-16" />
+            <div className="h-4 bg-gradient-to-r from-yellow-100 via-yellow-50 to-yellow-100 bg-[length:200%_100%] animate-shimmer rounded w-24" />
+            <div className="h-4 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-shimmer rounded w-16" />
           </div>
         </div>
 
         {/* Button */}
-        <div className="h-12 bg-gray-100 rounded-xl" />
+        <div className="h-12 bg-gradient-to-r from-gray-100 via-gray-50 to-gray-100 bg-[length:200%_100%] animate-shimmer rounded-xl" />
       </div>
     </div>
   );

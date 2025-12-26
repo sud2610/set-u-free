@@ -31,10 +31,10 @@ export interface ServiceCategorySEO {
 
 // ==================== CONSTANTS ====================
 
-const SITE_NAME = 'Set-U-Free';
+const SITE_NAME = 'FreeSetu';
 const DEFAULT_LOCALE = 'en_IN';
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://setufree.com';
-const DEFAULT_OG_IMAGE = `${BASE_URL}/og-default.png`;
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://freesetu.com';
+const DEFAULT_OG_IMAGE = `${BASE_URL}/og-image.png`;
 
 // ==================== CATEGORY DATA ====================
 
@@ -180,9 +180,9 @@ const categoryMetadata: Record<
 
 export function getHomePageMetadata(): Metadata {
   return {
-    title: 'Set-U-Free - Free Consultations from Trusted Professionals',
+    title: 'FreeSetu - Free Consultations with Verified Service Providers',
     description:
-      'Book free initial consultations with verified dentists, beauty parlors, gyms, physiotherapists, yoga instructors, and more. Find trusted service providers near you.',
+      'FreeSetu connects you with verified local service providers for 100% free consultations. Find dentists, beauty experts, fitness trainers, and more. Book instantly - no hidden charges!',
     keywords: [
       'free consultation',
       'service providers',
@@ -213,25 +213,25 @@ export function getHomePageMetadata(): Metadata {
       locale: DEFAULT_LOCALE,
       url: BASE_URL,
       siteName: SITE_NAME,
-      title: 'Set-U-Free - Free Consultations from Trusted Professionals',
+      title: 'FreeSetu - Free Consultations with Verified Service Providers',
       description:
-        'Book free initial consultations with verified dentists, beauty parlors, gyms, physiotherapists, and more.',
+        'FreeSetu connects you with verified professionals for 100% free consultations. Find dentists, beauty experts, fitness trainers, and more!',
       images: [
         {
           url: DEFAULT_OG_IMAGE,
           width: 1200,
           height: 630,
-          alt: 'Set-U-Free - Find Trusted Service Providers',
+          alt: 'FreeSetu - Free Consultations with Verified Professionals',
         },
       ],
     },
     twitter: {
       card: 'summary_large_image',
-      title: 'Set-U-Free - Free Consultations from Trusted Professionals',
+      title: 'FreeSetu - Free Consultations with Verified Service Providers',
       description:
-        'Book free initial consultations with verified service providers.',
+        'Connect with verified service providers for 100% free consultations. Book instantly on FreeSetu!',
       images: [DEFAULT_OG_IMAGE],
-      creator: '@setufree',
+      creator: '@freesetu',
     },
     robots: {
       index: true,
@@ -276,7 +276,7 @@ export function getServicesPageMetadata(): Metadata {
       locale: DEFAULT_LOCALE,
       url: `${BASE_URL}/services`,
       siteName: SITE_NAME,
-      title: 'Browse All Services | Set-U-Free',
+      title: 'Browse All Services | FreeSetu',
       description:
         'Find trusted service providers for free consultations. Browse by category and location.',
       images: [
@@ -284,13 +284,13 @@ export function getServicesPageMetadata(): Metadata {
           url: `${BASE_URL}/og-services.png`,
           width: 1200,
           height: 630,
-          alt: 'Browse Services on Set-U-Free',
+          alt: 'Browse Services on FreeSetu',
         },
       ],
     },
     twitter: {
       card: 'summary_large_image',
-      title: 'Browse All Services | Set-U-Free',
+      title: 'Browse All Services | FreeSetu',
       description: 'Find trusted service providers for free consultations.',
       images: [`${BASE_URL}/og-services.png`],
     },
@@ -345,7 +345,7 @@ export function getCategoryPageMetadata(
           url: `${BASE_URL}/og-category-${category.toLowerCase()}.png`,
           width: 1200,
           height: 630,
-          alt: `${categoryData.title} Services on Set-U-Free`,
+          alt: `${categoryData.title} Services on FreeSetu`,
         },
       ],
     },
@@ -434,8 +434,8 @@ export function getDashboardMetadata(
 
   const description =
     type === 'user'
-      ? 'Manage your bookings, profile, and account settings on Set-U-Free.'
-      : 'Manage your services, appointments, and business profile on Set-U-Free.';
+      ?       'Manage your bookings, profile, and account settings on FreeSetu.'
+      : 'Manage your services, appointments, and business profile on FreeSetu.';
 
   return {
     title: `${title} | ${SITE_NAME}`,
@@ -468,8 +468,8 @@ export function getAuthPageMetadata(type: 'login' | 'register'): Metadata {
     : 'Create Your Free Account';
 
   const description = isLogin
-    ? 'Sign in to Set-U-Free to manage your bookings and access your dashboard.'
-    : 'Join Set-U-Free for free. Book consultations with verified professionals or register as a service provider.';
+    ? 'Sign in to FreeSetu to manage your bookings and access your dashboard.'
+    : 'Join FreeSetu for free. Book consultations with verified professionals or register as a service provider.';
 
   return {
     title: `${title} | ${SITE_NAME}`,
@@ -505,25 +505,25 @@ export function getStaticPageMetadata(
     about: {
       title: 'About Us - Our Story, Mission & Team',
       description:
-        'Learn about Set-U-Free, our mission to connect customers with verified service providers for free consultations. Meet our team.',
+        'Learn about FreeSetu, our mission to connect customers with verified service providers for free consultations. Meet our team.',
       url: '/about',
     },
     contact: {
       title: 'Contact Us - Get in Touch',
       description:
-        'Have questions or feedback? Contact Set-U-Free support team. We\'re here to help you.',
+        'Have questions or feedback? Contact FreeSetu support team. We\'re here to help you.',
       url: '/contact',
     },
     privacy: {
       title: 'Privacy Policy - How We Protect Your Data',
       description:
-        'Learn how Set-U-Free collects, uses, and protects your personal information. Your privacy matters to us.',
+        'Learn how FreeSetu collects, uses, and protects your personal information. Your privacy matters to us.',
       url: '/privacy-policy',
     },
     terms: {
       title: 'Terms of Service - Platform Rules',
       description:
-        'Read the Terms of Service for Set-U-Free. Understand your rights, responsibilities, and platform rules.',
+        'Read the Terms of Service for FreeSetu. Understand your rights, responsibilities, and platform rules.',
       url: '/terms-of-service',
     },
   };
@@ -629,7 +629,7 @@ export function generateOrganizationSchema(): object {
     url: BASE_URL,
     logo: `${BASE_URL}/logo.png`,
     description:
-      'Set-U-Free connects customers with verified service providers for free consultations.',
+      'FreeSetu connects customers with verified service providers for 100% free consultations.',
     address: {
       '@type': 'PostalAddress',
       streetAddress: '123 Business Park, Sector 5',
@@ -645,10 +645,10 @@ export function generateOrganizationSchema(): object {
       availableLanguage: ['English', 'Hindi'],
     },
     sameAs: [
-      'https://facebook.com/setufree',
-      'https://twitter.com/setufree',
-      'https://instagram.com/setufree',
-      'https://linkedin.com/company/setufree',
+      'https://facebook.com/freesetu',
+      'https://twitter.com/freesetu',
+      'https://instagram.com/freesetu',
+      'https://linkedin.com/company/freesetu',
     ],
   };
 }

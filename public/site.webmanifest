@@ -1,7 +1,7 @@
 {
-  "name": "Set-U-Free",
-  "short_name": "SetUFree",
-  "description": "Find Local Service Providers",
+  "name": "FreeSetu",
+  "short_name": "FreeSetu",
+  "description": "Free Consultations with Verified Service Providers",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#fffbeb",

@@ -245,75 +245,78 @@ export function ProviderDetailContent({ providerId }: ProviderDetailContentProps
 
             {/* Provider Info */}
             <div className="flex-1">
-              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
-                <div>
-                  <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+              {/* Action Buttons - Top Right */}
+              <div className="flex justify-end gap-3 mb-4">
+                <button
+                  onClick={handleToggleFavorite}
+                  className={`p-3.5 rounded-xl border-2 transition-all duration-300 hover:scale-105 ${
+                    isFavorite
+                      ? 'bg-red-50 border-red-200 text-red-500 shadow-lg shadow-red-500/20'
+                      : 'bg-white/80 backdrop-blur-sm border-gray-200 text-gray-500 hover:border-red-200 hover:text-red-500'
+                  }`}
+                  aria-label={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
+                >
+                  <Heart className={`w-6 h-6 ${isFavorite ? 'fill-red-500' : ''}`} />
+                </button>
+                <button
+                  onClick={handleShare}
+                  className="p-3.5 rounded-xl bg-white/80 backdrop-blur-sm border-2 border-gray-200 text-gray-500 hover:border-yellow-300 hover:text-yellow-600 transition-all duration-300 hover:scale-105"
+                  aria-label="Share"
+                >
+                  <Share2 className="w-6 h-6" />
+                </button>
+              </div>
+
+              {/* Centered Business Name with Elegant Typography */}
+              <div className="text-center">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight">
+                  <span className="bg-gradient-to-r from-gray-800 via-gray-900 to-gray-800 bg-clip-text text-transparent">
                     {provider.businessName}
-                  </h1>
-                  
-                  {/* Categories */}
-                  <div className="flex flex-wrap gap-2 mt-4">
-                    {provider.categories.map((cat, index) => (
-                      <span
-                        key={index}
-                        className="px-4 py-1.5 bg-white/80 backdrop-blur-sm text-yellow-700 text-sm font-semibold rounded-full border border-yellow-200 shadow-sm"
-                      >
-                        {cat}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* Location */}
-                  <div className="flex items-center gap-2 mt-5 text-gray-600">
-                    <div className="p-2 bg-white/80 rounded-lg">
-                      <MapPin className="w-5 h-5 text-yellow-600" />
-                    </div>
-                    <span className="font-medium">{provider.location}, {provider.city}</span>
-                  </div>
-
-                  {/* Rating */}
-                  <div className="flex items-center gap-4 mt-5">
-                    <div className="flex items-center gap-3 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-xl shadow-sm">
-                      <div className="flex items-center gap-0.5">
-                        {[1, 2, 3, 4, 5].map((star) => (
-                          <Star
-                            key={star}
-                            className={`w-5 h-5 ${
-                              star <= Math.round(provider.rating)
-                                ? 'text-yellow-400 fill-yellow-400'
-                                : 'text-gray-300'
-                            }`}
-                          />
-                        ))}
-                      </div>
-                      <span className="font-bold text-gray-900 text-lg">{provider.rating}</span>
-                      <span className="text-gray-500 text-sm">
-                        ({provider.reviewCount} reviews)
-                      </span>
-                    </div>
-                  </div>
+                  </span>
+                </h1>
+                {/* Decorative underline - centered */}
+                <div className="mt-3 h-1 w-32 bg-gradient-to-r from-yellow-400 via-amber-500 to-orange-400 rounded-full mx-auto" />
+                
+                {/* Categories - centered */}
+                <div className="flex flex-wrap justify-center gap-2 mt-5">
+                  {provider.categories.map((cat, index) => (
+                    <span
+                      key={index}
+                      className="px-4 py-1.5 bg-white/80 backdrop-blur-sm text-yellow-700 text-sm font-semibold rounded-full border border-yellow-200 shadow-sm"
+                    >
+                      {cat}
+                    </span>
+                  ))}
                 </div>
 
-                {/* Action Buttons */}
-                <div className="flex items-center gap-3">
-                  <button
-                    onClick={handleToggleFavorite}
-                    className={`p-3.5 rounded-xl border-2 transition-all duration-300 hover:scale-105 ${
-                      isFavorite
-                        ? 'bg-red-50 border-red-200 text-red-500 shadow-lg shadow-red-500/20'
-                        : 'bg-white/80 backdrop-blur-sm border-gray-200 text-gray-500 hover:border-red-200 hover:text-red-500'
-                    }`}
-                    aria-label={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
-                  >
-                    <Heart className={`w-6 h-6 ${isFavorite ? 'fill-red-500' : ''}`} />
-                  </button>
-                  <button
-                    onClick={handleShare}
-                    className="p-3.5 rounded-xl bg-white/80 backdrop-blur-sm border-2 border-gray-200 text-gray-500 hover:border-yellow-300 hover:text-yellow-600 transition-all duration-300 hover:scale-105"
-                    aria-label="Share"
-                  >
-                    <Share2 className="w-6 h-6" />
-                  </button>
+                {/* Location - centered */}
+                <div className="flex items-center justify-center gap-2 mt-5 text-gray-600">
+                  <div className="p-2 bg-white/80 rounded-lg">
+                    <MapPin className="w-5 h-5 text-yellow-600" />
+                  </div>
+                  <span className="font-medium">{provider.location}, {provider.city}</span>
+                </div>
+
+                {/* Rating - centered */}
+                <div className="flex justify-center mt-5">
+                  <div className="flex items-center gap-3 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-xl shadow-sm">
+                    <div className="flex items-center gap-0.5">
+                      {[1, 2, 3, 4, 5].map((star) => (
+                        <Star
+                          key={star}
+                          className={`w-5 h-5 ${
+                            star <= Math.round(provider.rating)
+                              ? 'text-yellow-400 fill-yellow-400'
+                              : 'text-gray-300'
+                          }`}
+                        />
+                      ))}
+                    </div>
+                    <span className="font-bold text-gray-900 text-lg">{provider.rating}</span>
+                    <span className="text-gray-500 text-sm">
+                      ({provider.reviewCount} reviews)
+                    </span>
+                  </div>
                 </div>
               </div>
 

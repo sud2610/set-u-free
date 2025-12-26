@@ -3,7 +3,8 @@
 // ==================== HERO SECTION COMPONENT ====================
 
 /**
- * Hero section - Minimal Airbnb style (search bar removed)
+ * Hero section - Currently disabled
+ * The Announcement Banner at the top handles the free consultation messaging
  */
 export function HeroSection() {
   return null;

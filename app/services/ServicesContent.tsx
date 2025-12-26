@@ -159,7 +159,7 @@ export function ServicesContent() {
   // ==================== RENDER ====================
 
   return (
-    <section className="py-8 lg:py-12 bg-[#faf8f5]">
+    <section id="services-section" className="py-8 lg:py-12 bg-[#faf8f5]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* ==================== SEARCH & FILTERS ==================== */}
         <div className="bg-white rounded-2xl shadow-md border-2 border-yellow-400 p-4 sm:p-6 mb-8">
@@ -307,7 +307,8 @@ export function ServicesContent() {
               {providers.slice(0, currentPage * ITEMS_PER_PAGE).map((provider, index) => (
                 <ProviderCard 
                   key={provider.uid} 
-                  provider={provider} 
+                  provider={provider}
+                  priority={index < 4}
                 />
               ))}
             </div>

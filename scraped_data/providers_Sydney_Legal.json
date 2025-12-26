@@ -1,0 +1,1135 @@
+[
+  {
+    "id": "provider_0001",
+    "businessName": "Sydney Criminal Lawyers®",
+    "description": "",
+    "categories": [
+      "Legal"
+    ],
+    "location": "Museum Towers, 503/267 Castlereagh St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "(02) 9261 8881",
+    "website": "https://www.sydneycriminallawyers.com.au/?utm_source=google&utm_medium=organic&utm_campaign=local",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Sydney+Criminal+Lawyers%C2%AE",
+    "latitude": -33.8774336,
+    "longitude": 151.2083356,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Sydney+Criminal+Lawyers%C2%AE/@-33.8774336,151.2083356,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12ae3d1587302f:0x71b5781dd9242b87!8m2!3d-33.8774336!4d151.2083356!16s%2Fg%2F1tdgvk2r?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T03:13:05.124Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "book a free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0003",
+    "businessName": "LY Criminal Lawyers Sydney",
+    "description": "",
+    "categories": [
+      "Legal"
+    ],
+    "location": "Commercial, World Tower, Suite 1511, 87/89 Liverpool St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "1511",
+    "phone": "1300 595 299",
+    "website": "https://lylawyers.com.au/?utm_source=organic&utm_medium=gmb&utm_campaign=sydney",
+    "rating": 4.8,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "LY+Criminal+Lawyers+Sydney",
+    "latitude": -33.8765399,
+    "longitude": 151.2066628,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/LY+Criminal+Lawyers+Sydney/@-33.8765399,151.2066628,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12ae3d04181f29:0xf43ba286932500a3!8m2!3d-33.8765399!4d151.2066628!16s%2Fg%2F11_w3r5br?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T03:13:30.176Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "book your free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0004",
+    "businessName": "CRIMINAL Lawyer Sydney",
+    "description": "",
+    "categories": [
+      "Legal"
+    ],
+    "location": "276 Pitt St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "(02) 8090 7398",
+    "website": "http://www.criminalcharges.com.au/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "CRIMINAL+Lawyer+Sydney",
+    "latitude": -33.8739739,
+    "longitude": 151.2083485,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/CRIMINAL+Lawyer+Sydney/@-33.8739739,151.2083485,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12ae3d92573749:0x28ea7ed811012a61!8m2!3d-33.8739739!4d151.2083485!16s%2Fg%2F1vc6dkb8?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T03:13:40.454Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "first consultation free"
+    ]
+  },
+  {
+    "id": "provider_0005",
+    "businessName": "Criminal Lawyers Sydney",
+    "description": "",
+    "categories": [
+      "Legal"
+    ],
+    "location": "Level 17/9 Castlereagh St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "(02) 9152 8619",
+    "website": "https://www.criminallawyerssydney.com/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Criminal+Lawyers+Sydney",
+    "latitude": -33.8666553,
+    "longitude": 151.2096371,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Criminal+Lawyers+Sydney/@-33.8666553,151.2096371,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12af401bb45b19:0x96eb416d6cbc126f!8m2!3d-33.8666553!4d151.2096371!16s%2Fg%2F11nfv6m_yv?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T03:13:51.363Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free first consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0007",
+    "businessName": "O’Brien Criminal and Civil Solicitors",
+    "description": "",
+    "categories": [
+      "Legal"
+    ],
+    "location": "Level 4/219 Castlereagh St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "(02) 9261 4281",
+    "website": "http://www.obriensolicitors.com.au/",
+    "rating": 4.5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "O%E2%80%99Brien+Criminal+and+Civil+Solicitors",
+    "latitude": -33.8754894,
+    "longitude": 151.2086286,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/O%E2%80%99Brien+Criminal+and+Civil+Solicitors/@-33.8754894,151.2086286,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12ae3d14263bb3:0xd863e74d569ea209!8m2!3d-33.8754894!4d151.2086286!16s%2Fg%2F1tfkwgb3?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T03:14:21.395Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0010",
+    "businessName": "Australian Criminal Defence",
+    "description": "",
+    "categories": [
+      "Legal"
+    ],
+    "location": "1/299 Elizabeth St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "(02) 8815 8151",
+    "website": "https://callcriminallawyers.com.au/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Australian+Criminal+Defence",
+    "latitude": -33.8753273,
+    "longitude": 151.2094467,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Australian+Criminal+Defence/@-33.8753273,151.2094467,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12af59f5860499:0x68108c24b843c36d!8m2!3d-33.8753273!4d151.2094467!16s%2Fg%2F11pv28mw6l?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T03:15:03.966Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "book a free consultation",
+      "contact us for a free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0012",
+    "businessName": "Criminal Defence Lawyers Australia",
+    "description": "",
+    "categories": [
+      "Legal"
+    ],
+    "location": "Suite 279, Level 3/398 Pitt St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "(02) 8606 2218",
+    "website": "https://www.criminaldefencelawyers.com.au/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Criminal+Defence+Lawyers+Australia",
+    "latitude": -33.8785979,
+    "longitude": 151.207698,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Criminal+Defence+Lawyers+Australia/@-33.8785979,151.207698,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12ae3d3df16ba1:0x249d8ced901c62de!8m2!3d-33.8785979!4d151.207698!16s%2Fg%2F11gblf6_lk?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T03:15:29.378Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0013",
+    "businessName": "Australian Law Advocates",
+    "description": "",
+    "categories": [
+      "Legal"
+    ],
+    "location": "Three International Towers, Level 24/300 Barangaroo Ave, Barangaroo NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "(02) 8067 8361",
+    "website": "https://australianlawadvocates.com.au/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Australian+Law+Advocates",
+    "latitude": -33.8651342,
+    "longitude": 151.2021367,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Australian+Law+Advocates/@-33.8651342,151.2021367,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12af31e7d071c5:0x3567006400dbfb0a!8m2!3d-33.8651342!4d151.2021367!16s%2Fg%2F11vd7j2d20?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T03:15:38.539Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free first consultation",
+      "schedule your free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0015",
+    "businessName": "Gorval Lynch",
+    "description": "",
+    "categories": [
+      "Legal"
+    ],
+    "location": "Level 6/49-51 York St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "1300 031 998",
+    "website": "https://gorvallynch.com.au/",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Gorval+Lynch",
+    "latitude": -33.8670322,
+    "longitude": 151.2056229,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Gorval+Lynch/@-33.8670322,151.2056229,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12adf238c0535f:0xde337b73839615c5!8m2!3d-33.8670322!4d151.2056229!16s%2Fg%2F11c1nzyxm9?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T03:16:05.218Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult",
+      "free case assessment"
+    ]
+  },
+  {
+    "id": "provider_0019",
+    "businessName": "Criminal Law Group - Sydney Criminal & Traffic Lawyers 🥇",
+    "description": "",
+    "categories": [
+      "Legal"
+    ],
+    "location": "5/153 George St, Liverpool NSW 2170",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2170",
+    "phone": "1300 274 652",
+    "website": "https://www.criminallawgroup.com.au/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Criminal+Law+Group+-+Sydney+Criminal+%26+Traffic+Lawyers+%F0%9F%A5%87",
+    "latitude": -33.9212354,
+    "longitude": 150.9250583,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Criminal+Law+Group+-+Sydney+Criminal+%26+Traffic+Lawyers+%F0%9F%A5%87/@-33.9212354,150.9250583,17z/data=!3m1!4b1!4m6!3m5!1s0x6b1295278cd89901:0x1d0a0606ef325e9f!8m2!3d-33.9212354!4d150.9250583!16s%2Fg%2F11f5v9j63b?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T03:17:08.253Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free initial consultation",
+      "free consult",
+      "free case review",
+      "free case assessment"
+    ]
+  },
+  {
+    "id": "provider_0021",
+    "businessName": "Carneys Legal",
+    "description": "",
+    "categories": [
+      "Legal"
+    ],
+    "location": "Suite 502, Level 5/185 Elizabeth St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "(02) 8226 5555",
+    "website": "https://www.carneys.com.au/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Carneys+Legal",
+    "latitude": -33.872343,
+    "longitude": 151.2096784,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Carneys+Legal/@-33.872343,151.2096784,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12ae3ff8c72ceb:0xd45bc3ae5879e0cd!8m2!3d-33.872343!4d151.2096784!16s%2Fg%2F1tmz729p?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T03:17:34.822Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "book a free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0023",
+    "businessName": "Repute Law",
+    "description": "",
+    "categories": [
+      "Legal"
+    ],
+    "location": "Level 6/111 Elizabeth St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "1800 627 846",
+    "website": "https://reputelaw.com.au/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Repute+Law",
+    "latitude": -33.8697593,
+    "longitude": 151.2100561,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Repute+Law/@-33.8697593,151.2100561,17z/data=!3m1!4b1!4m6!3m5!1s0x291defd53074189d:0xfb3d801ed8b5446!8m2!3d-33.8697593!4d151.2100561!16s%2Fg%2F11stpj3snz?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T03:17:54.298Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free 15 minute",
+      "free 15-minute"
+    ]
+  },
+  {
+    "id": "provider_0031",
+    "businessName": "James & Jaramillo Lawyers",
+    "description": "",
+    "categories": [
+      "Legal"
+    ],
+    "location": "Level 8/88 Pitt St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "(02) 8378 8585",
+    "website": "https://jjlawyers.com.au/?utm_source=google&utm_medium=listing&utm_campaign=gmb",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "James+%26+Jaramillo+Lawyers",
+    "latitude": -33.8669755,
+    "longitude": 151.2088063,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/James+%26+Jaramillo+Lawyers/@-33.8669755,151.2088063,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12af54105fb7cf:0xdaf7231f240a88a9!8m2!3d-33.8669755!4d151.2088063!16s%2Fg%2F11qn93rls1?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T03:21:00.980Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "initial consultation free",
+      "book your free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0033",
+    "businessName": "Executive Law Group",
+    "description": "",
+    "categories": [
+      "Legal"
+    ],
+    "location": "Level 21/133 Castlereagh St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "1800 395 342",
+    "website": "https://www.executivelawgroup.com.au/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Executive+Law+Group",
+    "latitude": -33.8715818,
+    "longitude": 151.208819,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Executive+Law+Group/@-33.8715818,151.208819,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12ae3e249e3a7f:0xf474e64782bc7c40!8m2!3d-33.8715818!4d151.208819!16s%2Fg%2F11cp5v6h8q?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T03:21:26.061Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0037",
+    "businessName": "Australian Criminal and Family Lawyers",
+    "description": "",
+    "categories": [
+      "Legal"
+    ],
+    "location": "Suite 1003/265 Castlereagh St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "1003",
+    "phone": "1300 745 368",
+    "website": "https://www.acfl.com.au/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Australian+Criminal+and+Family+Lawyers",
+    "latitude": -33.8771732,
+    "longitude": 151.2084001,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Australian+Criminal+and+Family+Lawyers/@-33.8771732,151.2084001,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12af9231eb5855:0xb8a5efb5c3c90004!8m2!3d-33.8771732!4d151.2084001!16s%2Fg%2F11fj0tnptx?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T03:22:25.402Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0038",
+    "businessName": "King & York Lawyers",
+    "description": "",
+    "categories": [
+      "Legal"
+    ],
+    "location": "Tower 2, Level 20/201 Sussex St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "(02) 9290 8514",
+    "website": "http://kingandyorklawyers.com.au/",
+    "rating": 4.8,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "King+%26+York+Lawyers",
+    "latitude": -33.8718517,
+    "longitude": 151.2037258,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/King+%26+York+Lawyers/@-33.8718517,151.2037258,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12ae3ff2c910cd:0x161266807c902ffe!8m2!3d-33.8718517!4d151.2037258!16s%2Fg%2F11g7z6q9s9?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T03:22:37.014Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free initial consultation",
+      "book a free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0039",
+    "businessName": "KPT Defence Lawyers",
+    "description": "",
+    "categories": [
+      "Legal"
+    ],
+    "location": "Level 11, 97/99 Bathurst St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "(02) 9267 5555",
+    "website": "http://www.kptlegal.com.au/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "KPT+Defence+Lawyers",
+    "latitude": -33.8744554,
+    "longitude": 151.2058624,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/KPT+Defence+Lawyers/@-33.8744554,151.2058624,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12af15098b7a0d:0xdcb2b8a1601753d5!8m2!3d-33.8744554!4d151.2058624!16s%2Fg%2F11t7lbzxb0?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T03:22:52.712Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free initial consultation"
+    ]
+  },
+  {
+    "id": "provider_0050",
+    "businessName": "Maatouks Law Group - Sydney CBD",
+    "description": "",
+    "categories": [
+      "Legal"
+    ],
+    "location": "1/370 Pitt St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "(02) 9601 7222",
+    "website": "https://maatouks.com.au/",
+    "rating": 4.9,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Maatouks+Law+Group+-+Sydney+CBD",
+    "latitude": -33.877318,
+    "longitude": 151.207943,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Maatouks+Law+Group+-+Sydney+CBD/@-33.877318,151.207943,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12afec03e2711b:0xd902f6d87df4ac44!8m2!3d-33.877318!4d151.207943!16s%2Fg%2F11nz1ywqrb?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T03:26:42.811Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free phone consultation",
+      "schedule a free consultation",
+      "get a free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0063",
+    "businessName": "Sydney Litigation Lawyers",
+    "description": "",
+    "categories": [
+      "Legal"
+    ],
+    "location": "32 Martin Pl, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "(02) 9232 8033",
+    "website": "https://www.fglaw.com.au/litigation-dispute-resolution/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Sydney+Litigation+Lawyers",
+    "latitude": -33.867394,
+    "longitude": 151.2093794,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Sydney+Litigation+Lawyers/@-33.867394,151.2093794,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12afd95ffc3101:0x96b4662e740992f6!8m2!3d-33.867394!4d151.2093794!16s%2Fg%2F11jdyhf6cy?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T03:29:40.423Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free quote"
+    ]
+  },
+  {
+    "id": "provider_0064",
+    "businessName": "Burn Legal Australia Pty Ltd",
+    "description": "",
+    "categories": [
+      "Legal"
+    ],
+    "location": "13/111 Elizabeth St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "(02) 8089 3189",
+    "website": "http://www.burnlegal.com.au/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Burn+Legal+Australia+Pty+Ltd",
+    "latitude": -33.8697825,
+    "longitude": 151.2101073,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Burn+Legal+Australia+Pty+Ltd/@-33.8697825,151.2101073,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12afe3196ed30d:0xa7df6668b292e4a0!8m2!3d-33.8697825!4d151.2101073!16s%2Fg%2F11vk1ws_jx?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T03:29:54.038Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free 15-minute"
+    ]
+  },
+  {
+    "id": "provider_0069",
+    "businessName": "Boorman Lawyers NSW Solicitors",
+    "description": "",
+    "categories": [
+      "Legal"
+    ],
+    "location": "Level 13/2 Park St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "1300 941 900",
+    "website": "http://boormanlawyers.com.au/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Boorman+Lawyers+NSW+Solicitors",
+    "latitude": -33.872665,
+    "longitude": 151.207641,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Boorman+Lawyers+NSW+Solicitors/@-33.872665,151.207641,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12afbbddd574e9:0x2c85485075bc7d03!8m2!3d-33.872665!4d151.207641!16s%2Fg%2F11g4h_nhq4?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T03:31:05.714Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free case review"
+    ]
+  },
+  {
+    "id": "provider_0071",
+    "businessName": "LHD Lawyers Sydney",
+    "description": "",
+    "categories": [
+      "Legal"
+    ],
+    "location": "8/151 Castlereagh St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "1300 273 248",
+    "website": "https://www.lhd.com.au/office-location/sydney/?utm_medium=organic&utm_source=google-local&utm_campaign=sydney",
+    "rating": 4.8,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "LHD+Lawyers+Sydney",
+    "latitude": -33.8719308,
+    "longitude": 151.2090038,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/LHD+Lawyers+Sydney/@-33.8719308,151.2090038,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12ae3d7a608fc7:0x7fa352c915405cf2!8m2!3d-33.8719308!4d151.2090038!16s%2Fg%2F1tdqbqyk?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T03:31:32.448Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0077",
+    "businessName": "KF Lawyers Australia",
+    "description": "",
+    "categories": [
+      "Legal"
+    ],
+    "location": "1/299 Elizabeth St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "0434 255 922",
+    "website": "http://www.kflawyers.com.au/",
+    "rating": 4.9,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "KF+Lawyers+Australia",
+    "latitude": -33.876586,
+    "longitude": 151.2091185,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/KF+Lawyers+Australia/@-33.876586,151.2091185,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12af60d6e680bb:0xfc67f98ced28a0!8m2!3d-33.876586!4d151.2091185!16s%2Fg%2F11jplpksrj?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T03:33:03.398Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0081",
+    "businessName": "JB Solicitors",
+    "description": "",
+    "categories": [
+      "Legal"
+    ],
+    "location": "Suite 1, Level 20/233 Castlereagh St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "1300 287 911",
+    "website": "https://www.jbsolicitors.com.au/?utm_source=google&utm_medium=gbp&utm_campaign=sydney",
+    "rating": 4.9,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "JB+Solicitors",
+    "latitude": -33.8759774,
+    "longitude": 151.2084396,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/JB+Solicitors/@-33.8759774,151.2084396,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12af126c1bd7a9:0x53b57b566f44b49!8m2!3d-33.8759774!4d151.2084396!16s%2Fg%2F11hfyygcwt?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T03:34:03.334Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free legal advice"
+    ]
+  },
+  {
+    "id": "provider_0087",
+    "businessName": "Law In Order - Sydney",
+    "description": "",
+    "categories": [
+      "Legal"
+    ],
+    "location": "Angel Place, Level 3 Pitt St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "(02) 9223 9200",
+    "website": "https://www.lawinorder.com/au/",
+    "rating": 4.8,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Law+In+Order+-+Sydney",
+    "latitude": -33.866707,
+    "longitude": 151.208365,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Law+In+Order+-+Sydney/@-33.866707,151.208365,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12ae404f4d8bdd:0xa8b1c30ccbee045b!8m2!3d-33.866707!4d151.208365!16s%2Fg%2F1tfctchf?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T03:35:26.152Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "get a free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0090",
+    "businessName": "Go To Court Lawyers Sydney",
+    "description": "",
+    "categories": [
+      "Legal"
+    ],
+    "location": "Suite 1, Level 8/66 Goulburn St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "1300 636 846",
+    "website": "https://www.gotocourt.com.au/nsw/sydney-lawyers/",
+    "rating": 4.3,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Go+To+Court+Lawyers+Sydney",
+    "latitude": -33.8779053,
+    "longitude": 151.2081605,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Go+To+Court+Lawyers+Sydney/@-33.8779053,151.2081605,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12ae3d8d768d0d:0x1a0445c1e23f8c97!8m2!3d-33.8779053!4d151.2081605!16s%2Fg%2F1td4k8bp?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T03:36:11.964Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free legal advice"
+    ]
+  },
+  {
+    "id": "provider_0091",
+    "businessName": "ABP Lawyers (Australian Business & Property Lawyers)",
+    "description": "",
+    "categories": [
+      "Legal"
+    ],
+    "location": "806/370 Pitt St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "(02) 8880 6505",
+    "website": "http://www.abplaw.com.au/",
+    "rating": 4.9,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "ABP+Lawyers+(Australian+Business+%26+Property+Lawyers)",
+    "latitude": -33.877318,
+    "longitude": 151.2079431,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/ABP+Lawyers+(Australian+Business+%26+Property+Lawyers)/@-33.877318,151.2079431,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12af090271ccef:0x9c04cbeaecf758b5!8m2!3d-33.877318!4d151.2079431!16s%2Fg%2F11h2qqkxb9?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T03:36:23.561Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult",
+      "free case review"
+    ]
+  },
+  {
+    "id": "provider_0094",
+    "businessName": "Biz Lawyers & Advisory",
+    "description": "",
+    "categories": [
+      "Legal"
+    ],
+    "location": "Suite 5.02/175 Pitt St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "1800 893 836",
+    "website": "http://www.bizlawyers.com.au/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Biz+Lawyers+%26+Advisory",
+    "latitude": -33.8685511,
+    "longitude": 151.2079875,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Biz+Lawyers+%26+Advisory/@-33.8685511,151.2079875,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12ae403c55c1c3:0x76d12529a179f1ab!8m2!3d-33.8685511!4d151.2079875!16s%2Fg%2F11c67wqvs2?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T03:37:05.154Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free initial consultation",
+      "free consult"
+    ]
+  }
+]

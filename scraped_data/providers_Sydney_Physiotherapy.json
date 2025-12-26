@@ -1,0 +1,160 @@
+[
+  {
+    "id": "provider_0043",
+    "businessName": "Sydney City Physiotherapy",
+    "description": "",
+    "categories": [
+      "Physiotherapy"
+    ],
+    "location": "280/282 Pitt St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "0431 463 668",
+    "website": "http://www.nationalhomephysio.com.au/",
+    "rating": 0,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Sydney+City+Physiotherapy",
+    "latitude": -33.8741778,
+    "longitude": 151.2083479,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Sydney+City+Physiotherapy/@-33.8741778,151.2083479,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12af13826ff475:0x57341a578a606b03!8m2!3d-33.8741778!4d151.2083479!16s%2Fg%2F11w233806k?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T03:25:21.972Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free initial assessment"
+    ]
+  },
+  {
+    "id": "provider_0051",
+    "businessName": "MoveWell 2 LiveWell - Mobile Physiotherapy Service",
+    "description": "",
+    "categories": [
+      "Physiotherapy"
+    ],
+    "location": "",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "",
+    "phone": "0405 557 100",
+    "website": "http://www.movewell2livewell.com/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "MoveWell+2+LiveWell+-+Mobile+Physiotherapy+Service",
+    "latitude": -33.8482439,
+    "longitude": 150.9319747,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/MoveWell+2+LiveWell+-+Mobile+Physiotherapy+Service/@-33.8482439,150.9319747,10z/data=!3m1!4b1!4m6!3m5!1s0x6b12af67de9c4e63:0xdf684554d28c593c!8m2!3d-33.8482439!4d150.9319747!16s%2Fg%2F11gk8rxs0l?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T03:27:25.468Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free 15 minute"
+    ]
+  },
+  {
+    "id": "provider_0132",
+    "businessName": "Inner West Physiotherapy & Sports Injury Centre",
+    "description": "",
+    "categories": [
+      "Physiotherapy"
+    ],
+    "location": "2/394 Marrickville Rd, Marrickville NSW 2204",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2204",
+    "phone": "(02) 9560 1501",
+    "website": "https://www.innerwestphysionsw.com.au/",
+    "rating": 4.7,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Inner+West+Physiotherapy+%26+Sports+Injury+Centre",
+    "latitude": -33.9087268,
+    "longitude": 151.1521632,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Inner+West+Physiotherapy+%26+Sports+Injury+Centre/@-33.9087268,151.1521632,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12b064cb584011:0x2dcf6861a996c9e4!8m2!3d-33.9087268!4d151.1521632!16s%2Fg%2F1vh_8jpr?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T03:49:25.958Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free quote"
+    ]
+  },
+  {
+    "id": "provider_0155",
+    "businessName": "Physio Healthcare Clinic Liverpool",
+    "description": "",
+    "categories": [
+      "Physiotherapy"
+    ],
+    "location": "14/165-191 Macquarie St, Liverpool NSW 2170",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2170",
+    "phone": "0428 223 744",
+    "website": "https://www.physiohealthcareclinic.com.au/",
+    "rating": 4.9,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Physio+Healthcare+Clinic+Liverpool",
+    "latitude": -33.9215896,
+    "longitude": 150.9232801,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Physio+Healthcare+Clinic+Liverpool/@-33.9215896,150.9232801,17z/data=!3m1!4b1!4m6!3m5!1s0x6b129504b9827da5:0x80013ff6218ba479!8m2!3d-33.9215896!4d150.9232801!16s%2Fg%2F11vwxlnq57?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-26T03:55:10.349Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free assessment",
+      "free consult"
+    ]
+  }
+]

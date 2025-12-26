@@ -4,69 +4,149 @@
     "name": "Recruitment Agencies",
     "icon": "💼",
     "description": "Job placement & staffing services",
-    "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400"
+    "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400",
+    "images": [
+      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400",
+      "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=400",
+      "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400",
+      "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400",
+      "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400",
+      "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=400"
+    ]
   },
   {
     "id": "migration-visa",
     "name": "Migration & Visa Advisers",
     "icon": "🛂",
     "description": "Immigration & visa consultation",
-    "image": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=400"
+    "image": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=400",
+    "images": [
+      "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=400",
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=400",
+      "https://images.unsplash.com/photo-1488085061387-422e29b40080?w=400",
+      "https://images.unsplash.com/photo-1530521954074-e64f6810b32d?w=400",
+      "https://images.unsplash.com/photo-1544717305-2782549b5136?w=400",
+      "https://images.unsplash.com/photo-1578574577315-3fbeb0cecdc2?w=400"
+    ]
   },
   {
     "id": "beauty",
     "name": "Beauty",
     "icon": "💅",
     "description": "Salon, spa & skincare",
-    "image": "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400"
+    "image": "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400",
+    "images": [
+      "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400",
+      "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=400",
+      "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=400",
+      "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=400",
+      "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=400",
+      "https://images.unsplash.com/photo-1519415510236-718bdfcd89c8?w=400"
+    ]
   },
   {
     "id": "dentist",
     "name": "Dentist",
     "icon": "🦷",
     "description": "Dental care & oral health",
-    "image": "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=400"
+    "image": "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=400",
+    "images": [
+      "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=400",
+      "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=400",
+      "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=400",
+      "https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=400",
+      "https://images.unsplash.com/photo-1445527815219-ecbfec67492e?w=400",
+      "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=400"
+    ]
   },
   {
     "id": "eye-care",
     "name": "Eye Care",
     "icon": "👁️",
     "description": "Vision & eye health",
-    "image": "https://images.unsplash.com/photo-1574258495973-f010dfbb5371?w=400"
+    "image": "https://images.unsplash.com/photo-1574258495973-f010dfbb5371?w=400",
+    "images": [
+      "https://images.unsplash.com/photo-1574258495973-f010dfbb5371?w=400",
+      "https://images.unsplash.com/photo-1577401239170-897942555fb3?w=400",
+      "https://images.unsplash.com/photo-1516714435131-44d6b64dc6a2?w=400",
+      "https://images.unsplash.com/photo-1508243529287-e21d9cc3ff6f?w=400",
+      "https://images.unsplash.com/photo-1591076482161-42ce6da69f67?w=400",
+      "https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?w=400"
+    ]
   },
   {
     "id": "doctors",
     "name": "Doctors",
     "icon": "👨‍⚕️",
     "description": "General practice & specialists",
-    "image": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400"
+    "image": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400",
+    "images": [
+      "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400",
+      "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400",
+      "https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400",
+      "https://images.unsplash.com/photo-1651008376811-b90baee60c1f?w=400",
+      "https://images.unsplash.com/photo-1638202993928-7267aad84c31?w=400",
+      "https://images.unsplash.com/photo-1666214280557-f1b5022eb634?w=400"
+    ]
   },
   {
     "id": "mental-health",
     "name": "Mental Health",
     "icon": "🧠",
     "description": "Counseling & therapy",
-    "image": "https://images.unsplash.com/photo-1527689368864-3a821dbccc34?w=400"
+    "image": "https://images.unsplash.com/photo-1527689368864-3a821dbccc34?w=400",
+    "images": [
+      "https://images.unsplash.com/photo-1527689368864-3a821dbccc34?w=400",
+      "https://images.unsplash.com/photo-1573497620053-ea5300f94f21?w=400",
+      "https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=400",
+      "https://images.unsplash.com/photo-1508963493744-76fce69379c0?w=400",
+      "https://images.unsplash.com/photo-1474418397713-7ede21d49118?w=400",
+      "https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=400"
+    ]
   },
   {
     "id": "nutrition",
     "name": "Nutrition",
     "icon": "🥗",
     "description": "Diet plans & consultations",
-    "image": "https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=400"
+    "image": "https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=400",
+    "images": [
+      "https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=400",
+      "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=400",
+      "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400",
+      "https://images.unsplash.com/photo-1494390248081-4e521a5940db?w=400",
+      "https://images.unsplash.com/photo-1547592180-85f173990554?w=400",
+      "https://images.unsplash.com/photo-1505576399279-565b52d4ac71?w=400"
+    ]
   },
   {
     "id": "physiotherapy",
     "name": "Physiotherapy",
     "icon": "🏥",
     "description": "Physical therapy & rehab",
-    "image": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400"
+    "image": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400",
+    "images": [
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400",
+      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400",
+      "https://images.unsplash.com/photo-1598153346810-860daa814c4b?w=400",
+      "https://images.unsplash.com/photo-1519824145371-296894a0daa9?w=400",
+      "https://images.unsplash.com/photo-1609899537878-88d5ba429bdb?w=400",
+      "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400"
+    ]
   },
   {
     "id": "legal-services",
     "name": "Legal Services",
     "icon": "⚖️",
     "description": "Legal advice & representation",
-    "image": "https://images.unsplash.com/photo-1505664194779-8beaceb93744?w=400"
+    "image": "https://images.unsplash.com/photo-1505664194779-8beaceb93744?w=400",
+    "images": [
+      "https://images.unsplash.com/photo-1505664194779-8beaceb93744?w=400",
+      "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=400",
+      "https://images.unsplash.com/photo-1521791055366-0d553872125f?w=400",
+      "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400",
+      "https://images.unsplash.com/photo-1479142506502-19b3a3b7ff33?w=400",
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=400"
+    ]
   }
 ]

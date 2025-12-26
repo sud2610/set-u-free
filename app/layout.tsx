@@ -1,49 +1,59 @@
 import type { Metadata, Viewport } from 'next';
+import { Playfair_Display } from 'next/font/google';
 import { AuthProvider } from '@/context/AuthContext';
 import { Toaster } from 'react-hot-toast';
 import '@/styles/globals.css';
 
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  variable: '--font-playfair',
+  display: 'swap',
+});
+
 export const metadata: Metadata = {
   title: {
-    default: 'Set-U-Free | Find Local Service Providers',
-    template: '%s | Set-U-Free',
+    default: 'FreeSetu - Free Consultations with Verified Service Providers',
+    template: '%s | FreeSetu',
   },
   description:
-    'Connect with trusted local service providers for home services, beauty, wellness, education, and more. Book instantly and get things done effortlessly.',
+    'FreeSetu connects you with verified local service providers for 100% free consultations. Find dentists, beauty experts, fitness trainers, and more. Book instantly - no hidden charges!',
   keywords: [
+    'free consultation',
+    'FreeSetu',
     'local services',
     'service providers',
-    'home services',
+    'dentist consultation',
     'beauty services',
+    'fitness trainer',
     'wellness',
-    'tutoring',
-    'book services online',
-    'Australia',
+    'book appointment free',
+    'verified professionals',
+    'India',
   ],
-  authors: [{ name: 'Set-U-Free Team' }],
-  creator: 'Set-U-Free',
+  authors: [{ name: 'FreeSetu Team' }],
+  creator: 'FreeSetu',
   openGraph: {
     type: 'website',
-    locale: 'en_AU',
-    url: 'https://setufree.com',
-    siteName: 'Set-U-Free',
-    title: 'Set-U-Free | Find Local Service Providers',
+    locale: 'en_IN',
+    url: 'https://freesetu.com',
+    siteName: 'FreeSetu',
+    title: 'FreeSetu - Free Consultations with Verified Service Providers',
     description:
-      'Connect with trusted local service providers. Book instantly and get things done effortlessly.',
+      'FreeSetu connects you with verified professionals for 100% free consultations. Find dentists, beauty experts, fitness trainers, and more!',
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Set-U-Free - Your Local Service Marketplace',
+        alt: 'FreeSetu - Free Consultations with Verified Professionals',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Set-U-Free | Find Local Service Providers',
+    title: 'FreeSetu - Free Consultations with Verified Professionals',
     description:
-      'Connect with trusted local service providers. Book instantly and get things done effortlessly.',
+      'Connect with verified service providers for 100% free consultations. Book instantly on FreeSetu!',
     images: ['/og-image.png'],
   },
   robots: {
@@ -81,7 +91,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className={playfair.variable}>
       <body className="min-h-screen bg-[#faf8f5] antialiased">
         <AuthProvider>
           {children}

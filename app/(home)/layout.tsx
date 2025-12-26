@@ -1,17 +1,19 @@
 import { Metadata, Viewport } from 'next';
 import { Navbar } from '@/components/common/Navbar';
 import { Footer } from '@/components/common/Footer';
+import { AnnouncementBanner } from '@/components/common/AnnouncementBanner';
 
 // ==================== METADATA ====================
 
 export const metadata: Metadata = {
   title: {
-    default: 'Set-U-Free | Find Trusted Service Providers for Free Consultations',
-    template: '%s | Set-U-Free',
+    default: 'FreeSetu - Free Consultations with Verified Service Providers',
+    template: '%s | FreeSetu',
   },
   description:
-    'Connect with verified local service providers for free consultations. Find dentists, beauty experts, fitness trainers, and more. Book instantly and get expert advice at no cost.',
+    'FreeSetu connects you with verified local service providers for 100% free consultations. Find dentists, beauty experts, fitness trainers, and more. Book instantly - no hidden charges, no commitments!',
   keywords: [
+    'FreeSetu',
     'free consultation',
     'service providers',
     'local services',
@@ -21,47 +23,47 @@ export const metadata: Metadata = {
     'yoga classes',
     'physiotherapy',
     'nutrition consultant',
-    'book appointment',
+    'book appointment free',
     'verified professionals',
     'India',
   ],
-  authors: [{ name: 'Set-U-Free Team' }],
-  creator: 'Set-U-Free',
-  publisher: 'Set-U-Free',
+  authors: [{ name: 'FreeSetu Team' }],
+  creator: 'FreeSetu',
+  publisher: 'FreeSetu',
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
-  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'https://freesetu.com'),
   alternates: {
-    canonical: '/',
+    canonical: 'https://freesetu.com',
   },
   openGraph: {
     type: 'website',
     locale: 'en_IN',
-    url: '/',
-    siteName: 'Set-U-Free',
-    title: 'Set-U-Free | Find Trusted Service Providers for Free Consultations',
+    url: 'https://freesetu.com',
+    siteName: 'FreeSetu',
+    title: 'FreeSetu - Free Consultations with Verified Service Providers',
     description:
-      'Connect with verified local service providers. Book free consultations with dentists, beauty experts, fitness trainers, and more.',
+      'FreeSetu connects you with verified professionals for 100% free consultations. Find dentists, beauty experts, fitness trainers, and more!',
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Set-U-Free - Your Local Service Marketplace',
+        alt: 'FreeSetu - Free Consultations with Verified Professionals',
         type: 'image/png',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Set-U-Free | Find Trusted Service Providers',
+    title: 'FreeSetu - Free Consultations with Verified Professionals',
     description:
-      'Connect with verified local service providers. Book free consultations instantly.',
+      'Connect with verified service providers for 100% free consultations. Book instantly on FreeSetu!',
     images: ['/og-image.png'],
-    creator: '@setufree',
+    creator: '@freesetu',
   },
   robots: {
     index: true,
@@ -74,9 +76,11 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  verification: {
-    google: 'google-site-verification-code',
-  },
+  // TODO: Add your actual Google Search Console verification code here
+  // Get it from: https://search.google.com/search-console
+  // verification: {
+  //   google: 'your-actual-verification-code',
+  // },
 };
 
 export const viewport: Viewport = {
@@ -107,6 +111,9 @@ export default function HomeLayout({
 }) {
   return (
     <div className="flex flex-col min-h-screen">
+      {/* Announcement Banner - Floating at top */}
+      <AnnouncementBanner />
+
       {/* Navigation */}
       <Navbar />
 

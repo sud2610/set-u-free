@@ -20,6 +20,10 @@ const nextConfig = {
         hostname: '*.googleusercontent.com',
       },
     ],
+    // Cache images for 1 hour (faster repeat loads)
+    minimumCacheTTL: 3600,
+    // Use modern image formats
+    formats: ['image/avif', 'image/webp'],
   },
 
   // ==================== PERFORMANCE ====================
@@ -28,6 +32,12 @@ const nextConfig = {
 
   // Remove powered by header
   poweredByHeader: false,
+
+  // Compiler optimizations
+  compiler: {
+    // Remove console.log in production
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
 };
 
 module.exports = nextConfig;
