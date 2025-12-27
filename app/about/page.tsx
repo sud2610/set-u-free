@@ -104,7 +104,7 @@ export default function AboutPage() {
               
               <p className="text-lg text-gray-400 max-w-3xl mb-12 leading-relaxed">
                 Across Australia, people put off important decisions — about their health, legal rights, 
-                migration status, or mental wellbeing — because they can't afford consultation fees 
+                migration status, or mental wellbeing — because they can&apos;t afford consultation fees 
                 just to understand their options.
               </p>
               
@@ -240,7 +240,7 @@ export default function AboutPage() {
           <section className="py-20 bg-black border-t border-gray-900">
             <div className="max-w-3xl mx-auto px-6 text-center">
               <p className="text-gray-500 mb-4">
-                If Set-U-Free helps you move forward without the fear of cost, then it's doing its job.
+                If Set-U-Free helps you move forward without the fear of cost, then it&apos;s doing its job.
               </p>
               <h3 className="text-4xl sm:text-5xl font-black text-white mb-2">
                 Set-U-<span className="text-amber-400">Free</span>

@@ -154,7 +154,7 @@ export default function ContactPage() {
               </div>
               
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight mb-6">
-                We'd Love to
+                We&apos;d Love to
                 <br />
                 <span className="bg-gradient-to-r from-amber-400 via-orange-400 to-amber-500 bg-clip-text text-transparent">
                   Hear From You
@@ -207,7 +207,7 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <h2 className="text-xl font-bold text-white">Send a Message</h2>
-                        <p className="text-gray-500 text-sm">We'll get back to you soon</p>
+                        <p className="text-gray-500 text-sm">We&apos;ll get back to you soon</p>
                       </div>
                     </div>
 
