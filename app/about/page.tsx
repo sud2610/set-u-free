@@ -1,108 +1,39 @@
-import { Metadata } from 'next';
-import Image from 'next/image';
+'use client';
+
 import Link from 'next/link';
 import { Toaster } from 'react-hot-toast';
 import { Navbar } from '@/components/common/Navbar';
 import { Footer } from '@/components/common/Footer';
 import {
   Heart,
-  Target,
-  Shield,
-  Award,
-  Zap,
-  Globe,
-  Star,
-  Quote,
+  Eye,
+  ShieldOff,
+  MapPin,
+  Sparkles,
   ArrowRight,
-  CheckCircle,
+  Stethoscope,
+  Scale,
+  Brain,
+  Plane,
+  SmilePlus,
 } from 'lucide-react';
-
-// ==================== METADATA ====================
-
-export const metadata: Metadata = {
-  title: 'About Us | FreeSetu - Connecting You with Trusted Service Providers',
-  description:
-    'Learn about FreeSetu, our mission to connect customers with verified service providers for free consultations. Discover our story, values, and the team behind the platform.',
-  keywords: [
-    'about set-u-free',
-    'free consultation platform',
-    'service providers',
-    'our story',
-    'mission',
-    'team',
-  ],
-  openGraph: {
-    title: 'About FreeSetu',
-    description: 'Connecting customers with trusted service providers since 2023.',
-    images: ['/og-about.png'],
-  },
-};
 
 // ==================== DATA ====================
 
-const values = [
-  {
-    icon: Heart,
-    title: 'Customer First',
-    description: 'We prioritize our users\' needs, ensuring every interaction adds value to their lives.',
-    color: 'bg-rose-500',
-  },
-  {
-    icon: Shield,
-    title: 'Trust & Safety',
-    description: 'Every provider is verified to ensure quality service and peace of mind.',
-    color: 'bg-blue-500',
-  },
-  {
-    icon: Zap,
-    title: 'Innovation',
-    description: 'We continuously improve our platform to deliver the best booking experience.',
-    color: 'bg-amber-500',
-  },
-  {
-    icon: Globe,
-    title: 'Accessibility',
-    description: 'Making professional services accessible to everyone, everywhere.',
-    color: 'bg-green-500',
-  },
+const promises = [
+  { icon: Heart, text: 'People first', sub: "We're here to help, not to sell", gradient: 'from-pink-500 to-rose-500' },
+  { icon: Eye, text: 'Transparent', sub: 'We verify details, never exaggerate', gradient: 'from-cyan-500 to-blue-500' },
+  { icon: ShieldOff, text: 'No pay-to-rank', sub: 'Providers never pay for visibility', gradient: 'from-orange-500 to-red-500' },
+  { icon: MapPin, text: 'Local focus', sub: 'Built for Australia', gradient: 'from-emerald-500 to-teal-500' },
+  { icon: Sparkles, text: 'Tech for good', sub: 'Breaking down barriers', gradient: 'from-violet-500 to-purple-500' },
 ];
 
-const milestones = [
-  { year: '2023', title: 'Founded', description: 'FreeSetu was born with a vision' },
-  { year: '2023', title: '1000+ Providers', description: 'Reached our first milestone' },
-  { year: '2024', title: '10+ Cities', description: 'Expanded across Australia' },
-  { year: '2024', title: '50K+ Bookings', description: 'Helped thousands find services' },
-];
-
-const testimonials = [
-  {
-    quote: 'FreeSetu transformed how I find local services. The free consultation feature is a game-changer!',
-    author: 'Meera Joshi',
-    role: 'Small Business Owner',
-    rating: 5,
-    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100',
-  },
-  {
-    quote: 'As a provider, this platform helped me reach more customers than I ever imagined. Highly recommended!',
-    author: 'Dr. Vikram Singh',
-    role: 'Dental Specialist',
-    rating: 5,
-    image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=100',
-  },
-  {
-    quote: 'The verification process gives me confidence that I\'m choosing quality professionals.',
-    author: 'Ananya Reddy',
-    role: 'Homemaker',
-    rating: 5,
-    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100',
-  },
-];
-
-const stats = [
-  { value: '50K+', label: 'Happy Customers' },
-  { value: '500+', label: 'Verified Providers' },
-  { value: '25+', label: 'Cities' },
-  { value: '4.8', label: 'Average Rating' },
+const professionals = [
+  { icon: Stethoscope, label: 'Doctors' },
+  { icon: SmilePlus, label: 'Dentists' },
+  { icon: Scale, label: 'Lawyers' },
+  { icon: Plane, label: 'Migration Agents' },
+  { icon: Brain, label: 'Mental Health' },
 ];
 
 // ==================== ABOUT PAGE ====================
@@ -113,169 +44,191 @@ export default function AboutPage() {
       <Toaster position="top-center" />
       <div className="flex flex-col min-h-screen">
         <Navbar />
-        <main className="flex-1">
-          {/* Hero Section */}
-          <section className="relative bg-gradient-to-br from-orange-50 via-white to-amber-50 py-20 lg:py-28 overflow-hidden">
-            {/* Background Pattern */}
-            <div className="absolute inset-0 opacity-30">
-              <div className="absolute top-20 left-10 w-72 h-72 bg-orange-200 rounded-full blur-3xl" />
-              <div className="absolute bottom-20 right-10 w-96 h-96 bg-amber-200 rounded-full blur-3xl" />
+        <main className="flex-1 overflow-hidden">
+          
+          {/* Hero - Bold Statement */}
+          <section className="relative min-h-[70vh] flex items-center justify-center bg-black overflow-hidden">
+            {/* Animated gradient background */}
+            <div className="absolute inset-0">
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-900/40 via-black to-black" />
+              <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-amber-500/20 rounded-full blur-[100px] animate-pulse" />
+              <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-orange-500/20 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: '1s' }} />
             </div>
-
-            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="text-center max-w-3xl mx-auto">
-                <span className="inline-block px-4 py-2 bg-orange-100 text-orange-700 rounded-full text-sm font-semibold mb-6">
-                  Our Story
-                </span>
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                  Connecting People with{' '}
-                  <span className="bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">
-                    Trusted Professionals
-                  </span>
-                </h1>
-                <p className="mt-6 text-xl text-gray-600 leading-relaxed">
-                  FreeSetu was founded with a simple mission: make it easy for everyone to 
-                  access quality services through free consultations with verified professionals.
-                </p>
+            
+            {/* Grid pattern overlay */}
+            <div 
+              className="absolute inset-0 opacity-[0.03]"
+              style={{
+                backgroundImage: `linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px)`,
+                backgroundSize: '50px 50px'
+              }}
+            />
+            
+            <div className="relative max-w-4xl mx-auto px-6 text-center">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-amber-500/10 border border-amber-500/30 rounded-full text-amber-400 text-sm font-medium mb-8 backdrop-blur-sm">
+                <Sparkles className="w-4 h-4" />
+                Your first step, free
               </div>
-
-              {/* Stats */}
-              <div className="mt-16 grid grid-cols-2 lg:grid-cols-4 gap-6">
-                {stats.map((stat, index) => (
-                  <div
-                    key={index}
-                    className="bg-white rounded-2xl p-6 shadow-lg shadow-orange-500/5 border border-orange-100 text-center"
-                  >
-                    <div className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">
-                      {stat.value}
-                    </div>
-                    <div className="text-gray-600 mt-1">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
+              
+              <h1 className="text-5xl sm:text-7xl lg:text-8xl font-black text-white tracking-tight leading-none mb-6">
+                Set-U-
+                <span className="bg-gradient-to-r from-amber-400 via-orange-400 to-amber-500 bg-clip-text text-transparent">Free</span>
+              </h1>
+              
+              <p className="text-xl sm:text-2xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
+                Helping people take the first step
+                <br />
+                <span className="text-white font-medium">without the fear of cost</span>
+              </p>
+            </div>
+            
+            {/* Scroll indicator */}
+            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-500">
+              <span className="text-xs uppercase tracking-widest">Scroll</span>
+              <div className="w-px h-12 bg-gradient-to-b from-gray-500 to-transparent" />
             </div>
           </section>
 
-          {/* Mission Section */}
-          <section className="py-20 bg-white">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* The Problem - Dramatic Red */}
+          <section className="relative py-20 lg:py-28 bg-gradient-to-b from-black via-gray-950 to-gray-900">
+            <div className="max-w-5xl mx-auto px-6">
+              <div className="flex items-start gap-6 mb-12">
+                <div className="w-1 h-20 bg-gradient-to-b from-red-500 to-transparent rounded-full" />
                 <div>
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center">
-                      <Target className="w-6 h-6 text-orange-600" />
-                    </div>
-                    <h2 className="text-3xl font-bold text-gray-900">Our Mission</h2>
-                  </div>
-                  <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                    We believe everyone deserves access to quality professional services 
-                    without the barrier of upfront costs. Our platform bridges the gap between 
-                    customers seeking services and verified professionals ready to help.
-                  </p>
-                  <p className="text-lg text-gray-600 leading-relaxed mb-8">
-                    Through free consultations, we empower customers to make informed decisions 
-                    while giving providers the opportunity to showcase their expertise and grow 
-                    their business.
-                  </p>
-                  <div className="space-y-4">
-                    {[
-                      '100% free consultations for customers',
-                      'Verified and trusted service providers',
-                      'Easy booking with instant confirmation',
-                      'Secure and transparent platform',
-                    ].map((item, index) => (
-                      <div key={index} className="flex items-center gap-3">
-                        <CheckCircle className="w-5 h-5 text-green-500 shrink-0" />
-                        <span className="text-gray-700">{item}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <div className="relative">
-                  <div className="aspect-square rounded-3xl bg-gradient-to-br from-orange-100 to-amber-100 overflow-hidden">
-                    <Image
-                      src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800"
-                      alt="Team collaboration"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-6 shadow-xl">
-                    <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                        <Award className="w-6 h-6 text-green-600" />
-                      </div>
-                      <div>
-                        <div className="font-bold text-gray-900">Trusted Platform</div>
-                        <div className="text-sm text-gray-500">Since 2023</div>
-                      </div>
-                    </div>
-                  </div>
+                  <span className="text-red-400 text-sm font-semibold uppercase tracking-wider">The Problem</span>
+                  <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mt-2">
+                    Why people stay stuck
+                  </h2>
                 </div>
               </div>
-            </div>
-          </section>
-
-          {/* Values Section */}
-          <section className="py-20 bg-gray-50">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="text-center max-w-2xl mx-auto mb-16">
-                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
-                  Our Core Values
-                </h2>
-                <p className="mt-4 text-lg text-gray-600">
-                  The principles that guide everything we do
-                </p>
-              </div>
-
-              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                {values.map((value, index) => (
-                  <div
-                    key={index}
-                    className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-shadow"
+              
+              <p className="text-lg text-gray-400 max-w-3xl mb-12 leading-relaxed">
+                Across Australia, people put off important decisions — about their health, legal rights, 
+                migration status, or mental wellbeing — because they can't afford consultation fees 
+                just to understand their options.
+              </p>
+              
+              <div className="grid md:grid-cols-3 gap-4">
+                {[
+                  { num: '01', text: 'Delay dental care or health checkups indefinitely' },
+                  { num: '02', text: 'Live with legal uncertainty because "just asking" feels expensive' },
+                  { num: '03', text: 'Stay anxious and stuck — because the first step costs money' },
+                ].map((item, i) => (
+                  <div 
+                    key={i} 
+                    className="group relative bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-800 hover:border-red-500/50 rounded-2xl p-6 transition-all duration-500 hover:transform hover:-translate-y-1"
                   >
-                    <div
-                      className={`w-14 h-14 ${value.color} rounded-2xl flex items-center justify-center mb-6`}
-                    >
-                      <value.icon className="w-7 h-7 text-white" />
-                    </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-3">{value.title}</h3>
-                    <p className="text-gray-600">{value.description}</p>
+                    <span className="text-5xl font-black text-gray-800 group-hover:text-red-900 transition-colors">{item.num}</span>
+                    <p className="text-gray-300 mt-4 leading-relaxed">{item.text}</p>
                   </div>
                 ))}
               </div>
             </div>
           </section>
 
-          {/* Timeline Section */}
-          <section className="py-20 bg-white">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="text-center max-w-2xl mx-auto mb-16">
-                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">Our Journey</h2>
-                <p className="mt-4 text-lg text-gray-600">
-                  Key milestones in our growth story
+          {/* The Solution - Golden */}
+          <section className="relative py-20 lg:py-28 bg-gradient-to-b from-gray-900 to-amber-950/30">
+            <div className="max-w-5xl mx-auto px-6">
+              <div className="flex items-start gap-6 mb-12">
+                <div className="w-1 h-20 bg-gradient-to-b from-amber-400 to-transparent rounded-full" />
+                <div>
+                  <span className="text-amber-400 text-sm font-semibold uppercase tracking-wider">The Solution</span>
+                  <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mt-2">
+                    Free first consultations
+                  </h2>
+                </div>
+              </div>
+              
+              <div className="bg-gradient-to-br from-amber-500/10 to-orange-500/5 border border-amber-500/20 rounded-3xl p-8 lg:p-12 backdrop-blur-sm mb-12">
+                <p className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-snug mb-6">
+                  No payment. No obligation.
+                  <br />
+                  <span className="bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent">
+                    Just a conversation.
+                  </span>
+                </p>
+                <p className="text-gray-400 text-lg max-w-2xl">
+                  Set-U-Free connects you with professionals who are willing to meet you first — for free.
                 </p>
               </div>
+              
+              {/* Professionals */}
+              <div className="flex flex-wrap justify-center gap-3">
+                {professionals.map((pro, i) => (
+                  <div 
+                    key={i}
+                    className="flex items-center gap-2 px-4 py-2 bg-gray-800/50 border border-gray-700 rounded-full text-gray-300 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-default"
+                  >
+                    <pro.icon className="w-4 h-4" />
+                    <span className="text-sm font-medium">{pro.label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
 
+          {/* Quote Section */}
+          <section className="py-20 lg:py-28 bg-gradient-to-r from-amber-500 via-orange-500 to-amber-500 relative overflow-hidden">
+            <div className="absolute inset-0 opacity-30" style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+            }} />
+            
+            <div className="relative max-w-4xl mx-auto px-6 text-center">
+              <p className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight">
+                Getting help should start with a conversation,
+                <br />
+                <span className="text-black/80">not a credit card.</span>
+              </p>
+            </div>
+          </section>
+
+          {/* Our Promise - Cards */}
+          <section className="py-20 lg:py-28 bg-gray-950">
+            <div className="max-w-5xl mx-auto px-6">
+              <h2 className="text-3xl sm:text-4xl font-bold text-white text-center mb-16">
+                Our Promise
+              </h2>
+              
+              <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
+                {promises.map((promise, i) => (
+                  <div 
+                    key={i}
+                    className="group relative bg-gray-900 border border-gray-800 hover:border-gray-700 rounded-2xl p-5 text-center transition-all duration-300 hover:transform hover:-translate-y-1"
+                  >
+                    <div className={`w-12 h-12 mx-auto mb-4 bg-gradient-to-br ${promise.gradient} rounded-xl flex items-center justify-center shadow-lg`}>
+                      <promise.icon className="w-6 h-6 text-white" />
+                    </div>
+                    <h3 className="font-bold text-white mb-1">{promise.text}</h3>
+                    <p className="text-gray-500 text-sm">{promise.sub}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* How It Works - Steps */}
+          <section className="py-20 lg:py-28 bg-gradient-to-b from-gray-950 to-black">
+            <div className="max-w-3xl mx-auto px-6">
+              <h2 className="text-3xl sm:text-4xl font-bold text-white text-center mb-16">
+                How It Works
+              </h2>
+              
               <div className="relative">
-                <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-orange-200" />
-                <div className="space-y-12">
-                  {milestones.map((milestone, index) => (
-                    <div
-                      key={index}
-                      className={`flex flex-col lg:flex-row items-center gap-8 ${
-                        index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
-                      }`}
-                    >
-                      <div className={`flex-1 ${index % 2 === 0 ? 'lg:text-right' : 'lg:text-left'}`}>
-                        <div className="bg-gray-50 rounded-2xl p-6 inline-block">
-                          <div className="text-orange-600 font-bold text-lg">{milestone.year}</div>
-                          <h3 className="text-xl font-bold text-gray-900 mt-1">{milestone.title}</h3>
-                          <p className="text-gray-600 mt-2">{milestone.description}</p>
-                        </div>
+                {/* Vertical line */}
+                <div className="absolute left-6 top-0 bottom-0 w-px bg-gradient-to-b from-amber-500 via-orange-500 to-transparent" />
+                
+                <div className="space-y-8">
+                  {[
+                    'Search for the service you need',
+                    'Find providers offering free consultations',
+                    'Reach out and confirm directly',
+                    'Take that first step — without worry',
+                  ].map((step, i) => (
+                    <div key={i} className="flex items-center gap-6 group">
+                      <div className="relative z-10 w-12 h-12 bg-gradient-to-br from-amber-500 to-orange-500 rounded-full flex items-center justify-center shadow-lg shadow-amber-500/25 group-hover:scale-110 transition-transform">
+                        <span className="text-white font-bold">{i + 1}</span>
                       </div>
-                      <div className="relative z-10 w-4 h-4 bg-orange-500 rounded-full ring-4 ring-orange-100" />
-                      <div className="flex-1" />
+                      <p className="text-lg text-gray-300 group-hover:text-white transition-colors">{step}</p>
                     </div>
                   ))}
                 </div>
@@ -283,74 +236,24 @@ export default function AboutPage() {
             </div>
           </section>
 
-          {/* Testimonials Section */}
-          <section className="py-20 bg-orange-50">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="text-center max-w-2xl mx-auto mb-16">
-                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
-                  What People Say
-                </h2>
-                <p className="mt-4 text-lg text-gray-600">
-                  Hear from our customers and providers
-                </p>
-              </div>
-
-              <div className="grid md:grid-cols-3 gap-8">
-                {testimonials.map((testimonial, index) => (
-                  <div key={index} className="bg-white rounded-2xl p-8 shadow-sm">
-                    <Quote className="w-10 h-10 text-orange-200 mb-4" />
-                    <p className="text-gray-700 leading-relaxed mb-6">
-                      &ldquo;{testimonial.quote}&rdquo;
-                    </p>
-                    <div className="flex items-center gap-4">
-                      <div className="relative w-12 h-12">
-                        <Image
-                          src={testimonial.image}
-                          alt={testimonial.author}
-                          fill
-                          className="rounded-full object-cover"
-                        />
-                      </div>
-                      <div>
-                        <div className="font-semibold text-gray-900">{testimonial.author}</div>
-                        <div className="text-sm text-gray-500">{testimonial.role}</div>
-                      </div>
-                    </div>
-                    <div className="flex gap-1 mt-4">
-                      {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          {/* CTA Section */}
-          <section className="py-20 bg-gradient-to-r from-orange-500 to-amber-500">
-            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-                Ready to Get Started?
-              </h2>
-              <p className="text-xl text-orange-100 mb-8">
-                Join thousands of happy customers who have found their perfect service provider.
+          {/* CTA */}
+          <section className="py-20 bg-black border-t border-gray-900">
+            <div className="max-w-3xl mx-auto px-6 text-center">
+              <p className="text-gray-500 mb-4">
+                If Set-U-Free helps you move forward without the fear of cost, then it's doing its job.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  href="/"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-orange-600 font-semibold rounded-xl hover:bg-orange-50 transition-colors"
-                >
-                  Browse Services
-                  <ArrowRight className="w-5 h-5" />
-                </Link>
-                <Link
-                  href="/register?role=provider"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-white text-white font-semibold rounded-xl hover:bg-white/10 transition-colors"
-                >
-                  Become a Provider
-                </Link>
-              </div>
+              <h3 className="text-4xl sm:text-5xl font-black text-white mb-2">
+                Set-U-<span className="text-amber-400">Free</span>
+              </h3>
+              <p className="text-amber-400 font-semibold mb-10">— your first step, free.</p>
+              
+              <Link
+                href="/"
+                className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-white font-bold rounded-full transition-all shadow-xl shadow-amber-500/25 hover:shadow-amber-500/40"
+              >
+                Find a Professional
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
             </div>
           </section>
         </main>
@@ -359,4 +262,3 @@ export default function AboutPage() {
     </>
   );
 }
-
