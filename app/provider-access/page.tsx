@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { useForm } from 'react-hook-form';
@@ -133,9 +133,22 @@ function PasswordStrengthIndicator({ password }: { password: string }) {
   );
 }
 
-// ==================== PROVIDER ACCESS PAGE ====================
+// ==================== LOADING FALLBACK ====================
 
-export default function ProviderAccessPage() {
+function LoadingFallback() {
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-white">
+      <div className="text-center">
+        <Loader2 className="w-8 h-8 text-yellow-500 animate-spin mx-auto mb-4" />
+        <p className="text-gray-500">Loading...</p>
+      </div>
+    </div>
+  );
+}
+
+// ==================== PROVIDER ACCESS CONTENT ====================
+
+function ProviderAccessContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const redirectUrl = searchParams.get('redirect') || '/dashboard';
@@ -217,11 +230,11 @@ export default function ProviderAccessPage() {
       await registerUser(data.email, data.password, {
         fullName: data.providerName,
         role: 'provider',
-        businessName: data.businessName,
         location: '',
       });
 
       toast.success('Account created successfully! Welcome to FreeSetu!');
+      // Redirect to dashboard - provider can set up business details there
       router.push('/dashboard');
     } catch (err) {
       toast.error('Registration failed. Please try again.');
@@ -757,6 +770,16 @@ export default function ProviderAccessPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+// ==================== PROVIDER ACCESS PAGE (with Suspense) ====================
+
+export default function ProviderAccessPage() {
+  return (
+    <Suspense fallback={<LoadingFallback />}>
+      <ProviderAccessContent />
+    </Suspense>
   );
 }
 
