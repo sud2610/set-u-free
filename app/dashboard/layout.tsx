@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { useAuth } from '@/context/AuthContext';
 import { auth } from '@/lib/firebase';
@@ -24,6 +24,7 @@ interface DashboardLayoutProps {
 
 export default function DashboardLayout({ children }: DashboardLayoutProps) {
   const pathname = usePathname();
+  const router = useRouter();
   const { user, loading } = useAuth();
   const [authChecked, setAuthChecked] = useState(false);
   const [firebaseUser, setFirebaseUser] = useState<boolean | null>(null);
@@ -67,6 +68,13 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
     }
   }, [firebaseUser, user, loading]);
 
+  // No user after waiting - redirect to home page
+  useEffect(() => {
+    if (authChecked && !user && firebaseUser === false) {
+      router.replace('/');
+    }
+  }, [authChecked, user, firebaseUser, router]);
+
   // Show loading state while checking auth
   if (!authChecked || (firebaseUser === true && !user)) {
     return (
@@ -89,32 +97,15 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
     );
   }
 
-  // No user after waiting - show login prompt
+  // No user - show redirecting state (redirect effect will handle it)
   if (!user) {
     return (
       <div className="min-h-screen flex flex-col">
         <Navbar />
         <div className="flex-1 flex items-center justify-center bg-gray-50">
-          <div className="text-center max-w-md mx-auto p-8">
-            <div className="w-20 h-20 bg-gradient-to-br from-yellow-400 to-amber-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-yellow-200">
-              <User className="w-10 h-10 text-white" />
-            </div>
-            <h1 className="text-2xl font-bold text-gray-900 mb-2">Sign in required</h1>
-            <p className="text-gray-500 mb-6">
-              Please sign in to access your dashboard
-            </p>
-            <Link
-              href={`/login?redirect=${encodeURIComponent(pathname)}`}
-              className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-500 hover:to-amber-600 text-white font-semibold rounded-xl transition-all shadow-lg shadow-yellow-200"
-            >
-              Sign In
-            </Link>
-            <p className="mt-4 text-sm text-gray-400">
-              Don&apos;t have an account?{' '}
-              <Link href="/register" className="text-yellow-600 hover:text-yellow-700 font-medium">
-                Create one
-              </Link>
-            </p>
+          <div className="text-center">
+            <Loader2 className="w-6 h-6 text-yellow-500 animate-spin mx-auto mb-3" />
+            <p className="text-gray-500">Redirecting...</p>
           </div>
         </div>
       </div>

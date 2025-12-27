@@ -8,7 +8,6 @@ import { useAuth } from '@/context/AuthContext';
 import {
   Menu,
   X,
-  User,
   LogOut,
   Settings,
   Calendar,
@@ -155,16 +154,6 @@ export function Navbar() {
               <div className="w-10 h-10 rounded-full bg-white/50 animate-pulse" />
             ) : user ? (
               <div className="flex items-center gap-3">
-                {user.role !== 'provider' && (
-                  <Link
-                    href="/register?role=provider"
-                    className="hidden lg:flex items-center gap-2 px-4 py-2 text-sm font-semibold text-amber-900 bg-white/90 hover:bg-white rounded-full shadow-md hover:shadow-lg transition-all duration-200 border border-white/50"
-                  >
-                    <Sparkles className="w-4 h-4" />
-                    Become a Provider
-                  </Link>
-                )}
-
                 <div className="relative" ref={dropdownRef}>
                   <button
                     onClick={toggleProfileDropdown}
@@ -249,27 +238,11 @@ export function Navbar() {
             ) : (
               <div className="flex items-center gap-2">
                 <Link
-                  href="/register?role=provider"
-                  className="hidden lg:flex items-center gap-2 px-4 py-2 text-sm font-semibold text-amber-900 hover:text-amber-950 transition-colors"
-                >
-                  <Sparkles className="w-4 h-4" />
-                  Become a Provider
-                </Link>
-
-                <Link
-                  href="/login"
-                  className="hidden sm:flex items-center px-4 py-2.5 text-sm font-semibold text-amber-900 bg-white/80 hover:bg-white rounded-full shadow-md hover:shadow-lg transition-all duration-200"
-                >
-                  Sign In
-                </Link>
-
-                <Link
-                  href="/register"
+                  href="/provider-access"
                   className="flex items-center gap-2 px-5 py-2.5 bg-gray-900 hover:bg-gray-800 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-200"
                 >
-                  <User className="w-4 h-4" />
-                  <span className="hidden sm:inline">Get Started</span>
-                  <span className="sm:hidden">Join</span>
+                  <Briefcase className="w-4 h-4" />
+                  <span>Provider Access</span>
                 </Link>
               </div>
             )}
@@ -309,23 +282,14 @@ export function Navbar() {
               </div>
 
               {!user && (
-                <div className="pt-4 border-t border-amber-200 space-y-3">
+                <div className="pt-4 border-t border-amber-200">
                   <Link
-                    href="/register?role=provider"
-                    className="flex items-center justify-center gap-2 w-full px-4 py-3 text-amber-800 bg-amber-100 hover:bg-amber-200 rounded-xl font-semibold transition-colors"
+                    href="/provider-access"
+                    className="flex items-center justify-center gap-2 w-full px-4 py-3 text-white bg-gray-900 hover:bg-gray-800 rounded-xl font-semibold shadow-lg transition-all"
                   >
-                    <Sparkles className="w-4 h-4" />
-                    Become a Provider
+                    <Briefcase className="w-4 h-4" />
+                    Provider Access
                   </Link>
-
-                  <div className="grid grid-cols-2 gap-2">
-                    <Link href="/login" className="px-4 py-3 text-center text-gray-700 bg-gray-100 hover:bg-gray-200 rounded-xl font-semibold transition-colors">
-                      Sign In
-                    </Link>
-                    <Link href="/register" className="px-4 py-3 text-center text-white bg-gray-900 hover:bg-gray-800 rounded-xl font-semibold shadow-lg transition-all">
-                      Get Started
-                    </Link>
-                  </div>
                 </div>
               )}
             </div>

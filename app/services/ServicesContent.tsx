@@ -269,6 +269,43 @@ export function ServicesContent() {
           )}
         </div>
 
+        {/* ==================== PROMOTIONAL BANNER ==================== */}
+        <div className="bg-gradient-to-b from-sky-300 via-sky-400 to-cyan-400 rounded-2xl shadow-lg p-6 sm:p-8 mb-8 relative overflow-hidden">
+          <div className="absolute inset-0">
+            <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-transparent"></div>
+            <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-sky-500/20 to-transparent"></div>
+          </div>
+          <div className="relative flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="flex-1 text-center md:text-left">
+              <div className="inline-flex items-center gap-2 bg-white/40 backdrop-blur-sm rounded-full px-4 py-1.5 mb-4">
+                <span className="text-lg">🎉</span>
+                <span className="text-sm font-semibold text-gray-800">Limited Time Offer</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-3 drop-shadow-sm">
+                Book Your Free Consultation Today!
+              </h2>
+              <p className="text-white/90 text-base sm:text-lg max-w-xl drop-shadow-sm">
+                Connect with verified professionals and get expert advice at{' '}
+                <strong className="text-white">absolutely no cost</strong>. No hidden fees, no commitments.
+              </p>
+            </div>
+            <div className="flex items-center gap-4 sm:gap-6">
+              <div className="text-center bg-white/30 backdrop-blur-sm rounded-xl px-5 py-4">
+                <div className="text-2xl sm:text-3xl font-bold text-white drop-shadow-sm">1000+</div>
+                <div className="text-xs sm:text-sm text-white/90 font-medium">Verified Providers</div>
+              </div>
+              <div className="text-center bg-white/30 backdrop-blur-sm rounded-xl px-5 py-4">
+                <div className="text-2xl sm:text-3xl font-bold text-white drop-shadow-sm">100%</div>
+                <div className="text-xs sm:text-sm text-white/90 font-medium">Free Forever</div>
+              </div>
+              <div className="hidden sm:block text-center bg-white/30 backdrop-blur-sm rounded-xl px-5 py-4">
+                <div className="text-2xl sm:text-3xl font-bold text-white drop-shadow-sm">4.9★</div>
+                <div className="text-xs sm:text-sm text-white/90 font-medium">User Rating</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* ==================== RESULTS HEADER ==================== */}
         <div className="flex items-center justify-between mb-6">
           <div>

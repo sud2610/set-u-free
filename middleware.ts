@@ -45,6 +45,7 @@ const PUBLIC_ROUTES = [
   '/terms',
   '/login',
   '/register',
+  '/provider-access', // Provider login/signup page
   '/dashboard', // Client-side auth check handles this
 ];
 
