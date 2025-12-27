@@ -39,6 +39,14 @@ npx ts-node --project tsconfig.seed.json scripts/make-admin.ts your-email@exampl
 Here's the command to delete all users from Firebase Firestore:
 npx ts-node --project tsconfig.seed.json scripts/cleanup-firebase.ts users
 
+Command to Create Admin User:
+npx ts-node --project tsconfig.seed.json scripts/create-admin.ts <email> <password> "<full name>"
+npx ts-node --project tsconfig.seed.json scripts/create-admin.ts admin@freesetu.com MySecurePass123 "Sudhir Admin"
+
+npx ts-node --project tsconfig.seed.json scripts/create-admin.ts contact.freesetu@gmail.com MySecurePass123 "Sudhir Admin"
+
+
+
 
 To Seed Your Database
 npx ts-node --project tsconfig.seed.json scripts/seed-data.ts

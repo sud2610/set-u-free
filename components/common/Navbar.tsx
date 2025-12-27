@@ -236,7 +236,7 @@ export function Navbar() {
                 </div>
               </div>
             ) : (
-              <div className="flex items-center gap-2">
+              <div className="hidden lg:flex items-center gap-2">
                 <Link
                   href="/provider-access"
                   className="flex items-center gap-2 px-5 py-2.5 bg-gray-900 hover:bg-gray-800 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-200"
