@@ -229,16 +229,16 @@ export function ProviderDetailContent({ providerId }: ProviderDetailContentProps
                 </div>
               </div>
               
-              {/* Call for Booking Button */}
+              {/* Call for Free Booking Button */}
               {(provider as any).phone && (
                 <a
                   href={`tel:${(provider as any).phone}`}
-                  className="group w-full mt-5 px-6 py-4 bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-500 hover:to-amber-600 text-gray-900 font-bold rounded-2xl shadow-xl shadow-yellow-500/30 hover:shadow-yellow-500/40 transition-all duration-300 flex items-center justify-center gap-3 hover:scale-[1.02]"
+                  className="group w-full mt-5 px-6 py-4 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-bold rounded-2xl shadow-xl shadow-green-500/30 hover:shadow-green-500/40 transition-all duration-300 flex items-center justify-center gap-3 hover:scale-[1.02]"
                 >
                   <div className="p-2 bg-white/30 rounded-lg group-hover:bg-white/40 transition-colors">
                     <Phone className="w-5 h-5" />
                   </div>
-                  <span>Call for Booking</span>
+                  <span>Call for Free Booking</span>
                 </a>
               )}
             </div>
@@ -681,14 +681,14 @@ export function ProviderDetailContent({ providerId }: ProviderDetailContentProps
                     </div>
                   </div>
                   
-                  {/* Phone - Call for Booking */}
+                  {/* Phone - Call for Free Booking */}
                   {(provider as any).phone && (
                     <a 
                       href={`tel:${(provider as any).phone}`}
-                      className="w-full flex items-center justify-center gap-2 py-3 bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-gray-900 font-semibold rounded-xl shadow-lg shadow-yellow-500/25 transition-all"
+                      className="w-full flex items-center justify-center gap-2 py-3 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-semibold rounded-xl shadow-lg shadow-green-500/25 transition-all"
                     >
                       <Phone className="w-5 h-5" />
-                      Call for Booking
+                      Call for Free Booking
                     </a>
                   )}
                   

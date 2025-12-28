@@ -4,7 +4,8 @@ import { useState, useEffect, useCallback } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { Search, MapPin, Filter, ChevronDown, X, SlidersHorizontal } from 'lucide-react';
 import { ProviderCard, ProviderCardSkeleton } from '@/components/providers/ProviderCard';
-import { AnimatedServiceIllustration } from '@/components/home/AnimatedServiceIllustration';
+import { ClassicPosterHero } from '@/components/home/ClassicPosterHero';
+import { DadJoke } from '@/components/home/DadJoke';
 import { searchProviders, getAllCategories, getAllCities } from '@/lib/firestore';
 import type { Provider, SearchFilter } from '@/types';
 
@@ -271,17 +272,14 @@ export function ServicesContent() {
         </div>
 
         {/* ==================== PROMOTIONAL BANNER ==================== */}
-        <div className="bg-gradient-to-b from-sky-300 via-sky-400 to-cyan-400 rounded-2xl shadow-lg p-6 sm:p-8 mb-8 relative overflow-hidden">
+        <div className="bg-gradient-to-b from-sky-300 via-sky-400 to-cyan-400 rounded-2xl shadow-lg pt-1 pb-6 px-6 sm:pt-2 sm:pb-8 sm:px-8 mb-8 relative overflow-hidden">
           <div className="absolute inset-0">
             <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-transparent"></div>
             <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-sky-500/20 to-transparent"></div>
           </div>
           <div className="relative flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex-1 text-center md:text-left">
-              <div className="inline-flex items-center gap-2 bg-white/40 backdrop-blur-sm rounded-full px-4 py-1.5 mb-4">
-                <span className="text-lg">🎉</span>
-                <span className="text-sm font-semibold text-gray-800">Limited Time Offer</span>
-              </div>
+              <DadJoke />
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-3 drop-shadow-sm">
                 Book Your Free Consultation Today!
               </h2>
@@ -290,9 +288,9 @@ export function ServicesContent() {
                 <strong className="text-white">absolutely no cost</strong>. No hidden fees, no commitments.
               </p>
             </div>
-            {/* Animated Illustration */}
+            {/* Classic Poster Hero */}
             <div className="flex-shrink-0">
-              <AnimatedServiceIllustration />
+              <ClassicPosterHero />
             </div>
           </div>
         </div>
