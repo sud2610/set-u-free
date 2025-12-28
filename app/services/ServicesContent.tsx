@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { Search, MapPin, Filter, ChevronDown, X, SlidersHorizontal } from 'lucide-react';
 import { ProviderCard, ProviderCardSkeleton } from '@/components/providers/ProviderCard';
+import { AnimatedServiceIllustration } from '@/components/home/AnimatedServiceIllustration';
 import { searchProviders, getAllCategories, getAllCities } from '@/lib/firestore';
 import type { Provider, SearchFilter } from '@/types';
 
@@ -289,19 +290,9 @@ export function ServicesContent() {
                 <strong className="text-white">absolutely no cost</strong>. No hidden fees, no commitments.
               </p>
             </div>
-            <div className="flex items-center gap-4 sm:gap-6">
-              <div className="text-center bg-white/30 backdrop-blur-sm rounded-xl px-5 py-4">
-                <div className="text-2xl sm:text-3xl font-bold text-white drop-shadow-sm">1000+</div>
-                <div className="text-xs sm:text-sm text-white/90 font-medium">Verified Providers</div>
-              </div>
-              <div className="text-center bg-white/30 backdrop-blur-sm rounded-xl px-5 py-4">
-                <div className="text-2xl sm:text-3xl font-bold text-white drop-shadow-sm">100%</div>
-                <div className="text-xs sm:text-sm text-white/90 font-medium">Free Forever</div>
-              </div>
-              <div className="hidden sm:block text-center bg-white/30 backdrop-blur-sm rounded-xl px-5 py-4">
-                <div className="text-2xl sm:text-3xl font-bold text-white drop-shadow-sm">4.9★</div>
-                <div className="text-xs sm:text-sm text-white/90 font-medium">User Rating</div>
-              </div>
+            {/* Animated Illustration */}
+            <div className="flex-shrink-0">
+              <AnimatedServiceIllustration />
             </div>
           </div>
         </div>

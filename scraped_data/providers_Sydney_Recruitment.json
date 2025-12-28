@@ -1,10 +1,213 @@
 [
   {
-    "id": "provider_0169",
+    "id": "provider_0050",
+    "businessName": "RECRUITMENT EXPERT",
+    "description": "",
+    "categories": [
+      "Recruitment Agencies"
+    ],
+    "location": "NO WALK INS, 143 York St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "(02) 8003 3363",
+    "website": "http://www.recruitmentexpert.com.au/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "RECRUITMENT+EXPERT",
+    "latitude": -33.8724244,
+    "longitude": 151.2062661,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/RECRUITMENT+EXPERT/@-33.8724244,151.2062661,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12ae3e90b6f569:0xb8f4df19bb75a852!8m2!3d-33.8724244!4d151.2062661!16s%2Fg%2F11g4lnvbk5?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-28T02:21:56.765Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0062",
+    "businessName": "Platinum People Group - Mortgage Broker Recruitment Agency",
+    "description": "",
+    "categories": [
+      "Recruitment Agencies"
+    ],
+    "location": "The Commons, 388 George St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "(03) 9913 9642",
+    "website": "http://www.platinumpeoplegroup.com.au/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Platinum+People+Group+-+Mortgage+Broker+Recruitment+Agency",
+    "latitude": -33.8684088,
+    "longitude": 151.2073994,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Platinum+People+Group+-+Mortgage+Broker+Recruitment+Agency/@-33.8684088,151.2073994,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12afa879468571:0x4ab72aafbee2ee71!8m2!3d-33.8684088!4d151.2073994!16s%2Fg%2F11qmc3w6r6?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-28T02:24:45.536Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "book a free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0063",
+    "businessName": "BigTurn",
+    "description": "",
+    "categories": [
+      "Recruitment Agencies"
+    ],
+    "location": "Level 7/320 Pitt St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "(02) 9283 0369",
+    "website": "http://www.bigturn.com.au/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "BigTurn",
+    "latitude": -33.8754673,
+    "longitude": 151.2081966,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/BigTurn/@-33.8754673,151.2081966,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12ae3c6459a3ab:0xf1951fb2a5675ce3!8m2!3d-33.8754673!4d151.2081966!16s%2Fg%2F1tvm2y0_?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-28T02:24:55.977Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "complimentary consultation",
+      "free consult",
+      "complimentary consult"
+    ]
+  },
+  {
+    "id": "provider_0083",
+    "businessName": "ABRS – Australian Barnardos Recruitment Services",
+    "description": "",
+    "categories": [
+      "Recruitment Agencies"
+    ],
+    "location": "60-64 Bay St, Ultimo NSW 2007",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2007",
+    "phone": "(02) 9218 2334",
+    "website": "https://abrs.net.au/?utm_source=google&utm_medium=organic&utm_campaign=gmb",
+    "rating": 4.7,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "ABRS+%E2%80%93+Australian+Barnardos+Recruitment+Services",
+    "latitude": -33.8826126,
+    "longitude": 151.1951063,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/ABRS+%E2%80%93+Australian+Barnardos+Recruitment+Services/@-33.8826126,151.1951063,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12ae2905bfe7b5:0x6702da864fed4ca9!8m2!3d-33.8826126!4d151.1951063!16s%2Fg%2F1tm29v10?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-28T02:29:35.074Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0092",
+    "businessName": "Jivaro Recruitment",
+    "description": "",
+    "categories": [
+      "Recruitment Agencies"
+    ],
+    "location": "6/503-505 Kent St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "(02) 9267 9000",
+    "website": "https://www.jivaro.com.au/",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Jivaro+Recruitment",
+    "latitude": -33.8740027,
+    "longitude": 151.2047131,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Jivaro+Recruitment/@-33.8740027,151.2047131,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12ae3c0e0029df:0x2d92887f7fbe10d4!8m2!3d-33.8740027!4d151.2047131!16s%2Fg%2F1tfm1m4d?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-28T02:31:35.305Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "complimentary consultation",
+      "complimentary consult"
+    ]
+  },
+  {
+    "id": "provider_0138",
     "businessName": "Employment Compass",
     "description": "",
     "categories": [
-      "Recruitment"
+      "Recruitment Agencies"
     ],
     "location": "11 York St, Sydney NSW 2000",
     "city": "Sydney",
@@ -28,9 +231,9 @@
       "saturday": "",
       "sunday": ""
     },
-    "googleMapsUrl": "https://www.google.com/maps/place/Employment+Compass/@-33.8652046,151.2055165,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12af29a324b663:0x6180518e98b5de30!8m2!3d-33.8652046!4d151.2055165!16s%2Fg%2F11y1s8rz3k?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D",
+    "googleMapsUrl": "https://www.google.com/maps/place/Employment+Compass/@-33.8652046,151.2055165,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12af29a324b663:0x6180518e98b5de30!8m2!3d-33.8652046!4d151.2055165!16s%2Fg%2F11y1s8rz3k?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
     "dataSource": "google_maps_playwright",
-    "scrapedAt": "2025-12-26T00:35:14.375Z",
+    "scrapedAt": "2025-12-28T02:42:07.678Z",
     "needsManualVerification": false,
     "freeConsultation": true,
     "freeConsultationSource": "website",

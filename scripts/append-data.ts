@@ -296,79 +296,53 @@ function deduplicateProviders(providers: ScrapedProvider[]): ScrapedProvider[] {
 }
 
 /**
- * Clear a collection before seeding
+ * Get existing provider IDs from Firebase
  */
-async function clearCollection(collectionName: string): Promise<void> {
-  console.log(`🗑️  Clearing ${collectionName} collection...`);
+async function getExistingProviderIds(): Promise<Set<string>> {
+  console.log(`📂 Fetching existing provider IDs from Firebase...`);
+  const existingIds = new Set<string>();
   
-  const collectionRef = db.collection(collectionName);
-  const snapshot = await collectionRef.get();
+  const snapshot = await db.collection('providers').select().get();
+  snapshot.docs.forEach(doc => existingIds.add(doc.id));
   
-  if (snapshot.size === 0) {
-    console.log(`   Collection is empty`);
-    return;
-  }
-  
-  // Delete in batches of 500 (Firestore limit)
-  const batchSize = 500;
-  let deleted = 0;
-  
-  while (deleted < snapshot.size) {
-    const batch = db.batch();
-    const docsToDelete = snapshot.docs.slice(deleted, deleted + batchSize);
-    
-    docsToDelete.forEach((doc) => {
-      batch.delete(doc.ref);
-    });
-    
-    await batch.commit();
-    deleted += docsToDelete.length;
-  }
-  
-  console.log(`   Deleted ${snapshot.size} documents`);
+  console.log(`   Found ${existingIds.size} existing providers in Firebase`);
+  return existingIds;
 }
 
 /**
- * Seed categories collection
+ * Get existing city IDs from Firebase
  */
-async function seedCategories(categories: Category[]): Promise<void> {
-  console.log(`\n📦 Seeding categories...`);
-  await clearCollection('categories');
+async function getExistingCityIds(): Promise<Set<string>> {
+  const existingIds = new Set<string>();
   
-  const batch = db.batch();
+  const snapshot = await db.collection('cities').select().get();
+  snapshot.docs.forEach(doc => existingIds.add(doc.id));
   
-  for (const category of categories) {
-    const docRef = db.collection('categories').doc(category.id);
-    batch.set(docRef, {
-      name: category.name,
-      icon: category.icon,
-      description: category.description,
-      image: category.image,
-      createdAt: FieldValue.serverTimestamp(),
-      updatedAt: FieldValue.serverTimestamp(),
-    });
-    console.log(`   ✓ Added: ${category.name}`);
-  }
-  
-  await batch.commit();
-  console.log(`✅ Seeded ${categories.length} categories`);
+  return existingIds;
 }
 
 /**
- * Seed cities collection
+ * Append new cities (only add those that don't exist)
  */
-async function seedCities(cities: City[]): Promise<void> {
+async function appendCities(cities: City[]): Promise<number> {
   if (cities.length === 0) {
     console.log(`⏭️  Skipping cities (no data)`);
-    return;
+    return 0;
   }
   
-  console.log(`\n📦 Seeding cities...`);
-  await clearCollection('cities');
+  console.log(`\n📦 Appending new cities...`);
+  
+  const existingCityIds = await getExistingCityIds();
+  const newCities = cities.filter(city => !existingCityIds.has(city.id));
+  
+  if (newCities.length === 0) {
+    console.log(`   ✓ No new cities to add (all ${cities.length} cities already exist)`);
+    return 0;
+  }
   
   const batch = db.batch();
   
-  for (const city of cities) {
+  for (const city of newCities) {
     const docRef = db.collection('cities').doc(city.id);
     batch.set(docRef, {
       name: city.name,
@@ -376,37 +350,50 @@ async function seedCities(cities: City[]): Promise<void> {
       createdAt: FieldValue.serverTimestamp(),
       updatedAt: FieldValue.serverTimestamp(),
     });
-    console.log(`   ✓ Added: ${city.name}, ${city.state}`);
+    console.log(`   ✓ Adding: ${city.name}, ${city.state}`);
   }
   
   await batch.commit();
-  console.log(`✅ Seeded ${cities.length} cities`);
+  console.log(`✅ Added ${newCities.length} new cities (skipped ${cities.length - newCities.length} existing)`);
+  return newCities.length;
 }
 
 /**
- * Seed providers collection in batches
+ * Append providers (only add those that don't exist)
  */
-async function seedProviders(
+async function appendProviders(
   providers: ScrapedProvider[],
   categoryImageMap: Map<string, string[]>,
   categoryNameMap: Map<string, string>
-): Promise<void> {
+): Promise<number> {
   if (providers.length === 0) {
     console.log(`⏭️  Skipping providers (no data)`);
-    return;
+    return 0;
   }
   
-  console.log(`\n📦 Seeding providers...`);
-  await clearCollection('providers');
+  console.log(`\n📦 Appending new providers...`);
+  
+  // Get existing provider IDs to skip duplicates
+  const existingIds = await getExistingProviderIds();
+  
+  // Filter out providers that already exist
+  const newProviders = providers.filter(p => !existingIds.has(p.id));
+  
+  if (newProviders.length === 0) {
+    console.log(`   ✓ No new providers to add (all ${providers.length} providers already exist)`);
+    return 0;
+  }
+  
+  console.log(`   📊 ${newProviders.length} new providers to add (skipping ${providers.length - newProviders.length} existing)`);
   
   // Firestore batch limit is 500 operations
   const batchSize = 400;
   let processed = 0;
   let fallbackImageCount = 0;
   
-  while (processed < providers.length) {
+  while (processed < newProviders.length) {
     const batch = db.batch();
-    const chunk = providers.slice(processed, processed + batchSize);
+    const chunk = newProviders.slice(processed, processed + batchSize);
     
     for (const provider of chunk) {
       // Use the scraped ID as the document ID
@@ -459,19 +446,21 @@ async function seedProviders(
     
     await batch.commit();
     processed += chunk.length;
-    console.log(`   ✓ Seeded ${processed}/${providers.length} providers`);
+    console.log(`   ✓ Added ${processed}/${newProviders.length} new providers`);
   }
   
-  console.log(`✅ Seeded ${providers.length} providers`);
+  console.log(`✅ Added ${newProviders.length} new providers`);
   console.log(`   📷 ${fallbackImageCount} providers using category image as profileImage`);
+  return newProviders.length;
 }
 
-// ==================== MAIN SEED FUNCTION ====================
+// ==================== MAIN APPEND FUNCTION ====================
 
-async function seedDatabase(): Promise<void> {
-  console.log('🚀 Starting database seeding...');
+async function appendDatabase(): Promise<void> {
+  console.log('🚀 Starting database append (keeping existing data)...');
   console.log('==================================================');
   console.log(`📂 Loading data from: ${scrapedDataDir}`);
+  console.log('⚠️  NOTE: This will ADD new data without deleting existing data');
   console.log('==================================================\n');
 
   try {
@@ -496,51 +485,63 @@ async function seedDatabase(): Promise<void> {
     // Extract cities from providers
     const cities = extractCities(providers);
 
-    console.log(`\n📊 Data summary:`);
-    console.log(`   - Categories: ${categories.length}`);
-    console.log(`   - Cities: ${cities.length} (extracted from providers)`);
+    console.log(`\n📊 Data to process:`);
+    console.log(`   - Cities: ${cities.length} (from scraped data)`);
     console.log(`   - Providers: ${providers.length} (from scraped data)`);
 
-    // Seed collections
-    await seedCategories(categories);
-    await seedCities(cities);
-    await seedProviders(providers, categoryImageMap, categoryNameMap);
+    // Append new data (without deleting existing)
+    const newCitiesCount = await appendCities(cities);
+    const newProvidersCount = await appendProviders(providers, categoryImageMap, categoryNameMap);
 
     console.log('\n==================================================');
-    console.log('🎉 Database seeding completed successfully!');
+    console.log('🎉 Database append completed successfully!');
     console.log('==================================================');
     
     console.log('\n📝 Summary:');
-    console.log(`   ✅ ${categories.length} categories`);
-    console.log(`   ✅ ${cities.length} cities`);
-    console.log(`   ✅ ${providers.length} providers`);
+    console.log(`   ✅ ${newCitiesCount} new cities added`);
+    console.log(`   ✅ ${newProvidersCount} new providers added`);
+    console.log(`   ⏭️  ${providers.length - newProvidersCount} existing providers skipped`);
     
-    // Show breakdown by city
-    const cityBreakdown = new Map<string, number>();
-    for (const provider of providers) {
-      const count = cityBreakdown.get(provider.city) || 0;
-      cityBreakdown.set(provider.city, count + 1);
-    }
-    console.log('\n📍 Providers by city:');
-    Array.from(cityBreakdown.entries()).forEach(([city, count]) => {
-      console.log(`   - ${city}: ${count}`);
-    });
-    
-    // Show breakdown by category
-    const categoryBreakdown = new Map<string, number>();
-    for (const provider of providers) {
-      for (const cat of provider.categories) {
-        const count = categoryBreakdown.get(cat) || 0;
-        categoryBreakdown.set(cat, count + 1);
+    if (newProvidersCount > 0) {
+      // Show breakdown by city for new providers
+      const newProviderIds = new Set(
+        providers.filter(p => newProvidersCount > 0).slice(-newProvidersCount).map(p => p.id)
+      );
+      
+      const cityBreakdown = new Map<string, number>();
+      for (const provider of providers) {
+        if (!cityBreakdown.has(provider.city)) {
+          cityBreakdown.set(provider.city, 0);
+        }
       }
+      
+      // Simplified breakdown - just show what was in the scraped data
+      console.log('\n📍 Providers in scraped data by city:');
+      const providersByCity = new Map<string, number>();
+      for (const provider of providers) {
+        const count = providersByCity.get(provider.city) || 0;
+        providersByCity.set(provider.city, count + 1);
+      }
+      Array.from(providersByCity.entries()).forEach(([city, count]) => {
+        console.log(`   - ${city}: ${count}`);
+      });
+      
+      // Show breakdown by category
+      const categoryBreakdown = new Map<string, number>();
+      for (const provider of providers) {
+        for (const cat of provider.categories) {
+          const count = categoryBreakdown.get(cat) || 0;
+          categoryBreakdown.set(cat, count + 1);
+        }
+      }
+      console.log('\n🏷️  Providers in scraped data by category:');
+      Array.from(categoryBreakdown.entries()).forEach(([cat, count]) => {
+        console.log(`   - ${cat}: ${count}`);
+      });
     }
-    console.log('\n🏷️  Providers by category:');
-    Array.from(categoryBreakdown.entries()).forEach(([cat, count]) => {
-      console.log(`   - ${cat}: ${count}`);
-    });
     
   } catch (error) {
-    console.error('\n❌ Database seeding failed:', error);
+    console.error('\n❌ Database append failed:', error);
     process.exit(1);
   } finally {
     // Cleanup
@@ -550,4 +551,5 @@ async function seedDatabase(): Promise<void> {
 
 // ==================== RUN SCRIPT ====================
 
-seedDatabase();
+appendDatabase();
+
