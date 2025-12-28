@@ -20,12 +20,12 @@ import {
 export function ProviderDashboard() {
   const { user } = useAuth();
 
-  // Mock data - In production, fetch from Firebase
+  // Stats configuration - values will come from real data
   const stats = [
     {
       label: 'Total Bookings',
-      value: '48',
-      change: '+12%',
+      value: '0',
+      change: '',
       icon: Calendar,
       color: 'bg-blue-500',
       bgColor: 'bg-blue-50',
@@ -33,8 +33,8 @@ export function ProviderDashboard() {
     },
     {
       label: 'This Month',
-      value: '15',
-      change: '+8%',
+      value: '0',
+      change: '',
       icon: TrendingUp,
       color: 'bg-green-500',
       bgColor: 'bg-green-50',
@@ -42,8 +42,8 @@ export function ProviderDashboard() {
     },
     {
       label: 'Profile Views',
-      value: '234',
-      change: '+25%',
+      value: '0',
+      change: '',
       icon: Eye,
       color: 'bg-purple-500',
       bgColor: 'bg-purple-50',
@@ -51,8 +51,8 @@ export function ProviderDashboard() {
     },
     {
       label: 'Avg. Rating',
-      value: '4.8',
-      change: '+0.2',
+      value: '-',
+      change: '',
       icon: Star,
       color: 'bg-yellow-500',
       bgColor: 'bg-yellow-50',
@@ -60,57 +60,23 @@ export function ProviderDashboard() {
     },
   ];
 
-  const upcomingBookings = [
-    {
-      id: 1,
-      customer: 'John Smith',
-      service: 'Dental Checkup',
-      date: 'Today',
-      time: '2:00 PM',
-      status: 'confirmed',
-    },
-    {
-      id: 2,
-      customer: 'Sarah Wilson',
-      service: 'Teeth Whitening',
-      date: 'Today',
-      time: '4:30 PM',
-      status: 'confirmed',
-    },
-    {
-      id: 3,
-      customer: 'Mike Johnson',
-      service: 'Root Canal',
-      date: 'Tomorrow',
-      time: '10:00 AM',
-      status: 'pending',
-    },
-    {
-      id: 4,
-      customer: 'Emily Davis',
-      service: 'Dental Checkup',
-      date: 'Dec 26',
-      time: '11:30 AM',
-      status: 'confirmed',
-    },
-  ];
+  // Empty arrays - data comes from Firebase
+  const upcomingBookings: Array<{
+    id: number;
+    customer: string;
+    service: string;
+    date: string;
+    time: string;
+    status: string;
+  }> = [];
 
-  const recentReviews = [
-    {
-      id: 1,
-      customer: 'John S.',
-      rating: 5,
-      comment: 'Excellent service! Very professional and friendly staff.',
-      date: '2 days ago',
-    },
-    {
-      id: 2,
-      customer: 'Maria L.',
-      rating: 4,
-      comment: 'Great experience, would recommend to others.',
-      date: '5 days ago',
-    },
-  ];
+  const recentReviews: Array<{
+    id: number;
+    customer: string;
+    rating: number;
+    comment: string;
+    date: string;
+  }> = [];
 
   return (
     <div className="space-y-8">
@@ -122,7 +88,7 @@ export function ProviderDashboard() {
               Welcome back, {user?.fullName?.split(' ')[0]}! 👋
             </h1>
             <p className="mt-2 text-gray-800 opacity-90">
-              You have <span className="font-bold">4 upcoming bookings</span> today. Let&apos;s make it a great day!
+              Manage your bookings and grow your business. Let&apos;s make it a great day!
             </p>
           </div>
           <Link
@@ -146,9 +112,11 @@ export function ProviderDashboard() {
               <div className={`p-2.5 rounded-lg ${stat.bgColor}`}>
                 <stat.icon className={`w-5 h-5 ${stat.textColor}`} />
               </div>
-              <span className="text-xs font-medium text-green-600 bg-green-50 px-2 py-0.5 rounded-full">
-                {stat.change}
-              </span>
+              {stat.change && (
+                <span className="text-xs font-medium text-green-600 bg-green-50 px-2 py-0.5 rounded-full">
+                  {stat.change}
+                </span>
+              )}
             </div>
             <p className="text-2xl font-bold text-gray-900 mt-3">{stat.value}</p>
             <p className="text-sm text-gray-500">{stat.label}</p>
@@ -169,41 +137,49 @@ export function ProviderDashboard() {
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
-          <div className="divide-y divide-gray-100">
-            {upcomingBookings.map((booking) => (
-              <div
-                key={booking.id}
-                className="p-5 hover:bg-gray-50 transition-colors"
-              >
-                <div className="flex items-center justify-between gap-4">
-                  <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-500 flex items-center justify-center">
-                      <span className="font-semibold text-gray-900">
-                        {booking.customer.charAt(0)}
-                      </span>
+          {upcomingBookings.length > 0 ? (
+            <div className="divide-y divide-gray-100">
+              {upcomingBookings.map((booking) => (
+                <div
+                  key={booking.id}
+                  className="p-5 hover:bg-gray-50 transition-colors"
+                >
+                  <div className="flex items-center justify-between gap-4">
+                    <div className="flex items-center gap-4">
+                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-500 flex items-center justify-center">
+                        <span className="font-semibold text-gray-900">
+                          {booking.customer.charAt(0)}
+                        </span>
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-gray-900">{booking.customer}</h3>
+                        <p className="text-sm text-gray-500">{booking.service}</p>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="font-semibold text-gray-900">{booking.customer}</h3>
-                      <p className="text-sm text-gray-500">{booking.service}</p>
+                    <div className="text-right">
+                      <p className="font-medium text-gray-900">{booking.date}</p>
+                      <p className="text-sm text-gray-500">{booking.time}</p>
                     </div>
+                    <span
+                      className={`px-3 py-1 text-xs font-medium rounded-full ${
+                        booking.status === 'confirmed'
+                          ? 'bg-green-100 text-green-700'
+                          : 'bg-yellow-100 text-yellow-700'
+                      }`}
+                    >
+                      {booking.status.charAt(0).toUpperCase() + booking.status.slice(1)}
+                    </span>
                   </div>
-                  <div className="text-right">
-                    <p className="font-medium text-gray-900">{booking.date}</p>
-                    <p className="text-sm text-gray-500">{booking.time}</p>
-                  </div>
-                  <span
-                    className={`px-3 py-1 text-xs font-medium rounded-full ${
-                      booking.status === 'confirmed'
-                        ? 'bg-green-100 text-green-700'
-                        : 'bg-yellow-100 text-yellow-700'
-                    }`}
-                  >
-                    {booking.status.charAt(0).toUpperCase() + booking.status.slice(1)}
-                  </span>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          ) : (
+            <div className="p-8 text-center">
+              <Calendar className="w-12 h-12 text-gray-300 mx-auto mb-3" />
+              <p className="text-gray-500">No upcoming bookings yet</p>
+              <p className="text-sm text-gray-400 mt-1">Your bookings will appear here</p>
+            </div>
+          )}
         </div>
 
         {/* Recent Reviews */}
@@ -218,29 +194,37 @@ export function ProviderDashboard() {
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
-          <div className="divide-y divide-gray-100">
-            {recentReviews.map((review) => (
-              <div key={review.id} className="p-5">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="font-medium text-gray-900">{review.customer}</span>
-                  <div className="flex items-center gap-1">
-                    {[...Array(5)].map((_, i) => (
-                      <Star
-                        key={i}
-                        className={`w-4 h-4 ${
-                          i < review.rating
-                            ? 'text-yellow-400 fill-yellow-400'
-                            : 'text-gray-200'
-                        }`}
-                      />
-                    ))}
+          {recentReviews.length > 0 ? (
+            <div className="divide-y divide-gray-100">
+              {recentReviews.map((review) => (
+                <div key={review.id} className="p-5">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="font-medium text-gray-900">{review.customer}</span>
+                    <div className="flex items-center gap-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Star
+                          key={i}
+                          className={`w-4 h-4 ${
+                            i < review.rating
+                              ? 'text-yellow-400 fill-yellow-400'
+                              : 'text-gray-200'
+                          }`}
+                        />
+                      ))}
+                    </div>
                   </div>
+                  <p className="text-sm text-gray-600 line-clamp-2">{review.comment}</p>
+                  <p className="text-xs text-gray-400 mt-2">{review.date}</p>
                 </div>
-                <p className="text-sm text-gray-600 line-clamp-2">{review.comment}</p>
-                <p className="text-xs text-gray-400 mt-2">{review.date}</p>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          ) : (
+            <div className="p-8 text-center">
+              <Star className="w-12 h-12 text-gray-300 mx-auto mb-3" />
+              <p className="text-gray-500">No reviews yet</p>
+              <p className="text-sm text-gray-400 mt-1">Reviews from customers will appear here</p>
+            </div>
+          )}
         </div>
       </div>
 
@@ -252,7 +236,7 @@ export function ProviderDashboard() {
               <CheckCircle className="w-6 h-6 text-green-600" />
             </div>
             <div>
-              <p className="text-2xl font-bold text-gray-900">95%</p>
+              <p className="text-2xl font-bold text-gray-900">-</p>
               <p className="text-sm text-gray-500">Completion Rate</p>
             </div>
           </div>
@@ -263,7 +247,7 @@ export function ProviderDashboard() {
               <MessageSquare className="w-6 h-6 text-blue-600" />
             </div>
             <div>
-              <p className="text-2xl font-bold text-gray-900">12</p>
+              <p className="text-2xl font-bold text-gray-900">0</p>
               <p className="text-sm text-gray-500">New Messages</p>
             </div>
           </div>
@@ -274,7 +258,7 @@ export function ProviderDashboard() {
               <Users className="w-6 h-6 text-purple-600" />
             </div>
             <div>
-              <p className="text-2xl font-bold text-gray-900">156</p>
+              <p className="text-2xl font-bold text-gray-900">0</p>
               <p className="text-sm text-gray-500">Total Customers</p>
             </div>
           </div>

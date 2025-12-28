@@ -40,104 +40,6 @@ interface ExtendedBooking extends Booking {
   serviceName?: string;
 }
 
-// ==================== MOCK DATA ====================
-
-const mockBookings: ExtendedBooking[] = [
-  {
-    id: 'b1',
-    userId: 'u1',
-    providerId: 'p1',
-    serviceId: 's1',
-    status: 'pending',
-    dateTime: new Date(Date.now() + 2 * 60 * 60 * 1000), // 2 hours from now
-    notes: 'First time consultation',
-    createdAt: new Date(),
-    updatedAt: new Date(),
-    customerName: 'Rahul Sharma',
-    customerEmail: 'rahul@example.com',
-    serviceName: 'Dental Consultation',
-  },
-  {
-    id: 'b2',
-    userId: 'u2',
-    providerId: 'p1',
-    serviceId: 's2',
-    status: 'confirmed',
-    dateTime: new Date(Date.now() + 24 * 60 * 60 * 1000), // Tomorrow
-    createdAt: new Date(),
-    updatedAt: new Date(),
-    customerName: 'Priya Patel',
-    customerEmail: 'priya@example.com',
-    serviceName: 'Teeth Cleaning',
-  },
-  {
-    id: 'b3',
-    userId: 'u3',
-    providerId: 'p1',
-    serviceId: 's1',
-    status: 'pending',
-    dateTime: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000), // 3 days
-    createdAt: new Date(),
-    updatedAt: new Date(),
-    customerName: 'Amit Kumar',
-    customerEmail: 'amit@example.com',
-    serviceName: 'Dental Consultation',
-  },
-];
-
-const mockServices: Service[] = [
-  {
-    id: 's1',
-    providerId: 'p1',
-    category: 'Dentist',
-    title: 'Dental Consultation',
-    description: 'Comprehensive dental check-up and consultation.',
-    duration: 30,
-    images: [],
-    createdAt: new Date(),
-  },
-  {
-    id: 's2',
-    providerId: 'p1',
-    category: 'Dentist',
-    title: 'Teeth Cleaning',
-    description: 'Professional cleaning to remove plaque and tartar.',
-    duration: 45,
-    images: [],
-    createdAt: new Date(),
-  },
-  {
-    id: 's3',
-    providerId: 'p1',
-    category: 'Dentist',
-    title: 'Teeth Whitening',
-    description: 'Advanced whitening treatment for brighter smile.',
-    duration: 60,
-    images: [],
-    createdAt: new Date(),
-  },
-];
-
-const mockReviews: (Review & { userName: string })[] = [
-  {
-    id: 'r1',
-    userId: 'u1',
-    providerId: 'p1',
-    rating: 5,
-    comment: 'Excellent service! Very professional.',
-    createdAt: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000),
-    userName: 'Rahul S.',
-  },
-  {
-    id: 'r2',
-    userId: 'u2',
-    providerId: 'p1',
-    rating: 4,
-    comment: 'Good experience, would recommend.',
-    createdAt: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000),
-    userName: 'Priya P.',
-  },
-];
 
 // ==================== STATUS CONFIG ====================
 
@@ -197,18 +99,14 @@ export default function ProviderDashboardPage() {
           getProviderReviews(user.uid),
         ]);
 
-        setBookings(bookingsData.length > 0 ? (bookingsData as ExtendedBooking[]) : mockBookings);
-        setServices(servicesData.length > 0 ? servicesData : mockServices);
-        setReviews(
-          reviewsData.length > 0
-            ? reviewsData.map((r) => ({ ...r, userName: 'Customer' }))
-            : mockReviews
-        );
+        setBookings(bookingsData as ExtendedBooking[]);
+        setServices(servicesData);
+        setReviews(reviewsData.map((r) => ({ ...r, userName: 'Customer' })));
       } catch (error) {
         console.error('Error fetching data:', error);
-        setBookings(mockBookings);
-        setServices(mockServices);
-        setReviews(mockReviews);
+        setBookings([]);
+        setServices([]);
+        setReviews([]);
       } finally {
         setIsLoading(false);
       }
