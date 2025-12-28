@@ -102,35 +102,6 @@ async function validateOwnership(
   return { valid: false, role: null };
 }
 
-// ==================== MOCK BOOKING DATA ====================
-
-function getMockBooking(id: string): Booking | null {
-  const mockBookings: Record<string, Booking> = {
-    'b1': {
-      id: 'b1',
-      userId: 'u1',
-      providerId: 'p1',
-      serviceId: 's1',
-      status: 'pending',
-      dateTime: new Date(Date.now() + 24 * 60 * 60 * 1000),
-      notes: 'First consultation',
-      createdAt: new Date(),
-      updatedAt: new Date(),
-    },
-    'b2': {
-      id: 'b2',
-      userId: 'u1',
-      providerId: 'p2',
-      serviceId: 's2',
-      status: 'confirmed',
-      dateTime: new Date(Date.now() + 48 * 60 * 60 * 1000),
-      createdAt: new Date(),
-      updatedAt: new Date(),
-    },
-  };
-
-  return mockBookings[id] || null;
-}
 
 // ==================== GET HANDLER ====================
 
@@ -151,14 +122,7 @@ export async function GET(
     }
 
     // Fetch booking
-    let booking: Booking | null = null;
-    try {
-      booking = await getBooking(id);
-    } catch (error) {
-      console.error('Error fetching booking:', error);
-      // Use mock data for development
-      booking = getMockBooking(id);
-    }
+    const booking = await getBooking(id);
 
     if (!booking) {
       return NextResponse.json(
@@ -279,13 +243,7 @@ export async function PUT(
     }
 
     // Fetch booking
-    let booking: Booking | null = null;
-    try {
-      booking = await getBooking(id);
-    } catch (error) {
-      console.error('Error fetching booking:', error);
-      booking = getMockBooking(id);
-    }
+    const booking = await getBooking(id);
 
     if (!booking) {
       return NextResponse.json(
@@ -393,13 +351,7 @@ export async function DELETE(
     }
 
     // Fetch booking
-    let booking: Booking | null = null;
-    try {
-      booking = await getBooking(id);
-    } catch (error) {
-      console.error('Error fetching booking:', error);
-      booking = getMockBooking(id);
-    }
+    const booking = await getBooking(id);
 
     if (!booking) {
       return NextResponse.json(

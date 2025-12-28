@@ -18,11 +18,11 @@ import {
 export function CustomerDashboard() {
   const { user } = useAuth();
 
-  // Mock data - In production, fetch from Firebase
+  // TODO: Fetch real stats from Firebase
   const stats = [
     {
       label: 'Total Bookings',
-      value: '12',
+      value: '0',
       icon: Calendar,
       color: 'bg-blue-500',
       bgColor: 'bg-blue-50',
@@ -30,7 +30,7 @@ export function CustomerDashboard() {
     },
     {
       label: 'Completed',
-      value: '8',
+      value: '0',
       icon: CheckCircle,
       color: 'bg-green-500',
       bgColor: 'bg-green-50',
@@ -38,7 +38,7 @@ export function CustomerDashboard() {
     },
     {
       label: 'Upcoming',
-      value: '3',
+      value: '0',
       icon: Clock,
       color: 'bg-yellow-500',
       bgColor: 'bg-yellow-50',
@@ -46,7 +46,7 @@ export function CustomerDashboard() {
     },
     {
       label: 'Favorites',
-      value: '5',
+      value: '0',
       icon: Heart,
       color: 'bg-pink-500',
       bgColor: 'bg-pink-50',
@@ -54,35 +54,16 @@ export function CustomerDashboard() {
     },
   ];
 
-  const recentBookings = [
-    {
-      id: 1,
-      provider: 'Smile Dental Clinic',
-      service: 'Dental Checkup',
-      date: 'Dec 28, 2024',
-      time: '10:00 AM',
-      status: 'upcoming',
-      category: 'Dentist',
-    },
-    {
-      id: 2,
-      provider: 'Global Visa Consultants',
-      service: 'Visa Consultation',
-      date: 'Dec 25, 2024',
-      time: '2:00 PM',
-      status: 'upcoming',
-      category: 'Migration',
-    },
-    {
-      id: 3,
-      provider: 'Career Plus Recruitment',
-      service: 'Career Consultation',
-      date: 'Dec 20, 2024',
-      time: '11:00 AM',
-      status: 'completed',
-      category: 'Recruitment',
-    },
-  ];
+  // TODO: Fetch real bookings from Firebase
+  const recentBookings: Array<{
+    id: number;
+    provider: string;
+    service: string;
+    date: string;
+    time: string;
+    status: string;
+    category: string;
+  }> = [];
 
   const quickActions = [
     {

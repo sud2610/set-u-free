@@ -248,19 +248,7 @@ export async function POST(request: NextRequest): Promise<NextResponse<ApiRespon
     };
 
     // Create booking in Firestore
-    let createdBooking: Booking;
-    try {
-      createdBooking = await createBooking(bookingData);
-    } catch (error) {
-      console.error('Error creating booking:', error);
-      // Generate mock booking for development
-      createdBooking = {
-        id: `booking_${Date.now()}`,
-        ...bookingData,
-        createdAt: new Date(),
-        updatedAt: new Date(),
-      };
-    }
+    const createdBooking = await createBooking(bookingData);
 
     // Send notification to provider
     try {

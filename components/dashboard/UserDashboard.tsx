@@ -15,56 +15,24 @@ import {
 } from 'lucide-react';
 import { useAuth } from '@/context/AuthContext';
 
-// Mock data for demonstration
-const mockBookings = [
-  {
-    id: '1',
-    serviceName: 'Home Cleaning',
-    providerName: 'CleanPro Services',
-    providerImage: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100',
-    date: '2024-01-25',
-    time: '10:00 AM',
-    status: 'confirmed',
-    amount: 1500,
-  },
-  {
-    id: '2',
-    serviceName: 'AC Repair',
-    providerName: 'CoolFix Solutions',
-    providerImage: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100',
-    date: '2024-01-28',
-    time: '02:00 PM',
-    status: 'pending',
-    amount: 800,
-  },
-  {
-    id: '3',
-    serviceName: 'Hair Styling',
-    providerName: 'Glamour Studio',
-    providerImage: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100',
-    date: '2024-01-20',
-    time: '11:00 AM',
-    status: 'completed',
-    amount: 1200,
-  },
-];
-
-const mockFavorites = [
-  {
-    id: '1',
-    name: 'QuickFix Home Solutions',
-    category: 'Home Services',
-    rating: 4.8,
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200',
-  },
-  {
-    id: '2',
-    name: 'Glamour Studio',
-    category: 'Beauty & Wellness',
-    rating: 4.9,
-    image: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=200',
-  },
-];
+// TODO: Fetch real data from Firebase
+const mockBookings: Array<{
+  id: string;
+  serviceName: string;
+  providerName: string;
+  providerImage: string;
+  date: string;
+  time: string;
+  status: 'pending' | 'confirmed' | 'completed' | 'cancelled';
+  amount: number;
+}> = [];
+const mockFavorites: Array<{
+  id: string;
+  name: string;
+  category: string;
+  rating: number;
+  image: string;
+}> = [];
 
 const statusConfig = {
   pending: {
@@ -97,10 +65,10 @@ export function UserDashboard() {
   const { user } = useAuth();
 
   const stats = [
-    { label: 'Total Bookings', value: 12, icon: Calendar, color: 'text-blue-500' },
-    { label: 'Completed', value: 8, icon: CheckCircle, color: 'text-secondary-500' },
+    { label: 'Total Bookings', value: 0, icon: Calendar, color: 'text-blue-500' },
+    { label: 'Completed', value: 0, icon: CheckCircle, color: 'text-secondary-500' },
     { label: 'Favorites', value: mockFavorites.length, icon: Heart, color: 'text-red-500' },
-    { label: 'Reviews Given', value: 5, icon: Star, color: 'text-yellow-500' },
+    { label: 'Reviews Given', value: 0, icon: Star, color: 'text-yellow-500' },
   ];
 
   return (

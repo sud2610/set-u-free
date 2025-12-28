@@ -92,81 +92,6 @@ async function verifyAuth(request: NextRequest): Promise<{ valid: boolean; userI
   }
 }
 
-// ==================== MOCK DATA ====================
-
-function getMockProviderBookings(providerId: string): ExtendedBooking[] {
-  const mockBookings: ExtendedBooking[] = [
-    {
-      id: 'pb1',
-      userId: 'u1',
-      providerId: providerId,
-      serviceId: 's1',
-      status: 'pending',
-      dateTime: new Date(Date.now() + 2 * 60 * 60 * 1000),
-      notes: 'First time consultation',
-      createdAt: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000),
-      updatedAt: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000),
-      customerName: 'Rahul Sharma',
-      customerEmail: 'rahul@example.com',
-      serviceName: 'Dental Consultation',
-    },
-    {
-      id: 'pb2',
-      userId: 'u2',
-      providerId: providerId,
-      serviceId: 's2',
-      status: 'confirmed',
-      dateTime: new Date(Date.now() + 24 * 60 * 60 * 1000),
-      createdAt: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000),
-      updatedAt: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000),
-      customerName: 'Priya Patel',
-      customerEmail: 'priya@example.com',
-      serviceName: 'Teeth Cleaning',
-    },
-    {
-      id: 'pb3',
-      userId: 'u3',
-      providerId: providerId,
-      serviceId: 's1',
-      status: 'pending',
-      dateTime: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
-      notes: 'Have some tooth pain',
-      createdAt: new Date(Date.now() - 6 * 60 * 60 * 1000),
-      updatedAt: new Date(Date.now() - 6 * 60 * 60 * 1000),
-      customerName: 'Amit Kumar',
-      customerEmail: 'amit@example.com',
-      serviceName: 'Dental Consultation',
-    },
-    {
-      id: 'pb4',
-      userId: 'u4',
-      providerId: providerId,
-      serviceId: 's3',
-      status: 'completed',
-      dateTime: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000),
-      createdAt: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000),
-      updatedAt: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000),
-      customerName: 'Sneha Gupta',
-      customerEmail: 'sneha@example.com',
-      serviceName: 'Teeth Whitening',
-    },
-    {
-      id: 'pb5',
-      userId: 'u5',
-      providerId: providerId,
-      serviceId: 's1',
-      status: 'cancelled',
-      dateTime: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000),
-      createdAt: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000),
-      updatedAt: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000),
-      customerName: 'Vikram Singh',
-      customerEmail: 'vikram@example.com',
-      serviceName: 'Dental Consultation',
-    },
-  ];
-
-  return mockBookings;
-}
 
 // ==================== GET HANDLER ====================
 
@@ -238,12 +163,10 @@ export async function GET(
     }
 
     // Fetch bookings
-    let bookings: ExtendedBooking[] = [];
-    try {
-      const rawBookings = await getProviderBookings(providerId);
-      
-      // Enrich with customer data
-      bookings = await Promise.all(
+    const rawBookings = await getProviderBookings(providerId);
+
+    // Enrich with customer data
+    const bookings = await Promise.all(
         rawBookings.map(async (booking) => {
           let customerName = 'Customer';
           let customerEmail = '';
@@ -265,11 +188,6 @@ export async function GET(
           } as ExtendedBooking;
         })
       );
-    } catch (error) {
-      console.error('Error fetching bookings:', error);
-      // Use mock data for development
-      bookings = getMockProviderBookings(providerId);
-    }
 
     // Calculate stats before filtering
     const stats = {

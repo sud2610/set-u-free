@@ -1,4 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { collection, getDocs, query, where, orderBy, limit as firestoreLimit } from 'firebase/firestore';
+import { db } from '@/lib/firebase';
 
 // GET - Fetch services with optional filters
 export async function GET(request: NextRequest) {
@@ -15,127 +17,64 @@ export async function GET(request: NextRequest) {
     // if (category) query = query.where('category', '==', category);
     // if (providerId) query = query.where('providerId', '==', providerId);
 
-    // Mock services for development
-    const mockServices = [
-      {
-        id: 's1',
-        name: 'Basic Plumbing Repair',
-        description: 'Fix leaks, clogged drains, and minor plumbing issues',
-        price: 500,
-        priceType: 'starting_from',
-        duration: 60,
-        category: 'home-services',
-        subcategory: 'Plumbing',
-        isActive: true,
-        provider: {
-          id: 'p1',
-          businessName: 'QuickFix Home Solutions',
-          rating: 4.8,
-          location: { city: 'Mumbai' },
-        },
-      },
-      {
-        id: 's2',
-        name: 'Hair Styling',
-        description: 'Professional haircut and styling services',
-        price: 800,
-        priceType: 'fixed',
-        duration: 45,
-        category: 'beauty-wellness',
-        subcategory: 'Hair Salon',
-        isActive: true,
-        provider: {
-          id: 'p2',
-          businessName: 'Glamour Studio',
-          rating: 4.9,
-          location: { city: 'Delhi' },
-        },
-      },
-      {
-        id: 's3',
-        name: 'Personal Training Session',
-        description: 'One-on-one fitness training with certified trainer',
-        price: 1500,
-        priceType: 'hourly',
-        duration: 60,
-        category: 'health-fitness',
-        subcategory: 'Personal Training',
-        isActive: true,
-        provider: {
-          id: 'p3',
-          businessName: 'FitLife Pro',
-          rating: 4.7,
-          location: { city: 'Bangalore' },
-        },
-      },
-      {
-        id: 's4',
-        name: 'Math Tutoring',
-        description: 'Academic tutoring for grades 6-12',
-        price: 600,
-        priceType: 'hourly',
-        duration: 60,
-        category: 'education-tutoring',
-        subcategory: 'Academic Tutoring',
-        isActive: true,
-        provider: {
-          id: 'p4',
-          businessName: 'Bright Minds Academy',
-          rating: 4.8,
-          location: { city: 'Pune' },
-        },
-      },
-      {
-        id: 's5',
-        name: 'Wedding Photography',
-        description: 'Full day wedding photography coverage',
-        price: 50000,
-        priceType: 'starting_from',
-        duration: 480,
-        category: 'events-entertainment',
-        subcategory: 'Photography',
-        isActive: true,
-        provider: {
-          id: 'p5',
-          businessName: 'Capture Moments',
-          rating: 4.9,
-          location: { city: 'Mumbai' },
-        },
-      },
-    ];
-
-    // Apply filters
-    let filteredServices = mockServices;
+    // Fetch services from Firestore
+    let servicesQuery = query(
+      collection(db!, 'services'),
+      where('isActive', '==', true),
+      orderBy('createdAt', 'desc')
+    );
 
     if (category) {
-      filteredServices = filteredServices.filter((s) => s.category === category);
-    }
-
-    if (providerId) {
-      filteredServices = filteredServices.filter((s) => s.provider.id === providerId);
-    }
-
-    if (search) {
-      const searchLower = search.toLowerCase();
-      filteredServices = filteredServices.filter(
-        (s) =>
-          s.name.toLowerCase().includes(searchLower) ||
-          s.description.toLowerCase().includes(searchLower)
+      servicesQuery = query(
+        collection(db!, 'services'),
+        where('isActive', '==', true),
+        where('category', '==', category),
+        orderBy('createdAt', 'desc')
       );
     }
 
-    // Pagination
+    if (providerId) {
+      servicesQuery = query(
+        collection(db!, 'services'),
+        where('isActive', '==', true),
+        where('providerId', '==', providerId),
+        orderBy('createdAt', 'desc')
+      );
+    }
+
+    // Apply pagination limit
+    servicesQuery = query(servicesQuery, firestoreLimit(page * limit));
+
+    const servicesSnapshot = await getDocs(servicesQuery);
+    let services = servicesSnapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    }));
+
+    // Apply search filter (in memory for now)
+    if (search) {
+      const searchLower = search.toLowerCase();
+      services = services.filter(
+        (s: any) =>
+          s.title?.toLowerCase().includes(searchLower) ||
+          s.description?.toLowerCase().includes(searchLower)
+      );
+    }
+
+    // Apply pagination
+    const totalServices = services.length;
     const startIndex = (page - 1) * limit;
-    const paginatedServices = filteredServices.slice(startIndex, startIndex + limit);
+    const endIndex = Math.min(startIndex + limit, totalServices);
+    const paginatedServices = services.slice(startIndex, endIndex);
 
     return NextResponse.json({
       success: true,
       data: {
         items: paginatedServices,
-        total: filteredServices.length,
+        total: totalServices,
         page,
         limit,
-        hasMore: startIndex + limit < filteredServices.length,
+        hasMore: endIndex < totalServices,
       },
     });
   } catch (error) {

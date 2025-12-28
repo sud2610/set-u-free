@@ -141,18 +141,6 @@ function validateSlots(slots: AddSlotRequestBody['slots']): { valid: boolean; er
   };
 }
 
-// ==================== MOCK DATA ====================
-
-const mockSlots: TimeSlot[] = [
-  { date: '2024-01-25', startTime: '09:00', endTime: '09:30', available: true },
-  { date: '2024-01-25', startTime: '10:00', endTime: '10:30', available: true },
-  { date: '2024-01-25', startTime: '11:00', endTime: '11:30', available: false },
-  { date: '2024-01-25', startTime: '14:00', endTime: '14:30', available: true },
-  { date: '2024-01-25', startTime: '15:00', endTime: '15:30', available: true },
-  { date: '2024-01-26', startTime: '09:00', endTime: '09:30', available: true },
-  { date: '2024-01-26', startTime: '10:00', endTime: '10:30', available: true },
-  { date: '2024-01-26', startTime: '11:00', endTime: '11:30', available: true },
-];
 
 // ==================== GET HANDLER ====================
 
@@ -180,7 +168,7 @@ export async function GET(request: NextRequest): Promise<NextResponse<ApiRespons
     }
 
     // Get slots
-    let slots: TimeSlot[] = provider?.consultationSlots || mockSlots;
+    let slots: TimeSlot[] = provider?.consultationSlots || [];
 
     // Filter by date
     if (date && validateDateFormat(date)) {
@@ -423,7 +411,7 @@ export async function DELETE(request: NextRequest): Promise<NextResponse<ApiResp
       console.error('Error fetching provider:', error);
     }
 
-    const existingSlots = provider?.consultationSlots || mockSlots;
+    const existingSlots = provider?.consultationSlots || [];
 
     // Find and remove slot
     let updatedSlots: TimeSlot[];

@@ -45,191 +45,7 @@ function getSecurityHeaders(): HeadersInit {
   };
 }
 
-// ==================== MOCK DATA ====================
-
-// Mock providers synced with Firebase seed data (Australian cities - MVP: Sydney & Melbourne)
-const mockProviders: Provider[] = [
-  {
-    uid: 'provider_001',
-    businessName: 'Sydney Smile Dental',
-    description: 'We provide comprehensive dental services including cleanings, fillings, and cosmetic dentistry.',
-    categories: ['Dentist'],
-    location: 'Bondi Junction',
-    city: 'Sydney',
-    bio: 'Expert dental care with modern technology and experienced professionals.',
-    profileImage: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=400',
-    rating: 4.8,
-    reviewCount: 234,
-    verified: true,
-    consultationSlots: [],
-    createdAt: new Date(),
-    updatedAt: new Date(),
-  },
-  {
-    uid: 'provider_002',
-    businessName: 'Melbourne Beauty Lounge',
-    description: 'Premium beauty and spa services for all your grooming needs.',
-    categories: ['Beauty'],
-    location: 'South Yarra',
-    city: 'Melbourne',
-    bio: 'Transform yourself with our expert beauty treatments.',
-    profileImage: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=400',
-    rating: 4.9,
-    reviewCount: 189,
-    verified: true,
-    consultationSlots: [],
-    createdAt: new Date(),
-    updatedAt: new Date(),
-  },
-  {
-    uid: 'provider_003',
-    businessName: 'Global Migration Consultants',
-    description: 'Expert migration agents for visa applications and immigration pathways.',
-    categories: ['Migration'],
-    location: 'CBD',
-    city: 'Sydney',
-    bio: 'Your trusted partner for Australian visa and immigration.',
-    profileImage: 'https://images.unsplash.com/photo-1569974507005-6dc61f97fb5c?w=400',
-    rating: 4.7,
-    reviewCount: 156,
-    verified: true,
-    consultationSlots: [],
-    createdAt: new Date(),
-    updatedAt: new Date(),
-  },
-  {
-    uid: 'provider_004',
-    businessName: 'Melbourne Physio & Rehab',
-    description: 'Specialized physiotherapy services for pain relief and rehabilitation.',
-    categories: ['Physiotherapy'],
-    location: 'St Kilda',
-    city: 'Melbourne',
-    bio: 'Get back to your active lifestyle with expert physiotherapy care.',
-    profileImage: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400',
-    rating: 4.9,
-    reviewCount: 98,
-    verified: true,
-    consultationSlots: [],
-    createdAt: new Date(),
-    updatedAt: new Date(),
-  },
-  {
-    uid: 'provider_005',
-    businessName: 'Career Plus Recruitment',
-    description: 'Professional recruitment agency for job seekers and employers.',
-    categories: ['Recruitment'],
-    location: 'Parramatta',
-    city: 'Sydney',
-    bio: 'Find your dream job with our expert recruiters.',
-    profileImage: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=400',
-    rating: 4.8,
-    reviewCount: 267,
-    verified: true,
-    consultationSlots: [],
-    createdAt: new Date(),
-    updatedAt: new Date(),
-  },
-  {
-    uid: 'provider_006',
-    businessName: 'Sydney Nutrition Clinic',
-    description: 'Personalized nutrition plans and dietary consultations.',
-    categories: ['Nutrition'],
-    location: 'Surry Hills',
-    city: 'Sydney',
-    bio: 'Transform your health with certified nutritionists.',
-    profileImage: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=400',
-    rating: 4.6,
-    reviewCount: 145,
-    verified: true,
-    consultationSlots: [],
-    createdAt: new Date(),
-    updatedAt: new Date(),
-  },
-  {
-    uid: 'provider_007',
-    businessName: 'MindWell Psychology',
-    description: 'Professional mental health counseling and therapy services.',
-    categories: ['Mental Health'],
-    location: 'Fitzroy',
-    city: 'Melbourne',
-    bio: 'Your mental health matters. Get professional support.',
-    profileImage: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400',
-    rating: 4.9,
-    reviewCount: 89,
-    verified: true,
-    consultationSlots: [],
-    createdAt: new Date(),
-    updatedAt: new Date(),
-  },
-  {
-    uid: 'provider_008',
-    businessName: 'Sydney Legal Partners',
-    description: 'Expert legal advice for family law, property, and business matters.',
-    categories: ['Legal'],
-    location: 'Martin Place',
-    city: 'Sydney',
-    bio: 'Professional legal services you can trust.',
-    profileImage: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=400',
-    rating: 4.7,
-    reviewCount: 178,
-    verified: true,
-    consultationSlots: [],
-    createdAt: new Date(),
-    updatedAt: new Date(),
-  },
-  {
-    uid: 'provider_009',
-    businessName: 'Melbourne Doctors Clinic',
-    description: 'General practice and specialist medical consultations.',
-    categories: ['Doctors'],
-    location: 'Richmond',
-    city: 'Melbourne',
-    bio: 'Quality healthcare for you and your family.',
-    profileImage: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400',
-    rating: 4.8,
-    reviewCount: 134,
-    verified: true,
-    consultationSlots: [],
-    createdAt: new Date(),
-    updatedAt: new Date(),
-  },
-  {
-    uid: 'provider_010',
-    businessName: 'Sydney Eye Centre',
-    description: 'Comprehensive eye care services including exams and vision correction.',
-    categories: ['Eye Care'],
-    location: 'Chatswood',
-    city: 'Sydney',
-    bio: 'Clear vision for a brighter future.',
-    profileImage: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=400',
-    rating: 4.6,
-    reviewCount: 112,
-    verified: true,
-    consultationSlots: [],
-    createdAt: new Date(),
-    updatedAt: new Date(),
-  },
-];
-
-// Categories synced with Firebase seed data
-const defaultCategories = [
-  'Recruitment Agencies',
-  'Migration & Visa Advisers',
-  'Beauty',
-  'Dentist',
-  'Eye Care',
-  'Doctors',
-  'Mental Health',
-  'Nutrition',
-  'Physiotherapy',
-  'Legal Services',
-];
-
-// Cities synced with Firebase seed data (Australia - MVP)
-const defaultCities = [
-  'Sydney',
-  'Melbourne',
-];
+// ==================== HANDLER ====================
 
 // ==================== FULL-TEXT SEARCH ====================
 
@@ -290,17 +106,17 @@ export async function GET(request: NextRequest): Promise<NextResponse<ApiRespons
       ]);
     } catch (error) {
       console.error('Error fetching from Firestore:', error);
-      // Use mock data
-      providers = [...mockProviders];
-      categories = defaultCategories;
-      cities = defaultCities;
+      // Return empty results if Firestore fails
+      providers = [];
+      categories = [];
+      cities = [];
     }
 
-    // If no results from Firestore, use mock data
+    // If no results from Firestore, return empty arrays
     if (providers.length === 0) {
-      providers = [...mockProviders];
-      categories = categories.length > 0 ? categories : defaultCategories;
-      cities = cities.length > 0 ? cities : defaultCities;
+      providers = [];
+      categories = categories.length > 0 ? categories : [];
+      cities = cities.length > 0 ? cities : [];
     }
 
     // Apply filters to mock/fetched data
@@ -394,8 +210,8 @@ export async function GET(request: NextRequest): Promise<NextResponse<ApiRespons
             verified,
           },
           facets: {
-            categories: categories.length > 0 ? categories : defaultCategories,
-            cities: cities.length > 0 ? cities : defaultCities,
+            categories: categories,
+            cities: cities,
           },
         },
       },

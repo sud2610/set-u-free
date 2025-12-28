@@ -121,34 +121,6 @@ function validateUpdateInput(body: UpdateServiceRequestBody): { valid: boolean; 
   };
 }
 
-// ==================== MOCK DATA ====================
-
-function getMockService(serviceId: string): Service | null {
-  const mockServices: Record<string, Service> = {
-    's1': {
-      id: 's1',
-      providerId: 'p1',
-      category: 'Dentist',
-      title: 'Dental Consultation',
-      description: 'Comprehensive dental check-up and consultation with our expert dentist.',
-      duration: 30,
-      images: [],
-      createdAt: new Date(),
-    },
-    's2': {
-      id: 's2',
-      providerId: 'p1',
-      category: 'Dentist',
-      title: 'Teeth Cleaning',
-      description: 'Professional teeth cleaning to remove plaque and tartar buildup.',
-      duration: 45,
-      images: [],
-      createdAt: new Date(),
-    },
-  };
-
-  return mockServices[serviceId] || null;
-}
 
 // ==================== GET HANDLER ====================
 
@@ -165,7 +137,6 @@ export async function GET(
       service = await getService(serviceId);
     } catch (error) {
       console.error('Error fetching service:', error);
-      service = getMockService(serviceId);
     }
 
     if (!service) {
@@ -241,7 +212,6 @@ export async function PUT(
       service = await getService(serviceId);
     } catch (error) {
       console.error('Error fetching service:', error);
-      service = getMockService(serviceId);
     }
 
     if (!service) {
@@ -324,7 +294,6 @@ export async function DELETE(
       service = await getService(serviceId);
     } catch (error) {
       console.error('Error fetching service:', error);
-      service = getMockService(serviceId);
     }
 
     if (!service) {

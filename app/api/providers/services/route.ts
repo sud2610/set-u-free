@@ -239,17 +239,7 @@ export async function POST(request: NextRequest): Promise<NextResponse<ApiRespon
     };
 
     // Create service in Firestore
-    let createdService: Service;
-    try {
-      createdService = await createService(body.providerId, serviceData);
-    } catch (error) {
-      console.error('Error creating service:', error);
-      // Generate mock service for development
-      createdService = {
-        id: `service_${Date.now()}`,
-        ...serviceData,
-      };
-    }
+    const createdService = await createService(body.providerId, serviceData);
 
     return NextResponse.json(
       {

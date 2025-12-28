@@ -39,32 +39,18 @@ interface AdminLayoutProps {
 // Set to false to require actual admin authentication
 const DEV_BYPASS_AUTH = false;
 
-// Mock admin user for development
-const DEV_ADMIN_USER = {
-  uid: 'dev-admin',
-  fullName: 'Dev Admin',
-  email: 'admin@localhost',
-  role: 'admin' as const,
-  location: 'Development',
-  profileImage: undefined as string | undefined,
-  phone: undefined as string | undefined,
-  isActive: true,
-  createdAt: new Date(),
-  updatedAt: new Date(),
-};
-
 export default function AdminLayout({ children }: AdminLayoutProps) {
   const router = useRouter();
   const pathname = usePathname();
   const { user: authUser, loading, logout } = useAuth();
   
-  // Use mock admin in dev mode, otherwise use real auth
-  const user = DEV_BYPASS_AUTH ? DEV_ADMIN_USER : authUser;
+  // Use real auth only
+  const user = authUser;
   
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [loggingOut, setLoggingOut] = useState(false);
-  const [authChecked, setAuthChecked] = useState(DEV_BYPASS_AUTH ? true : false);
-  const [firebaseUser, setFirebaseUser] = useState<boolean | null>(DEV_BYPASS_AUTH ? true : null);
+  const [authChecked, setAuthChecked] = useState(false);
+  const [firebaseUser, setFirebaseUser] = useState<boolean | null>(null);
 
   // Listen to Firebase Auth directly for faster detection
   useEffect(() => {
@@ -203,12 +189,6 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
 
   return (
     <div className="min-h-screen bg-slate-900">
-      {/* Dev Mode Banner */}
-      {DEV_BYPASS_AUTH && (
-        <div className="fixed top-0 left-0 right-0 z-[100] bg-gradient-to-r from-orange-500 to-red-500 text-white text-center py-1.5 text-sm font-medium">
-          🔓 DEV MODE: Auth bypassed - You are viewing as mock admin
-        </div>
-      )}
       
       {/* Mobile Sidebar Overlay */}
       {sidebarOpen && (

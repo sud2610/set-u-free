@@ -387,19 +387,18 @@ export function AuthProvider({ children }: AuthProviderProps) {
       // Step 3: If registering as a provider, also create provider document
       if (userData.role === 'provider') {
         await createProvider(uid, {
-          name: userData.fullName,
-          email: email,
-          phone: '',
-          location: userData.location || '',
-          services: [],
+          businessName: userData.fullName,
           description: '',
+          categories: [],
+          location: userData.location || '',
+          city: '',
+          bio: '',
+          profileImage: '',
           rating: 0,
           reviewCount: 0,
           verified: false,
           status: 'pending', // New providers need admin approval
-          availability: {},
-          profileImage: '',
-          images: [],
+          consultationSlots: [],
         });
         console.log('Provider document created with pending status');
       }

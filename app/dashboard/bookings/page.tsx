@@ -29,122 +29,31 @@ export default function BookingsPage() {
 
   const isProvider = user?.role === 'provider';
 
-  // Mock bookings data - In production, fetch from Firebase
-  const customerBookings = [
-    {
-      id: 1,
-      provider: 'Smile Dental Clinic',
-      providerImage: null,
-      service: 'Dental Checkup',
-      date: '2024-12-28',
-      time: '10:00 AM',
-      status: 'upcoming',
-      location: '123 Main St, Sydney',
-      phone: '+61 2 1234 5678',
-      category: 'Dentist',
-    },
-    {
-      id: 2,
-      provider: 'FitLife Gym',
-      providerImage: null,
-      service: 'Personal Training Session',
-      date: '2024-12-25',
-      time: '6:00 PM',
-      status: 'upcoming',
-      location: '456 Fitness Ave, Sydney',
-      phone: 'Contact via platform',
-      category: 'Gym',
-    },
-    {
-      id: 3,
-      provider: 'Zen Yoga Studio',
-      providerImage: null,
-      service: 'Yoga Class',
-      date: '2024-12-20',
-      time: '7:00 AM',
-      status: 'completed',
-      location: '789 Peace Rd, Sydney',
-      phone: '+61 2 5555 1234',
-      category: 'Yoga',
-    },
-    {
-      id: 4,
-      provider: 'Glow Beauty Spa',
-      providerImage: null,
-      service: 'Facial Treatment',
-      date: '2024-12-15',
-      time: '2:00 PM',
-      status: 'completed',
-      location: '321 Beauty Lane, Sydney',
-      phone: '+61 2 4444 5678',
-      category: 'Beauty',
-    },
-    {
-      id: 5,
-      provider: 'City Physio',
-      providerImage: null,
-      service: 'Physiotherapy Session',
-      date: '2024-12-10',
-      time: '11:00 AM',
-      status: 'cancelled',
-      location: '654 Health St, Sydney',
-      phone: '+61 2 3333 9876',
-      category: 'Physiotherapy',
-    },
-  ];
+  // TODO: Fetch real bookings from Firebase
+  const customerBookings: Array<{
+    id: number;
+    provider: string;
+    providerImage: string | null;
+    service: string;
+    date: string;
+    time: string;
+    status: string;
+    location: string;
+    phone: string;
+    category: string;
+  }> = [];
 
-  const providerBookings = [
-    {
-      id: 1,
-      customer: 'John Smith',
-      customerEmail: 'john@example.com',
-      service: 'Dental Checkup',
-      date: '2024-12-23',
-      time: '2:00 PM',
-      status: 'upcoming',
-      notes: 'First time patient',
-    },
-    {
-      id: 2,
-      customer: 'Sarah Wilson',
-      customerEmail: 'sarah@example.com',
-      service: 'Teeth Whitening',
-      date: '2024-12-23',
-      time: '4:30 PM',
-      status: 'upcoming',
-      notes: '',
-    },
-    {
-      id: 3,
-      customer: 'Mike Johnson',
-      customerEmail: 'mike@example.com',
-      service: 'Root Canal',
-      date: '2024-12-24',
-      time: '10:00 AM',
-      status: 'upcoming',
-      notes: 'Follow-up appointment',
-    },
-    {
-      id: 4,
-      customer: 'Emily Davis',
-      customerEmail: 'emily@example.com',
-      service: 'Dental Checkup',
-      date: '2024-12-20',
-      time: '11:30 AM',
-      status: 'completed',
-      notes: '',
-    },
-    {
-      id: 5,
-      customer: 'David Brown',
-      customerEmail: 'david@example.com',
-      service: 'Consultation',
-      date: '2024-12-18',
-      time: '3:00 PM',
-      status: 'cancelled',
-      notes: 'Rescheduled by customer',
-    },
-  ];
+  // TODO: Fetch real provider bookings from Firebase
+  const providerBookings: Array<{
+    id: number;
+    customer: string;
+    customerEmail: string;
+    service: string;
+    date: string;
+    time: string;
+    status: string;
+    notes: string;
+  }> = [];
 
   const bookings = isProvider ? providerBookings : customerBookings;
 

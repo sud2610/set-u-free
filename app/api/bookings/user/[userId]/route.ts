@@ -77,55 +77,6 @@ async function verifyAuth(request: NextRequest): Promise<{ valid: boolean; userI
   }
 }
 
-// ==================== MOCK DATA ====================
-
-function getMockUserBookings(userId: string): Booking[] {
-  const mockBookings: Booking[] = [
-    {
-      id: 'b1',
-      userId: userId,
-      providerId: 'p1',
-      serviceId: 's1',
-      status: 'confirmed',
-      dateTime: new Date(Date.now() + 2 * 24 * 60 * 60 * 1000),
-      notes: 'First dental checkup',
-      createdAt: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000),
-      updatedAt: new Date(Date.now() - 4 * 24 * 60 * 60 * 1000),
-    },
-    {
-      id: 'b2',
-      userId: userId,
-      providerId: 'p2',
-      serviceId: 's2',
-      status: 'pending',
-      dateTime: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000),
-      createdAt: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000),
-      updatedAt: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000),
-    },
-    {
-      id: 'b3',
-      userId: userId,
-      providerId: 'p1',
-      serviceId: 's3',
-      status: 'completed',
-      dateTime: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000),
-      createdAt: new Date(Date.now() - 14 * 24 * 60 * 60 * 1000),
-      updatedAt: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000),
-    },
-    {
-      id: 'b4',
-      userId: userId,
-      providerId: 'p3',
-      serviceId: 's4',
-      status: 'cancelled',
-      dateTime: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000),
-      createdAt: new Date(Date.now() - 10 * 24 * 60 * 60 * 1000),
-      updatedAt: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000),
-    },
-  ];
-
-  return mockBookings;
-}
 
 // ==================== GET HANDLER ====================
 
@@ -174,14 +125,7 @@ export async function GET(
     }
 
     // Fetch bookings
-    let bookings: Booking[] = [];
-    try {
-      bookings = await getBookings(userId);
-    } catch (error) {
-      console.error('Error fetching bookings:', error);
-      // Use mock data for development
-      bookings = getMockUserBookings(userId);
-    }
+    let bookings = await getBookings(userId);
 
     // Apply status filter
     if (status) {
