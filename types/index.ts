@@ -13,6 +13,8 @@ export interface User {
 }
 
 // ==================== PROVIDER ====================
+export type ProviderStatus = 'pending' | 'approved' | 'rejected';
+
 export interface Provider {
   uid: string;
   businessName: string;
@@ -25,6 +27,7 @@ export interface Provider {
   rating: number; // 0-5
   reviewCount: number;
   verified: boolean;
+  status: ProviderStatus; // Admin approval status
   consultationSlots: TimeSlot[];
   createdAt: Date;
   updatedAt: Date;
@@ -205,6 +208,9 @@ export interface AdminDashboardStats {
   cancelledBookings: number;
   pendingVerifications: number;
   verifiedProviders: number;
+  pendingProviderApprovals: number; // Providers awaiting admin approval
+  approvedProviders: number;
+  rejectedProviders: number;
   totalServices: number;
   totalReviews: number;
   recentUsers: User[];

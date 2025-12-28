@@ -233,9 +233,21 @@ function ProviderAccessContent() {
         location: '',
       });
 
-      toast.success('Account created successfully! Welcome to FreeSetu!');
-      // Redirect to dashboard - provider can set up business details there
-      router.push('/dashboard');
+      // Show success message about pending approval
+      toast.success(
+        '🎉 Registration successful! Your application is pending admin approval. We\'ll notify you once approved.',
+        { duration: 6000 }
+      );
+      
+      // Log out the user immediately - they shouldn't be logged in until approved
+      const { signOut } = await import('firebase/auth');
+      const { auth } = await import('@/lib/firebase');
+      if (auth) {
+        await signOut(auth);
+      }
+      
+      // Redirect to home page instead of dashboard (since they need approval first)
+      router.push('/?registered=pending');
     } catch (err) {
       toast.error('Registration failed. Please try again.');
     }

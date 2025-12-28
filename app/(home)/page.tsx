@@ -5,6 +5,7 @@ import { ServicesLoading } from '@/app/services/ServicesLoading';
 import { CategoriesSection } from '@/components/home/CategoriesSection';
 import { StatsSection } from '@/components/home/StatsSection';
 import { WhyChooseUs } from '@/components/home/WhyChooseUs';
+import { PendingApprovalBanner } from '@/components/home/PendingApprovalBanner';
 
 // ==================== HOME PAGE COMPONENT ====================
 
@@ -21,6 +22,11 @@ import { WhyChooseUs } from '@/components/home/WhyChooseUs';
 export default function HomePage() {
   return (
     <>
+      {/* ==================== PENDING APPROVAL BANNER ==================== */}
+      <Suspense fallback={null}>
+        <PendingApprovalBanner />
+      </Suspense>
+
       {/* ==================== HERO SECTION ==================== */}
       <HeroSection />
 

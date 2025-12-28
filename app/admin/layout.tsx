@@ -28,6 +28,7 @@ import {
   CheckCircle,
   Package,
   Database,
+  Clock,
 } from 'lucide-react';
 
 interface AdminLayoutProps {
@@ -191,6 +192,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
   // Admin navigation items
   const adminNavItems = [
     { href: '/admin', icon: LayoutDashboard, label: 'Overview' },
+    { href: '/admin/providers', icon: Briefcase, label: 'Providers', badge: true },
     { href: '/admin/data', icon: Database, label: 'Data Management' },
     { href: '/admin/users', icon: Users, label: 'Users' },
     { href: '/admin/bookings', icon: Calendar, label: 'Bookings' },
@@ -296,9 +298,14 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
                     isActive ? 'text-amber-500' : 'text-slate-500 group-hover:text-slate-300'
                   }`}
                 />
-                <span>{item.label}</span>
+                <span className="flex-1">{item.label}</span>
+                {(item as any).badge && (
+                  <span className="px-2 py-0.5 text-xs font-medium bg-amber-500/20 text-amber-400 rounded-full">
+                    New
+                  </span>
+                )}
                 {isActive && (
-                  <ChevronRight className="w-4 h-4 ml-auto text-amber-500" />
+                  <ChevronRight className="w-4 h-4 text-amber-500" />
                 )}
               </Link>
             );

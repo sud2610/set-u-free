@@ -39,7 +39,7 @@ const defaultCities = [
 export function ServicesContent() {
   // ==================== HOOKS ====================
   const searchParams = useSearchParams();
-  const router = useRouter();
+   const router = useRouter();
 
   // ==================== STATE ====================
   const [providers, setProviders] = useState<Provider[]>([]);

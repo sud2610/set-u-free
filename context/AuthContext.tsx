@@ -19,6 +19,7 @@ import {
 } from 'firebase/auth';
 import { doc, getDoc, setDoc, updateDoc, serverTimestamp } from 'firebase/firestore';
 import { auth, db, isFirebaseConfigured } from '@/lib/firebase';
+import { createProvider } from '@/lib/firestore';
 import type { User } from '@/types';
 
 // ==================== TYPES ====================
@@ -383,7 +384,27 @@ export function AuthProvider({ children }: AuthProviderProps) {
       const newUser = await createUserInFirestore(uid, email, userData);
       console.log('Firestore profile created');
 
-      // Step 3: Update local state immediately
+      // Step 3: If registering as a provider, also create provider document
+      if (userData.role === 'provider') {
+        await createProvider(uid, {
+          name: userData.fullName,
+          email: email,
+          phone: '',
+          location: userData.location || '',
+          services: [],
+          description: '',
+          rating: 0,
+          reviewCount: 0,
+          verified: false,
+          status: 'pending', // New providers need admin approval
+          availability: {},
+          profileImage: '',
+          images: [],
+        });
+        console.log('Provider document created with pending status');
+      }
+
+      // Step 4: Update local state immediately
       // (onAuthStateChanged will also fire, but this ensures immediate UI update)
       setUser(newUser);
       

@@ -8,8 +8,10 @@
     "start": "next start",
     "lint": "next lint",
     "deploy": "npm run build && firebase deploy --only hosting",
+    "push": "node scripts/deploy.js",
     "seed": "ts-node --project tsconfig.seed.json scripts/seed-data.ts",
-    "seed:append": "ts-node --project tsconfig.seed.json scripts/append-data.ts"
+    "seed:append": "ts-node --project tsconfig.seed.json scripts/append-data.ts",
+    "migrate:providers": "ts-node --project tsconfig.seed.json scripts/migrate-providers.ts"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",

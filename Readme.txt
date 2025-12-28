@@ -7,6 +7,10 @@ Free Consultation
 Discover trusted service providers offering free consultations. From dental care to fitness, 
 beauty to wellness - your perfect match is just a search away.
 
+====================================================
+npm run push "Fixed on 28Dec"
+====================================================
+
 
 # Login to Firebase
 firebase login
@@ -59,3 +63,17 @@ npx ts-node --project tsconfig.seed.json scripts/seed-data.ts
 Adding New Categories in the Future
 Edit the CATEGORIES array in scripts/seed-data.ts (lines 42-107) and re-run the seed script. The format is:
 {  id: 'your-category-id',  name: 'Your Category Name',  icon: '🔧',  description: 'Short description',  image: 'https://...',}
+
+npm run seed
+npm run seed:append
+
+
+# 1. Register with email: admin@freesetu.com on your website
+
+# 2. Run this command
+npx ts-node --project tsconfig.seed.json scripts/make-admin.ts admin@freesetu.com
+
+# 3. Login at /login with that email
+# 4. Navigate to /admin
+
+

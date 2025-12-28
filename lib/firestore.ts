@@ -193,6 +193,7 @@ export async function createProvider(
       rating: providerData.rating || 0,
       reviewCount: providerData.reviewCount || 0,
       verified: providerData.verified || false,
+      status: providerData.status || 'pending', // New providers need admin approval
       createdAt: serverTimestamp(),
       updatedAt: serverTimestamp(),
     };
@@ -207,6 +208,7 @@ export async function createProvider(
       rating: providerDoc.rating,
       reviewCount: providerDoc.reviewCount,
       verified: providerDoc.verified,
+      status: providerDoc.status,
       createdAt: new Date(),
       updatedAt: new Date(),
     };
@@ -814,6 +816,9 @@ export async function searchProviders(filters: SearchFilter): Promise<Provider[]
     const providersRef = collection(db!, COLLECTIONS.providers);
     const constraints: QueryConstraint[] = [];
 
+    // Only show approved providers to users
+    constraints.push(where('status', '==', 'approved'));
+
     // Filter by city
     if (filters.city) {
       constraints.push(where('city', '==', filters.city));
@@ -1070,5 +1075,144 @@ export async function getServicesByCategory(category: string): Promise<Service[]
     return services;
   } catch (error) {
     handleFirestoreError(error, 'getServicesByCategory');
+  }
+}
+
+// ==================== PROVIDER APPROVAL FUNCTIONS ====================
+
+/**
+ * Updates a provider's approval status
+ * @param providerId - Provider's UID
+ * @param status - New status ('pending' | 'approved' | 'rejected')
+ * @returns Updated provider or null
+ */
+export async function updateProviderStatus(
+  providerId: string,
+  status: 'pending' | 'approved' | 'rejected'
+): Promise<Provider | null> {
+  try {
+    assertDbInitialized();
+    
+    const providerRef = doc(db!, COLLECTIONS.providers, providerId);
+    
+    await updateDoc(providerRef, {
+      status,
+      updatedAt: serverTimestamp(),
+    });
+
+    console.log(`Provider ${providerId} status updated to: ${status}`);
+    
+    // Fetch and return the updated provider
+    return await getProvider(providerId);
+  } catch (error) {
+    handleFirestoreError(error, 'updateProviderStatus');
+  }
+}
+
+/**
+ * Gets all providers pending approval (for admin)
+ * @returns Array of providers with pending status
+ */
+export async function getPendingProviders(): Promise<Provider[]> {
+  try {
+    assertDbInitialized();
+    
+    const providersRef = collection(db!, COLLECTIONS.providers);
+    const q = query(
+      providersRef,
+      where('status', '==', 'pending'),
+      orderBy('createdAt', 'desc')
+    );
+
+    const querySnap = await getDocs(q);
+    
+    const providers: Provider[] = querySnap.docs.map((doc) => {
+      const data = doc.data();
+      return {
+        ...data,
+        uid: doc.id,
+        createdAt: convertTimestamp(data.createdAt),
+        updatedAt: convertTimestamp(data.updatedAt),
+      } as Provider;
+    });
+
+    console.log(`Found ${providers.length} pending providers`);
+    return providers;
+  } catch (error) {
+    handleFirestoreError(error, 'getPendingProviders');
+  }
+}
+
+/**
+ * Gets all providers by status (for admin)
+ * @param status - Provider status to filter by
+ * @returns Array of providers with the specified status
+ */
+export async function getProvidersByStatus(
+  status: 'pending' | 'approved' | 'rejected'
+): Promise<Provider[]> {
+  try {
+    assertDbInitialized();
+    
+    const providersRef = collection(db!, COLLECTIONS.providers);
+    const q = query(
+      providersRef,
+      where('status', '==', status),
+      orderBy('createdAt', 'desc')
+    );
+
+    const querySnap = await getDocs(q);
+    
+    const providers: Provider[] = querySnap.docs.map((doc) => {
+      const data = doc.data();
+      return {
+        ...data,
+        uid: doc.id,
+        createdAt: convertTimestamp(data.createdAt),
+        updatedAt: convertTimestamp(data.updatedAt),
+      } as Provider;
+    });
+
+    console.log(`Found ${providers.length} providers with status: ${status}`);
+    return providers;
+  } catch (error) {
+    handleFirestoreError(error, 'getProvidersByStatus');
+  }
+}
+
+/**
+ * Gets provider counts by status (for admin dashboard)
+ * @returns Object with counts for each status
+ */
+export async function getProviderStatusCounts(): Promise<{
+  pending: number;
+  approved: number;
+  rejected: number;
+  total: number;
+}> {
+  try {
+    assertDbInitialized();
+    
+    const providersRef = collection(db!, COLLECTIONS.providers);
+    const querySnap = await getDocs(providersRef);
+    
+    const counts = {
+      pending: 0,
+      approved: 0,
+      rejected: 0,
+      total: querySnap.size,
+    };
+
+    querySnap.docs.forEach((doc) => {
+      const status = doc.data().status;
+      if (status === 'pending') counts.pending++;
+      else if (status === 'approved') counts.approved++;
+      else if (status === 'rejected') counts.rejected++;
+      else counts.pending++; // Treat providers without status as pending (for existing data)
+    });
+
+    return counts;
+  } catch (error) {
+    handleFirestoreError(error, 'getProviderStatusCounts');
   }
 }

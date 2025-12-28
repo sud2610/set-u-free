@@ -50,6 +50,7 @@ export default function AdminProvidersPage() {
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
   const [verificationFilter, setVerificationFilter] = useState<'all' | 'verified' | 'pending'>('all');
+  const [approvalFilter, setApprovalFilter] = useState<'all' | 'pending' | 'approved' | 'rejected'>('all');
   const [selectedProvider, setSelectedProvider] = useState<ProviderWithUser | null>(null);
   const [showProviderModal, setShowProviderModal] = useState(false);
   const [actionLoading, setActionLoading] = useState<string | null>(null);
@@ -64,7 +65,7 @@ export default function AdminProvidersPage() {
 
   useEffect(() => {
     filterProviders();
-  }, [providers, searchQuery, verificationFilter]);
+  }, [providers, searchQuery, verificationFilter, approvalFilter]);
 
   const fetchProviders = async () => {
     if (!db) return;
@@ -153,6 +154,14 @@ export default function AdminProvidersPage() {
       );
     }
 
+    // Approval status filter
+    if (approvalFilter !== 'all') {
+      filtered = filtered.filter(provider => {
+        const status = (provider as any).status || 'pending';
+        return status === approvalFilter;
+      });
+    }
+
     setFilteredProviders(filtered);
     setCurrentPage(1);
   };
@@ -176,6 +185,29 @@ export default function AdminProvidersPage() {
       }
     } catch (error) {
       console.error('Error updating verification status:', error);
+    } finally {
+      setActionLoading(null);
+    }
+  };
+
+  const updateApprovalStatus = async (provider: ProviderWithUser, status: 'pending' | 'approved' | 'rejected') => {
+    if (!db) return;
+    const firestore = db;
+    setActionLoading(provider.uid);
+
+    try {
+      const providerRef = doc(firestore, 'providers', provider.uid);
+      await updateDoc(providerRef, { status, updatedAt: new Date() });
+      
+      setProviders(prev => prev.map(p => 
+        p.uid === provider.uid ? { ...p, status } as ProviderWithUser : p
+      ));
+
+      if (selectedProvider?.uid === provider.uid) {
+        setSelectedProvider({ ...selectedProvider, status } as ProviderWithUser);
+      }
+    } catch (error) {
+      console.error('Error updating approval status:', error);
     } finally {
       setActionLoading(null);
     }
@@ -229,14 +261,14 @@ export default function AdminProvidersPage() {
           <div className="flex items-center gap-2 px-3 py-1.5 bg-amber-500/20 rounded-lg border border-amber-500/30">
             <Clock className="w-4 h-4 text-amber-500" />
             <span className="text-amber-400 text-sm font-medium">
-              {providers.filter(p => !p.verified).length} Pending Verification
+              {providers.filter(p => (p as any).status === 'pending' || !(p as any).status).length} Pending Approval
             </span>
           </div>
         </div>
       </div>
 
       {/* Stats Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
         <div className="bg-slate-800 rounded-xl p-4 border border-slate-700">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-purple-500/20 rounded-lg flex items-center justify-center">
@@ -244,29 +276,49 @@ export default function AdminProvidersPage() {
             </div>
             <div>
               <p className="text-2xl font-bold text-white">{providers.length}</p>
-              <p className="text-slate-400 text-sm">Total Providers</p>
+              <p className="text-slate-400 text-sm">Total</p>
             </div>
           </div>
         </div>
-        <div className="bg-slate-800 rounded-xl p-4 border border-slate-700">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-emerald-500/20 rounded-lg flex items-center justify-center">
-              <ShieldCheck className="w-5 h-5 text-emerald-400" />
-            </div>
-            <div>
-              <p className="text-2xl font-bold text-white">{providers.filter(p => p.verified).length}</p>
-              <p className="text-slate-400 text-sm">Verified</p>
-            </div>
-          </div>
-        </div>
-        <div className="bg-slate-800 rounded-xl p-4 border border-slate-700">
+        <div 
+          className={`bg-slate-800 rounded-xl p-4 border cursor-pointer transition-colors ${approvalFilter === 'pending' ? 'border-amber-500' : 'border-slate-700 hover:border-slate-600'}`}
+          onClick={() => setApprovalFilter(approvalFilter === 'pending' ? 'all' : 'pending')}
+        >
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-amber-500/20 rounded-lg flex items-center justify-center">
               <Clock className="w-5 h-5 text-amber-400" />
             </div>
             <div>
-              <p className="text-2xl font-bold text-white">{providers.filter(p => !p.verified).length}</p>
-              <p className="text-slate-400 text-sm">Pending</p>
+              <p className="text-2xl font-bold text-white">{providers.filter(p => (p as any).status === 'pending' || !(p as any).status).length}</p>
+              <p className="text-slate-400 text-sm">Pending Approval</p>
+            </div>
+          </div>
+        </div>
+        <div 
+          className={`bg-slate-800 rounded-xl p-4 border cursor-pointer transition-colors ${approvalFilter === 'approved' ? 'border-emerald-500' : 'border-slate-700 hover:border-slate-600'}`}
+          onClick={() => setApprovalFilter(approvalFilter === 'approved' ? 'all' : 'approved')}
+        >
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-emerald-500/20 rounded-lg flex items-center justify-center">
+              <CheckCircle className="w-5 h-5 text-emerald-400" />
+            </div>
+            <div>
+              <p className="text-2xl font-bold text-white">{providers.filter(p => (p as any).status === 'approved').length}</p>
+              <p className="text-slate-400 text-sm">Approved</p>
+            </div>
+          </div>
+        </div>
+        <div 
+          className={`bg-slate-800 rounded-xl p-4 border cursor-pointer transition-colors ${approvalFilter === 'rejected' ? 'border-red-500' : 'border-slate-700 hover:border-slate-600'}`}
+          onClick={() => setApprovalFilter(approvalFilter === 'rejected' ? 'all' : 'rejected')}
+        >
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-red-500/20 rounded-lg flex items-center justify-center">
+              <XCircle className="w-5 h-5 text-red-400" />
+            </div>
+            <div>
+              <p className="text-2xl font-bold text-white">{providers.filter(p => (p as any).status === 'rejected').length}</p>
+              <p className="text-slate-400 text-sm">Rejected</p>
             </div>
           </div>
         </div>
@@ -332,17 +384,31 @@ export default function AdminProvidersPage() {
                   <div className="flex-1 min-w-0">
                     <div className="flex items-start justify-between gap-2">
                       <h3 className="text-white font-semibold truncate">{provider.businessName}</h3>
-                      {provider.verified ? (
-                        <span className="flex-shrink-0 inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium bg-emerald-500/20 text-emerald-400">
-                          <ShieldCheck className="w-3 h-3" />
-                          Verified
-                        </span>
-                      ) : (
-                        <span className="flex-shrink-0 inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium bg-amber-500/20 text-amber-400">
-                          <Clock className="w-3 h-3" />
-                          Pending
-                        </span>
-                      )}
+                      {(() => {
+                        const status = (provider as any).status || 'pending';
+                        if (status === 'approved') {
+                          return (
+                            <span className="flex-shrink-0 inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium bg-emerald-500/20 text-emerald-400">
+                              <CheckCircle className="w-3 h-3" />
+                              Approved
+                            </span>
+                          );
+                        } else if (status === 'rejected') {
+                          return (
+                            <span className="flex-shrink-0 inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium bg-red-500/20 text-red-400">
+                              <XCircle className="w-3 h-3" />
+                              Rejected
+                            </span>
+                          );
+                        } else {
+                          return (
+                            <span className="flex-shrink-0 inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium bg-amber-500/20 text-amber-400">
+                              <Clock className="w-3 h-3" />
+                              Pending
+                            </span>
+                          );
+                        }
+                      })()}
                     </div>
                     <p className="text-slate-400 text-sm truncate">{provider.user?.fullName}</p>
                   </div>
@@ -389,40 +455,68 @@ export default function AdminProvidersPage() {
               </div>
 
               {/* Actions */}
-              <div className="p-4 border-t border-slate-700 flex gap-2">
-                <button
-                  onClick={() => {
-                    setSelectedProvider(provider);
-                    setShowProviderModal(true);
-                  }}
-                  className="flex-1 py-2 px-3 bg-slate-700 hover:bg-slate-600 text-white rounded-lg text-sm font-medium transition-colors flex items-center justify-center gap-2"
-                >
-                  <Eye className="w-4 h-4" />
-                  View
-                </button>
-                <button
-                  onClick={() => toggleVerification(provider)}
-                  disabled={actionLoading === provider.uid}
-                  className={`flex-1 py-2 px-3 rounded-lg text-sm font-medium transition-colors flex items-center justify-center gap-2 disabled:opacity-50 ${
-                    provider.verified
-                      ? 'bg-red-500/20 hover:bg-red-500/30 text-red-400'
-                      : 'bg-emerald-500 hover:bg-emerald-600 text-white'
-                  }`}
-                >
-                  {actionLoading === provider.uid ? (
-                    <Loader2 className="w-4 h-4 animate-spin" />
-                  ) : provider.verified ? (
-                    <>
-                      <ShieldX className="w-4 h-4" />
-                      Revoke
-                    </>
-                  ) : (
-                    <>
-                      <ShieldCheck className="w-4 h-4" />
-                      Verify
-                    </>
+              <div className="p-4 border-t border-slate-700 space-y-2">
+                {/* Approval Actions */}
+                {((provider as any).status === 'pending' || !(provider as any).status) && (
+                  <div className="flex gap-2">
+                    <button
+                      onClick={() => updateApprovalStatus(provider, 'approved')}
+                      disabled={actionLoading === provider.uid}
+                      className="flex-1 py-2 px-3 bg-emerald-500 hover:bg-emerald-600 text-white rounded-lg text-sm font-medium transition-colors flex items-center justify-center gap-2 disabled:opacity-50"
+                    >
+                      {actionLoading === provider.uid ? (
+                        <Loader2 className="w-4 h-4 animate-spin" />
+                      ) : (
+                        <>
+                          <CheckCircle className="w-4 h-4" />
+                          Approve
+                        </>
+                      )}
+                    </button>
+                    <button
+                      onClick={() => updateApprovalStatus(provider, 'rejected')}
+                      disabled={actionLoading === provider.uid}
+                      className="flex-1 py-2 px-3 bg-red-500/20 hover:bg-red-500/30 text-red-400 rounded-lg text-sm font-medium transition-colors flex items-center justify-center gap-2 disabled:opacity-50"
+                    >
+                      <XCircle className="w-4 h-4" />
+                      Reject
+                    </button>
+                  </div>
+                )}
+                
+                {/* View & Other Actions */}
+                <div className="flex gap-2">
+                  <button
+                    onClick={() => {
+                      setSelectedProvider(provider);
+                      setShowProviderModal(true);
+                    }}
+                    className="flex-1 py-2 px-3 bg-slate-700 hover:bg-slate-600 text-white rounded-lg text-sm font-medium transition-colors flex items-center justify-center gap-2"
+                  >
+                    <Eye className="w-4 h-4" />
+                    View Details
+                  </button>
+                  {(provider as any).status === 'approved' && (
+                    <button
+                      onClick={() => updateApprovalStatus(provider, 'pending')}
+                      disabled={actionLoading === provider.uid}
+                      className="py-2 px-3 bg-amber-500/20 hover:bg-amber-500/30 text-amber-400 rounded-lg text-sm font-medium transition-colors flex items-center justify-center gap-2 disabled:opacity-50"
+                    >
+                      <Clock className="w-4 h-4" />
+                      Suspend
+                    </button>
                   )}
-                </button>
+                  {(provider as any).status === 'rejected' && (
+                    <button
+                      onClick={() => updateApprovalStatus(provider, 'approved')}
+                      disabled={actionLoading === provider.uid}
+                      className="py-2 px-3 bg-emerald-500 hover:bg-emerald-600 text-white rounded-lg text-sm font-medium transition-colors flex items-center justify-center gap-2 disabled:opacity-50"
+                    >
+                      <CheckCircle className="w-4 h-4" />
+                      Approve
+                    </button>
+                  )}
+                </div>
               </div>
             </div>
           ))
@@ -490,16 +584,38 @@ export default function AdminProvidersPage() {
                   <div>
                     <h2 className="text-xl font-bold text-white">{selectedProvider.businessName}</h2>
                     <p className="text-slate-400">{selectedProvider.user?.fullName}</p>
-                    <div className="flex items-center gap-2 mt-2">
-                      {selectedProvider.verified ? (
-                        <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-medium bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+                    <div className="flex items-center gap-2 mt-2 flex-wrap">
+                      {/* Approval Status */}
+                      {(() => {
+                        const status = (selectedProvider as any).status || 'pending';
+                        if (status === 'approved') {
+                          return (
+                            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-medium bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+                              <CheckCircle className="w-3.5 h-3.5" />
+                              Approved
+                            </span>
+                          );
+                        } else if (status === 'rejected') {
+                          return (
+                            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-medium bg-red-500/20 text-red-400 border border-red-500/30">
+                              <XCircle className="w-3.5 h-3.5" />
+                              Rejected
+                            </span>
+                          );
+                        } else {
+                          return (
+                            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-medium bg-amber-500/20 text-amber-400 border border-amber-500/30">
+                              <Clock className="w-3.5 h-3.5" />
+                              Pending Approval
+                            </span>
+                          );
+                        }
+                      })()}
+                      {/* Verification Badge */}
+                      {selectedProvider.verified && (
+                        <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-medium bg-blue-500/20 text-blue-400 border border-blue-500/30">
                           <ShieldCheck className="w-3.5 h-3.5" />
-                          Verified Provider
-                        </span>
-                      ) : (
-                        <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-medium bg-amber-500/20 text-amber-400 border border-amber-500/30">
-                          <Clock className="w-3.5 h-3.5" />
-                          Pending Verification
+                          Verified
                         </span>
                       )}
                     </div>
@@ -590,38 +706,87 @@ export default function AdminProvidersPage() {
               </div>
             </div>
 
-            <div className="p-6 border-t border-slate-700 flex gap-3">
-              <button
-                onClick={() => toggleVerification(selectedProvider)}
-                disabled={actionLoading === selectedProvider.uid}
-                className={`flex-1 py-3 rounded-xl font-medium transition-colors disabled:opacity-50 flex items-center justify-center gap-2 ${
-                  selectedProvider.verified
-                    ? 'bg-amber-500/20 hover:bg-amber-500/30 text-amber-400 border border-amber-500/30'
-                    : 'bg-emerald-500 hover:bg-emerald-600 text-white'
-                }`}
-              >
-                {actionLoading === selectedProvider.uid ? (
-                  <Loader2 className="w-5 h-5 animate-spin" />
-                ) : selectedProvider.verified ? (
-                  <>
-                    <ShieldX className="w-5 h-5" />
-                    Revoke Verification
-                  </>
-                ) : (
-                  <>
-                    <ShieldCheck className="w-5 h-5" />
-                    Verify Provider
-                  </>
+            <div className="p-6 border-t border-slate-700 space-y-3">
+              {/* Approval Actions */}
+              {((selectedProvider as any).status === 'pending' || !(selectedProvider as any).status) && (
+                <div className="flex gap-3">
+                  <button
+                    onClick={() => updateApprovalStatus(selectedProvider, 'approved')}
+                    disabled={actionLoading === selectedProvider.uid}
+                    className="flex-1 py-3 bg-emerald-500 hover:bg-emerald-600 text-white rounded-xl font-medium transition-colors disabled:opacity-50 flex items-center justify-center gap-2"
+                  >
+                    {actionLoading === selectedProvider.uid ? (
+                      <Loader2 className="w-5 h-5 animate-spin" />
+                    ) : (
+                      <>
+                        <CheckCircle className="w-5 h-5" />
+                        Approve Provider
+                      </>
+                    )}
+                  </button>
+                  <button
+                    onClick={() => updateApprovalStatus(selectedProvider, 'rejected')}
+                    disabled={actionLoading === selectedProvider.uid}
+                    className="flex-1 py-3 bg-red-500/20 hover:bg-red-500/30 text-red-400 rounded-xl font-medium transition-colors disabled:opacity-50 flex items-center justify-center gap-2 border border-red-500/30"
+                  >
+                    <XCircle className="w-5 h-5" />
+                    Reject
+                  </button>
+                </div>
+              )}
+              
+              {/* Other Actions */}
+              <div className="flex gap-3">
+                {(selectedProvider as any).status === 'approved' && (
+                  <button
+                    onClick={() => updateApprovalStatus(selectedProvider, 'pending')}
+                    disabled={actionLoading === selectedProvider.uid}
+                    className="flex-1 py-3 bg-amber-500/20 hover:bg-amber-500/30 text-amber-400 rounded-xl font-medium transition-colors disabled:opacity-50 flex items-center justify-center gap-2 border border-amber-500/30"
+                  >
+                    <Clock className="w-5 h-5" />
+                    Suspend Provider
+                  </button>
                 )}
-              </button>
-              <button
-                onClick={() => deleteProvider(selectedProvider)}
-                disabled={actionLoading === selectedProvider.uid}
-                className="px-6 py-3 bg-red-500/20 hover:bg-red-500/30 text-red-400 rounded-xl font-medium transition-colors disabled:opacity-50 flex items-center gap-2"
-              >
-                <Trash2 className="w-5 h-5" />
-                Delete
-              </button>
+                {(selectedProvider as any).status === 'rejected' && (
+                  <button
+                    onClick={() => updateApprovalStatus(selectedProvider, 'approved')}
+                    disabled={actionLoading === selectedProvider.uid}
+                    className="flex-1 py-3 bg-emerald-500 hover:bg-emerald-600 text-white rounded-xl font-medium transition-colors disabled:opacity-50 flex items-center justify-center gap-2"
+                  >
+                    <CheckCircle className="w-5 h-5" />
+                    Approve Provider
+                  </button>
+                )}
+                <button
+                  onClick={() => toggleVerification(selectedProvider)}
+                  disabled={actionLoading === selectedProvider.uid}
+                  className={`py-3 px-5 rounded-xl font-medium transition-colors disabled:opacity-50 flex items-center justify-center gap-2 ${
+                    selectedProvider.verified
+                      ? 'bg-slate-700 hover:bg-slate-600 text-slate-300'
+                      : 'bg-blue-500/20 hover:bg-blue-500/30 text-blue-400 border border-blue-500/30'
+                  }`}
+                >
+                  {selectedProvider.verified ? (
+                    <>
+                      <ShieldX className="w-5 h-5" />
+                      Unverify
+                    </>
+                  ) : (
+                    <>
+                      <ShieldCheck className="w-5 h-5" />
+                      Verify
+                    </>
+                  )}
+                </button>
+                <button
+                  onClick={() => deleteProvider(selectedProvider)}
+                  disabled={actionLoading === selectedProvider.uid}
+                  className="py-3 px-5 bg-red-500/20 hover:bg-red-500/30 text-red-400 rounded-xl font-medium transition-colors disabled:opacity-50 flex items-center gap-2"
+                >
+                  <Trash2 className="w-5 h-5" />
+                  Delete
+                </button>
+              </div>
             </div>
           </div>
         </div>
