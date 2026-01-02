@@ -1,0 +1,83 @@
+[
+  {
+    "id": "provider_0165",
+    "businessName": "Haymarket Medical Dental Clinic",
+    "description": "",
+    "categories": [
+      "Doctors"
+    ],
+    "location": "5/650 George St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "(02) 9283 2808",
+    "website": "http://www.dentist.com.au/dentist-detail/haymarket-medical-and-dental-clinic/a11004780",
+    "rating": 4.7,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Haymarket+Medical+Dental+Clinic",
+    "latitude": -33.8766393,
+    "longitude": 151.2064317,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Haymarket+Medical+Dental+Clinic/@-33.8766393,151.2064317,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12ae3cea1fa11f:0xf658f6bc717d054a!8m2!3d-33.8766393!4d151.2064317!16s%2Fg%2F1tg86tb4?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-30T06:00:58.452Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0272",
+    "businessName": "Doctor Home",
+    "description": "",
+    "categories": [
+      "Doctors"
+    ],
+    "location": "Online, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "0426 055 556",
+    "website": "https://doctorathome.au/",
+    "rating": 0,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Doctor+Home",
+    "latitude": -33.8708457,
+    "longitude": 151.2073857,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Doctor+Home/@-33.8708457,151.2073857,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12aff90634b447:0x1d32e69e814076fd!8m2!3d-33.8708457!4d151.2073857!16s%2Fg%2F11vycld3vc?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-30T08:27:34.540Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "schedule a free consultation",
+      "free consult"
+    ]
+  }
+]

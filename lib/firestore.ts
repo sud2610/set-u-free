@@ -813,25 +813,31 @@ export async function searchProviders(filters: SearchFilter): Promise<Provider[]
   try {
     assertDbInitialized();
     
+    console.log('🔍 Search filters:', filters);
+    
     const providersRef = collection(db!, COLLECTIONS.providers);
     const constraints: QueryConstraint[] = [];
 
     // Only show approved providers to users
     constraints.push(where('status', '==', 'approved'));
+    console.log('📋 Applied status filter: approved');
 
     // Filter by city
     if (filters.city) {
       constraints.push(where('city', '==', filters.city));
+      console.log('📋 Applied city filter:', filters.city);
     }
 
     // Filter by category (requires composite index with orderBy)
     if (filters.category) {
       constraints.push(where('categories', 'array-contains', filters.category));
+      console.log('📋 Applied category filter:', filters.category);
     }
 
     // Filter by minimum rating
     if (filters.rating && filters.rating > 0) {
       constraints.push(where('rating', '>=', filters.rating));
+      console.log('📋 Applied rating filter:', filters.rating);
     }
 
     // Limit results
@@ -841,13 +847,24 @@ export async function searchProviders(filters: SearchFilter): Promise<Provider[]
     let querySnap;
     try {
       const q = query(providersRef, ...constraints, orderBy('rating', 'desc'));
+      console.log('🔥 Executing Firestore query with orderBy...');
       querySnap = await getDocs(q);
+      console.log('✅ Query executed successfully');
     } catch (indexError) {
-      // If composite index is missing, fetch without orderBy and sort client-side
       console.warn('Firestore index not available, sorting client-side');
       const q = query(providersRef, ...constraints);
+      console.log('🔥 Executing Firestore query without orderBy...');
       querySnap = await getDocs(q);
+      console.log('✅ Query executed successfully (fallback)');
     }
+    
+    console.log(`📊 Raw query returned ${querySnap.docs.length} documents`);
+    
+    // Log first few document IDs and status values for debugging
+    querySnap.docs.slice(0, 3).forEach((doc, index) => {
+      const data = doc.data();
+      console.log(`   Doc ${index + 1}: ID=${doc.id}, status=${data.status}, city=${data.city}, categories=${JSON.stringify(data.categories)}`);
+    });
     
     let providers: Provider[] = querySnap.docs.map((doc) => {
       const data = doc.data();
@@ -859,9 +876,12 @@ export async function searchProviders(filters: SearchFilter): Promise<Provider[]
       } as Provider;
     });
 
+    console.log(`🔄 After mapping: ${providers.length} providers`);
+
     // Client-side text search (Firestore doesn't support full-text search)
     if (filters.searchQuery) {
       const searchLower = filters.searchQuery.toLowerCase();
+      console.log('🔍 Applying client-side text search for:', searchLower);
       providers = providers.filter(
         (provider) =>
           (provider.businessName || '').toLowerCase().includes(searchLower) ||
@@ -869,6 +889,7 @@ export async function searchProviders(filters: SearchFilter): Promise<Provider[]
           (provider.bio || '').toLowerCase().includes(searchLower) ||
           (provider.categories || []).some((cat) => cat.toLowerCase().includes(searchLower))
       );
+      console.log(`📊 After text search: ${providers.length} providers`);
     }
 
     // Always sort by rating (descending) on client-side to ensure consistency
@@ -877,6 +898,7 @@ export async function searchProviders(filters: SearchFilter): Promise<Provider[]
     console.log(`Search found ${providers.length} providers`);
     return providers;
   } catch (error) {
+    console.error('❌ Search error:', error);
     handleFirestoreError(error, 'searchProviders');
   }
 }

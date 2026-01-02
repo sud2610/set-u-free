@@ -1,0 +1,532 @@
+[
+  {
+    "id": "provider_0032",
+    "businessName": "Shweta's Brow and Lash Bar",
+    "description": "",
+    "categories": [
+      "Beauty"
+    ],
+    "location": "level 2/387 George St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "0483 001 781",
+    "website": "http://www.shwetasbrow.com.au/",
+    "rating": 4.8,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Shweta's+Brow+and+Lash+Bar",
+    "latitude": -33.8695264,
+    "longitude": 151.2067223,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Shweta's+Brow+and+Lash+Bar/@-33.8695264,151.2067223,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12af92f1588a61:0xcc16c8e67c7f738c!8m2!3d-33.8695264!4d151.2067223!16s%2Fg%2F11fs6s7dnx?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-29T05:58:15.095Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free quote",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0118",
+    "businessName": "Lumi Skin Clinics",
+    "description": "",
+    "categories": [
+      "Beauty"
+    ],
+    "location": "Wilson Parking - Market City, Haymarket, Sydney CBD NSW Car Park, Level1, Shop R1.05/13 Hay St, Haymarket NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "(02) 9211 0987",
+    "website": "http://lumiskinclinics.com.au/",
+    "rating": 4.6,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Lumi+Skin+Clinics",
+    "latitude": -33.8796569,
+    "longitude": 151.2037102,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Lumi+Skin+Clinics/@-33.8796569,151.2037102,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12af31c757d193:0xd084720f178139bf!8m2!3d-33.8796569!4d151.2037102!16s%2Fg%2F11spzr7lgm?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-29T07:23:55.809Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "book your free consultation",
+      "get a free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0122",
+    "businessName": "V BEAUTY SKIN CLINICS",
+    "description": "",
+    "categories": [
+      "Beauty"
+    ],
+    "location": "3/95 Bathurst St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "0466 658 168",
+    "website": "https://vbeauty.com.au/",
+    "rating": 4.8,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "V+BEAUTY+SKIN+CLINICS",
+    "latitude": 0,
+    "longitude": 0,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/V+BEAUTY+SKIN+CLINICS/data=!4m7!3m6!1s0x6b12ae3c6bae8d6f:0x2d906260bb8c34ae!8m2!3d-33.8743632!4d151.2056712!16s%2Fg%2F11c6169_wz!19sChIJb42uazyuEmsRrjSMu2BikC0?authuser=0&hl=en&rclk=1",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-29T07:25:03.279Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "book a free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0126",
+    "businessName": "Global Skin Clinics - Sydney",
+    "description": "",
+    "categories": [
+      "Beauty"
+    ],
+    "location": "3/276-278 Pitt St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "(02) 9070 6900",
+    "website": "http://globalskinclinics.com/",
+    "rating": 4.4,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Global+Skin+Clinics+-+Sydney",
+    "latitude": -33.8739875,
+    "longitude": 151.2082232,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Global+Skin+Clinics+-+Sydney/@-33.8739875,151.2082232,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12af2898c15087:0x85e485d303e14abb!8m2!3d-33.8739875!4d151.2082232!16s%2Fg%2F11rpq7q4hk?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-29T07:26:05.352Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "complimentary consultation",
+      "complimentary consult"
+    ]
+  },
+  {
+    "id": "provider_0138",
+    "businessName": "Sharon MediSkin Clinic",
+    "description": "",
+    "categories": [
+      "Beauty"
+    ],
+    "location": "Shop 3, Ground Floor/265 Castlereagh St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "(02) 9267 7411",
+    "website": "https://sharonmediskinclinic.com.au/",
+    "rating": 4.5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Sharon+MediSkin+Clinic",
+    "latitude": -33.8771732,
+    "longitude": 151.2084001,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Sharon+MediSkin+Clinic/@-33.8771732,151.2084001,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12ae3d16acacdf:0x9008e216250137b2!8m2!3d-33.8771732!4d151.2084001!16s%2Fg%2F11bv6pvxw4?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-29T07:29:32.638Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0139",
+    "businessName": "Gardenia Skin Co - Cosmetic Clinic Sydney",
+    "description": "",
+    "categories": [
+      "Beauty"
+    ],
+    "location": "Suite 134, Level 13/183 Macquarie St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "0450 041 505",
+    "website": "https://gardeniaskinco.com.au/?utm_source=gmb",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Gardenia+Skin+Co+-+Cosmetic+Clinic+Sydney",
+    "latitude": -33.8665832,
+    "longitude": 151.212255,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Gardenia+Skin+Co+-+Cosmetic+Clinic+Sydney/@-33.8665832,151.212255,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12affe6f835287:0x54bef15b82eb80b2!8m2!3d-33.8665832!4d151.212255!16s%2Fg%2F11v0q10jdb?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-29T07:29:47.688Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "book a free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0143",
+    "businessName": "Cosmedix Clinics",
+    "description": "",
+    "categories": [
+      "Beauty"
+    ],
+    "location": "169 William St, Darlinghurst NSW 2010",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2010",
+    "phone": "(02) 8006 3344",
+    "website": "http://www.cosmedixclinics.com.au/",
+    "rating": 4.5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Cosmedix+Clinics",
+    "latitude": -33.8749366,
+    "longitude": 151.2190271,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Cosmedix+Clinics/@-33.8749366,151.2190271,16z/data=!3m1!4b1!4m6!3m5!1s0x6b12a31ebfd590d3:0xc9b6cb0f336c3b14!8m2!3d-33.8749366!4d151.2190271!16s%2Fg%2F1tcw3s51?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-29T07:30:52.857Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "book your free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0144",
+    "businessName": "悉尼专业医美诊所|美伊尔 Meyer Cosmetic Beauty Clinic",
+    "description": "",
+    "categories": [
+      "Beauty"
+    ],
+    "location": "101 Bathurst St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "0473 699 999",
+    "website": "https://www.meyerbeauty.com/",
+    "rating": 4.7,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "%E6%82%89%E5%B0%BC%E4%B8%93%E4%B8%9A%E5%8C%BB%E7%BE%8E%E8%AF%8A%E6%89%80%7C%E7%BE%8E%E4%BC%8A%E5%B0%94+Meyer+Cosmetic+Beauty+Clinic",
+    "latitude": -33.8745502,
+    "longitude": 151.2061184,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/%E6%82%89%E5%B0%BC%E4%B8%93%E4%B8%9A%E5%8C%BB%E7%BE%8E%E8%AF%8A%E6%89%80%7C%E7%BE%8E%E4%BC%8A%E5%B0%94+Meyer+Cosmetic+Beauty+Clinic/@-33.8745502,151.2061184,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12af3e161010d9:0x2d94fee142f2dced!8m2!3d-33.8745502!4d151.2061184!16s%2Fg%2F11n0mp793k?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-29T07:31:04.753Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "book a free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0152",
+    "businessName": "Lumière beauty clinic",
+    "description": "",
+    "categories": [
+      "Beauty"
+    ],
+    "location": "Shop 2, Ground Floor/389 Sussex St, Haymarket NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "(02) 8964 2550",
+    "website": "https://www.lumierebeautyclinic.com.au/",
+    "rating": 4.7,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Lumi%C3%A8re+beauty+clinic",
+    "latitude": 0,
+    "longitude": 0,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Lumi%C3%A8re+beauty+clinic/data=!4m7!3m6!1s0x6b12afb278af4153:0xcc6775d7fa54eac7!8m2!3d-33.8778402!4d151.2045048!16s%2Fg%2F11g22_x151!19sChIJU0GveLKvEmsRx-pU-td1Z8w?authuser=0&hl=en&rclk=1",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-29T07:32:58.681Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "book a free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0154",
+    "businessName": "Advanced Dermatology",
+    "description": "",
+    "categories": [
+      "Beauty"
+    ],
+    "location": "Level 2 Suite 28/650 George St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "1300 788 800",
+    "website": "https://www.advanced-dermatology.com.au/",
+    "rating": 4.7,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Advanced+Dermatology",
+    "latitude": 0,
+    "longitude": 0,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Advanced+Dermatology/data=!4m7!3m6!1s0x6b12ae3ce7cdd08d:0x5f8708f2381967da!8m2!3d-33.8768156!4d151.2062708!16s%2Fg%2F11hcnb76gn!19sChIJjdDN5zyuEmsR2mcZOPIIh18?authuser=0&hl=en&rclk=1",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-29T07:33:33.992Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0162",
+    "businessName": "FUTURE CLINIC MODERN BEAUTY",
+    "description": "",
+    "categories": [
+      "Beauty"
+    ],
+    "location": "4 Cross St, Double Bay NSW 2028",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2028",
+    "phone": "0415 588 449",
+    "website": "https://future.clinic/",
+    "rating": 4.9,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "FUTURE+CLINIC+MODERN+BEAUTY",
+    "latitude": -33.876873,
+    "longitude": 151.2438585,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/FUTURE+CLINIC+MODERN+BEAUTY/@-33.876873,151.2438585,17z/data=!3m1!4b1!4m6!3m5!1s0x6b12ada21d7f4b73:0x388e4beca9b65655!8m2!3d-33.876873!4d151.2438585!16s%2Fg%2F11g8tp0s4t?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-29T07:35:33.825Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "book a free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0165",
+    "businessName": "Vernalys Skin & Laser Clinic",
+    "description": "",
+    "categories": [
+      "Beauty"
+    ],
+    "location": "351/569 George St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "(02) 9267 5981",
+    "website": "https://www.vernalyslaserclinic.com.au/?utm_source=local&utm_medium=organic&utm_campaign=gmb&utm_content=website",
+    "rating": 4.8,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Vernalys+Skin+%26+Laser+Clinic",
+    "latitude": 0,
+    "longitude": 0,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Vernalys+Skin+%26+Laser+Clinic/data=!4m7!3m6!1s0x6b12af730899a94b:0x77af4419a02434ae!8m2!3d-33.8769632!4d151.2057434!16s%2Fg%2F11pckgc7xc!19sChIJS6mZCHOvEmsRrjQkoBlEr3c?authuser=0&hl=en&rclk=1",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-29T07:36:21.676Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0169",
+    "businessName": "Ciao Beauty",
+    "description": "",
+    "categories": [
+      "Beauty"
+    ],
+    "location": "suite 410 level 4/405-411 Sussex St, Sydney NSW 2000",
+    "city": "Sydney",
+    "state": "New South Wales",
+    "postcode": "2000",
+    "phone": "(02) 9211 0018",
+    "website": "https://www.ciaobeauty.com.au/",
+    "rating": 4.8,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Ciao+Beauty",
+    "latitude": 0,
+    "longitude": 0,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Ciao+Beauty/data=!4m7!3m6!1s0x6b12ae23586b285d:0xa37325b175f85a66!8m2!3d-33.878469!4d151.204462!16s%2Fg%2F11cm0j0s8g!19sChIJXShrWCOuEmsRZlr4dbElc6M?authuser=0&hl=en&rclk=1",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-29T07:37:11.733Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "book a free consultation",
+      "free consult"
+    ]
+  }
+]

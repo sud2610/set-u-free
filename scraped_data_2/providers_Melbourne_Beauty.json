@@ -1,0 +1,487 @@
+[
+  {
+    "id": "provider_0063",
+    "businessName": "La Belle Clinic - Skin Clinic Melbourne",
+    "description": "",
+    "categories": [
+      "Beauty"
+    ],
+    "location": "LEVEL 1/329 Elizabeth St, Melbourne VIC 3000",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3000",
+    "phone": "(03) 9670 3399",
+    "website": "http://www.labelleclinic.com.au/?utm_source=google&utm_medium=GMB&utm_campaign=labelleclinic_gmb",
+    "rating": 4.8,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "La+Belle+Clinic+-+Skin+Clinic+Melbourne",
+    "latitude": -37.810988,
+    "longitude": 144.9613817,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/La+Belle+Clinic+-+Skin+Clinic+Melbourne/@-37.810988,144.9613817,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad642b55b613519:0x4b23da4cdfbd9019!8m2!3d-37.810988!4d144.9613817!16s%2Fg%2F11gbzc5mj7?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-29T04:28:34.747Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "book a free consultation",
+      "book your free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0067",
+    "businessName": "Australian Laser & Skin Clinics Reservoir",
+    "description": "",
+    "categories": [
+      "Beauty"
+    ],
+    "location": "46 Edwardes St, Reservoir VIC 3073",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3073",
+    "phone": "(03) 9464 2633",
+    "website": "https://www.australianlaser.com.au/",
+    "rating": 4.7,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Australian+Laser+%26+Skin+Clinics+Reservoir",
+    "latitude": -37.715944,
+    "longitude": 145.004297,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Australian+Laser+%26+Skin+Clinics+Reservoir/@-37.715944,145.004297,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad64f0e7602ce5f:0xc531e4a766e8379b!8m2!3d-37.715944!4d145.004297!16s%2Fg%2F1tf60f6t?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-29T04:29:27.094Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0069",
+    "businessName": "Australian Skin Clinics Northland",
+    "description": "",
+    "categories": [
+      "Beauty"
+    ],
+    "location": "Shop K005, Northland Shopping Centre, 2-50 Murray Rd, Preston VIC 3072",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3072",
+    "phone": "(03) 9938 8242",
+    "website": "https://australianskinclinics.com.au/clinics/vic/northland/",
+    "rating": 4.7,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Australian+Skin+Clinics+Northland",
+    "latitude": -37.7394281,
+    "longitude": 145.0314417,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Australian+Skin+Clinics+Northland/@-37.7394281,145.0314417,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad645cbac490b43:0x1079553fa254ff05!8m2!3d-37.7394281!4d145.0314417!16s%2Fg%2F11cn5nwlh9?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-29T04:29:51.726Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "book a free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0078",
+    "businessName": "Snowy Medispa",
+    "description": "",
+    "categories": [
+      "Beauty"
+    ],
+    "location": "Level 12/350 Queen St, Melbourne VIC 3000",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3000",
+    "phone": "0435 607 666",
+    "website": "https://snowymedispa.com.au/",
+    "rating": 4.4,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Snowy+Medispa",
+    "latitude": -37.8104023,
+    "longitude": 144.9590325,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Snowy+Medispa/@-37.8104023,144.9590325,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad65db1acf7082d:0xf20c32c495b7cdee!8m2!3d-37.8104023!4d144.9590325!16s%2Fg%2F11jp35g1hg?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-29T04:31:50.586Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "book a free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0081",
+    "businessName": "Beauty Emergency Clinic",
+    "description": "",
+    "categories": [
+      "Beauty"
+    ],
+    "location": "299 Victoria St, West Melbourne VIC 3003",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3003",
+    "phone": "",
+    "website": "http://www.beautyemergencyclinic.com.au/",
+    "rating": 5,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Beauty+Emergency+Clinic",
+    "latitude": -37.8055348,
+    "longitude": 144.9515083,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Beauty+Emergency+Clinic/@-37.8055348,144.9515083,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad65dbbfe8fffff:0x1c5d3635a9d9715f!8m2!3d-37.8055348!4d144.9515083!16s%2Fg%2F11fn2_7d2r?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-29T04:32:28.265Z",
+    "needsManualVerification": true,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0082",
+    "businessName": "DermaCare Cosmetic and Laser Skin Clinic Melbourne",
+    "description": "",
+    "categories": [
+      "Beauty"
+    ],
+    "location": "10/19 Norwood Cres, Moonee Ponds VIC 3039",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3039",
+    "phone": "1300 651 216",
+    "website": "https://www.dermacare.com.au/",
+    "rating": 4.8,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "DermaCare+Cosmetic+and+Laser+Skin+Clinic+Melbourne",
+    "latitude": -37.7655877,
+    "longitude": 144.9187637,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/DermaCare+Cosmetic+and+Laser+Skin+Clinic+Melbourne/@-37.7655877,144.9187637,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad65cf66c963dc5:0x25b57c2ef21943a!8m2!3d-37.7655877!4d144.9187637!16s%2Fg%2F1tfx50k5?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-29T04:32:37.503Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "complimentary consultation",
+      "complimentary consult"
+    ]
+  },
+  {
+    "id": "provider_0084",
+    "businessName": "Laser Clinics Australia - Melbourne QV",
+    "description": "",
+    "categories": [
+      "Beauty"
+    ],
+    "location": "and, Shop 1-52 QV Melbourne, Cnr Lonsdale Street, Swanston St, Melbourne VIC 3000",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3000",
+    "phone": "(03) 8593 7508",
+    "website": "https://www.laserclinics.com.au/skin-care-clinic/melbourne-qv/?utm_source=google&utm_medium=organic&utm_campaign=Google%20My%20Business%20Page&utm_content=Melbourne%20QV&utm_term=plcid_11839765167504618361",
+    "rating": 4.3,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Laser+Clinics+Australia+-+Melbourne+QV",
+    "latitude": -37.8114344,
+    "longitude": 144.964753,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Laser+Clinics+Australia+-+Melbourne+QV/@-37.8114344,144.964753,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad643706afd7d09:0xa1b6ea9f0bc109c2!8m2!3d-37.8114344!4d144.964753!16s%2Fg%2F11g4g19x00?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-29T04:32:59.631Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "complimentary consultation",
+      "complimentary consult"
+    ]
+  },
+  {
+    "id": "provider_0102",
+    "businessName": "Laser Clinics Australia - Melbourne Emporium",
+    "description": "",
+    "categories": [
+      "Beauty"
+    ],
+    "location": "Shop 3 - 014/287 Lonsdale St, Melbourne VIC 3000",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3000",
+    "phone": "(03) 8593 7561",
+    "website": "https://www.laserclinics.com.au/skin-care-clinic/emporium-melbourne-cbd/?utm_source=google&utm_medium=organic&utm_campaign=Google%20My%20Business%20Page&utm_content=Emporium%20Melbourne%20CBD&utm_term=plcid_17928587385182821705",
+    "rating": 4.4,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Laser+Clinics+Australia+-+Melbourne+Emporium",
+    "latitude": -37.8127654,
+    "longitude": 144.9634563,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Laser+Clinics+Australia+-+Melbourne+Emporium/@-37.8127654,144.9634563,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad642ca8713b54f:0xdbd6f5fe2bfee609!8m2!3d-37.8127654!4d144.9634563!16s%2Fg%2F11c2jxtkr6?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-29T04:36:57.454Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "complimentary consultation",
+      "complimentary consult"
+    ]
+  },
+  {
+    "id": "provider_0103",
+    "businessName": "Cityskin Cosmetic Clinic Melbourne CBD",
+    "description": "",
+    "categories": [
+      "Beauty"
+    ],
+    "location": "Level 1, Suite 122/530 Little Collins St, Melbourne VIC 3000",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3000",
+    "phone": "1800 248 975",
+    "website": "https://cityskin.com.au/locations/cityskin-melbourne-cbd/?utm_source=GMBlisting&utm_medium=organic&utm_campaign=GBP+Melbourne+CBD&utm_id=GBP",
+    "rating": 4.7,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Cityskin+Cosmetic+Clinic+Melbourne+CBD",
+    "latitude": -37.8168746,
+    "longitude": 144.9570946,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Cityskin+Cosmetic+Clinic+Melbourne+CBD/@-37.8168746,144.9570946,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad65d4db45a0563:0x8bdbcd71009f4599!8m2!3d-37.8168746!4d144.9570946!16s%2Fg%2F11fy4xyw5z?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-29T04:37:05.946Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free 30-minute"
+    ]
+  },
+  {
+    "id": "provider_0105",
+    "businessName": "Laser Clinics Australia - Richmond",
+    "description": "",
+    "categories": [
+      "Beauty"
+    ],
+    "location": "620 Victoria St, Richmond VIC 3121",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3121",
+    "phone": "(03) 7020 3392",
+    "website": "https://www.laserclinics.com.au/skin-care-clinic/richmond-vic/?utm_source=google&utm_medium=organic&utm_campaign=Google%20My%20Business%20Page&utm_content=Richmond%20VIC&utm_term=plcid_7165746608773184623",
+    "rating": 4.8,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "Laser+Clinics+Australia+-+Richmond",
+    "latitude": -37.8125531,
+    "longitude": 145.0112532,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Laser+Clinics+Australia+-+Richmond/@-37.8125531,145.0112532,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad6437d00d6d50f:0x16951472a2e6ac72!8m2!3d-37.8125531!4d145.0112532!16s%2Fg%2F11pcl4xx52?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-29T04:37:25.838Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "complimentary consultation",
+      "complimentary consult"
+    ]
+  },
+  {
+    "id": "provider_0113",
+    "businessName": "V Young Medical & Aesthetic Clinic",
+    "description": "",
+    "categories": [
+      "Beauty"
+    ],
+    "location": "Ground Floor, Shop 2/16 Liverpool St, Melbourne VIC 3000",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3000",
+    "phone": "(03) 8638 0745",
+    "website": "https://vyoungmedical.com.au/",
+    "rating": 4.8,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "V+Young+Medical+%26+Aesthetic+Clinic",
+    "latitude": -37.811106,
+    "longitude": 144.97147,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/V+Young+Medical+%26+Aesthetic+Clinic/@-37.811106,144.97147,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad643e2ba72b6eb:0x316cf9347b28cb89!8m2!3d-37.811106!4d144.97147!16s%2Fg%2F11pxllcvfv?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-29T04:39:18.443Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "book your free consultation",
+      "free consult"
+    ]
+  },
+  {
+    "id": "provider_0133",
+    "businessName": "My Body Vibes Carlton – Cosmetic Clinic",
+    "description": "",
+    "categories": [
+      "Beauty"
+    ],
+    "location": "218 Elgin St, Carlton VIC 3053",
+    "city": "Melbourne",
+    "state": "Victoria",
+    "postcode": "3053",
+    "phone": "1300 722 911",
+    "website": "https://www.mybodyvibes.com.au/carlton-cosmetic-clinic",
+    "rating": 4.7,
+    "reviewCount": 0,
+    "verified": false,
+    "profileImage": "",
+    "placeId": "My+Body+Vibes+Carlton+%E2%80%93+Cosmetic+Clinic",
+    "latitude": -37.7968766,
+    "longitude": 144.9668441,
+    "businessHours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/My+Body+Vibes+Carlton+%E2%80%93+Cosmetic+Clinic/@-37.7968766,144.9668441,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad65db927ad2fcb:0x6f0a35220cd74904!8m2!3d-37.7968766!4d144.9668441!16s%2Fg%2F11fjzwjt38?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "dataSource": "google_maps_playwright",
+    "scrapedAt": "2025-12-29T04:43:37.654Z",
+    "needsManualVerification": false,
+    "freeConsultation": true,
+    "freeConsultationSource": "website",
+    "freeConsultationTermsMatched": [
+      "free consultation",
+      "book your free consultation",
+      "free consult"
+    ]
+  }
+]

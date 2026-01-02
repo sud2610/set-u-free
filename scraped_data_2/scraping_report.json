@@ -1,0 +1,39 @@
+{
+  "scrapedAt": "2026-01-01T11:07:23.350Z",
+  "totalProvidersScanned": 0,
+  "totalProviders": 20,
+  "freeConsultationProviders": 20,
+  "byCity": [
+    {
+      "city": "Melbourne",
+      "total": 20,
+      "freeConsultation": 20
+    }
+  ],
+  "byCategory": [
+    {
+      "category": "Legal",
+      "total": 20,
+      "freeConsultation": 20
+    }
+  ],
+  "errors": [
+    {
+      "timestamp": "2026-01-01T03:35:41.803Z",
+      "businessName": "Carbone Lawyers Melbourne",
+      "category": "Legal",
+      "city": "Melbourne",
+      "error": "page.goto: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"https://www.google.com/maps/place/Carbone+Lawyers+Melbourne/data=!4m7!3m6!1s0x6ad65d73ed5b6bf1:0x3baa62ee255e45d8!8m2!3d-37.8129944!4d144.9544427!16s%2Fg%2F11gxm9wrkq!19sChIJ8Wtb7XNd1moR2EVeJe5iqjs?authuser=0&hl=en&rclk=1\", waiting until \"domcontentloaded\"\u001b[22m\n",
+      "retryCount": 0
+    },
+    {
+      "timestamp": "2026-01-01T05:15:02.930Z",
+      "businessName": "Business Lawyers Melbourne",
+      "category": "Legal",
+      "city": "Melbourne",
+      "error": "page.goto: net::ERR_ABORTED at https://www.google.com/maps/place/Business+Lawyers+Melbourne/data=!4m7!3m6!1s0x6ad65d4b3cdb4ce5:0x68cfe9db0a33138b!8m2!3d-37.8170671!4d144.9597254!16s%2Fg%2F11csr2cvvt!19sChIJ5UzbPEtd1moRixMzCtvpz2g?authuser=0&hl=en&rclk=1\nCall log:\n\u001b[2m  - navigating to \"https://www.google.com/maps/place/Business+Lawyers+Melbourne/data=!4m7!3m6!1s0x6ad65d4b3cdb4ce5:0x68cfe9db0a33138b!8m2!3d-37.8170671!4d144.9597254!16s%2Fg%2F11csr2cvvt!19sChIJ5UzbPEtd1moRixMzCtvpz2g?authuser=0&hl=en&rclk=1\", waiting until \"domcontentloaded\"\u001b[22m\n",
+      "retryCount": 0
+    }
+  ],
+  "duration": "8h 50m 4s"
+}

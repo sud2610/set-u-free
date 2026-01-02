@@ -8,7 +8,7 @@ Discover trusted service providers offering free consultations. From dental care
 beauty to wellness - your perfect match is just a search away.
 
 ====================================================
-npm run push "Fixed on 28Dec"
+npm run push "Fixed on Final"
 ====================================================
 
 
@@ -48,6 +48,8 @@ npx ts-node --project tsconfig.seed.json scripts/create-admin.ts <email> <passwo
 npx ts-node --project tsconfig.seed.json scripts/create-admin.ts admin@freesetu.com MySecurePass123 "Sudhir Admin"
 
 npx ts-node --project tsconfig.seed.json scripts/create-admin.ts contact.freesetu@gmail.com MySecurePass123 "Sudhir Admin"
+
+npx ts-node --project tsconfig.seed.json scripts/create-admin.ts sudhir@freesetu.com Melbourne2020@123 "Sudhir Admin"
 
 
 

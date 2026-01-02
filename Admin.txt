@@ -1,0 +1,34 @@
+PS C:\Sudhir\Code\FreeSetu_200> npx ts-node --project tsconfig.seed.json scripts/create-admin.ts sudhir@freesetu.com Melbourne2020@123 "Sudhir Admin"
+👤 Create Admin User Script
+==================================================
+
+📧 Email: sudhir@freesetu.com
+👤 Name: Sudhir Admin
+
+📝 Creating user in Firebase Auth...
+   ✅ Auth user created with UID: QXDWMpo1ZuPcFwbsGgzUGTAnH8e2
+📝 Creating user document in Firestore...
+   ✅ Firestore document created!
+
+==================================================
+✅ Admin user created successfully!
+==================================================
+
+📧 Email: sudhir@freesetu.com
+🔑 Password: Melbourne2020@123
+👤 Name: Sudhir Admin
+🆔 UID: QXDWMpo1ZuPcFwbsGgzUGTAnH8e2
+👑 Role: admin
+
+🎯 You can now log in at /login with these credentials
+   and access the admin panel at /admin
+
+   ================================================================
+
+   Usage Examples:
+1. Verify ALL unverified providers:
+npx ts-node --project tsconfig.seed.json scripts/verify-providers.ts all
+2. Verify specific providers by UID:
+npx ts-node --project tsconfig.seed.json scripts/verify-providers.ts uid1,uid2,uid3
+3. Verify a single provider:
+npx ts-node --project tsconfig.seed.json scripts

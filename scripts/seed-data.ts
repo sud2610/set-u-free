@@ -438,6 +438,7 @@ async function seedProviders(
         rating: provider.rating || 0,
         reviewCount: provider.reviewCount || 0,
         verified: provider.verified || false,
+        status: 'approved',
         profileImage: profileImage,
         latitude: provider.latitude,
         longitude: provider.longitude,
