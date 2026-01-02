@@ -230,6 +230,8 @@ function getCategoryImage(categories: string[], categoryImageMap: Map<string, st
   return '';
 }
 
+
+
 /**
  * Load all provider JSON files from scraped_data folder
  */

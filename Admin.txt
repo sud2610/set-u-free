@@ -2,6 +2,8 @@ PS C:\Sudhir\Code\FreeSetu_200> npx ts-node --project tsconfig.seed.json scripts
 👤 Create Admin User Script
 ==================================================
 
+npx ts-node --project tsconfig.seed.json scripts/create-admin.ts sudhir@freesetu.com Melbourne2020@123 "Sudhir Admin"
+
 📧 Email: sudhir@freesetu.com
 👤 Name: Sudhir Admin
 

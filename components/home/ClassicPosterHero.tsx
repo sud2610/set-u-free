@@ -13,65 +13,65 @@ const fallbackGradients = [
   'from-indigo-500 to-violet-500',
 ];
 
-// Classic culturally familiar poster collections with multiple fallback URLs
+// Service-focused poster collections aligned with Set-U-Free's mission
 const posterCollections = [
   {
-    id: 'movies',
+    id: 'health',
     posters: [
       { 
-        src: 'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=300&q=80', 
-        alt: 'Cinema',
-        fallbackIcon: '🎬'
+        src: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=300&q=80', 
+        alt: 'Healthcare Consultation',
+        fallbackIcon: '👨‍⚕️'
       },
       { 
-        src: 'https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=300&q=80', 
-        alt: 'Classic Film',
-        fallbackIcon: '🎥'
+        src: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=300&q=80', 
+        alt: 'Dental Checkup',
+        fallbackIcon: '🦷'
       },
       { 
-        src: 'https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=300&q=80', 
-        alt: 'Movie Theater',
-        fallbackIcon: '🎞️'
+        src: 'https://images.unsplash.com/photo-1577401239170-897942555fb3?w=300&q=80', 
+        alt: 'Vision Testing',
+        fallbackIcon: '👁️'
       },
     ]
   },
   {
-    id: 'music',
+    id: 'legal',
     posters: [
       { 
-        src: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=300&q=80', 
-        alt: 'Vinyl Records',
-        fallbackIcon: '🎵'
+        src: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=300&q=80', 
+        alt: 'Legal Consultation',
+        fallbackIcon: '⚖️'
       },
       { 
-        src: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=300&q=80', 
-        alt: 'Concert',
-        fallbackIcon: '🎸'
+        src: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=300&q=80', 
+        alt: 'Migration Planning',
+        fallbackIcon: '🛂'
       },
       { 
-        src: 'https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=300&q=80', 
-        alt: 'Guitar',
-        fallbackIcon: '🎤'
+        src: 'https://images.unsplash.com/photo-1521791055366-0d553872125f?w=300&q=80', 
+        alt: 'Legal Documents',
+        fallbackIcon: '📋'
       },
     ]
   },
   {
-    id: 'culture',
+    id: 'wellbeing',
     posters: [
       { 
-        src: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&q=80', 
-        alt: 'Australian Landscape',
-        fallbackIcon: '🏔️'
+        src: 'https://images.unsplash.com/photo-1573497620053-ea5300f94f21?w=300&q=80', 
+        alt: 'Mental Health Support',
+        fallbackIcon: '🧠'
       },
       { 
-        src: 'https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?w=300&q=80', 
-        alt: 'Sydney Opera House',
-        fallbackIcon: '🏛️'
+        src: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=300&q=80', 
+        alt: 'Physical Therapy',
+        fallbackIcon: '🏥'
       },
       { 
-        src: 'https://images.unsplash.com/photo-1529108190281-9a4f620bc2d8?w=300&q=80', 
-        alt: 'Beach Culture',
-        fallbackIcon: '🏖️'
+        src: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=300&q=80', 
+        alt: 'Healthy Nutrition',
+        fallbackIcon: '🥗'
       },
     ]
   }
