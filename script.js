@@ -16,9 +16,6 @@ const WHEEL_DEFINITIONS = {
     }
 };
 
-// FIX: Normalise all wheel values to strings for consistent type handling.
-// This eliminates the int/string mixing that caused fragile comparisons
-// (e.g. parseInt('00') === NaN, which silently broke color lookups).
 function normaliseWheel(def) {
     return {
         wheel: def.wheel.map(String),
@@ -41,27 +38,39 @@ function getWheelConfiguration(tableType) {
 }
 
 // ============================================
-// CLUSTER ANALYSIS CONSTANTS
+// JUMP PATTERN CONSTANTS
 // ============================================
 
-// The number of recent spins used for cluster analysis.
-// Kept separate from the spin history length (20) so the UI can label it clearly.
-const CLUSTER_WINDOW = 10;
+// How many recent spins to analyse
+const ANALYSIS_WINDOW = 10;
 
-// Minimum wheel-position separation between predicted sector centres.
-// Prevents the top-3 predictions from being near-duplicates when clustering
-// is tight — each sector centre must be at least this many positions apart.
-const MIN_SECTOR_SEPARATION = 5;
+// ±1 slot tolerance when matching jump gaps
+const GAP_TOLERANCE = 1;
+
+// Minimum number of consistent gaps needed to trust a pattern
+const MIN_PATTERN_MATCHES = 3;
 
 // ============================================
-// APPLICATION STATE & LOGIC
+// CORE: CLOCKWISE GAP LOGIC
+//
+// Returns how many slots clockwise you travel going from posA → posB.
+// Example: wheel length 38, posA=5, posB=3
+//   clockwise = (3 - 5 + 38) % 38 = 36 slots clockwise
+//   (anti-clockwise would only be 2, but we always measure clockwise)
+// ============================================
+function clockwiseGap(posA, posB, wheelLen) {
+    return (posB - posA + wheelLen) % wheelLen;
+}
+
+// ============================================
+// APPLICATION STATE
 // ============================================
 const app = {
-    spins: [],           // Sliding window of last 20 spins (normalised strings)
+    spins: [],          // Sliding window, max 20, oldest→newest, normalised strings
     predictions: [],
-    clusterScore: 0,
+    patternResult: null, // { dominantGap, matchCount, consistency, gaps[] }
     tableStatus: null,
-    frequency: {},       // Hit counts within the current 20-spin window
+    frequency: {},
     currentTableType: 'triple-zero',
     wheelConfig: getWheelConfiguration('triple-zero'),
 
@@ -70,7 +79,7 @@ const app = {
         this.wheelConfig = getWheelConfiguration(tableType);
         this.spins = [];
         this.predictions = [];
-        this.clusterScore = 0;
+        this.patternResult = null;
         this.tableStatus = null;
         this.initFrequency();
         this.initializeGrid();
@@ -79,9 +88,7 @@ const app = {
 
     initFrequency() {
         this.frequency = {};
-        this.wheelConfig.wheel.forEach(num => {
-            this.frequency[num] = 0;
-        });
+        this.wheelConfig.wheel.forEach(num => { this.frequency[num] = 0; });
     },
 
     getNumberColor(num) {
@@ -92,16 +99,14 @@ const app = {
     },
 
     addSpin(number) {
-        // Normalise to string on entry so all internal state is consistent
         const n = String(number);
-
         if (this.spins.length >= 20) {
             const removed = this.spins.shift();
             this.frequency[removed]--;
         }
         this.spins.push(n);
         this.frequency[n]++;
-        this.detectCluster();
+        this.analyseJumpPattern();
         this.render();
     },
 
@@ -110,9 +115,9 @@ const app = {
             const removed = this.spins.pop();
             this.frequency[removed]--;
             this.predictions = [];
-            this.clusterScore = 0;
+            this.patternResult = null;
             this.tableStatus = null;
-            this.detectCluster();
+            this.analyseJumpPattern();
             this.render();
         }
     },
@@ -121,133 +126,129 @@ const app = {
         if (this.spins.length > 0) {
             this.spins = [];
             this.predictions = [];
-            this.clusterScore = 0;
+            this.patternResult = null;
             this.tableStatus = null;
             this.initFrequency();
             this.render();
         }
     },
 
-    detectCluster() {
-        if (this.spins.length < 5) {
-            this.clusterScore = 0;
-            this.tableStatus = null;
-            return;
-        }
+    // ============================================
+    // NEW LOGIC: CLOCKWISE JUMP PATTERN ANALYSIS
+    //
+    // For spins [21, 34, 8, 29, 3, 15, 0, 24, 12, 31]:
+    //
+    // 1. Find each number's position on the physical wheel
+    // 2. Measure the CLOCKWISE gap between each consecutive pair:
+    //    21→34 = X slots, 34→8 = Y slots, 8→29 = Z slots ...
+    // 3. Find which gap value repeats the most (within ±1 tolerance)
+    // 4. That's the "dominant gap" — the dealer's consistent throw pattern
+    // 5. Apply that gap to the LAST spin to predict where the ball lands next
+    // ============================================
+    analyseJumpPattern() {
+        this.predictions = [];
+        this.patternResult = null;
+        this.tableStatus = null;
 
-        // Use only the most recent CLUSTER_WINDOW spins for analysis
-        const recentSpins = this.spins.slice(-CLUSTER_WINDOW);
+        if (this.spins.length < 3) return;
 
-        // FIX: Filter out any -1 indexes (guard against values missing from wheel)
-        const indexes = recentSpins
-            .map(n => this.wheelConfig.wheel.indexOf(n))
+        const wheel = this.wheelConfig.wheel;
+        const wheelLen = wheel.length;
+        const recent = this.spins.slice(-ANALYSIS_WINDOW);
+
+        // Step 1: Wheel positions for recent spins
+        const positions = recent
+            .map(n => wheel.indexOf(n))
             .filter(i => i !== -1);
 
-        if (indexes.length === 0) {
-            this.clusterScore = 0;
-            this.tableStatus = null;
+        if (positions.length < 3) return;
+
+        // Step 2: Clockwise gap between every consecutive pair of spins
+        const gaps = [];
+        for (let i = 0; i < positions.length - 1; i++) {
+            gaps.push(clockwiseGap(positions[i], positions[i + 1], wheelLen));
+        }
+
+        // Step 3: Find the most repeated gap (±1 tolerance)
+        // For each unique gap, count how many other gaps are within ±1 of it
+        let bestGap = null;
+        let bestCount = 0;
+
+        for (let i = 0; i < gaps.length; i++) {
+            const matchCount = gaps.filter(g => Math.abs(g - gaps[i]) <= GAP_TOLERANCE).length;
+            if (matchCount > bestCount) {
+                bestCount = matchCount;
+                bestGap = gaps[i];
+            }
+        }
+
+        // Step 4: Is the pattern strong enough?
+        if (bestCount < MIN_PATTERN_MATCHES) {
+            this.tableStatus = {
+                label: '✗ NO PATTERN',
+                class: 'status-random',
+                desc: `Only ${bestCount} matching gaps — need ${MIN_PATTERN_MATCHES}`
+            };
+            this.patternResult = { gaps, dominantGap: bestGap, matchCount: bestCount, consistency: 0, totalGaps: gaps.length };
             return;
         }
 
-        const wheelLen = this.wheelConfig.wheel.length;
-        let bestCluster = 0;
+        // Step 5: Consistency = % of gaps that match the dominant gap
+        const consistency = Math.round((bestCount / gaps.length) * 100);
 
-        for (let i = 0; i < wheelLen; i++) {
-            let count = 0;
-            for (const idx of indexes) {
-                const dist = Math.min(
-                    Math.abs(i - idx),
-                    wheelLen - Math.abs(i - idx)
-                );
-                if (dist <= 2) count++;
-            }
-            bestCluster = Math.max(bestCluster, count);
-        }
+        this.patternResult = { gaps, dominantGap: bestGap, matchCount: bestCount, consistency, totalGaps: gaps.length };
 
-        // FIX: Divide by recentSpins.length (not this.spins.length) so the score
-        // is measured against the same window the indexes came from.
-        this.clusterScore = Math.round((bestCluster / recentSpins.length) * 10);
-
-        if (this.clusterScore >= 8) {
-            this.tableStatus = { label: '💎 STRONG TABLE', class: 'status-strong', desc: 'Excellent clustering detected' };
-            this.generatePredictions(indexes, recentSpins.length);
-        } else if (this.clusterScore >= 6) {
-            this.tableStatus = { label: '✓ GOOD TABLE', class: 'status-good', desc: 'Sector clustering detected' };
-            this.generatePredictions(indexes, recentSpins.length);
-        } else if (this.clusterScore >= 4) {
-            this.tableStatus = { label: '~ WEAK CLUSTER', class: 'status-weak', desc: 'Weak clustering pattern' };
-            this.predictions = [];
+        if (consistency >= 80) {
+            this.tableStatus = { label: '💎 STRONG PATTERN', class: 'status-strong', desc: `${consistency}% gaps consistent` };
+        } else if (consistency >= 60) {
+            this.tableStatus = { label: '✓ GOOD PATTERN',   class: 'status-good',   desc: `${consistency}% gaps consistent` };
         } else {
-            this.tableStatus = { label: '✗ RANDOM TABLE', class: 'status-random', desc: 'No clear pattern' };
-            this.predictions = [];
+            this.tableStatus = { label: '~ WEAK PATTERN',   class: 'status-weak',   desc: `${consistency}% gaps consistent` };
+        }
+
+        // Step 6: Predict — apply dominant gap (and ±1) from last known position
+        if (consistency >= 60) {
+            this.generateJumpPredictions(positions, bestGap, consistency, wheelLen);
         }
     },
 
-    // FIX: Accept windowSize so confidence is computed against the correct denominator
-    generatePredictions(indexes, windowSize) {
-        if (this.clusterScore < 6) {
-            this.predictions = [];
-            return;
-        }
+    generateJumpPredictions(positions, dominantGap, consistency, wheelLen) {
+        const wheel = this.wheelConfig.wheel;
+        const lastPos = positions[positions.length - 1];
 
-        const wheelLen = this.wheelConfig.wheel.length;
+        // Three predictions: exact gap, gap+1, gap-1
+        const offsets = [0, 1, -1];
 
-        // Score every wheel position by how many recent spins fall within ±2
-        const sectorScore = this.wheelConfig.wheel.map((_, i) => {
-            let score = 0;
-            for (const idx of indexes) {
-                const dist = Math.min(
-                    Math.abs(i - idx),
-                    wheelLen - Math.abs(i - idx)
-                );
-                if (dist <= 2) score++;
-            }
-            return { pos: i, score };
-        });
+        this.predictions = offsets.map((offset, i) => {
+            const gapUsed = (dominantGap + offset + wheelLen) % wheelLen;
+            const centre = (lastPos + gapUsed) % wheelLen;
 
-        sectorScore.sort((a, b) => b.score - a.score);
-
-        // FIX: Enforce minimum separation between sector centres so the top-3
-        // predictions don't all point at the same tight cluster on the wheel.
-        this.predictions = [];
-        const chosenPositions = [];
-
-        for (const candidate of sectorScore) {
-            if (this.predictions.length >= 3) break;
-
-            // Check this candidate is far enough from all already-chosen centres
-            const tooClose = chosenPositions.some(chosen => {
-                const dist = Math.min(
-                    Math.abs(candidate.pos - chosen),
-                    wheelLen - Math.abs(candidate.pos - chosen)
-                );
-                return dist < MIN_SECTOR_SEPARATION;
-            });
-
-            if (tooClose) continue;
-
-            chosenPositions.push(candidate.pos);
-
-            // Build the ±2 sector around this centre
+            // Build ±2 sector around predicted centre (5 numbers total)
             const sector = [];
-            for (let i = -2; i <= 2; i++) {
-                const index = (candidate.pos + i + wheelLen) % wheelLen;
-                sector.push(this.wheelConfig.wheel[index]);
+            for (let j = -2; j <= 2; j++) {
+                sector.push(wheel[(centre + j + wheelLen) % wheelLen]);
             }
 
-            this.predictions.push({
-                rank: this.predictions.length + 1,
+            // Primary gets full confidence, adjacents get slightly less
+            const confidence = i === 0 ? consistency : Math.max(consistency - (i * 10), 10);
+
+            return {
+                rank: i + 1,
                 sector,
-                // FIX: Use windowSize (recentSpins.length) as denominator
-                confidence: Math.round((candidate.score / windowSize) * 100)
-            });
-        }
+                centreNumber: wheel[centre],
+                gapUsed,
+                confidence,
+                label: i === 0 ? `🎯 Primary — +${gapUsed} slots` : `~ Adjacent — +${gapUsed} slots`
+            };
+        });
     },
 
+    // ============================================
+    // RENDER METHODS
+    // ============================================
     initializeGrid() {
         const grid = document.getElementById('numbersGrid');
         grid.innerHTML = '';
-
         this.wheelConfig.wheel.forEach(num => {
             const btn = document.createElement('button');
             btn.className = `number-btn ${this.getNumberColor(num)}`;
@@ -274,16 +275,41 @@ const app = {
             return;
         }
 
-        this.spins.forEach(spin => {
+        const wheel = this.wheelConfig.wheel;
+        const wheelLen = wheel.length;
+
+        this.spins.forEach((spin, i) => {
+            // The spin chip
             const chip = document.createElement('div');
             chip.className = `chip ${this.getNumberColor(spin)}`;
             chip.textContent = spin;
             container.appendChild(chip);
+
+            // Between chips: show the clockwise gap, highlighted if it matches dominant pattern
+            if (i < this.spins.length - 1) {
+                const posA = wheel.indexOf(spin);
+                const posB = wheel.indexOf(this.spins[i + 1]);
+                if (posA !== -1 && posB !== -1) {
+                    const gap = clockwiseGap(posA, posB, wheelLen);
+                    const isDominant = this.patternResult &&
+                        Math.abs(gap - this.patternResult.dominantGap) <= GAP_TOLERANCE;
+
+                    const arrow = document.createElement('div');
+                    arrow.className = `gap-arrow ${isDominant ? 'gap-match' : 'gap-miss'}`;
+                    arrow.textContent = `→${gap}`;
+                    arrow.title = `Clockwise jump: ${gap} slots`;
+                    container.appendChild(arrow);
+                }
+            }
         });
     },
 
     renderScore() {
-        document.getElementById('scoreDisplay').textContent = this.clusterScore;
+        // Show dominant gap instead of cluster score
+        const gapDisplay = this.patternResult && this.patternResult.dominantGap !== null
+            ? this.patternResult.dominantGap
+            : '—';
+        document.getElementById('scoreDisplay').textContent = gapDisplay;
 
         if (!this.tableStatus) {
             document.getElementById('statusLabel').textContent = 'ENTER SPINS';
@@ -294,7 +320,8 @@ const app = {
 
         document.getElementById('statusLabel').textContent = this.tableStatus.label;
         document.getElementById('statusLabel').className = `status-label ${this.tableStatus.class}`;
-        document.getElementById('statusBarFill').style.width = (this.clusterScore * 10) + '%';
+        document.getElementById('statusBarFill').style.width =
+            (this.patternResult ? this.patternResult.consistency : 0) + '%';
     },
 
     renderPredictions() {
@@ -305,26 +332,34 @@ const app = {
             return;
         }
 
-        let html = '';
+        const lastSpin = this.spins[this.spins.length - 1];
+        const pr = this.patternResult;
+
+        let html = `
+            <div class="predictions-note">
+                Last spin: <strong>${lastSpin}</strong>
+                &nbsp;|&nbsp; Dominant jump: <strong>+${pr.dominantGap} slots clockwise</strong>
+                &nbsp;|&nbsp; Consistency: <strong>${pr.consistency}%</strong>
+                (${pr.matchCount} of ${pr.totalGaps} gaps matched ±${GAP_TOLERANCE})
+            </div>`;
+
         this.predictions.forEach(pred => {
             html += `
-                <div class="prediction-card">
+                <div class="prediction-card ${pred.rank === 1 ? 'primary' : 'secondary'}">
                     <div class="prediction-header">
-                        <div class="prediction-rank">🎯 Sector #${pred.rank}</div>
+                        <div class="prediction-rank">${pred.label}</div>
                         <div class="prediction-confidence">${pred.confidence}% Confidence</div>
                     </div>
+                    <div class="prediction-subtext">Centre: <strong>${pred.centreNumber}</strong> · 5-number sector</div>
                     <div class="sector-numbers">
-                        ${pred.sector.map(num => `<div class="sector-chip ${this.getNumberColor(num)}">${num}</div>`).join('')}
+                        ${pred.sector.map(num =>
+                            `<div class="sector-chip ${this.getNumberColor(num)}">${num}</div>`
+                        ).join('')}
                     </div>
-                    <div class="wheel-visual">
-                        ${this.renderWheelStrip(pred.sector)}
-                    </div>
-                </div>
-            `;
+                    <div class="wheel-visual">${this.renderWheelStrip(pred.sector)}</div>
+                </div>`;
         });
 
-        // FIX: Label makes clear predictions are based on last CLUSTER_WINDOW spins
-        html = `<div class="predictions-note">Analysis based on last ${Math.min(this.spins.length, CLUSTER_WINDOW)} spins</div>` + html;
         section.innerHTML = html;
     },
 
@@ -337,15 +372,12 @@ const app = {
             const color = this.getNumberColor(num);
             const isPredicted = sectorSet.has(num);
             const isHistoric = spinSet.has(num);
-
             let bgColor = '#2c3e50';
             if (color === 'red') bgColor = '#e74c3c';
             else if (color === 'green') bgColor = '#00ff41';
-
             const classes = isPredicted ? 'predicted' : (isHistoric ? 'historic' : '');
             const opacity = isPredicted ? 1 : (isHistoric ? 0.6 : 0.3);
-
-            html += `<div class="wheel-segment ${classes}" style="background: ${bgColor}; opacity: ${opacity};"></div>`;
+            html += `<div class="wheel-segment ${classes}" style="background:${bgColor};opacity:${opacity};"></div>`;
         });
 
         html += '</div>';
@@ -354,14 +386,10 @@ const app = {
 
     renderHeatmap() {
         const maxFreq = Math.max(1, ...Object.values(this.frequency));
-
-        // FIX: Show ALL wheel numbers in the heatmap, not a hardcoded subset of 10.
-        // Numbers are sorted numerically (zeros last) so the grid is easy to scan.
         const allNums = [...this.wheelConfig.wheel].sort((a, b) => {
-            const aNum = parseFloat(a);
-            const bNum = parseFloat(b);
+            const aNum = parseFloat(a), bNum = parseFloat(b);
             if (isNaN(aNum) && isNaN(bNum)) return 0;
-            if (isNaN(aNum)) return 1;  // '00', '000' go to end
+            if (isNaN(aNum)) return 1;
             if (isNaN(bNum)) return -1;
             return aNum - bNum;
         });
@@ -373,34 +401,27 @@ const app = {
             const freq = this.frequency[num] || 0;
             const intensity = freq / maxFreq;
             const color = this.getNumberColor(num);
-
             const cell = document.createElement('div');
             cell.className = `heatmap-cell ${intensity > 0.4 ? 'hot' : ''}`;
             cell.textContent = num;
 
             let bgColor;
-            if (color === 'red') bgColor = `rgba(231, 76, 60, ${0.3 + intensity * 0.6})`;
-            else if (color === 'green') bgColor = `rgba(0, 255, 65, ${0.3 + intensity * 0.6})`;
-            else bgColor = `rgba(52, 73, 94, ${0.3 + intensity * 0.6})`;
+            if (color === 'red') bgColor = `rgba(231,76,60,${0.3 + intensity * 0.6})`;
+            else if (color === 'green') bgColor = `rgba(0,255,65,${0.3 + intensity * 0.6})`;
+            else bgColor = `rgba(52,73,94,${0.3 + intensity * 0.6})`;
 
             cell.style.background = bgColor;
             cell.style.color = freq > 0 ? '#fff' : 'rgba(255,255,255,0.3)';
             cell.style.fontWeight = freq > 0 ? '700' : '600';
-
             grid.appendChild(cell);
         });
 
-        const heatmapSection = document.getElementById('heatmapSection');
-        if (this.spins.length > 0) {
-            heatmapSection.classList.add('show');
-        } else {
-            heatmapSection.classList.remove('show');
-        }
+        document.getElementById('heatmapSection').classList.toggle('show', this.spins.length > 0);
     }
 };
 
 // ============================================
-// INITIALIZE APPLICATION
+// INITIALIZE
 // ============================================
 function initialize() {
     app.initFrequency();
