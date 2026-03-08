@@ -10,7 +10,7 @@
 
         /* ── CSS Variables ─────────────────────────────────────────────── */
         :root {
-            --bg: #1a1f2e;
+            --bg: #e2e4eb;
             --surface: #222838;
             --card: #263040;
             --border: #334158;
@@ -356,21 +356,13 @@
         .arc-pill.match {
             background: rgba(39, 174, 96, 0.12);
             border-color: #1a5a28;
-            color: #55d078;
+            color: #45c068;
         }
 
         .arc-pill.miss {
             background: rgba(192, 57, 43, 0.1);
             border-color: #5a1810;
             color: #c05050;
-        }
-
-        .arc-pill.outlier {
-            background: rgba(180, 140, 0, 0.12);
-            border-color: #5a4800;
-            color: #c8a820;
-            text-decoration: line-through;
-            opacity: 0.7;
         }
 
         /* ── Control buttons ─────────────────────────────────────────────── */
@@ -1105,86 +1097,26 @@
                 this.render();
             },
 
-            // ── Dominant arc analysis with outlier filtering ─────────────────
-            //
-            // Step 1: Find rough dominant arc from ALL valid arcs (±1 tol).
-            // Step 2: Compute mean and standard deviation of all arcs.
-            // Step 3: Drop any arc that deviates more than 1.5 × stdDev
-            //         from the rough dominant — these are the "random throws"
-            //         the dealer made that don't match their usual pattern.
-            // Step 4: Recompute dominant arc from the clean set only.
-            // Step 5: Consistency = clean matches / total arcs (including outliers)
-            //         so the score honestly reflects how noisy the session is.
-            //
+            // ── Dominant arc analysis ────────────────────────────────────────
             getArcAnalysis() {
                 const valid = this.arcs.filter(a => a !== null);
                 if (valid.length < 2) return null;
                 const tol = 1;
-                const wLen = this.cfg.wheel.length;
-
-                // ── Pass 1: rough dominant from all arcs ──────────────────────
-                let roughDom = null, roughCount = 0;
+                let domArc = null, domCount = 0;
                 for (const arc of valid) {
                     const c = valid.filter(a => Math.abs(a - arc) <= tol).length;
-                    if (c > roughCount) { roughCount = c; roughDom = arc; }
+                    if (c > domCount) { domCount = c; domArc = arc; }
                 }
-
-                // ── Outlier detection via standard deviation ──────────────────
-                // Mean and stdDev of all valid arcs
-                const mean = valid.reduce((s, a) => s + a, 0) / valid.length;
-                const stdDev = Math.sqrt(
-                    valid.reduce((s, a) => s + Math.pow(a - mean, 2), 0) / valid.length
-                );
-
-                // Threshold: 1.5 × stdDev from the rough dominant arc.
-                // If stdDev is very small (tight cluster), use a minimum of 3 slots
-                // so we don't over-aggressively drop arcs in a nearly-perfect series.
-                const threshold = Math.max(stdDev * 1.5, 3);
-
-                // Classify each arc
-                const annotations = this.arcs.map(a => {
-                    if (a === null) return 'none';
-                    return Math.abs(a - roughDom) > threshold ? 'outlier' : null; // fill below
-                });
-
-                // Clean arcs = valid arcs that are NOT outliers
-                const cleanArcs = valid.filter(a => Math.abs(a - roughDom) <= threshold);
-                const outlierCount = valid.length - cleanArcs.length;
-
-                // ── Pass 2: recompute dominant from clean arcs only ───────────
-                let domArc = roughDom, domCount = 0;
-                if (cleanArcs.length >= 2) {
-                    for (const arc of cleanArcs) {
-                        const c = cleanArcs.filter(a => Math.abs(a - arc) <= tol).length;
-                        if (c > domCount) { domCount = c; domArc = arc; }
-                    }
-                } else {
-                    // Fallback: not enough clean arcs, use rough dominant
-                    domArc = roughDom;
-                    domCount = roughCount;
-                }
-
-                // ── Final annotations (match / miss / outlier) ─────────────────
-                const finalAnnotations = this.arcs.map(a => {
-                    if (a === null) return 'none';
-                    if (Math.abs(a - roughDom) > threshold) return 'outlier';
-                    return Math.abs(a - domArc) <= tol ? 'match' : 'miss';
-                });
-
-                // Consistency scored against ALL arcs (including outliers) so the
-                // user gets an honest picture of how reliable the dealer pattern is.
-                const consistency = Math.round(domCount / valid.length * 100);
-
+                const wLen = this.cfg.wheel.length;
                 return {
                     domArc,
                     domCount,
                     total: valid.length,
-                    cleanTotal: cleanArcs.length,
-                    outlierCount,
-                    consistency,
+                    consistency: Math.round(domCount / valid.length * 100),
                     netSlots: domArc % wLen,
-                    annotations: finalAnnotations,
-                    threshold: Math.round(threshold)
+                    annotations: this.arcs.map(a =>
+                        a === null ? 'none' : Math.abs(a - domArc) <= tol ? 'match' : 'miss'
+                    )
                 };
             },
 
@@ -1273,7 +1205,7 @@
                         const arcVal = this.arcs[i - 1];
                         const anno = arc ? arc.annotations[i - 1] : 'none';
                         const net = arcVal !== null ? arcVal % this.cfg.wheel.length : '?';
-                        html += `<div class="arc-pill ${anno}" title="${anno === 'outlier' ? 'Outlier — excluded from pattern' : anno === 'match' ? 'Matches dominant arc' : 'Arc: ' + arcVal + ' slots'}">↻${this.rotations}+${net}${anno === 'outlier' ? ' ⚡' : ''}</div>`;
+                        html += `<div class="arc-pill ${anno}" title="Arc: ${arcVal} slots">↻${this.rotations}+${net}</div>`;
                     }
                     html += `
         <div class="spin-group">
@@ -1311,13 +1243,8 @@
         <div class="arc-stat-val" style="color:${arc.consistency >= 70 ? '#27ae60' : arc.consistency >= 50 ? '#f39c12' : '#c0392b'}">${arc.consistency}<small style="font-size:0.5rem">%</small></div>
       </div>
       <div class="arc-stat">
-        <div class="arc-stat-label">CLEAN / OUTLIERS</div>
-        <div class="arc-stat-val">
-          <span style="color:#55d078">${arc.cleanTotal}</span>
-          <small style="font-size:0.5rem;color:var(--text-dim)"> / </small>
-          <span style="color:${arc.outlierCount > 0 ? '#c8a820' : 'var(--text-dim)'}">${arc.outlierCount}</span>
-          <small style="font-size:0.45rem;color:var(--text-dim)"> excl.</small>
-        </div>
+        <div class="arc-stat-label">MATCHED ARCS</div>
+        <div class="arc-stat-val">${arc.domCount}<small style="font-size:0.5rem;color:var(--text-dim)"> / ${arc.total}</small></div>
       </div>`;
             },
 
