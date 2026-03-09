@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dealer Signature Analyzer - Roulette Analysis</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+            color: #e0e0e0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #00d4aa;
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #00d4aa;
+            text-shadow: 0 0 10px rgba(0, 212, 170, 0.5);
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            color: #888;
+            font-size: 0.9em;
+        }
+
+        .controls-section {
+            background: rgba(20, 25, 45, 0.8);
+            border: 1px solid #00d4aa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 25px;
+            backdrop-filter: blur(10px);
+        }
+
+        .control-group {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+
+        .control-group:last-child {
+            margin-bottom: 0;
+        }
+
+        label {
+            font-weight: bold;
+            color: #00d4aa;
+            min-width: 150px;
+        }
+
+        select,
+        input {
+            background: rgba(10, 14, 39, 0.9);
+            border: 1px solid #00d4aa;
+            color: #e0e0e0;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        select:hover,
+        input:hover {
+            border-color: #00ff88;
+            box-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+        }
+
+        select:focus,
+        input:focus {
+            outline: none;
+            border-color: #00ff88;
+            box-shadow: 0 0 15px rgba(0, 255, 136, 0.5);
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        button {
+            background: linear-gradient(135deg, #00d4aa 0%, #00a884 100%);
+            border: none;
+            color: #0a0e27;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9em;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 212, 170, 0.4);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        button.danger {
+            background: linear-gradient(135deg, #d4004a 0%, #a80035 100%);
+            color: #fff;
+        }
+
+        button.danger:hover {
+            box-shadow: 0 5px 15px rgba(212, 0, 74, 0.4);
+        }
+
+        .number-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+            gap: 8px;
+            margin-bottom: 25px;
+            background: rgba(20, 25, 45, 0.8);
+            border: 1px solid #00d4aa;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 100%;
+        }
+
+        .number-btn {
+            aspect-ratio: 1;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .number-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+        }
+
+        .number-btn.red {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: #fff;
+        }
+
+        .number-btn.black {
+            background: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%);
+            color: #fff;
+            border: 1px solid #444;
+        }
+
+        .number-btn.green {
+            background: linear-gradient(135deg, #00d4aa 0%, #00a884 100%);
+            color: #0a0e27;
+        }
+
+        .spin-history {
+            background: rgba(20, 25, 45, 0.8);
+            border: 1px solid #00d4aa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+
+        .spin-history h3 {
+            color: #00d4aa;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .history-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+            min-height: 50px;
+            align-items: center;
+        }
+
+        .chip {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.85em;
+            cursor: pointer;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+            transition: all 0.2s ease;
+        }
+
+        .chip:hover {
+            transform: scale(1.1);
+        }
+
+        .chip.red {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: #fff;
+        }
+
+        .chip.black {
+            background: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%);
+            color: #fff;
+            border: 1px solid #555;
+        }
+
+        .chip.green {
+            background: linear-gradient(135deg, #00d4aa 0%, #00a884 100%);
+            color: #0a0e27;
+        }
+
+        .empty-history {
+            color: #888;
+            font-style: italic;
+        }
+
+        .wheel-strip {
+            background: rgba(20, 25, 45, 0.8);
+            border: 1px solid #00d4aa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 25px;
+            overflow-x: auto;
+        }
+
+        .wheel-strip h3 {
+            color: #00d4aa;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .wheel-visual {
+            display: flex;
+            gap: 4px;
+            min-width: min-content;
+            padding: 10px 0;
+        }
+
+        .wheel-pocket {
+            width: 35px;
+            height: 35px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75em;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            transition: all 0.2s ease;
+            flex-shrink: 0;
+        }
+
+        .wheel-pocket.recent {
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+            transform: scale(1.15);
+        }
+
+        .wheel-pocket.signature {
+            box-shadow: 0 0 15px rgba(0, 255, 136, 0.8);
+            border: 2px solid #00ff88;
+        }
+
+        .wheel-pocket.predicted {
+            opacity: 0.7;
+            border: 1px dashed #ffd700;
+        }
+
+        .analysis-panel {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .analysis-card {
+            background: rgba(20, 25, 45, 0.8);
+            border: 1px solid #00d4aa;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .analysis-card h4 {
+            color: #00d4aa;
+            margin-bottom: 10px;
+            font-size: 0.95em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .analysis-value {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #00ff88;
+            margin-bottom: 5px;
+        }
+
+        .analysis-label {
+            color: #888;
+            font-size: 0.85em;
+        }
+
+        .signature-strength {
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .signature-strength.weak {
+            background: rgba(100, 100, 100, 0.3);
+            border: 1px solid #888;
+            color: #ccc;
+        }
+
+        .signature-strength.moderate {
+            background: rgba(255, 193, 7, 0.2);
+            border: 1px solid #ffc107;
+            color: #ffc107;
+        }
+
+        .signature-strength.strong {
+            background: rgba(0, 255, 136, 0.2);
+            border: 1px solid #00ff88;
+            color: #00ff88;
+        }
+
+        .recommended-numbers {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .rec-number {
+            background: linear-gradient(135deg, #ffd700 0%, #ffaa00 100%);
+            color: #0a0e27;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1em;
+        }
+
+        .chart-container {
+            background: rgba(20, 25, 45, 0.8);
+            border: 1px solid #00d4aa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+
+        .chart-container h3 {
+            color: #00d4aa;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+        }
+
+        .chart {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            height: 250px;
+            gap: 15px;
+        }
+
+        .bar {
+            flex: 1;
+            background: linear-gradient(180deg, #00d4aa 0%, #00a884 100%);
+            border-radius: 5px 5px 0 0;
+            min-height: 20px;
+            position: relative;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 212, 170, 0.3);
+        }
+
+        .bar:hover {
+            box-shadow: 0 4px 12px rgba(0, 212, 170, 0.6);
+        }
+
+        .bar-label {
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #888;
+            font-size: 0.85em;
+            font-weight: bold;
+        }
+
+        .bar-value {
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #00ff88;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+
+        .info-text {
+            color: #888;
+            font-size: 0.9em;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .number-grid {
+                grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+                gap: 6px;
+                padding: 15px;
+            }
+
+            .number-btn {
+                font-size: 0.9em;
+            }
+
+            .analysis-panel {
+                grid-template-columns: 1fr;
+            }
+
+            .control-group {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            label {
+                min-width: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 1.4em;
+            }
+
+            .number-grid {
+                grid-template-columns: repeat(auto-fit, minmax(35px, 1fr));
+                gap: 4px;
+                padding: 10px;
+            }
+
+            .chip {
+                width: 35px;
+                height: 35px;
+                font-size: 0.75em;
+            }
+
+            .wheel-pocket {
+                width: 30px;
+                height: 30px;
+                font-size: 0.7em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>🎰 Dealer Signature Analyzer</h1>
+            <p class="subtitle">Detect repeating landing sector clusters for strategic advantage</p>
+        </header>
+
+        <div class="controls-section">
+            <div class="control-group">
+                <label for="tableType">Roulette Table Type:</label>
+                <select id="tableType">
+                    <option value="european">European (Single Zero)</option>
+                    <option value="american">American (Double Zero)</option>
+                    <option value="tripleZero">Triple Zero</option>
+                </select>
+                <div class="button-group">
+                    <button onclick="undoLastSpin()">↶ Undo Last Spin</button>
+                    <button onclick="clearHistory()" class="danger">🗑️ Clear History</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="spin-history">
+            <h3>Spin History (Last 100)</h3>
+            <div class="history-chips" id="historyChips">
+                <span class="empty-history">No spins recorded yet...</span>
+            </div>
+            <div class="info-text" id="spinCount">Total Spins: 0</div>
+        </div>
+
+        <div style="margin-bottom: 25px;">
+            <h3 style="color: #00d4aa; margin-bottom: 15px;">Number Selection</h3>
+            <div class="number-grid" id="numberGrid"></div>
+        </div>
+
+        <div class="wheel-strip">
+            <h3>Wheel Strip Visualization</h3>
+            <p class="info-text">Green: Signature Sector | Gold Border: Predicted Numbers | Yellow Glow: Recent Spins
+            </p>
+            <div class="wheel-visual" id="wheelVisual"></div>
+        </div>
+
+        <div class="analysis-panel" id="analysisPanel">
+            <div class="analysis-card">
+                <h4>📊 Total Spins</h4>
+                <div class="analysis-value" id="totalSpins">0</div>
+                <div class="analysis-label">Recorded spins</div>
+            </div>
+
+            <div class="analysis-card">
+                <h4>🎯 Most Frequent Sector</h4>
+                <div class="analysis-value" id="mostFrequentSector">—</div>
+                <div class="analysis-label">Highest concentration</div>
+            </div>
+
+            <div class="analysis-card">
+                <h4>📈 Sector Frequency</h4>
+                <div class="analysis-value" id="sectorFrequency">—</div>
+                <div class="analysis-label">Percentage of spins</div>
+            </div>
+
+            <div class="analysis-card">
+                <h4>💪 Signature Strength</h4>
+                <div class="analysis-value" id="confidenceScore">0/10</div>
+                <div id="strengthIndicator" class="signature-strength weak">
+                    No Signature Detected
+                </div>
+            </div>
+
+            <div class="analysis-card">
+                <h4>🎲 Neighbor Betting Sector</h4>
+                <div class="analysis-value" id="betSector">—</div>
+                <div class="analysis-label">Predicted center sector</div>
+                <div class="recommended-numbers" id="recommendedNumbers"></div>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <h3>Sector Distribution Chart</h3>
+            <div class="chart" id="chart"></div>
+        </div>
+    </div>
+
+    <script>
+        // Wheel configurations
+        const wheelConfigurations = {
+            european: [0, 32, 15, 19, 4, 21, 2, 25, 17, 34, 6, 27, 13, 36, 11, 30, 8, 23, 10, 5, 24, 16, 33, 1, 20, 14, 31, 9, 22, 18, 29, 7, 28, 12, 35, 3, 26],
+            american: [0, "00", 32, 15, 19, 4, 21, 2, 25, 17, 34, 6, 27, 13, 36, 11, 30, 8, 23, 10, 5, 24, 16, 33, 1, 20, 14, 31, 9, 22, 18, 29, 7, 28, 12, 35, 3, 26],
+            tripleZero: [0, "00", "000", 32, 15, 19, 4, 21, 2, 25, 17, 34, 6, 27, 13, 36, 11, 30, 8, 23, 10, 5, 24, 16, 33, 1, 20, 14, 31, 9, 22, 18, 29, 7, 28, 12, 35, 3, 26]
+        };
+
+        // Red numbers in roulette
+        const redNumbers = new Set([1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36]);
+
+        // State
+        let currentWheel = wheelConfigurations.european;
+        let spinHistory = [];
+        let sectorCounts = [0, 0, 0, 0, 0, 0, 0, 0];
+        const MAX_SPINS = 100;
+        const NUM_SECTORS = 8;
+
+        // Initialize
+        document.getElementById('tableType').addEventListener('change', updateWheelConfiguration);
+        initializeNumberGrid();
+        initializeChart();
+        updateDisplay();
+
+        function getWheelConfiguration() {
+            return currentWheel;
+        }
+
+        function updateWheelConfiguration() {
+            const tableType = document.getElementById('tableType').value;
+            currentWheel = wheelConfigurations[tableType];
+            initializeNumberGrid();
+            updateDisplay();
+        }
+
+        function getNumberColor(number) {
+            if (number === 0 || number === "00" || number === "000") {
+                return 'green';
+            }
+            return redNumbers.has(number) ? 'red' : 'black';
+        }
+
+        function initializeNumberGrid() {
+            const grid = document.getElementById('numberGrid');
+            grid.innerHTML = '';
+
+            currentWheel.forEach(number => {
+                const btn = document.createElement('button');
+                btn.className = `number-btn ${getNumberColor(number)}`;
+                btn.textContent = number;
+                btn.onclick = () => addSpin(number);
+                grid.appendChild(btn);
+            });
+        }
+
+        function addSpin(number) {
+            // Add to history
+            spinHistory.push(number);
+
+            // Keep only last 100
+            if (spinHistory.length > MAX_SPINS) {
+                spinHistory.shift();
+            }
+
+            // Calculate sector and update counts
+            const wheelIndex = currentWheel.indexOf(number);
+            const sector = calculateSector(wheelIndex);
+            sectorCounts[sector]++;
+
+            updateDisplay();
+        }
+
+        function calculateSector(wheelIndex) {
+            const sectorSize = currentWheel.length / NUM_SECTORS;
+            return Math.floor(wheelIndex / sectorSize);
+        }
+
+        function analyzeDealerSignature() {
+            if (spinHistory.length === 0) {
+                return {
+                    hasSig: false,
+                    mostFrequentSector: null,
+                    frequency: 0,
+                    confidence: 0,
+                    strength: 'weak'
+                };
+            }
+
+            const expectedFrequency = 100 / NUM_SECTORS; // 12.5%
+            let maxCount = Math.max(...sectorCounts);
+            let mostFrequentSector = sectorCounts.indexOf(maxCount);
+
+            const actualFrequency = (maxCount / spinHistory.length) * 100;
+            const frequencyRatio = actualFrequency / expectedFrequency;
+
+            // Confidence score (0-10)
+            let confidence = Math.min(frequencyRatio * 5, 10);
+
+            let strength = 'weak';
+            let hasSig = false;
+
+            if (actualFrequency >= 20) {
+                hasSig = true;
+                if (actualFrequency >= 25) {
+                    strength = 'strong';
+                    confidence = Math.min(confidence, 10);
+                } else {
+                    strength = 'moderate';
+                    confidence = Math.min(confidence, 8);
+                }
+            }
+
+            return {
+                hasSig,
+                mostFrequentSector,
+                frequency: actualFrequency,
+                confidence: Math.round(confidence),
+                maxCount,
+                expectedCount: expectedFrequency,
+                strength
+            };
+        }
+
+        function predictNeighborNumbers() {
+            const analysis = analyzeDealerSignature();
+            if (!analysis.hasSig) return [];
+
+            const sectorSize = currentWheel.length / NUM_SECTORS;
+            const sectorStart = analysis.mostFrequentSector * sectorSize;
+            const centerIndex = Math.floor(sectorStart + sectorSize / 2);
+
+            const neighbors = [];
+            for (let i = -2; i <= 2; i++) {
+                let idx = (centerIndex + i + currentWheel.length) % currentWheel.length;
+                neighbors.push(currentWheel[idx]);
+            }
+
+            return neighbors;
+        }
+
+        function undoLastSpin() {
+            if (spinHistory.length === 0) return;
+
+            const lastNumber = spinHistory.pop();
+            const wheelIndex = currentWheel.indexOf(lastNumber);
+            const sector = calculateSector(wheelIndex);
+            sectorCounts[sector]--;
+
+            if (sectorCounts[sector] < 0) {
+                sectorCounts[sector] = 0;
+            }
+
+            updateDisplay();
+        }
+
+        function clearHistory() {
+            if (confirm('Are you sure you want to clear all spin history?')) {
+                spinHistory = [];
+                sectorCounts = [0, 0, 0, 0, 0, 0, 0, 0];
+                updateDisplay();
+            }
+        }
+
+        function updateDisplay() {
+            updateSpinHistory();
+            updateAnalysisPanel();
+            updateWheelVisualization();
+            updateChart();
+        }
+
+        function updateSpinHistory() {
+            const container = document.getElementById('historyChips');
+            const countEl = document.getElementById('spinCount');
+
+            if (spinHistory.length === 0) {
+                container.innerHTML = '<span class="empty-history">No spins recorded yet...</span>';
+                countEl.textContent = 'Total Spins: 0';
+                return;
+            }
+
+            container.innerHTML = spinHistory.map(number => {
+                const color = getNumberColor(number);
+                return `<div class="chip ${color}">${number}</div>`;
+            }).join('');
+
+            countEl.textContent = `Total Spins: ${spinHistory.length}`;
+        }
+
+        function updateAnalysisPanel() {
+            const analysis = analyzeDealerSignature();
+
+            // Total spins
+            document.getElementById('totalSpins').textContent = spinHistory.length;
+
+            if (spinHistory.length === 0) {
+                document.getElementById('mostFrequentSector').textContent = '—';
+                document.getElementById('sectorFrequency').textContent = '—';
+                document.getElementById('confidenceScore').textContent = '0/10';
+                document.getElementById('betSector').textContent = '—';
+                document.getElementById('recommendedNumbers').innerHTML = '';
+                document.getElementById('strengthIndicator').className = 'signature-strength weak';
+                document.getElementById('strengthIndicator').textContent = 'No Data';
+                return;
+            }
+
+            // Most frequent sector
+            document.getElementById('mostFrequentSector').textContent = `S${analysis.mostFrequentSector + 1}`;
+
+            // Sector frequency
+            document.getElementById('sectorFrequency').textContent = `${analysis.frequency.toFixed(1)}%`;
+
+            // Confidence score
+            document.getElementById('confidenceScore').textContent = `${analysis.confidence}/10`;
+
+            // Strength indicator
+            const strengthEl = document.getElementById('strengthIndicator');
+            strengthEl.className = `signature-strength ${analysis.strength}`;
+
+            if (!analysis.hasSig) {
+                strengthEl.textContent = 'No Signature Detected';
+            } else if (analysis.strength === 'weak') {
+                strengthEl.textContent = '⚠️ Weak Signature';
+            } else if (analysis.strength === 'moderate') {
+                strengthEl.textContent = '⚡ Moderate Signature';
+            } else {
+                strengthEl.textContent = '💪 Strong Dealer Signature';
+            }
+
+            // Recommended numbers
+            const neighbors = predictNeighborNumbers();
+            if (neighbors.length > 0) {
+                document.getElementById('betSector').textContent = `S${analysis.mostFrequentSector + 1}`;
+                const recHTML = neighbors.map(n => `<div class="rec-number">${n}</div>`).join('');
+                document.getElementById('recommendedNumbers').innerHTML = recHTML;
+            } else {
+                document.getElementById('betSector').textContent = '—';
+                document.getElementById('recommendedNumbers').innerHTML = '';
+            }
+        }
+
+        function updateWheelVisualization() {
+            const container = document.getElementById('wheelVisual');
+            container.innerHTML = '';
+
+            const analysis = analyzeDealerSignature();
+            const neighbors = predictNeighborNumbers();
+            const recentNumbers = spinHistory.slice(-10);
+
+            currentWheel.forEach((number, index) => {
+                const pocket = document.createElement('div');
+                pocket.className = `wheel-pocket ${getNumberColor(number)}`;
+                pocket.textContent = number;
+
+                // Add classes for highlighting
+                if (recentNumbers.includes(number)) {
+                    pocket.classList.add('recent');
+                }
+
+                if (analysis.hasSig) {
+                    const sectorOfPocket = calculateSector(index);
+                    if (sectorOfPocket === analysis.mostFrequentSector) {
+                        pocket.classList.add('signature');
+                    }
+
+                    if (neighbors.includes(number)) {
+                        pocket.classList.add('predicted');
+                    }
+                }
+
+                container.appendChild(pocket);
+            });
+        }
+
+        function initializeChart() {
+            updateChart();
+        }
+
+        function updateChart() {
+            const container = document.getElementById('chart');
+            container.innerHTML = '';
+
+            const maxCount = Math.max(...sectorCounts, 1);
+
+            for (let i = 0; i < NUM_SECTORS; i++) {
+                const barWrapper = document.createElement('div');
+                barWrapper.style.flex = '1';
+                barWrapper.style.display = 'flex';
+                barWrapper.style.flexDirection = 'column';
+                barWrapper.style.alignItems = 'center';
+                barWrapper.style.position = 'relative';
+                barWrapper.style.marginTop = '30px';
+
+                const bar = document.createElement('div');
+                bar.className = 'bar';
+
+                const height = (sectorCounts[i] / maxCount) * 100;
+                bar.style.height = height + '%';
+
+                if (sectorCounts[i] > 0) {
+                    const value = document.createElement('div');
+                    value.className = 'bar-value';
+                    value.textContent = sectorCounts[i];
+                    bar.appendChild(value);
+                }
+
+                const label = document.createElement('div');
+                label.className = 'bar-label';
+                label.textContent = `S${i + 1}`;
+
+                barWrapper.appendChild(bar);
+                barWrapper.appendChild(label);
+                container.appendChild(barWrapper);
+            }
+        }
+    </script>
+</body>
+
+</html>
