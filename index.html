@@ -68,10 +68,43 @@
             letter-spacing: 0.05em;
             line-height: 1.5;
         }
+        .fixed-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: var(--card);
+            border-bottom: 1px solid var(--border);
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .fixed-nav a {
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-dim);
+            padding: 6px 12px;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+        .fixed-nav a:hover { color: var(--blue); }
+        .fixed-nav a.active { color: var(--blue); font-weight: 600; }
+        .fixed-nav .nav-brand { color: var(--blue); font-weight: 700; margin-right: auto; }
+        .app { padding-top: 56px; }
     </style>
 </head>
 
 <body>
+    <nav class="fixed-nav">
+        <a href="index.html" class="nav-brand">SECTOR ORACLE</a>
+        <a href="index.html" class="active">Home</a>
+        <a href="basic.html">Basic</a>
+        <a href="advance.html">Advanced</a>
+    </nav>
     <div class="app">
         <div class="landing">
             <h1 class="landing-title">SECTOR ORACLE</h1>

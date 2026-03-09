@@ -358,6 +358,31 @@
             text-align: center;
         }
 
+        .fixed-nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            background: #161b22;
+            border-bottom: 1px solid #2d3748;
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+        }
+        .fixed-nav a {
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #9ca3af;
+            padding: 6px 12px;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+        .fixed-nav a:hover { color: #22c55e; }
+        .fixed-nav a.active { color: #22c55e; font-weight: 600; }
+        .fixed-nav .nav-brand { color: #22c55e; font-weight: 700; margin-right: auto; }
+        .app { padding-top: 56px; }
         @media (max-width: 560px) {
             .number-grid { grid-template-columns: repeat(auto-fill, minmax(44px, 1fr)); }
             .drift-metrics { grid-template-columns: 1fr 1fr; }
@@ -366,6 +391,12 @@
 </head>
 
 <body>
+    <nav class="fixed-nav">
+        <a href="index.html" class="nav-brand">SECTOR ORACLE</a>
+        <a href="index.html">Home</a>
+        <a href="basic.html">Basic</a>
+        <a href="advance.html" class="active">Advanced</a>
+    </nav>
     <div class="app">
         <header class="header">
             <h1 class="header-title">SECTOR DRIFT DETECTOR</h1>
