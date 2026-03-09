@@ -1,30 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Rajdhani:wght@300;400;500;600&display=swap');
 
-/* ── CSS Variables ─────────────────────────────────────────────── */
+/* ── CSS Variables (Google-style palette) ───────────────────────── */
 :root {
-    --bg: #d4d8e4;
-    --surface: #222838;
-    --card: #263040;
-    --border: #334158;
-    --border2: #3d4f6a;
-    --gold: #e0b84a;
-    --gold2: #f0d080;
-    --gold-dim: #a07c30;
-    --red: #c0392b;
-    --red2: #e74c3c;
-    --green: #1a7a3c;
-    --green2: #27ae60;
-    --text: #f0e8d8;
-    --text-dim: #a09878;
-    --text-faint: #5a5040;
-    --s1: #e87c2a;
-    --s2: #9b59b6;
-    --s3: #2e86c1;
-    --s4: #1e8449;
-    --s5: #b03a2e;
-    --s6: #148f77;
-    --s7: #d4ac0d;
-    --s8: #2874a6;
+    --bg: #ffffff;
+    --surface: #f8f9fa;
+    --card: #ffffff;
+    --border: #dadce0;
+    --border2: #e8eaed;
+    --blue: #4285F4;
+    --blue-light: #e8f0fe;
+    --green: #34A853;
+    --green-light: #e6f4ea;
+    --red: #EA4335;
+    --red-light: #fce8e6;
+    --yellow: #FBBC05;
+    --text: #202124;
+    --text-dim: #5f6368;
+    --text-faint: #80868b;
+    --s1: #4285F4;
+    --s2: #34A853;
+    --s3: #EA4335;
+    --s4: #FBBC05;
+    --s5: #4285F4;
+    --s6: #34A853;
+    --s7: #EA4335;
+    --s8: #FBBC05;
+    --gold: var(--blue);
 }
 
 /* ── Reset ─────────────────────────────────────────────────────── */
@@ -55,13 +56,8 @@ body::before {
     position: fixed;
     inset: 0;
     background:
-        radial-gradient(ellipse 80% 50% at 50% -10%, #1e3a28 0%, transparent 60%),
-        radial-gradient(ellipse 60% 40% at 80% 110%, #2a1e08 0%, transparent 50%),
-        repeating-linear-gradient(45deg,
-            transparent,
-            transparent 40px,
-            rgba(255, 255, 255, 0.015) 40px,
-            rgba(255, 255, 255, 0.015) 41px);
+        radial-gradient(ellipse 80% 50% at 50% -10%, rgba(66, 133, 244, 0.06) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 40% at 80% 110%, rgba(52, 168, 83, 0.05) 0%, transparent 50%);
     pointer-events: none;
     z-index: 0;
 }
@@ -88,8 +84,7 @@ body::before {
     font-size: clamp(1.4rem, 5vw, 2.2rem);
     font-weight: 700;
     letter-spacing: 0.15em;
-    color: var(--gold);
-    text-shadow: 0 0 40px rgba(201, 168, 76, 0.4);
+    color: var(--blue);
 }
 
 .header-sub {
@@ -104,6 +99,7 @@ body::before {
 .card {
     background: var(--card);
     border: 1px solid var(--border);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
     border-radius: 6px;
     padding: 14px 16px;
     margin-bottom: 14px;
@@ -113,7 +109,7 @@ body::before {
     font-family: 'Cinzel', serif;
     font-size: 0.65rem;
     letter-spacing: 0.25em;
-    color: var(--gold-dim);
+    color: var(--text-dim);
     text-transform: uppercase;
     margin-bottom: 12px;
     display: flex;
@@ -153,15 +149,15 @@ body::before {
 }
 
 .table-btn:hover {
-    border-color: var(--gold-dim);
-    color: var(--text);
+    border-color: var(--blue);
+    color: var(--blue);
 }
 
 .table-btn.active {
-    background: linear-gradient(135deg, #2e2000, #3d2c00);
-    border-color: var(--gold);
-    color: var(--gold);
-    box-shadow: 0 0 16px rgba(224, 184, 74, 0.2), inset 0 1px 0 rgba(224, 184, 74, 0.15);
+    background: var(--blue-light);
+    border-color: var(--blue);
+    color: var(--blue);
+    box-shadow: 0 1px 3px rgba(66, 133, 244, 0.2);
 }
 
 /* ── Rotation control ────────────────────────────────────────────── */
@@ -184,7 +180,7 @@ body::before {
     background: var(--surface);
     border: 1px solid var(--border2);
     border-radius: 4px;
-    color: var(--gold);
+    color: var(--blue);
     font-family: 'Rajdhani', sans-serif;
     font-size: 0.95rem;
     font-weight: 600;
@@ -193,7 +189,7 @@ body::before {
 
 .rotation-input:focus {
     outline: none;
-    border-color: var(--gold-dim);
+    border-color: var(--blue);
 }
 
 /* ── Number Grid ─────────────────────────────────────────────────── */
@@ -221,21 +217,21 @@ body::before {
 }
 
 .num-btn.red {
-    background: #3a1212;
-    color: #f07070;
-    border-color: #6a2020;
+    background: var(--red-light);
+    color: var(--red);
+    border-color: rgba(234, 67, 53, 0.4);
 }
 
 .num-btn.black {
-    background: #1e2535;
-    color: #a0b5cc;
-    border-color: #2e3d55;
+    background: var(--surface);
+    color: var(--text);
+    border-color: var(--border);
 }
 
 .num-btn.green {
-    background: #0e2218;
-    color: #55d078;
-    border-color: #1a4a28;
+    background: var(--green-light);
+    color: var(--green);
+    border-color: rgba(52, 168, 83, 0.4);
 }
 
 .num-btn:hover {
@@ -298,21 +294,21 @@ body::before {
 }
 
 .spin-chip.red {
-    background: #4a1515;
-    color: #f07070;
-    border-color: #8a2828;
+    background: var(--red-light);
+    color: var(--red);
+    border-color: var(--red);
 }
 
 .spin-chip.black {
-    background: #1e2838;
-    color: #c0d0e0;
-    border-color: #3a4e68;
+    background: var(--surface);
+    color: var(--text);
+    border-color: var(--border2);
 }
 
 .spin-chip.green {
-    background: #0e2a18;
-    color: #55d078;
-    border-color: #1e5830;
+    background: var(--green-light);
+    color: var(--green);
+    border-color: var(--green);
 }
 
 .spin-stag {
@@ -321,7 +317,7 @@ body::before {
     letter-spacing: 0.05em;
     padding: 1px 4px;
     border-radius: 2px;
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--surface);
 }
 
 .spin-arrow {
@@ -336,7 +332,7 @@ body::before {
     font-size: 0.58rem;
     padding: 2px 5px;
     border-radius: 10px;
-    background: rgba(255, 255, 255, 0.04);
+    background: var(--surface);
     border: 1px solid var(--border);
     color: var(--text-dim);
     white-space: nowrap;
@@ -346,21 +342,21 @@ body::before {
 }
 
 .arc-pill.match {
-    background: rgba(39, 174, 96, 0.12);
-    border-color: #1a5a28;
-    color: #55d078;
+    background: var(--green-light);
+    border-color: var(--green);
+    color: var(--green);
 }
 
 .arc-pill.miss {
-    background: rgba(192, 57, 43, 0.1);
-    border-color: #5a1810;
-    color: #c05050;
+    background: var(--red-light);
+    border-color: var(--red);
+    color: var(--red);
 }
 
 .arc-pill.outlier {
-    background: rgba(180, 140, 0, 0.12);
-    border-color: #5a4800;
-    color: #c8a820;
+    background: rgba(251, 188, 5, 0.15);
+    border-color: var(--yellow);
+    color: #b8860b;
     text-decoration: line-through;
     opacity: 0.7;
 }
@@ -387,8 +383,8 @@ body::before {
 }
 
 .ctrl-btn:hover {
-    border-color: var(--gold-dim);
-    color: var(--text);
+    border-color: var(--blue);
+    color: var(--blue);
 }
 
 .spin-count {
@@ -435,18 +431,18 @@ body::before {
 }
 
 .legend-num.red {
-    background: #3a1212;
-    color: #f07070;
+    background: var(--red-light);
+    color: var(--red);
 }
 
 .legend-num.black {
-    background: #1e2535;
-    color: #a0b5cc;
+    background: var(--surface);
+    color: var(--text);
 }
 
 .legend-num.green {
-    background: #0e2218;
-    color: #55d078;
+    background: var(--green-light);
+    color: var(--green);
 }
 
 /* ── Transition Matrix ───────────────────────────────────────────── */
@@ -473,13 +469,13 @@ body::before {
 
 .matrix-table td {
     padding: 5px 8px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    border-bottom: 1px solid var(--border);
     text-align: center;
     position: relative;
 }
 
 .matrix-table tr:hover td {
-    background: rgba(255, 255, 255, 0.02);
+    background: var(--surface);
 }
 
 .matrix-cell-bar {
@@ -572,7 +568,7 @@ body::before {
 }
 
 .pred-confidence strong {
-    color: var(--gold);
+    color: var(--blue);
 }
 
 .pred-numbers {
@@ -589,21 +585,21 @@ body::before {
 }
 
 .pred-num-chip.red {
-    background: #3a1212;
-    color: #f07070;
-    border: 1px solid #7a2828;
+    background: var(--red-light);
+    color: var(--red);
+    border: 1px solid rgba(234, 67, 53, 0.4);
 }
 
 .pred-num-chip.black {
-    background: #1e2535;
-    color: #a0b5cc;
-    border: 1px solid #2e4060;
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--border);
 }
 
 .pred-num-chip.green {
-    background: #0e2218;
-    color: #55d078;
-    border: 1px solid #1a4a28;
+    background: var(--green-light);
+    color: var(--green);
+    border: 1px solid rgba(52, 168, 83, 0.4);
 }
 
 /* Confidence bars */
@@ -630,7 +626,7 @@ body::before {
 .conf-bar-bg {
     flex: 1;
     height: 6px;
-    background: rgba(255, 255, 255, 0.04);
+    background: var(--surface);
     border-radius: 3px;
     overflow: hidden;
 }
@@ -684,7 +680,7 @@ body::before {
     height: 0;
     border-left: 4px solid transparent;
     border-right: 4px solid transparent;
-    border-top: 5px solid var(--gold);
+    border-top: 5px solid var(--blue);
 }
 
 /* ── Arc Panel ───────────────────────────────────────────────────── */
@@ -711,7 +707,7 @@ body::before {
 .arc-stat-val {
     font-size: 1rem;
     font-weight: 600;
-    color: var(--gold);
+    color: var(--blue);
     font-family: 'Cinzel', serif;
 }
 
