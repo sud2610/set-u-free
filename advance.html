@@ -10,7 +10,7 @@
         html { font-size: 15px; }
 
         body {
-            background: #0d1117;
+            background: linear-gradient(160deg, #0d1117 0%, #161b22 30%, #1a1f2e 60%, #0f1419 100%);
             color: #e6edf3;
             font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
             min-height: 100vh;
@@ -21,7 +21,11 @@
             content: '';
             position: fixed;
             inset: 0;
-            background: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(34, 197, 94, 0.06) 0%, transparent 50%);
+            background:
+                radial-gradient(ellipse 80% 50% at 50% -10%, rgba(34, 197, 94, 0.12) 0%, transparent 55%),
+                radial-gradient(ellipse 50% 40% at 90% 80%, rgba(234, 88, 12, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse 40% 35% at 5% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 45%),
+                radial-gradient(ellipse 60% 30% at 80% 10%, rgba(168, 85, 247, 0.06) 0%, transparent 40%);
             pointer-events: none;
             z-index: 0;
         }
@@ -44,7 +48,10 @@
         .header-title {
             font-size: clamp(1.4rem, 5vw, 2rem);
             font-weight: 700;
-            color: #22c55e;
+            background: linear-gradient(135deg, #22c55e, #4ade80, #38bdf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             letter-spacing: 0.1em;
         }
 
@@ -65,17 +72,23 @@
         .header a:hover { color: #22c55e; }
 
         .card {
-            background: #161b22;
+            background: linear-gradient(180deg, #1c2128 0%, #161b22 100%);
             border: 1px solid #2d3748;
-            border-radius: 8px;
+            border-left: 4px solid #22c55e;
+            border-radius: 10px;
             padding: 16px;
             margin-bottom: 14px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
+
+        .card:nth-of-type(4) { border-left-color: #38bdf8; }
+        .card:nth-of-type(5) { border-left-color: #f97316; }
+        .card:nth-of-type(6) { border-left-color: #a855f7; }
 
         .card-title {
             font-size: 0.7rem;
             letter-spacing: 0.2em;
-            color: #22c55e;
+            color: #4ade80;
             text-transform: uppercase;
             margin-bottom: 12px;
             font-weight: 600;
@@ -139,21 +152,24 @@
         }
 
         .num-btn.red {
-            background: #991b1b;
-            color: #fca5a5;
-            border-color: #b91c1c;
+            background: linear-gradient(180deg, #b91c1c 0%, #991b1b 100%);
+            color: #fecaca;
+            border-color: #dc2626;
+            box-shadow: 0 2px 8px rgba(185, 28, 28, 0.4);
         }
 
         .num-btn.black {
-            background: #1f2937;
-            color: #d1d5db;
-            border-color: #374151;
+            background: linear-gradient(180deg, #374151 0%, #1f2937 100%);
+            color: #e5e7eb;
+            border-color: #4b5563;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
         }
 
         .num-btn.green {
-            background: #14532d;
+            background: linear-gradient(180deg, #166534 0%, #14532d 100%);
             color: #86efac;
-            border-color: #166534;
+            border-color: #22c55e;
+            box-shadow: 0 2px 8px rgba(34, 197, 94, 0.3);
         }
 
         /* Spin history */
@@ -188,9 +204,21 @@
             border: 2px solid rgba(255,255,255,0.2);
         }
 
-        .spin-chip.red { background: #991b1b; color: #fca5a5; }
-        .spin-chip.black { background: #1f2937; color: #d1d5db; }
-        .spin-chip.green { background: #14532d; color: #86efac; }
+        .spin-chip.red {
+            background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+            color: #fecaca;
+            box-shadow: 0 2px 6px rgba(185, 28, 28, 0.4);
+        }
+        .spin-chip.black {
+            background: linear-gradient(135deg, #4b5563 0%, #1f2937 100%);
+            color: #e5e7eb;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        }
+        .spin-chip.green {
+            background: linear-gradient(135deg, #22c55e 0%, #14532d 100%);
+            color: #bbf7d0;
+            box-shadow: 0 2px 6px rgba(34, 197, 94, 0.4);
+        }
 
         .ctrl-row {
             display: flex;
@@ -239,11 +267,13 @@
         }
 
         .drift-metric {
-            background: #0d1117;
+            background: linear-gradient(180deg, #1c2128 0%, #0d1117 100%);
             border: 1px solid #2d3748;
-            border-radius: 6px;
+            border-left: 3px solid #22c55e;
+            border-radius: 8px;
             padding: 12px;
         }
+        .drift-metric:nth-child(2) { border-left-color: #38bdf8; }
 
         .drift-metric-label {
             font-size: 0.65rem;
@@ -256,7 +286,10 @@
         .drift-metric-val {
             font-size: 1.1rem;
             font-weight: 700;
-            color: #22c55e;
+            background: linear-gradient(135deg, #22c55e, #4ade80);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .drift-score-wrap {
@@ -281,7 +314,7 @@
 
         .drift-score-fill {
             height: 100%;
-            background: linear-gradient(90deg, #22c55e, #4ade80);
+            background: linear-gradient(90deg, #22c55e, #4ade80, #38bdf8);
             border-radius: 5px;
             transition: width 0.5s ease;
         }
@@ -362,8 +395,8 @@
             position: fixed;
             top: 0; left: 0; right: 0;
             z-index: 1000;
-            background: #161b22;
-            border-bottom: 1px solid #2d3748;
+            background: linear-gradient(90deg, #161b22 0%, #1a2332 50%, #151b27 100%);
+            border-bottom: 2px solid #2d3748;
             padding: 10px 16px;
             display: flex;
             align-items: center;
@@ -381,7 +414,14 @@
         }
         .fixed-nav a:hover { color: #22c55e; }
         .fixed-nav a.active { color: #22c55e; font-weight: 600; }
-        .fixed-nav .nav-brand { color: #22c55e; font-weight: 700; margin-right: auto; }
+        .fixed-nav .nav-brand {
+            font-weight: 700;
+            margin-right: auto;
+            background: linear-gradient(135deg, #22c55e, #38bdf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
         .app { padding-top: 56px; }
         @media (max-width: 560px) {
             .number-grid { grid-template-columns: repeat(auto-fill, minmax(44px, 1fr)); }
