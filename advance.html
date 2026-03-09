@@ -4,96 +4,633 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sector Oracle — Roulette Pattern Analyser (Advanced)</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Sector Drift Detection Analyzer</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { font-size: 15px; }
+
+        body {
+            background: #0d1117;
+            color: #e6edf3;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(34, 197, 94, 0.06) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .app {
+            position: relative;
+            z-index: 1;
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 16px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 24px 0 20px;
+            border-bottom: 1px solid #2d3748;
+            margin-bottom: 20px;
+        }
+
+        .header-title {
+            font-size: clamp(1.4rem, 5vw, 2rem);
+            font-weight: 700;
+            color: #22c55e;
+            letter-spacing: 0.1em;
+        }
+
+        .header-sub {
+            font-size: 0.85rem;
+            color: #9ca3af;
+            margin-top: 6px;
+            letter-spacing: 0.08em;
+        }
+
+        .header a {
+            display: inline-block;
+            margin-top: 12px;
+            font-size: 0.8rem;
+            color: #6b7280;
+            text-decoration: none;
+        }
+        .header a:hover { color: #22c55e; }
+
+        .card {
+            background: #161b22;
+            border: 1px solid #2d3748;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 14px;
+        }
+
+        .card-title {
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            color: #22c55e;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        /* Table type selector */
+        .table-select-wrap {
+            margin-bottom: 0;
+        }
+
+        .table-select-wrap label {
+            display: block;
+            font-size: 0.8rem;
+            color: #9ca3af;
+            margin-bottom: 8px;
+        }
+
+        .table-select-wrap select {
+            width: 100%;
+            max-width: 280px;
+            padding: 10px 12px;
+            background: #0d1117;
+            border: 1px solid #2d3748;
+            border-radius: 6px;
+            color: #e6edf3;
+            font-family: inherit;
+            font-size: 0.95rem;
+            cursor: pointer;
+        }
+
+        .table-select-wrap select:focus {
+            outline: none;
+            border-color: #22c55e;
+        }
+
+        /* Number grid */
+        .number-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(48px, 1fr));
+            gap: 6px;
+        }
+
+        .num-btn {
+            aspect-ratio: 1;
+            border-radius: 8px;
+            border: 2px solid transparent;
+            font-family: inherit;
+            font-size: 0.9rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.15s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 44px;
+        }
+
+        .num-btn:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.2);
+        }
+
+        .num-btn.red {
+            background: #991b1b;
+            color: #fca5a5;
+            border-color: #b91c1c;
+        }
+
+        .num-btn.black {
+            background: #1f2937;
+            color: #d1d5db;
+            border-color: #374151;
+        }
+
+        .num-btn.green {
+            background: #14532d;
+            color: #86efac;
+            border-color: #166534;
+        }
+
+        /* Spin history */
+        .history-scroll {
+            display: flex;
+            align-items: flex-start;
+            gap: 6px;
+            overflow-x: auto;
+            padding-bottom: 8px;
+            min-height: 56px;
+            scrollbar-width: thin;
+            scrollbar-color: #2d3748 #161b22;
+        }
+
+        .history-empty {
+            color: #6b7280;
+            font-size: 0.85rem;
+            align-self: center;
+            padding: 12px 0;
+        }
+
+        .spin-chip {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+
+        .spin-chip.red { background: #991b1b; color: #fca5a5; }
+        .spin-chip.black { background: #1f2937; color: #d1d5db; }
+        .spin-chip.green { background: #14532d; color: #86efac; }
+
+        .ctrl-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+            align-items: center;
+        }
+
+        .ctrl-btn {
+            padding: 8px 16px;
+            background: #0d1117;
+            border: 1px solid #2d3748;
+            border-radius: 6px;
+            color: #9ca3af;
+            font-family: inherit;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .ctrl-btn:hover {
+            border-color: #22c55e;
+            color: #22c55e;
+        }
+
+        .spin-count {
+            margin-left: auto;
+            font-size: 0.8rem;
+            color: #6b7280;
+        }
+
+        /* Drift output */
+        .drift-output {
+            display: none;
+        }
+
+        .drift-output.visible {
+            display: block;
+        }
+
+        .drift-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .drift-metric {
+            background: #0d1117;
+            border: 1px solid #2d3748;
+            border-radius: 6px;
+            padding: 12px;
+        }
+
+        .drift-metric-label {
+            font-size: 0.65rem;
+            letter-spacing: 0.1em;
+            color: #6b7280;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .drift-metric-val {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #22c55e;
+        }
+
+        .drift-score-wrap {
+            margin: 16px 0;
+        }
+
+        .drift-score-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            margin-bottom: 6px;
+            color: #9ca3af;
+        }
+
+        .drift-score-bar {
+            height: 12px;
+            background: #0d1117;
+            border-radius: 6px;
+            overflow: hidden;
+            border: 1px solid #2d3748;
+        }
+
+        .drift-score-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #22c55e, #4ade80);
+            border-radius: 5px;
+            transition: width 0.5s ease;
+        }
+
+        .predicted-sector {
+            margin-top: 16px;
+            padding: 14px;
+            background: #0d1117;
+            border: 1px solid #22c55e;
+            border-radius: 6px;
+        }
+
+        .predicted-sector-title {
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            color: #22c55e;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .predicted-numbers {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .pred-num {
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .pred-num.red { background: #991b1b; color: #fca5a5; }
+        .pred-num.black { background: #1f2937; color: #d1d5db; }
+        .pred-num.green { background: #14532d; color: #86efac; }
+        .pred-num.highlight { box-shadow: 0 0 0 2px #22c55e; }
+
+        /* Wheel strip */
+        .wheel-strip-wrap {
+            margin-top: 16px;
+        }
+
+        .wheel-strip-label {
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            color: #6b7280;
+            margin-bottom: 8px;
+        }
+
+        .wheel-strip {
+            display: flex;
+            height: 24px;
+            border-radius: 12px;
+            overflow: hidden;
+            gap: 1px;
+            border: 1px solid #2d3748;
+        }
+
+        .ws-slot {
+            flex: 1;
+            min-width: 4px;
+            transition: opacity 0.3s;
+        }
+
+        .ws-slot.recent { opacity: 1; }
+        .ws-slot.predicted { opacity: 1; box-shadow: inset 0 -3px 0 #22c55e; }
+        .ws-slot.default { opacity: 0.25; }
+
+        .no-data-msg {
+            color: #6b7280;
+            font-size: 0.9rem;
+            padding: 24px 0;
+            text-align: center;
+        }
+
+        @media (max-width: 560px) {
+            .number-grid { grid-template-columns: repeat(auto-fill, minmax(44px, 1fr)); }
+            .drift-metrics { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
 </head>
 
 <body>
     <div class="app">
+        <header class="header">
+            <h1 class="header-title">SECTOR DRIFT DETECTOR</h1>
+            <p class="header-sub">Moving Cluster & Wheel Position Analyzer</p>
+            <a href="index.html">← Back to home</a>
+        </header>
 
-        <!-- Header -->
-        <div class="header">
-            <div class="header-title">SECTOR ORACLE</div>
-            <div class="header-sub">Roulette Wheel Pattern Analyser — Advanced</div>
-            <a href="index.html" style="display:inline-block;margin-top:12px;font-size:0.75rem;color:var(--text-dim);letter-spacing:0.1em;text-decoration:none">← Back to home</a>
-        </div>
-
-        <!-- Status Strip -->
-        <div class="status-strip" id="statusStrip">
-            <div class="status-dot" id="statusDot" style="background:#3a3028"></div>
-            <span class="status-text" id="statusText">Enter spins to begin analysis</span>
-            <span class="status-sub" id="statusSub">0 spins</span>
-        </div>
-
-        <!-- 1. Table Type & Rotations -->
+        <!-- Step 1: Table Type Selector -->
         <div class="card">
-            <div class="card-title">Table Configuration</div>
-            <div class="table-selector">
-                <button class="table-btn" id="btn-european" onclick="app.setTable('european')">European<br><small
-                        style="opacity:0.5;font-size:0.65rem">Single Zero</small></button>
-                <button class="table-btn" id="btn-american" onclick="app.setTable('american')">American<br><small
-                        style="opacity:0.5;font-size:0.65rem">Double Zero</small></button>
-                <button class="table-btn active" id="btn-triple-zero" onclick="app.setTable('triple-zero')">Triple
-                    Zero<br><small style="opacity:0.5;font-size:0.65rem">3 Zeros</small></button>
-            </div>
-            <div class="rotation-row">
-                <span class="rotation-label">Ball rotations assumed:</span>
-                <input type="number" class="rotation-input" id="rotInput" value="15" min="1" max="50"
-                    onchange="app.setRotations(this.value)">
-                <span class="rotation-label" style="color:var(--text-faint)">per spin</span>
+            <div class="card-title">Roulette Table Type</div>
+            <div class="table-select-wrap">
+                <label for="tableType">Select wheel configuration</label>
+                <select id="tableType">
+                    <option value="european">European (Single Zero)</option>
+                    <option value="american">American (Double Zero)</option>
+                    <option value="triple-zero">Triple Zero</option>
+                </select>
             </div>
         </div>
 
-        <!-- 2. Number Input Grid -->
+        <!-- Step 2: Number Input -->
         <div class="card">
             <div class="card-title">Enter Spin Result</div>
             <div class="number-grid" id="numGrid"></div>
         </div>
 
-        <!-- 3. Spin History -->
+        <!-- Step 3: Spin History -->
         <div class="card">
             <div class="card-title">Spin History</div>
             <div class="history-scroll" id="historyScroll">
                 <span class="history-empty">No spins yet — tap a number above</span>
             </div>
             <div class="ctrl-row">
-                <button class="ctrl-btn" onclick="app.undo()">↩ Undo</button>
-                <button class="ctrl-btn" onclick="app.clear()">✕ Clear All</button>
+                <button class="ctrl-btn" id="btnUndo">↩ Undo Last Spin</button>
+                <button class="ctrl-btn" id="btnClear">✕ Clear Spins</button>
                 <span class="spin-count" id="spinCount">0 / 20 spins</span>
             </div>
         </div>
 
-        <!-- 4. Sector Mapping -->
-        <div class="card">
-            <div class="card-title">Sector Map</div>
-            <div class="sector-legend" id="sectorLegend"></div>
-        </div>
-
-        <!-- 5. Arc Analysis -->
-        <div class="card" id="arcCard" style="display:none">
-            <div class="card-title">Arc Analysis</div>
-            <div class="arc-stats" id="arcStats"></div>
-        </div>
-
-        <!-- 6. Transition Matrix -->
-        <div class="card">
-            <div class="card-title">Sector Transition Matrix</div>
-            <div class="matrix-wrap" id="matrixWrap">
-                <div class="no-data-row">Enter at least 3 spins to build transition data</div>
+        <!-- Steps 5-10: Drift Analysis Output -->
+        <div class="card drift-output" id="driftOutput">
+            <div class="card-title">Drift Analysis</div>
+            <div id="driftContent">
+                <div class="no-data-msg">Enter at least 4 spins to detect drift</div>
             </div>
         </div>
 
-        <!-- 7. Prediction -->
-        <div class="card" id="predCard">
-            <div class="card-title">Prediction</div>
-            <div id="predContent">
-                <div class="no-data-row">Need more spins for prediction</div>
+        <!-- Step 9: Visual Wheel Strip -->
+        <div class="card">
+            <div class="card-title">Wheel Strip</div>
+            <div class="wheel-strip-wrap">
+                <div class="wheel-strip-label">Wheel order (left → right = clockwise)</div>
+                <div class="wheel-strip" id="wheelStrip"></div>
             </div>
         </div>
+    </div>
 
-    </div><!-- /app -->
+    <script>
+        (function () {
+            const WHEEL_DEFS = {
+                european: [0, 32, 15, 19, 4, 21, 2, 25, 17, 34, 6, 27, 13, 36, 11, 30, 8, 23, 10, 5, 24, 16, 33, 1, 20, 14, 31, 9, 22, 18, 29, 7, 28, 12, 35, 3, 26],
+                american: [0, '00', 32, 15, 19, 4, 21, 2, 25, 17, 34, 6, 27, 13, 36, 11, 30, 8, 23, 10, 5, 24, 16, 33, 1, 20, 14, 31, 9, 22, 18, 29, 7, 28, 12, 35, 3, 26],
+                'triple-zero': [0, '00', '000', 32, 15, 19, 4, 21, 2, 25, 17, 34, 6, 27, 13, 36, 11, 30, 8, 23, 10, 5, 24, 16, 33, 1, 20, 14, 31, 9, 22, 18, 29, 7, 28, 12, 35, 3, 26]
+            };
 
-    <script src="script.js"></script>
+            const RED = new Set('1,3,5,7,9,12,14,16,18,19,21,23,25,27,30,32,34,36'.split(','));
+
+            function getWheelConfiguration(tableType) {
+                const raw = WHEEL_DEFS[tableType] || WHEEL_DEFS['triple-zero'];
+                return raw.map(String);
+            }
+
+            function getNumberColor(numStr) {
+                if (numStr === '0' || numStr === '00' || numStr === '000') return 'green';
+                return RED.has(numStr) ? 'red' : 'black';
+            }
+
+            const state = {
+                tableType: 'triple-zero',
+                wheel: getWheelConfiguration('triple-zero'),
+                spins: [],
+                maxSpins: 20
+            };
+
+            function renderGrid() {
+                const grid = document.getElementById('numGrid');
+                grid.innerHTML = '';
+                state.wheel.forEach(num => {
+                    const btn = document.createElement('button');
+                    btn.className = 'num-btn ' + getNumberColor(num);
+                    btn.textContent = num;
+                    btn.type = 'button';
+                    btn.addEventListener('click', () => addSpin(num));
+                    grid.appendChild(btn);
+                });
+            }
+
+            function addSpin(numStr) {
+                if (state.spins.length >= state.maxSpins) state.spins.shift();
+                state.spins.push(String(numStr));
+                render();
+            }
+
+            function undo() {
+                if (state.spins.length) {
+                    state.spins.pop();
+                    render();
+                }
+            }
+
+            function clear() {
+                state.spins = [];
+                render();
+            }
+
+            function setTableType() {
+                const sel = document.getElementById('tableType');
+                state.tableType = sel.value;
+                state.wheel = getWheelConfiguration(state.tableType);
+                renderGrid();
+                render();
+            }
+
+            function calculateDrift() {
+                const spins = state.spins;
+                const wheel = state.wheel;
+                const len = wheel.length;
+                if (spins.length < 4) return null;
+
+                const indexes = spins.map(n => wheel.indexOf(n)).filter(i => i !== -1);
+                if (indexes.length < 4) return null;
+
+                const diffs = [];
+                for (let i = 0; i < indexes.length - 1; i++) {
+                    let d = indexes[i + 1] - indexes[i];
+                    if (d > len / 2) d -= len;
+                    if (d < -len / 2) d += len;
+                    diffs.push(d);
+                }
+
+                const mean = diffs.reduce((a, b) => a + b, 0) / diffs.length;
+                const variance = diffs.reduce((s, d) => s + Math.pow(d - mean, 2), 0) / diffs.length;
+                const std = Math.sqrt(variance);
+
+                let direction = 'No drift (random)';
+                if (mean > 0.3) direction = 'Clockwise drift';
+                else if (mean < -0.3) direction = 'Counter-clockwise drift';
+
+                const sameSign = diffs.filter(d => (mean >= 0 && d >= 0) || (mean < 0 && d < 0)).length;
+                const dirConsistency = sameSign / diffs.length;
+                const stepConsistency = Math.max(0, 1 - std / 4);
+                const movement = Math.min(1, Math.abs(mean) / 3);
+                let score = 10 * (0.5 * dirConsistency + 0.3 * stepConsistency + 0.2 * movement);
+                score = Math.round(Math.min(10, Math.max(0, score)) * 10) / 10;
+
+                return {
+                    avgStep: mean,
+                    direction,
+                    score,
+                    diffs,
+                    indexes,
+                    lastIndex: indexes[indexes.length - 1]
+                };
+            }
+
+            function predictNextSector(drift) {
+                if (!drift || drift.score < 5) return null;
+                const wheel = state.wheel;
+                const len = wheel.length;
+                const center = (drift.lastIndex + Math.round(drift.avgStep) + len) % len;
+                const nums = [];
+                for (let o = -2; o <= 2; o++) {
+                    const idx = (center + o + len) % len;
+                    nums.push({ num: wheel[idx], idx, isCenter: o === 0 });
+                }
+                return nums;
+            }
+
+            function renderHistory() {
+                const scroll = document.getElementById('historyScroll');
+                const countEl = document.getElementById('spinCount');
+                countEl.textContent = state.spins.length + ' / ' + state.maxSpins + ' spins';
+
+                if (!state.spins.length) {
+                    scroll.innerHTML = '<span class="history-empty">No spins yet — tap a number above</span>';
+                    return;
+                }
+                scroll.innerHTML = state.spins.map(n =>
+                    '<div class="spin-chip ' + getNumberColor(n) + '">' + n + '</div>'
+                ).join('');
+                scroll.scrollLeft = scroll.scrollWidth;
+            }
+
+            function renderDriftOutput() {
+                const out = document.getElementById('driftOutput');
+                const content = document.getElementById('driftContent');
+                const drift = calculateDrift();
+
+                if (!drift) {
+                    out.classList.remove('visible');
+                    content.innerHTML = '<div class="no-data-msg">Enter at least 4 spins to detect drift</div>';
+                    return;
+                }
+
+                out.classList.add('visible');
+                const pred = predictNextSector(drift);
+                const avgStepStr = drift.avgStep >= 0 ? '+' + drift.avgStep.toFixed(1) : drift.avgStep.toFixed(1);
+
+                let html = '<div class="drift-metrics">';
+                html += '<div class="drift-metric"><div class="drift-metric-label">Drift Direction</div><div class="drift-metric-val">' + drift.direction + '</div></div>';
+                html += '<div class="drift-metric"><div class="drift-metric-label">Average Drift Step</div><div class="drift-metric-val">' + avgStepStr + ' pockets/spin</div></div>';
+                html += '</div>';
+
+                html += '<div class="drift-score-wrap">';
+                html += '<div class="drift-score-label"><span>Drift Strength Score</span><span>' + drift.score + ' / 10</span></div>';
+                html += '<div class="drift-score-bar"><div class="drift-score-fill" style="width:' + (drift.score * 10) + '%"></div></div>';
+                html += '</div>';
+
+                if (pred && drift.score >= 5) {
+                    html += '<div class="predicted-sector">';
+                    html += '<div class="predicted-sector-title">Predicted Next Sector</div>';
+                    html += '<div class="predicted-numbers">';
+                    pred.forEach(p => {
+                        const c = getNumberColor(p.num);
+                        html += '<span class="pred-num ' + c + (p.isCenter ? ' highlight' : '') + '">' + p.num + '</span>';
+                    });
+                    html += '</div></div>';
+                }
+
+                content.innerHTML = html;
+            }
+
+            function renderWheelStrip() {
+                const strip = document.getElementById('wheelStrip');
+                const wheel = state.wheel;
+                const drift = calculateDrift();
+                const predIndexes = drift && drift.score >= 5 ? predictNextSector(drift) : null;
+                const recentIndexes = drift ? new Set(drift.indexes) : new Set();
+                const predSet = predIndexes ? new Set(predIndexes.map(p => p.idx)) : new Set();
+
+                strip.innerHTML = wheel.map((num, idx) => {
+                    const isRecent = recentIndexes.has(idx);
+                    const isPred = predSet.has(idx);
+                    let cls = 'ws-slot default';
+                    if (isRecent) cls = 'ws-slot recent';
+                    if (isPred) cls = 'ws-slot predicted';
+                    const bg = getNumberColor(num) === 'red' ? '#991b1b' : getNumberColor(num) === 'green' ? '#14532d' : '#1f2937';
+                    return '<div class="' + cls + '" style="background:' + bg + '" title="' + num + '"></div>';
+                }).join('');
+            }
+
+            function render() {
+                renderGrid();
+                renderHistory();
+                renderDriftOutput();
+                renderWheelStrip();
+            }
+
+            document.getElementById('tableType').addEventListener('change', setTableType);
+            document.getElementById('btnUndo').addEventListener('click', undo);
+            document.getElementById('btnClear').addEventListener('click', clear);
+
+            render();
+        })();
+    </script>
 </body>
 
 </html>
