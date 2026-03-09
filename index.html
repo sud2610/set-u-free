@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sector Oracle — Roulette Pattern Analyser</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .landing {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .landing-title {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(1.8rem, 6vw, 2.6rem);
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            color: var(--gold);
+            text-shadow: 0 0 40px rgba(201, 168, 76, 0.4);
+            margin-bottom: 8px;
+        }
+        .landing-sub {
+            font-size: 0.9rem;
+            letter-spacing: 0.25em;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            margin-bottom: 48px;
+        }
+        .landing-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+        @media (max-width: 520px) {
+            .landing-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+        .landing-card {
+            display: block;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 32px 24px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.25s;
+        }
+        .landing-card:hover {
+            border-color: var(--gold-dim);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+        }
+        .landing-card h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            color: var(--gold);
+            margin-bottom: 8px;
+        }
+        .landing-card p {
+            font-size: 0.82rem;
+            color: var(--text-dim);
+            letter-spacing: 0.05em;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app">
+        <div class="landing">
+            <h1 class="landing-title">SECTOR ORACLE</h1>
+            <p class="landing-sub">Roulette Wheel Pattern Analyser</p>
+            <div class="landing-cards">
+                <a href="basic.html" class="landing-card">
+                    <h2>Basic</h2>
+                    <p>Core analysis: spin entry, sector map, transition matrix, and predictions</p>
+                </a>
+                <a href="advance.html" class="landing-card">
+                    <h2>Advanced</h2>
+                    <p>Full feature set with arc analysis and detailed pattern insights</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
