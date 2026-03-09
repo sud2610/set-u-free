@@ -481,10 +481,16 @@
                 maxSpins: 20
             };
 
+            function getNormalSequence() {
+                const zeros = state.wheel.filter(n => n === '0' || n === '00' || n === '000');
+                const oneTo36 = Array.from({ length: 36 }, (_, i) => String(i + 1));
+                return [...zeros, ...oneTo36];
+            }
+
             function renderGrid() {
                 const grid = document.getElementById('numGrid');
                 grid.innerHTML = '';
-                state.wheel.forEach(num => {
+                getNormalSequence().forEach(num => {
                     const btn = document.createElement('button');
                     btn.className = 'num-btn ' + getNumberColor(num);
                     btn.textContent = num;

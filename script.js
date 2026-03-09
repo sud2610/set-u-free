@@ -280,7 +280,10 @@ const app = {
     renderGrid() {
         const g = document.getElementById('numGrid');
         g.innerHTML = '';
-        this.cfg.wheel.forEach(num => {
+        const zeros = this.cfg.wheel.filter(n => this.cfg.greens.has(n));
+        const oneTo36 = Array.from({ length: 36 }, (_, i) => String(i + 1));
+        const normalSequence = [...zeros, ...oneTo36];
+        normalSequence.forEach(num => {
             const col = getNumberColor(num, this.cfg.greens);
             const sec = convertNumberToSector(num, this.sectors);
             const btn = document.createElement('button');
