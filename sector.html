@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sector Oracle — Tier, Orphelins & Voisins</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .fixed-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: linear-gradient(90deg, #ffffff 0%, #f0f7ff 50%, #f5fff5 100%);
+            border-bottom: 2px solid var(--border);
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            box-shadow: 0 4px 16px rgba(66, 133, 244, 0.12);
+        }
+
+        .fixed-nav a {
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-dim);
+            padding: 6px 12px;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+
+        .fixed-nav a:hover {
+            color: var(--blue);
+        }
+
+        .fixed-nav a.active {
+            color: var(--blue);
+            font-weight: 600;
+        }
+
+        .fixed-nav .nav-brand {
+            font-weight: 700;
+            margin-right: auto;
+            background: linear-gradient(135deg, var(--blue), var(--green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .app {
+            padding-top: 56px;
+        }
+
+        .header {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 32px 20px 20px;
+        }
+
+        .header-title {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(1.6rem, 5vw, 2.2rem);
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            background: linear-gradient(135deg, #4285F4, #34A853, #EA4335);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 6px;
+        }
+
+        .header-sub {
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            color: var(--text-dim);
+            text-transform: uppercase;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 16px 32px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .card-title {
+            font-size: 0.8rem;
+            letter-spacing: 0.15em;
+            color: var(--blue);
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 14px;
+        }
+
+        .status-strip {
+            background: linear-gradient(90deg, #f0f7ff 0%, #f5fff5 100%);
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            padding: 14px 16px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .status-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #999;
+            transition: background 0.3s;
+        }
+
+        .status-text {
+            font-weight: 500;
+            color: var(--text);
+        }
+
+        .status-sub {
+            margin-left: auto;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+        }
+
+        .number-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .num-btn {
+            aspect-ratio: 1;
+            border-radius: 8px;
+            border: 2px solid var(--border);
+            background: var(--card-bg);
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .num-btn:hover {
+            transform: translateY(-2px);
+            border-color: var(--blue);
+            box-shadow: 0 4px 12px rgba(66, 133, 244, 0.2);
+        }
+
+        .num-btn.red {
+            color: #d32f2f;
+            background: #ffebee;
+        }
+
+        .num-btn.black {
+            color: #1a1a1a;
+            background: #f5f5f5;
+        }
+
+        .num-btn.green {
+            color: #2e7d32;
+            background: #e8f5e9;
+        }
+
+        .sector-dot {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            bottom: 3px;
+            right: 3px;
+        }
+
+        .history-scroll {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding: 8px 0;
+            min-height: 50px;
+        }
+
+        .history-empty {
+            color: var(--text-dim);
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .spin-chip {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+            border: 2px solid var(--border);
+        }
+
+        .spin-chip.red {
+            background: #ffebee;
+            color: #d32f2f;
+            border-color: #ef5350;
+        }
+
+        .spin-chip.black {
+            background: #f5f5f5;
+            color: #1a1a1a;
+            border-color: #bdbdbd;
+        }
+
+        .spin-chip.green {
+            background: #e8f5e9;
+            color: #2e7d32;
+            border-color: #66bb6a;
+        }
+
+        .sector-label {
+            font-size: 0.65rem;
+            color: var(--blue);
+            font-weight: 600;
+            margin-top: 2px;
+        }
+
+        .ctrl-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+            align-items: center;
+        }
+
+        .ctrl-btn {
+            padding: 8px 16px;
+            background: var(--card-bg);
+            border: 2px solid var(--border);
+            border-radius: 6px;
+            color: var(--text);
+            font-weight: 500;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .ctrl-btn:hover {
+            border-color: var(--blue);
+            color: var(--blue);
+            box-shadow: 0 2px 6px rgba(66, 133, 244, 0.15);
+        }
+
+        .spin-count {
+            margin-left: auto;
+            font-size: 0.8rem;
+            color: var(--text-dim);
+        }
+
+        .sector-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .sector-card {
+            background: linear-gradient(135deg, #f8fbff 0%, #f0f7ff 100%);
+            border: 2px solid var(--border);
+            border-left: 4px solid var(--blue);
+            border-radius: 8px;
+            padding: 14px;
+        }
+
+        .sector-card.orphelins {
+            border-left-color: #9b59b6;
+            background: linear-gradient(135deg, #faf5ff 0%, #f5f0ff 100%);
+        }
+
+        .sector-card.voisins {
+            border-left-color: #e67e22;
+            background: linear-gradient(135deg, #fffaf0 0%, #fff5f0 100%);
+        }
+
+        .sector-name {
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--blue);
+            margin-bottom: 8px;
+        }
+
+        .sector-card.orphelins .sector-name {
+            color: #9b59b6;
+        }
+
+        .sector-card.voisins .sector-name {
+            color: #e67e22;
+        }
+
+        .sector-numbers {
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            line-height: 1.6;
+            margin-bottom: 8px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .sector-count {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--blue);
+        }
+
+        .sector-card.orphelins .sector-count {
+            color: #9b59b6;
+        }
+
+        .sector-card.voisins .sector-count {
+            color: #e67e22;
+        }
+
+        .sector-label-small {
+            font-size: 0.65rem;
+            color: var(--text-dim);
+        }
+
+        .prediction-box {
+            background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%);
+            border: 2px solid #81c784;
+            border-radius: 8px;
+            padding: 16px;
+            margin-top: 12px;
+        }
+
+        .prediction-title {
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: #2e7d32;
+            margin-bottom: 8px;
+        }
+
+        .prediction-sector {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #2e7d32;
+        }
+
+        .prediction-prob {
+            font-size: 0.85rem;
+            color: #558b2f;
+            margin-top: 6px;
+        }
+
+        .matrix-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.8rem;
+            margin-top: 8px;
+        }
+
+        .matrix-table th,
+        .matrix-table td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .matrix-table th {
+            background: var(--bg);
+            font-weight: 700;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            font-size: 0.65rem;
+            letter-spacing: 0.1em;
+        }
+
+        .matrix-from,
+        .matrix-to {
+            font-weight: 700;
+        }
+
+        .matrix-cnt {
+            font-weight: 700;
+            color: var(--blue);
+        }
+
+        .matrix-pct {
+            font-weight: 600;
+        }
+
+        .no-data-row {
+            padding: 12px;
+            text-align: center;
+            color: var(--text-dim);
+            font-size: 0.85rem;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="fixed-nav">
+        <a href="index.html" class="nav-brand">SECTOR ORACLE</a>
+        <a href="index.html">Home</a>
+        <a href="sector.html" class="active">Sectors</a>
+        <a href="signature.html">Signature</a>
+    </nav>
+
+    <div class="app">
+        <div class="header">
+            <div class="header-title">SECTOR ORACLE</div>
+            <div class="header-sub">Tier • Orphelins • Voisins Predictor</div>
+        </div>
+
+        <div class="container">
+
+            <!-- Status Strip -->
+            <div class="status-strip">
+                <div class="status-dot" id="statusDot"></div>
+                <span class="status-text" id="statusText">Enter spins to begin analysis</span>
+                <span class="status-sub" id="statusSub">0 spins</span>
+            </div>
+
+            <!-- 1. Enter Spin Results -->
+            <div class="card">
+                <div class="card-title">Enter Spin Results</div>
+                <div class="number-grid" id="numGrid"></div>
+                <div class="ctrl-row">
+                    <button class="ctrl-btn" onclick="app.undo()">↩ Undo</button>
+                    <button class="ctrl-btn" onclick="app.clear()">✕ Clear All</button>
+                    <span class="spin-count" id="spinCount">0 spins</span>
+                </div>
+            </div>
+
+            <!-- 2. Spin History -->
+            <div class="card">
+                <div class="card-title">Spin History</div>
+                <div class="history-scroll" id="historyScroll">
+                    <span class="history-empty">No spins yet — tap a number above</span>
+                </div>
+            </div>
+
+            <!-- 3. Sector Statistics -->
+            <div class="card">
+                <div class="card-title">Sector Statistics</div>
+                <div class="sector-grid" id="sectorStats"></div>
+            </div>
+
+            <!-- 4. Prediction -->
+            <div class="card">
+                <div class="card-title">Next Sector Prediction</div>
+                <div id="predContent">
+                    <div class="no-data-row">Need at least 2 spins for prediction</div>
+                </div>
+            </div>
+
+            <!-- 5. Transition Matrix -->
+            <div class="card">
+                <div class="card-title">Sector Transition Matrix</div>
+                <div id="matrixWrap">
+                    <div class="no-data-row">Enter at least 3 spins to build transition data</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Roulette sector definitions
+        const ROULETTE_SECTORS = {
+            TIER: {
+                id: 0,
+                label: 'Tier',
+                color: '#4285F4',
+                numbers: new Set(['12', '35', '3', '26', '0', '32', '15', '19', '4', '21', '2', '25'])
+            },
+            ORPHELINS: {
+                id: 1,
+                label: 'Orphelins',
+                color: '#9b59b6',
+                numbers: new Set(['1', '20', '14', '31', '9', '22', '18', '29', '7', '28', '12', '35'])
+            },
+            VOISINS: {
+                id: 2,
+                label: 'Voisins',
+                color: '#e67e22',
+                numbers: new Set(['22', '18', '29', '7', '28', '12', '35', '3', '26', '0', '32', '15', '19', '4', '21', '2', '25', '17', '34', '6'])
+            }
+        };
+
+        const sectorApp = {
+            tableType: 'european',
+            cfg: getWheelConfiguration('european'),
+            spins: [],
+            lastSectors: [],
+
+            init() {
+                this.cfg = getWheelConfiguration(this.tableType);
+                this.spins = [];
+                this.lastSectors = [];
+                this.renderGrid();
+                this.render();
+            },
+
+            addSpin(numStr) {
+                if (this.spins.length >= 30) {
+                    this.spins.shift();
+                    this.lastSectors.shift();
+                }
+                const sector = this.getNumberSector(numStr);
+                this.spins.push({ num: numStr, sectorId: sector ? sector.id : null });
+                this.lastSectors.push(sector);
+                this.render();
+            },
+
+            getNumberSector(numStr) {
+                for (const [key, sector] of Object.entries(ROULETTE_SECTORS)) {
+                    if (sector.numbers.has(numStr)) {
+                        return sector;
+                    }
+                }
+                return null;
+            },
+
+            undo() {
+                if (!this.spins.length) return;
+                this.spins.pop();
+                this.lastSectors.pop();
+                this.render();
+            },
+
+            clear() {
+                this.spins = [];
+                this.lastSectors = [];
+                this.render();
+            },
+
+            renderGrid() {
+                const g = document.getElementById('numGrid');
+                g.innerHTML = '';
+                const zeros = ['0'];
+                const oneTo36 = Array.from({ length: 36 }, (_, i) => String(i + 1));
+                const allNums = [...zeros, ...oneTo36];
+
+                allNums.forEach(num => {
+                    const col = getNumberColor(num, this.cfg.greens);
+                    const sector = this.getNumberSector(num);
+                    const btn = document.createElement('button');
+                    btn.className = 'num-btn ' + col;
+                    btn.innerHTML = num;
+                    if (sector) {
+                        btn.innerHTML += `<span class="sector-dot" style="background:${sector.color}"></span>`;
+                    }
+                    btn.onclick = () => this.addSpin(num);
+                    g.appendChild(btn);
+                });
+            },
+
+            render() {
+                this.renderStatus();
+                this.renderHistory();
+                this.renderSectorStats();
+                this.renderPrediction();
+                this.renderMatrix();
+                document.getElementById('spinCount').textContent = this.spins.length + ' spins';
+            },
+
+            renderStatus() {
+                const dot = document.getElementById('statusDot');
+                const text = document.getElementById('statusText');
+                const sub = document.getElementById('statusSub');
+                sub.textContent = this.spins.length + ' spin' + (this.spins.length !== 1 ? 's' : '');
+
+                if (this.spins.length === 0) {
+                    dot.style.background = '#999';
+                    text.textContent = 'Enter spins to begin analysis';
+                } else if (this.spins.length < 3) {
+                    dot.style.background = '#f39c12';
+                    text.textContent = 'Collecting data...';
+                } else {
+                    dot.style.background = '#27ae60';
+                    text.textContent = 'Analysis ready — enter more for better predictions';
+                }
+            },
+
+            renderHistory() {
+                const scroll = document.getElementById('historyScroll');
+                if (!this.spins.length) {
+                    scroll.innerHTML = '<span class="history-empty">No spins yet — tap a number above</span>';
+                    return;
+                }
+                let html = '';
+                this.spins.forEach((sp, i) => {
+                    const col = getNumberColor(sp.num, this.cfg.greens);
+                    const sector = sp.sectorId !== null ? Object.values(ROULETTE_SECTORS)[sp.sectorId] : null;
+                    html += `
+                        <div style="display:flex;flex-direction:column;align-items:center;gap:2px">
+                            <div class="spin-chip ${col}">${sp.num}</div>
+                            <div class="sector-label">${sector ? sector.label : '?'}</div>
+                        </div>`;
+                });
+                scroll.innerHTML = html;
+                scroll.scrollLeft = scroll.scrollWidth;
+            },
+
+            renderSectorStats() {
+                const stats = document.getElementById('sectorStats');
+                const counts = { 0: 0, 1: 0, 2: 0 };
+                this.spins.forEach(sp => {
+                    if (sp.sectorId !== null) counts[sp.sectorId]++;
+                });
+
+                const sectors = Object.values(ROULETTE_SECTORS);
+                let html = '';
+                sectors.forEach((sector, idx) => {
+                    const count = counts[sector.id];
+                    const nums = Array.from(sector.numbers).sort((a, b) => parseInt(a) - parseInt(b)).join(', ');
+                    const cardClass = idx === 0 ? '' : idx === 1 ? 'orphelins' : 'voisins';
+                    html += `
+                        <div class="sector-card ${cardClass}">
+                            <div class="sector-name">${sector.label}</div>
+                            <div class="sector-numbers">${nums}</div>
+                            <div class="sector-count">${count}</div>
+                            <div class="sector-label-small">hit${count !== 1 ? 's' : ''}</div>
+                        </div>`;
+                });
+                stats.innerHTML = html;
+            },
+
+            renderPrediction() {
+                const content = document.getElementById('predContent');
+                if (this.spins.length < 2) {
+                    content.innerHTML = '<div class="no-data-row">Need at least 2 spins for prediction</div>';
+                    return;
+                }
+
+                const sectorSeq = this.spins.map(s => s.sectorId);
+                const lastSectorId = sectorSeq[sectorSeq.length - 1];
+                if (lastSectorId === null) {
+                    content.innerHTML = '<div class="no-data-row">Last spin not in any sector</div>';
+                    return;
+                }
+
+                const transitions = this.calculateTransitions(sectorSeq);
+                const predictions = this.getPredictions(lastSectorId, transitions);
+
+                if (!predictions.length) {
+                    content.innerHTML = '<div class="no-data-row">No transition history yet for this sector</div>';
+                    return;
+                }
+
+                const topPred = predictions[0];
+                const topSector = Object.values(ROULETTE_SECTORS)[topPred.sectorId];
+                const html = `
+                    <div class="prediction-box">
+                        <div class="prediction-title">Most Likely Next Sector</div>
+                        <div class="prediction-sector" style="color:${topSector.color}">${topSector.label}</div>
+                        <div class="prediction-prob">${topPred.pct}% probability (${topPred.count} occurrences)</div>
+                    </div>
+                    ${predictions.length > 1 ? `
+                    <div style="margin-top:12px;font-size:0.8rem;color:var(--text-dim)">
+                        <strong>Other possibilities:</strong><br>
+                        ${predictions.slice(1).map(p => {
+                    const s = Object.values(ROULETTE_SECTORS)[p.sectorId];
+                    return `${s.label}: ${p.pct}% (${p.count}×)`;
+                }).join(' • ')}
+                    </div>` : ''}`;
+                content.innerHTML = html;
+            },
+
+            calculateTransitions(sectorSeq) {
+                const map = {};
+                for (let i = 0; i < sectorSeq.length - 1; i++) {
+                    const f = sectorSeq[i], t = sectorSeq[i + 1];
+                    if (f === null || t === null) continue;
+                    const key = f + '→' + t;
+                    if (!map[key]) map[key] = { from: f, to: t, count: 0 };
+                    map[key].count++;
+                }
+                return map;
+            },
+
+            getPredictions(currentSectorId, transitions) {
+                const tally = {};
+                let total = 0;
+                for (const [, v] of Object.entries(transitions)) {
+                    if (v.from !== currentSectorId) continue;
+                    tally[v.to] = (tally[v.to] || 0) + v.count;
+                    total += v.count;
+                }
+                if (total === 0) return [];
+                return Object.entries(tally)
+                    .map(([id, count]) => ({
+                        sectorId: +id,
+                        count,
+                        pct: Math.round(count / total * 100)
+                    }))
+                    .sort((a, b) => b.pct - a.pct);
+            },
+
+            renderMatrix() {
+                const wrap = document.getElementById('matrixWrap');
+                const sectorSeq = this.spins.map(s => s.sectorId);
+                if (sectorSeq.length < 3) {
+                    wrap.innerHTML = '<div class="no-data-row">Enter at least 3 spins to build transition data</div>';
+                    return;
+                }
+
+                const transitions = this.calculateTransitions(sectorSeq);
+                const entries = Object.values(transitions).sort((a, b) => b.count - a.count);
+                if (!entries.length) {
+                    wrap.innerHTML = '<div class="no-data-row">No transitions yet</div>';
+                    return;
+                }
+
+                const fromTotals = {};
+                entries.forEach(e => { fromTotals[e.from] = (fromTotals[e.from] || 0) + e.count; });
+
+                const sectors = Object.values(ROULETTE_SECTORS);
+                let html = `
+                    <table class="matrix-table">
+                        <thead>
+                            <tr>
+                                <th>FROM</th>
+                                <th style="text-align:center">→</th>
+                                <th>TO</th>
+                                <th>COUNT</th>
+                                <th>PROBABILITY</th>
+                            </tr>
+                        </thead>
+                        <tbody>`;
+
+                entries.forEach(e => {
+                    const fromSec = sectors[e.from];
+                    const toSec = sectors[e.to];
+                    const pct = Math.round(e.count / fromTotals[e.from] * 100);
+                    html += `
+                            <tr>
+                                <td><span class="matrix-from" style="color:${fromSec.color}">${fromSec.label}</span></td>
+                                <td style="text-align:center;color:var(--text-faint)">→</td>
+                                <td><span class="matrix-to" style="color:${toSec.color}">${toSec.label}</span></td>
+                                <td><span class="matrix-cnt">${e.count}×</span></td>
+                                <td><span class="matrix-pct" style="color:${pct >= 60 ? '#27ae60' : pct >= 40 ? '#f39c12' : 'var(--text-dim)'}">${pct}%</span></td>
+                            </tr>`;
+                });
+
+                html += `</tbody></table>`;
+                wrap.innerHTML = html;
+            }
+        };
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            sectorApp.init();
+        });
+    </script>
+</body>
+
+</html>
