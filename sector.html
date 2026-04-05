@@ -264,6 +264,48 @@
             box-shadow: 0 2px 6px rgba(66, 133, 244, 0.15);
         }
 
+        .table-selector {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .table-btn {
+            flex: 1 1 170px;
+            min-width: 140px;
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            background: var(--card-bg);
+            color: var(--text);
+            padding: 14px 16px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            line-height: 1.3;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: center;
+        }
+
+        .table-btn small {
+            display: block;
+            opacity: 0.7;
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin-top: 6px;
+        }
+
+        .table-btn.active {
+            border-color: var(--blue);
+            background: rgba(66, 133, 244, 0.08);
+            color: var(--blue);
+            box-shadow: 0 6px 16px rgba(66, 133, 244, 0.14);
+        }
+
+        .table-btn:hover {
+            transform: translateY(-2px);
+            border-color: var(--blue);
+        }
+
         .spin-count {
             margin-left: auto;
             font-size: 0.8rem;
@@ -438,6 +480,19 @@
                 <span class="status-sub" id="statusSub">0 spins</span>
             </div>
 
+            <!-- Table Configuration -->
+            <div class="card">
+                <div class="card-title">Table Configuration</div>
+                <div class="table-selector">
+                    <button id="btn-european" class="table-btn active"
+                        onclick="app.setTable('european')">European<br><small>Single Zero</small></button>
+                    <button id="btn-american" class="table-btn"
+                        onclick="app.setTable('american')">American<br><small>Double Zero</small></button>
+                    <button id="btn-triple-zero" class="table-btn" onclick="app.setTable('triple-zero')">Triple
+                        Zero<br><small>3 Zeros</small></button>
+                </div>
+            </div>
+
             <!-- 1. Enter Spin Results -->
             <div class="card">
                 <div class="card-title">Enter Spin Results</div>
@@ -513,9 +568,20 @@
             lastSectors: [],
 
             init() {
+                window.app = this;
                 this.cfg = getWheelConfiguration(this.tableType);
                 this.spins = [];
                 this.lastSectors = [];
+                this.renderGrid();
+                this.render();
+            },
+
+            setTable(tableType) {
+                this.tableType = tableType;
+                this.cfg = getWheelConfiguration(tableType);
+                document.querySelectorAll('.table-btn').forEach(button => {
+                    button.classList.toggle('active', button.id === `btn-${tableType}`);
+                });
                 this.renderGrid();
                 this.render();
             },
