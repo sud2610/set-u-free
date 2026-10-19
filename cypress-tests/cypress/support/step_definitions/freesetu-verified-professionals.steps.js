@@ -1,10 +1,11 @@
 import { Given, Then } from '@badeball/cypress-cucumber-preprocessor';
+import homePage from '../pages/home-page.js';
 
 Given('I have opened the FreeSetu home page to review provider verification', () => {
-    cy.visit('/');
+    homePage.visit();
 });
 
 Then('the verified professionals benefit should be described', () => {
-    cy.contains('h4', 'Verified Professionals').should('be.visible');
-    cy.contains('p', 'thoroughly verified').should('be.visible');
+    homePage.assertVisibleText('Verified Professionals', 'h4');
+    homePage.assertVisibleText('thoroughly verified', 'p');
 });

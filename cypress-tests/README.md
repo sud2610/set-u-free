@@ -37,8 +37,9 @@ FreeSetu/
 		├── fixtures/               # Stable mocked API responses
 		└── support/
 			├── commands.js         # Reusable Cypress custom commands
-			├── e2e.js              # Support-file entry point
-			├── pages/              # Page Object Models
+			├── e2e.js              # Support hooks and entry point
+			├── pages/
+			│   └── home-page.js    # Page Object for page interactions and assertions
 			└── step_definitions/   # Gherkin-to-Cypress implementations
 ```
 
@@ -105,7 +106,7 @@ The API-search scenario intercepts `GET **/search*` and returns the local fixtur
 
 ## Reporting
 
-Cypress prints a per-feature summary and an overall pass/fail count to the terminal. A failing test causes the Cypress command and CI step to exit non-zero. Cypress saves screenshots for failed browser tests under `cypress/screenshots/`; generated screenshots, downloads, and videos are ignored by Git. Video recording is not enabled, and this project does not currently generate JUnit or HTML reports.
+Cypress prints a per-feature summary and an overall pass/fail count to the terminal. A failing test causes the Cypress command and CI step to exit non-zero. Each passing scenario saves a viewport screenshot under `cypress/screenshots/`, named after the scenario; Cypress also saves screenshots for failures. Generated screenshots, downloads, and videos are ignored by Git. Video recording is not enabled, and this project does not currently generate JUnit or HTML reports.
 
 ## CI/CD
 
@@ -115,7 +116,7 @@ After importing the YAML file as a pipeline in Azure DevOps, configure the badge
 
 ## Design Decisions
 
-- **Page Object Model:** `cypress/support/pages/home-page.js` centralizes the home-page visit, search interaction, and result lookup. This keeps page interactions reusable and limits selector changes to one place as coverage grows. Stable `data-testid` attributes and `cy.findByDataTestid()` provide resilient element lookup.
+- **Page Object Model:** `cypress/support/pages/home-page.js` centralizes page visits, search and navigation interactions, selectors, and common page assertions. Step definitions describe the scenario and delegate UI work to this object. Stable `data-testid` attributes and `cy.findByDataTestid()` provide resilient element lookup.
 - **Test data:** `cypress/fixtures/service-search-results.json` contains the deterministic response used by `cy.intercept()`. Tests verify the outgoing query and wait on the aliased response with `cy.wait('@serviceSearch')`, avoiding fixed sleeps and external backend dependencies.
 - **Environment separation:** Cypress and Vite URLs are environment-configurable, allowing the same suite to target local or deployed environments without changing test code.
 
