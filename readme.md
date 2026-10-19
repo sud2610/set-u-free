@@ -6,6 +6,11 @@ Step 2 - git commit -m "Code commited"
 Step 3 - git push origin main
 
 
+## Testing
+
+End-to-end Cypress tests are documented in [cypress-tests/README.md](cypress-tests/README.md).
+
+
 
 For claude AI - Paste a summary at the start of a new chat
 ==========================================================

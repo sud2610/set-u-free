@@ -631,6 +631,7 @@
                     const sector = this.getNumberSector(num);
                     const btn = document.createElement('button');
                     btn.className = 'num-btn ' + col;
+                    btn.setAttribute('data-testid', 'number-button');
                     btn.innerHTML = num;
                     if (sector) {
                         btn.innerHTML += `<span class="sector-dot" style="background:${sector.color}"></span>`;
@@ -669,6 +670,7 @@
 
             renderHistory() {
                 const scroll = document.getElementById('historyScroll');
+                scroll.setAttribute('data-testid', 'spin-history');
                 if (!this.spins.length) {
                     scroll.innerHTML = '<span class="history-empty">No spins yet — tap a number above</span>';
                     return;
@@ -713,6 +715,7 @@
 
             renderPrediction() {
                 const content = document.getElementById('predContent');
+                content.setAttribute('data-testid', 'prediction-output');
                 if (this.spins.length < 2) {
                     content.innerHTML = '<div class="no-data-row">Need at least 2 spins for prediction</div>';
                     return;

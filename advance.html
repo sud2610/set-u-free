@@ -533,6 +533,7 @@
                 getNormalSequence().forEach(num => {
                     const btn = document.createElement('button');
                     btn.className = 'num-btn ' + getNumberColor(num);
+                    btn.setAttribute('data-testid', 'number-button');
                     btn.textContent = num;
                     btn.type = 'button';
                     btn.addEventListener('click', () => addSpin(num));
@@ -623,6 +624,7 @@
 
             function renderHistory() {
                 const scroll = document.getElementById('historyScroll');
+                scroll.setAttribute('data-testid', 'spin-history');
                 const countEl = document.getElementById('spinCount');
                 countEl.textContent = state.spins.length + ' / ' + state.maxSpins + ' spins';
 
@@ -639,6 +641,7 @@
             function renderDriftOutput() {
                 const out = document.getElementById('driftOutput');
                 const content = document.getElementById('driftContent');
+                content.setAttribute('data-testid', 'analysis-output');
                 const drift = calculateDrift();
 
                 if (!drift) {

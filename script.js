@@ -288,6 +288,7 @@ const app = {
             const sec = convertNumberToSector(num, this.sectors);
             const btn = document.createElement('button');
             btn.className = 'num-btn ' + col;
+            btn.setAttribute('data-testid', 'number-button');
             btn.innerHTML = num +
                 `<span class="sdot" style="background:${sec ? sec.colour : '#444'}"></span>`;
             btn.onclick = () => this.addSpin(num);
@@ -350,6 +351,7 @@ const app = {
 
     renderHistory() {
         const scroll = document.getElementById('historyScroll');
+      scroll.setAttribute('data-testid', 'spin-history');
         if (!this.spins.length) {
             scroll.innerHTML = '<span class="history-empty">No spins yet — tap a number above</span>';
             return;
@@ -464,6 +466,7 @@ const app = {
 
     renderPrediction() {
         const content = document.getElementById('predContent');
+      content.setAttribute('data-testid', 'prediction-output');
         const sectorSeq = this.spins.map(s => s.sectorId);
         if (sectorSeq.length < 2) {
             content.innerHTML = '<div class="no-data-row">Need more spins for prediction</div>';

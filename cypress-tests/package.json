@@ -1,0 +1,32 @@
+{
+    "name": "freesetu-cypress-bdd",
+    "private": true,
+    "version": "1.0.0",
+    "type": "module",
+    "scripts": {
+        "start": "npm --prefix .. run dev -- --host 127.0.0.1 --port 5174 --strictPort",
+        "cy:open": "cypress open",
+        "cy:run": "cypress run",
+        "cy:headed": "cypress run --headed",
+        "test": "concurrently --kill-others --success command-1 \"npm run start\" \"wait-on http://127.0.0.1:5174 && npm run cy:run\"",
+        "test:smoke": "concurrently --kill-others --success command-1 \"npm run start\" \"wait-on http://127.0.0.1:5174 && npm run cy:run -- --spec=cypress/e2e/freesetu-api-search.feature\"",
+        "test:regression": "npm test",
+        "test:headless": "npm test",
+        "test:headed": "concurrently --kill-others --success command-1 \"npm run start\" \"wait-on http://127.0.0.1:5174 && npm run cy:headed\"",
+        "test:open": "concurrently --kill-others --success command-1 \"npm run start\" \"wait-on http://127.0.0.1:5174 && npm run cy:open\""
+    },
+    "devDependencies": {
+        "@badeball/cypress-cucumber-preprocessor": "^22.0.1",
+        "@bahmutov/cypress-esbuild-preprocessor": "^2.2.4",
+        "concurrently": "^9.2.1",
+        "cypress": "^14.5.4",
+        "wait-on": "^9.0.4"
+    },
+    "cypress-cucumber-preprocessor": {
+        "stepDefinitions": [
+            "cypress/e2e/[filepath].{js,ts}",
+            "cypress/e2e/[filepath]/**/*.{js,ts}",
+            "cypress/support/step_definitions/**/*.{js,ts}"
+        ]
+    }
+}

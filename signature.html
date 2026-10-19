@@ -619,6 +619,7 @@
             currentWheel.forEach(number => {
                 const btn = document.createElement('button');
                 btn.className = `number-btn ${getNumberColor(number)}`;
+                btn.setAttribute('data-testid', 'number-button');
                 btn.textContent = number;
                 btn.onclick = () => addSpin(number);
                 grid.appendChild(btn);
@@ -743,6 +744,7 @@
         function updateSpinHistory() {
             const container = document.getElementById('historyChips');
             const countEl = document.getElementById('spinCount');
+            container.setAttribute('data-testid', 'spin-history');
 
             if (spinHistory.length === 0) {
                 container.innerHTML = '<span class="empty-history">No spins recorded yet...</span>';
@@ -760,6 +762,7 @@
 
         function updateAnalysisPanel() {
             const analysis = analyzeDealerSignature();
+            document.getElementById('analysisPanel').setAttribute('data-testid', 'analysis-output');
 
             // Total spins
             document.getElementById('totalSpins').textContent = spinHistory.length;
