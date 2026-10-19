@@ -1,0 +1,75 @@
+name: Cypress tests
+
+on:
+  workflow_dispatch:
+    inputs:
+      app_url:
+        description: Deployed FreeSetu application URL to test
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  cypress:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+          cache-dependency-path: cypress-tests/package-lock.json
+
+      - name: Install Cypress test dependencies
+        run: npm ci --prefix cypress-tests
+
+      - name: Prepare result directory
+        run: mkdir -p cypress-tests/results
+
+      - name: Run Cypress tests
+        id: cypress
+        continue-on-error: true
+        env:
+          CYPRESS_APP_BASE_URL: ${{ inputs.app_url }}
+        run: npm run cy:run --prefix cypress-tests -- --reporter json --reporter-options output=results/cypress-results.json
+
+      - name: Add test results to run summary
+        if: always()
+        env:
+          CYPRESS_OUTCOME: ${{ steps.cypress.outcome }}
+          APP_URL: ${{ inputs.app_url }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          node --input-type=module -e '
+            import { appendFileSync, existsSync, readFileSync } from "node:fs";
+            const reportPath = "cypress-tests/results/cypress-results.json";
+            const outcome = process.env.CYPRESS_OUTCOME;
+            let details = "Cypress did not produce a JSON report.";
+            if (existsSync(reportPath)) {
+              const report = JSON.parse(readFileSync(reportPath, "utf8"));
+              const stats = report.stats ?? {};
+              details = `| Passed | Failed | Pending | Total |\n| ---: | ---: | ---: | ---: |\n| ${stats.passes ?? 0} | ${stats.failures ?? 0} | ${stats.pending ?? 0} | ${stats.tests ?? 0} |`;
+            }
+            const summary = `## Cypress test execution\n\n**Status:** ${outcome}\n\n**Application:** ${process.env.APP_URL}\n\n${details}\n\n[View this CI pipeline run](${process.env.RUN_URL})\n`;
+            appendFileSync(process.env.GITHUB_STEP_SUMMARY, summary);
+          '
+
+      - name: Upload screenshots and test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-evidence-${{ github.run_number }}
+          path: |
+            cypress-tests/cypress/screenshots/
+            cypress-tests/results/cypress-results.json
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: Fail workflow when Cypress tests fail
+        if: steps.cypress.outcome == 'failure'
+        run: exit 1

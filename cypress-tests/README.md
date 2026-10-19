@@ -2,32 +2,27 @@
 
 ![Cypress](https://img.shields.io/badge/Cypress-14.5.4-17202C?logo=cypress&logoColor=white)
 ![Cucumber](https://img.shields.io/badge/BDD-Cucumber-23A841?logo=cucumber&logoColor=white)
-[![Azure Pipelines](https://dev.azure.com/YOUR_ORGANIZATION/YOUR_PROJECT/_apis/build/status/YOUR_PIPELINE_ID?branchName=29JulyCode)](https://dev.azure.com/YOUR_ORGANIZATION/YOUR_PROJECT/_build/latest?definitionId=YOUR_PIPELINE_ID&branchName=29JulyCode)
-
-> Replace `YOUR_ORGANIZATION`, `YOUR_PROJECT`, and `YOUR_PIPELINE_ID` in the Azure badge after importing `azure-pipelines.yml` and creating the pipeline in Azure DevOps. The badge is not live until those values are configured.
+[![Cypress tests](https://github.com/sud2610/set-u-free/actions/workflows/cypress-tests.yml/badge.svg)](https://github.com/sud2610/set-u-free/actions/workflows/cypress-tests.yml)
 
 ## Overview
 
-This repository contains a standalone Cypress end-to-end test project for the FreeSetu React/Vite application. Tests are written as Gherkin scenarios and connected to Cypress through the Cucumber preprocessor. The suite covers core page navigation, service discovery inputs, account pages, provider information, and the mocked service-search API flow.
+This repository contains a standalone Cypress end-to-end test project for the FreeSetu web application. Tests are written as Gherkin scenarios and connected to Cypress through the Cucumber preprocessor. The suite covers core page navigation, service discovery inputs, account pages, provider information, and the mocked service-search API flow. The application itself is not included in this repository; run the suite against a deployed instance or a separately started local app.
 
-The test project is under `cypress-tests/`; the application remains in the repository root. Running the project scripts starts the Vite app on `http://127.0.0.1:5174` and shuts it down after the test command completes.
+The test project is under `cypress-tests/`.
 
 ## Tech Stack
 
 - Cypress for browser automation and assertions
 - Cucumber/Gherkin with `@badeball/cypress-cucumber-preprocessor` for readable BDD scenarios
 - JavaScript ES modules and esbuild for step-definition bundling
-- React and Vite for the application under test
-- Azure Pipelines for CI execution
+- GitHub Actions for CI execution
 
 ## Project Structure
 
 ```text
-FreeSetu/
-├── azure-pipelines.yml
-├── src/
-│   ├── components/                 # React application screens
-│   └── utils/api.js                # Search API client
+set-u-free/
+├── .github/workflows/
+│   └── cypress-tests.yml           # Manually triggered Cypress CI workflow
 └── cypress-tests/
 	├── cypress.config.js
 	├── package.json
@@ -51,10 +46,9 @@ FreeSetu/
 
 ## Installation
 
-From the repository root, install both the application and test dependencies:
+From the repository root, install the test dependencies:
 
 ```sh
-npm ci
 npm ci --prefix cypress-tests
 ```
 
@@ -67,18 +61,20 @@ npx cypress install
 
 ## Running Tests
 
-Run commands from `cypress-tests/`.
+Run commands from `cypress-tests/` against an already-running application:
+
+```powershell
+$env:CYPRESS_APP_BASE_URL = 'https://your-deployed-app.example'
+npm run cy:run
+```
 
 | Goal | Command | Behavior |
 | --- | --- | --- |
-| Smoke tests | `npm run test:smoke` | Runs the API-search flow, including the intercepted request and results |
-| Full regression, headless | `npm run test:regression` | Runs every discovered `.feature` file in headless Electron |
-| Headless | `npm run test:headless` | Alias for the full regression run |
-| Headed browser | `npm run test:headed` | Runs the full suite with a visible Electron browser |
-| Cypress interactive runner | `npm run test:open` | Opens Cypress with the app running |
-| Full suite, default | `npm test` | Runs the complete suite headlessly |
+| Full regression, headless | `npm run cy:run` | Runs every discovered `.feature` file in headless Electron |
+| Headed browser | `npm run cy:headed` | Runs the full suite with a visible Electron browser |
+| Cypress interactive runner | `npm run cy:open` | Opens Cypress with the app available at the configured base URL |
 
-The `test:*` commands manage the local Vite server automatically on port 5174. To use a server you started yourself, run `npm run cy:run` or `npm run cy:headed`; those commands do not start the app.
+The Cypress commands do not start the application server. Set `CYPRESS_APP_BASE_URL` to its URL or make it available at the default `http://127.0.0.1:5174`.
 
 ## Environment Configuration
 
@@ -95,24 +91,23 @@ $env:CYPRESS_APP_BASE_URL = 'https://staging.example.com'
 npm run cy:run
 ```
 
-For a local app using a non-default API service, set the API URL before running a script that starts Vite:
+For an application configured with a non-default API service, set `VITE_API_BASE_URL` in that application's environment before starting it:
 
 ```powershell
 $env:VITE_API_BASE_URL = 'https://staging-api.example.com'
-npm run test:smoke
 ```
 
 The API-search scenario intercepts `GET **/search*` and returns the local fixture, so it does not require a live search backend.
 
 ## Reporting
 
-Cypress prints a per-feature summary and an overall pass/fail count to the terminal. A failing test causes the Cypress command and CI step to exit non-zero. Each passing scenario saves a viewport screenshot under `cypress/screenshots/`, named after the scenario; Cypress also saves screenshots for failures. Generated screenshots, downloads, and videos are ignored by Git. Video recording is not enabled, and this project does not currently generate JUnit or HTML reports.
+Cypress prints a per-feature summary and an overall pass/fail count to the terminal. A failing test causes the Cypress command and CI step to exit non-zero. Each passing scenario saves a viewport screenshot under `cypress/screenshots/`, named after the scenario; Cypress also saves screenshots for failures. The GitHub Actions run produces a JSON test report and uploads it with scenario screenshots as the `cypress-evidence` artifact. The run summary shows pass/fail counts and links to the pipeline run. Generated screenshots, results, downloads, and videos are ignored by Git. Video recording is not enabled.
 
 ## CI/CD
 
-The root `azure-pipelines.yml` defines an Azure DevOps pipeline triggered by changes to branch `29JulyCode`. It selects a Node.js 20 agent, runs `npm ci` for the application and Cypress project, and executes `npm test --prefix cypress-tests`. The BDD suite uses the same local Vite server and mocked search fixture as a developer run, so CI does not need search-service credentials.
+The `.github/workflows/cypress-tests.yml` workflow can be started manually from the GitHub Actions tab. Enter the deployed FreeSetu application URL when starting the workflow; the test suite runs against that URL and publishes its JSON report and screenshots as downloadable artifacts. A run summary includes test counts and a link to the pipeline run. The repository does not currently include a local application package that CI can start.
 
-After importing the YAML file as a pipeline in Azure DevOps, configure the badge above with the organization, project, and pipeline definition ID. Azure reports the run state using that badge URL; pipeline logs contain the Cypress feature-level and overall test summaries.
+To capture evidence of a pipeline run, open the linked run in the GitHub Actions tab and take a screenshot of its summary; the actual run page is generated by GitHub and is not a repository file.
 
 ## Design Decisions
 
